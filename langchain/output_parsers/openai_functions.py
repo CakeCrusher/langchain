@@ -2,6 +2,7 @@ import json
 from typing import Any, List
 
 from langchain.schema import BaseLLMOutputParser, ChatGeneration, Generation
+from langchain.utils import MessageLosslessError
 
 
 class OutputFunctionsParser(BaseLLMOutputParser[Any]):
@@ -16,8 +17,8 @@ class OutputFunctionsParser(BaseLLMOutputParser[Any]):
         message = generation.message
         try:
             func_call = message.additional_kwargs["function_call"]
-        except ValueError as exc:
-            raise ValueError(f"Could not parse function call: {exc}")
+        except (ValueError, KeyError) as exc:
+            raise MessageLosslessError(f"Could not parse function call: {exc}", message=message)
 
         if self.args_only:
             return func_call["arguments"]
