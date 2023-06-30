@@ -7,6 +7,16 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from requests import HTTPError, Response
 
+class MessageLosslessError(ValueError):
+    """Error class that contains the original message so that the message can
+    still be used
+    
+    Args:
+        val: The value to stringify.
+    """
+    def __init__(self, *args, message):
+        super().__init__(*args)
+        self.message = message
 
 def get_from_dict_or_env(
     data: Dict[str, Any], key: str, env_key: str, default: Optional[str] = None
