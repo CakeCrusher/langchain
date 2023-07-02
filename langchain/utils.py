@@ -12,7 +12,7 @@ class MessageLosslessError(ValueError):
     still be used
     
     Args:
-        val: The value to stringify.
+        message: generated message response.
     """
     def __init__(self, *args, message):
         super().__init__(*args)
