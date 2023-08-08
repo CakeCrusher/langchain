@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "oplangchain"
-version = "0.0.255"
+version = "0.1.1"
 description = "Building applications with LLMs through composability"
 authors = []
 license = "MIT"
