@@ -23,7 +23,11 @@ from oplangchain.utilities.portkey import Portkey
 from oplangchain.utilities.powerbi import PowerBIDataset
 from oplangchain.utilities.pupmed import PubMedAPIWrapper
 from oplangchain.utilities.python import PythonREPL
-from oplangchain.utilities.requests import Requests, RequestsWrapper, TextRequestsWrapper
+from oplangchain.utilities.requests import (
+    Requests,
+    RequestsWrapper,
+    TextRequestsWrapper,
+)
 from oplangchain.utilities.scenexplain import SceneXplainAPIWrapper
 from oplangchain.utilities.searx_search import SearxSearchWrapper
 from oplangchain.utilities.serpapi import SerpAPIWrapper

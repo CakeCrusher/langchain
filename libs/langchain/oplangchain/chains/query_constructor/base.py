@@ -22,7 +22,11 @@ from oplangchain.chains.query_constructor.prompt import (
 )
 from oplangchain.chains.query_constructor.schema import AttributeInfo
 from oplangchain.output_parsers.json import parse_and_check_json_markdown
-from oplangchain.schema import BaseOutputParser, BasePromptTemplate, OutputParserException
+from oplangchain.schema import (
+    BaseOutputParser,
+    BasePromptTemplate,
+    OutputParserException,
+)
 from oplangchain.schema.language_model import BaseLanguageModel
 
 

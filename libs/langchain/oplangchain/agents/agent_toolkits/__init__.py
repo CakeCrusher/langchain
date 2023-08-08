@@ -23,7 +23,9 @@ from oplangchain.agents.agent_toolkits.office365.toolkit import O365Toolkit
 from oplangchain.agents.agent_toolkits.openapi.base import create_openapi_agent
 from oplangchain.agents.agent_toolkits.openapi.toolkit import OpenAPIToolkit
 from oplangchain.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
-from oplangchain.agents.agent_toolkits.playwright.toolkit import PlayWrightBrowserToolkit
+from oplangchain.agents.agent_toolkits.playwright.toolkit import (
+    PlayWrightBrowserToolkit,
+)
 from oplangchain.agents.agent_toolkits.powerbi.base import create_pbi_agent
 from oplangchain.agents.agent_toolkits.powerbi.chat_base import create_pbi_chat_agent
 from oplangchain.agents.agent_toolkits.powerbi.toolkit import PowerBIToolkit

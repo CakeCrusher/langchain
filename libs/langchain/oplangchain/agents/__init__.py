@@ -63,7 +63,9 @@ from oplangchain.agents.load_tools import (
 from oplangchain.agents.loading import load_agent
 from oplangchain.agents.mrkl.base import MRKLChain, ZeroShotAgent
 from oplangchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
-from oplangchain.agents.openai_functions_multi_agent.base import OpenAIMultiFunctionsAgent
+from oplangchain.agents.openai_functions_multi_agent.base import (
+    OpenAIMultiFunctionsAgent,
+)
 from oplangchain.agents.react.base import ReActChain, ReActTextWorldAgent
 from oplangchain.agents.self_ask_with_search.base import SelfAskWithSearchChain
 from oplangchain.agents.structured_chat.base import StructuredChatAgent

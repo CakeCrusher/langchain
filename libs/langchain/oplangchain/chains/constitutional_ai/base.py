@@ -5,7 +5,10 @@ from oplangchain.callbacks.manager import CallbackManagerForChainRun
 from oplangchain.chains.base import Chain
 from oplangchain.chains.constitutional_ai.models import ConstitutionalPrinciple
 from oplangchain.chains.constitutional_ai.principles import PRINCIPLES
-from oplangchain.chains.constitutional_ai.prompts import CRITIQUE_PROMPT, REVISION_PROMPT
+from oplangchain.chains.constitutional_ai.prompts import (
+    CRITIQUE_PROMPT,
+    REVISION_PROMPT,
+)
 from oplangchain.chains.llm import LLMChain
 from oplangchain.schema import BasePromptTemplate
 from oplangchain.schema.language_model import BaseLanguageModel

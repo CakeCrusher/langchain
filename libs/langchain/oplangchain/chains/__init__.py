@@ -47,7 +47,9 @@ from oplangchain.chains.llm_bash.base import LLMBashChain
 from oplangchain.chains.llm_checker.base import LLMCheckerChain
 from oplangchain.chains.llm_math.base import LLMMathChain
 from oplangchain.chains.llm_requests import LLMRequestsChain
-from oplangchain.chains.llm_summarization_checker.base import LLMSummarizationCheckerChain
+from oplangchain.chains.llm_summarization_checker.base import (
+    LLMSummarizationCheckerChain,
+)
 from oplangchain.chains.loading import load_chain
 from oplangchain.chains.mapreduce import MapReduceChain
 from oplangchain.chains.moderation import OpenAIModerationChain

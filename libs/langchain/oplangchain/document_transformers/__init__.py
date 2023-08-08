@@ -19,7 +19,9 @@ from oplangchain.document_transformers.doctran_text_extract import (
     DoctranPropertyExtractor,
 )
 from oplangchain.document_transformers.doctran_text_qa import DoctranQATransformer
-from oplangchain.document_transformers.doctran_text_translate import DoctranTextTranslator
+from oplangchain.document_transformers.doctran_text_translate import (
+    DoctranTextTranslator,
+)
 from oplangchain.document_transformers.embeddings_redundant_filter import (
     EmbeddingsClusteringFilter,
     EmbeddingsRedundantFilter,
@@ -27,7 +29,9 @@ from oplangchain.document_transformers.embeddings_redundant_filter import (
 )
 from oplangchain.document_transformers.html2text import Html2TextTransformer
 from oplangchain.document_transformers.long_context_reorder import LongContextReorder
-from oplangchain.document_transformers.nuclia_text_transform import NucliaTextTransformer
+from oplangchain.document_transformers.nuclia_text_transform import (
+    NucliaTextTransformer,
+)
 from oplangchain.document_transformers.openai_functions import OpenAIMetadataTagger
 
 __all__ = [

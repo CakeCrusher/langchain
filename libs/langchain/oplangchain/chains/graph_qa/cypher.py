@@ -8,7 +8,10 @@ from pydantic import Field
 
 from oplangchain.callbacks.manager import CallbackManagerForChainRun
 from oplangchain.chains.base import Chain
-from oplangchain.chains.graph_qa.prompts import CYPHER_GENERATION_PROMPT, CYPHER_QA_PROMPT
+from oplangchain.chains.graph_qa.prompts import (
+    CYPHER_GENERATION_PROMPT,
+    CYPHER_QA_PROMPT,
+)
 from oplangchain.chains.llm import LLMChain
 from oplangchain.graphs.neo4j_graph import Neo4jGraph
 from oplangchain.schema import BasePromptTemplate

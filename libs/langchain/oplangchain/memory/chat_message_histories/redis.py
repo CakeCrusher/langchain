@@ -5,7 +5,11 @@ from typing import List, Optional
 from oplangchain.schema import (
     BaseChatMessageHistory,
 )
-from oplangchain.schema.messages import BaseMessage, _message_to_dict, messages_from_dict
+from oplangchain.schema.messages import (
+    BaseMessage,
+    _message_to_dict,
+    messages_from_dict,
+)
 from oplangchain.utilities.redis import get_client
 
 logger = logging.getLogger(__name__)

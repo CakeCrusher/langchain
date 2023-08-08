@@ -7,7 +7,11 @@ from oplangchain.agents.agent import Agent, AgentOutputParser
 from oplangchain.agents.structured_chat.output_parser import (
     StructuredChatOutputParserWithRetries,
 )
-from oplangchain.agents.structured_chat.prompt import FORMAT_INSTRUCTIONS, PREFIX, SUFFIX
+from oplangchain.agents.structured_chat.prompt import (
+    FORMAT_INSTRUCTIONS,
+    PREFIX,
+    SUFFIX,
+)
 from oplangchain.callbacks.base import BaseCallbackManager
 from oplangchain.chains.llm import LLMChain
 from oplangchain.prompts.chat import (

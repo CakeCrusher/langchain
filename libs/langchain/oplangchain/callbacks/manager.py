@@ -39,7 +39,10 @@ from oplangchain.callbacks.base import (
 from oplangchain.callbacks.openai_info import OpenAICallbackHandler
 from oplangchain.callbacks.stdout import StdOutCallbackHandler
 from oplangchain.callbacks.tracers.langchain import LangChainTracer
-from oplangchain.callbacks.tracers.langchain_v1 import LangChainTracerV1, TracerSessionV1
+from oplangchain.callbacks.tracers.langchain_v1 import (
+    LangChainTracerV1,
+    TracerSessionV1,
+)
 from oplangchain.callbacks.tracers.stdout import ConsoleCallbackHandler
 from oplangchain.callbacks.tracers.wandb import WandbTracer
 from oplangchain.schema import (

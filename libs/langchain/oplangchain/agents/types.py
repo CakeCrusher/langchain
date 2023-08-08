@@ -7,7 +7,9 @@ from oplangchain.agents.conversational.base import ConversationalAgent
 from oplangchain.agents.conversational_chat.base import ConversationalChatAgent
 from oplangchain.agents.mrkl.base import ZeroShotAgent
 from oplangchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
-from oplangchain.agents.openai_functions_multi_agent.base import OpenAIMultiFunctionsAgent
+from oplangchain.agents.openai_functions_multi_agent.base import (
+    OpenAIMultiFunctionsAgent,
+)
 from oplangchain.agents.react.base import ReActDocstoreAgent
 from oplangchain.agents.self_ask_with_search.base import SelfAskWithSearchAgent
 from oplangchain.agents.structured_chat.base import StructuredChatAgent

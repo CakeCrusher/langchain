@@ -4,7 +4,11 @@ from pydantic import Field
 
 from oplangchain.chains.llm import LLMChain
 from oplangchain.graphs import NetworkxEntityGraph
-from oplangchain.graphs.networkx_graph import KnowledgeTriple, get_entities, parse_triples
+from oplangchain.graphs.networkx_graph import (
+    KnowledgeTriple,
+    get_entities,
+    parse_triples,
+)
 from oplangchain.memory.chat_memory import BaseChatMemory
 from oplangchain.memory.prompt import (
     ENTITY_EXTRACTION_PROMPT,

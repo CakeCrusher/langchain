@@ -5,7 +5,10 @@ from pydantic import validator
 
 from oplangchain.callbacks.manager import CallbackManagerForLLMRun
 from oplangchain.chat_models.base import SimpleChatModel
-from oplangchain.llms.azureml_endpoint import AzureMLEndpointClient, ContentFormatterBase
+from oplangchain.llms.azureml_endpoint import (
+    AzureMLEndpointClient,
+    ContentFormatterBase,
+)
 from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,

@@ -284,24 +284,24 @@ class RedisSemanticCache(BaseCache):
     ):
         """Initialize by passing in the `init` GPTCache func
 
-        Args:
-            redis_url (str): URL to connect to Redis.
-            embedding (Embedding): Embedding provider for semantic encoding and search.
-            score_threshold (float, 0.2):
+                Args:
+                    redis_url (str): URL to connect to Redis.
+                    embedding (Embedding): Embedding provider for semantic encoding and search.
+                    score_threshold (float, 0.2):
 
-        Example:
+                Example:
 
-        .. code-block:: python
+                .. code-block:: python
 
-import oplangchain
+        import oplangchain
 
-            from oplangchain.cache import RedisSemanticCache
-            from oplangchain.embeddings import OpenAIEmbeddings
+                    from oplangchain.cache import RedisSemanticCache
+                    from oplangchain.embeddings import OpenAIEmbeddings
 
-            langchain.llm_cache = RedisSemanticCache(
-                redis_url="redis://localhost:6379",
-                embedding=OpenAIEmbeddings()
-            )
+                    langchain.llm_cache = RedisSemanticCache(
+                        redis_url="redis://localhost:6379",
+                        embedding=OpenAIEmbeddings()
+                    )
 
         """
         self._cache_dict: Dict[str, RedisVectorstore] = {}

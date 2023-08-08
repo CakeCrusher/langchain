@@ -11,7 +11,11 @@ if typing.TYPE_CHECKING:
 from oplangchain.schema import (
     BaseChatMessageHistory,
 )
-from oplangchain.schema.messages import BaseMessage, _message_to_dict, messages_from_dict
+from oplangchain.schema.messages import (
+    BaseMessage,
+    _message_to_dict,
+    messages_from_dict,
+)
 
 DEFAULT_TABLE_NAME = "message_store"
 DEFAULT_TTL_SECONDS = None

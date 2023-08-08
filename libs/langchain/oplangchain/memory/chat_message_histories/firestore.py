@@ -7,7 +7,11 @@ from typing import TYPE_CHECKING, List, Optional
 from oplangchain.schema import (
     BaseChatMessageHistory,
 )
-from oplangchain.schema.messages import BaseMessage, messages_from_dict, messages_to_dict
+from oplangchain.schema.messages import (
+    BaseMessage,
+    messages_from_dict,
+    messages_to_dict,
+)
 
 logger = logging.getLogger(__name__)
 

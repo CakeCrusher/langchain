@@ -28,7 +28,10 @@ from oplangchain.tools.base import BaseTool, StructuredTool, Tool, tool
 from oplangchain.tools.bing_search.tool import BingSearchResults, BingSearchRun
 from oplangchain.tools.brave_search.tool import BraveSearch
 from oplangchain.tools.convert_to_openai import format_tool_to_openai_function
-from oplangchain.tools.ddg_search.tool import DuckDuckGoSearchResults, DuckDuckGoSearchRun
+from oplangchain.tools.ddg_search.tool import (
+    DuckDuckGoSearchResults,
+    DuckDuckGoSearchRun,
+)
 from oplangchain.tools.file_management import (
     CopyFileTool,
     DeleteFileTool,
