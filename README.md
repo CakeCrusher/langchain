@@ -1,6 +1,7 @@
 # oplangchain
 This is a fork of [LangChain](https://github.com/langchain-ai/langchain) intended to opperate in the following (undesirable) way.
 1. Replace `from langchain` with `from oplangchain`
+2. Replace `^\s*import langchain\s*$` with `import oplangchain`
 
 # 🦜️🔗 LangChain
 

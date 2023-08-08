@@ -3,7 +3,7 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Sequence, Union
 
-import langchain
+import oplangchain
 from oplangchain.callbacks.base import BaseCallbackHandler
 from oplangchain.callbacks.utils import (
     BaseMetadataCallbackHandler,

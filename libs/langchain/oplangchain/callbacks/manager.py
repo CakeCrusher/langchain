@@ -25,7 +25,7 @@ from uuid import UUID
 
 from tenacity import RetryCallState
 
-import langchain
+import oplangchain
 from oplangchain.callbacks.base import (
     BaseCallbackHandler,
     BaseCallbackManager,

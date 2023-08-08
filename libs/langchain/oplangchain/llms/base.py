@@ -38,7 +38,7 @@ from tenacity import (
     wait_exponential,
 )
 
-import langchain
+import oplangchain
 from oplangchain.callbacks.base import BaseCallbackManager
 from oplangchain.callbacks.manager import (
     AsyncCallbackManager,

@@ -293,7 +293,7 @@ class RedisSemanticCache(BaseCache):
 
         .. code-block:: python
 
-            import langchain
+import oplangchain
 
             from oplangchain.cache import RedisSemanticCache
             from oplangchain.embeddings import OpenAIEmbeddings

@@ -10,7 +10,7 @@ from typing import Any, Dict, List, Optional, Union
 import yaml
 from pydantic import Field, root_validator, validator
 
-import langchain
+import oplangchain
 from oplangchain.callbacks.base import BaseCallbackManager
 from oplangchain.callbacks.manager import (
     AsyncCallbackManager,

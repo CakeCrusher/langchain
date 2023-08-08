@@ -16,7 +16,7 @@ from typing import (
 
 from pydantic import Field, root_validator
 
-import langchain
+import oplangchain
 from oplangchain.callbacks.base import BaseCallbackManager
 from oplangchain.callbacks.manager import (
     AsyncCallbackManager,
