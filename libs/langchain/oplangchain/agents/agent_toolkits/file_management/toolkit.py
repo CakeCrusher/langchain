@@ -4,15 +4,15 @@ from typing import List, Optional
 
 from pydantic import root_validator
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.tools import BaseTool
-from langchain.tools.file_management.copy import CopyFileTool
-from langchain.tools.file_management.delete import DeleteFileTool
-from langchain.tools.file_management.file_search import FileSearchTool
-from langchain.tools.file_management.list_dir import ListDirectoryTool
-from langchain.tools.file_management.move import MoveFileTool
-from langchain.tools.file_management.read import ReadFileTool
-from langchain.tools.file_management.write import WriteFileTool
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.tools import BaseTool
+from oplangchain.tools.file_management.copy import CopyFileTool
+from oplangchain.tools.file_management.delete import DeleteFileTool
+from oplangchain.tools.file_management.file_search import FileSearchTool
+from oplangchain.tools.file_management.list_dir import ListDirectoryTool
+from oplangchain.tools.file_management.move import MoveFileTool
+from oplangchain.tools.file_management.read import ReadFileTool
+from oplangchain.tools.file_management.write import WriteFileTool
 
 _FILE_TOOLS = {
     tool_cls.__fields__["name"].default: tool_cls

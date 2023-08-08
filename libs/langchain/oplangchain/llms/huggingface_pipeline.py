@@ -4,9 +4,9 @@ from typing import Any, List, Mapping, Optional
 
 from pydantic import Extra
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
 
 DEFAULT_MODEL_ID = "gpt2"
 DEFAULT_TASK = "text-generation"
@@ -25,7 +25,7 @@ class HuggingFacePipeline(LLM):
     Example using from_model_id:
         .. code-block:: python
 
-            from langchain.llms import HuggingFacePipeline
+            from oplangchain.llms import HuggingFacePipeline
             hf = HuggingFacePipeline.from_model_id(
                 model_id="gpt2",
                 task="text-generation",
@@ -34,7 +34,7 @@ class HuggingFacePipeline(LLM):
     Example passing pipeline in directly:
         .. code-block:: python
 
-            from langchain.llms import HuggingFacePipeline
+            from oplangchain.llms import HuggingFacePipeline
             from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
             model_id = "gpt2"

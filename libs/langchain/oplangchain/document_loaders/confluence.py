@@ -11,8 +11,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 logger = logging.getLogger(__name__)
 
@@ -60,7 +60,7 @@ class ConfluenceLoader(BaseLoader):
     Example:
         .. code-block:: python
 
-            from langchain.document_loaders import ConfluenceLoader
+            from oplangchain.document_loaders import ConfluenceLoader
 
             loader = ConfluenceLoader(
                 url="https://yoursite.atlassian.com/wiki",

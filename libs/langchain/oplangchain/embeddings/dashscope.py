@@ -19,8 +19,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -73,7 +73,7 @@ class DashScopeEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import DashScopeEmbeddings
+            from oplangchain.embeddings import DashScopeEmbeddings
             embeddings = DashScopeEmbeddings(dashscope_api_key="my-api-key")
 
     Example:
@@ -82,7 +82,7 @@ class DashScopeEmbeddings(BaseModel, Embeddings):
             import os
             os.environ["DASHSCOPE_API_KEY"] = "your DashScope API KEY"
 
-            from langchain.embeddings.dashscope import DashScopeEmbeddings
+            from oplangchain.embeddings.dashscope import DashScopeEmbeddings
             embeddings = DashScopeEmbeddings(
                 model="text-embedding-v1",
             )

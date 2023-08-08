@@ -1,4 +1,4 @@
-from langchain.tools.dataforseo_api_search.tool import (
+from oplangchain.tools.dataforseo_api_search.tool import (
     DataForSeoAPISearchResults,
     DataForSeoAPISearchRun,
 )

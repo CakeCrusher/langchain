@@ -10,10 +10,10 @@ except ImportError:
     from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-from langchain.schema import (
+from oplangchain.schema import (
     BaseChatMessageHistory,
 )
-from langchain.schema.messages import BaseMessage, _message_to_dict, messages_from_dict
+from oplangchain.schema.messages import BaseMessage, _message_to_dict, messages_from_dict
 
 logger = logging.getLogger(__name__)
 

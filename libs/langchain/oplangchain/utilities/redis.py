@@ -28,7 +28,7 @@ def get_client(redis_url: str, **kwargs: Any) -> RedisType:
     Example:
         .. code-block:: python
 
-            from langchain.utilities.redis import get_client
+            from oplangchain.utilities.redis import get_client
             redis_client = get_client(
                 redis_url="redis://username:password@localhost:6379"
                 index_name="my-index",
@@ -48,7 +48,7 @@ def get_client(redis_url: str, **kwargs: Any) -> RedisType:
     Example:
         .. code-block:: python
 
-            from langchain.utilities.redis import get_client
+            from oplangchain.utilities.redis import get_client
             redis_client = get_client(
                 redis_url="redis+sentinel://username:password@sentinelhost:26379/mymaster/0"
                 index_name="my-index",

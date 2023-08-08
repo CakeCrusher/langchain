@@ -3,8 +3,8 @@
 
 from typing import Union
 
-from langchain.docstore.base import Docstore
-from langchain.docstore.document import Document
+from oplangchain.docstore.base import Docstore
+from oplangchain.docstore.document import Document
 
 
 class Wikipedia(Docstore):

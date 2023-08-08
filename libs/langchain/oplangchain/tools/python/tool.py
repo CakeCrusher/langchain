@@ -10,12 +10,12 @@ from typing import Any, Dict, Optional
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForToolRun,
     CallbackManagerForToolRun,
 )
-from langchain.tools.base import BaseTool
-from langchain.utilities import PythonREPL
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities import PythonREPL
 
 
 def _get_default_python_repl() -> PythonREPL:

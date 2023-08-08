@@ -27,21 +27,21 @@ from urllib.parse import urlparse, urlunparse
 from langsmith import Client, RunEvaluator
 from langsmith.schemas import Dataset, DataType, Example
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.callbacks.manager import Callbacks
-from langchain.callbacks.tracers.base import BaseTracer
-from langchain.callbacks.tracers.evaluation import EvaluatorCallbackHandler
-from langchain.callbacks.tracers.langchain import LangChainTracer
-from langchain.chains.base import Chain
-from langchain.chat_models.openai import ChatOpenAI
-from langchain.evaluation.loading import load_evaluator
-from langchain.evaluation.schema import EvaluatorType, StringEvaluator
-from langchain.schema import ChatResult, LLMResult
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.messages import BaseMessage, messages_from_dict
-from langchain.schema.runnable import Runnable, RunnableConfig, RunnableLambda
-from langchain.smith.evaluation.config import EvalConfig, RunEvalConfig
-from langchain.smith.evaluation.string_run_evaluator import StringRunEvaluatorChain
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.callbacks.tracers.base import BaseTracer
+from oplangchain.callbacks.tracers.evaluation import EvaluatorCallbackHandler
+from oplangchain.callbacks.tracers.langchain import LangChainTracer
+from oplangchain.chains.base import Chain
+from oplangchain.chat_models.openai import ChatOpenAI
+from oplangchain.evaluation.loading import load_evaluator
+from oplangchain.evaluation.schema import EvaluatorType, StringEvaluator
+from oplangchain.schema import ChatResult, LLMResult
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.messages import BaseMessage, messages_from_dict
+from oplangchain.schema.runnable import Runnable, RunnableConfig, RunnableLambda
+from oplangchain.smith.evaluation.config import EvalConfig, RunEvalConfig
+from oplangchain.smith.evaluation.string_run_evaluator import StringRunEvaluatorChain
 
 logger = logging.getLogger(__name__)
 
@@ -1184,9 +1184,9 @@ async def arun_on_dataset(
     .. code-block:: python
 
         from langsmith import Client
-        from langchain.chat_models import ChatOpenAI
-        from langchain.chains import LLMChain
-        from langchain.smith import RunEvalConfig, arun_on_dataset
+        from oplangchain.chat_models import ChatOpenAI
+        from oplangchain.chains import LLMChain
+        from oplangchain.smith import RunEvalConfig, arun_on_dataset
 
         # Chains may have memory. Passing in a constructor function lets the
         # evaluation framework avoid cross-contamination between runs.
@@ -1225,7 +1225,7 @@ async def arun_on_dataset(
     .. code-block:: python
 
         from typing import Optional
-        from langchain.evaluation import StringEvaluator
+        from oplangchain.evaluation import StringEvaluator
 
         class MyStringEvaluator(StringEvaluator):
 
@@ -1328,9 +1328,9 @@ def run_on_dataset(
     .. code-block:: python
 
         from langsmith import Client
-        from langchain.chat_models import ChatOpenAI
-        from langchain.chains import LLMChain
-        from langchain.smith import RunEvalConfig, run_on_dataset
+        from oplangchain.chat_models import ChatOpenAI
+        from oplangchain.chains import LLMChain
+        from oplangchain.smith import RunEvalConfig, run_on_dataset
 
         # Chains may have memory. Passing in a constructor function lets the
         # evaluation framework avoid cross-contamination between runs.
@@ -1369,7 +1369,7 @@ def run_on_dataset(
     .. code-block:: python
 
         from typing import Optional
-        from langchain.evaluation import StringEvaluator
+        from oplangchain.evaluation import StringEvaluator
 
         class MyStringEvaluator(StringEvaluator):
 

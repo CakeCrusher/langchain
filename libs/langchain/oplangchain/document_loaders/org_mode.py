@@ -1,7 +1,7 @@
 """Loads Org-Mode files."""
 from typing import Any, List
 
-from langchain.document_loaders.unstructured import (
+from oplangchain.document_loaders.unstructured import (
     UnstructuredFileLoader,
     validate_unstructured_version,
 )
@@ -18,7 +18,7 @@ class UnstructuredOrgModeLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredOrgModeLoader
+    from oplangchain.document_loaders import UnstructuredOrgModeLoader
 
     loader = UnstructuredOrgModeLoader(
         "example.org", mode="elements", strategy="fast",

@@ -2,8 +2,8 @@
 import sys
 from typing import Any, Dict, List, Union
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.schema import AgentAction, AgentFinish, LLMResult
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.schema import AgentAction, AgentFinish, LLMResult
 
 
 class StreamingStdOutCallbackHandler(BaseCallbackHandler):

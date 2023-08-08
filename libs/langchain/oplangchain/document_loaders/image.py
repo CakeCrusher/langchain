@@ -1,7 +1,7 @@
 """Loads image files."""
 from typing import List
 
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
 
 
 class UnstructuredImageLoader(UnstructuredFileLoader):
@@ -16,7 +16,7 @@ class UnstructuredImageLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredImageLoader
+    from oplangchain.document_loaders import UnstructuredImageLoader
 
     loader = UnstructuredImageLoader(
         "example.png", mode="elements", strategy="fast",

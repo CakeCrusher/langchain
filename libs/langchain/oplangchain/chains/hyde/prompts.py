@@ -1,5 +1,5 @@
 # flake8: noqa
-from langchain.prompts.prompt import PromptTemplate
+from oplangchain.prompts.prompt import PromptTemplate
 
 web_search_template = """Please write a passage to answer the question 
 Question: {QUESTION}

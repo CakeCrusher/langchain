@@ -5,9 +5,9 @@ from typing import TYPE_CHECKING, Any, Dict, List, Optional, Sequence
 
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.schema import BaseRetriever, Document
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.schema import BaseRetriever, Document
+from oplangchain.utils import get_from_dict_or_env
 
 if TYPE_CHECKING:
     from google.cloud.discoveryengine_v1beta import (

@@ -1,16 +1,16 @@
 from typing import Any, AsyncIterator, Dict, Iterator, List, Optional
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.chat_models.base import BaseChatModel
-from langchain.llms.anthropic import _AnthropicCommon
-from langchain.schema import (
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.llms.anthropic import _AnthropicCommon
+from oplangchain.schema import (
     ChatGeneration,
     ChatResult,
 )
-from langchain.schema.messages import (
+from oplangchain.schema.messages import (
     AIMessage,
     AIMessageChunk,
     BaseMessage,
@@ -18,7 +18,7 @@ from langchain.schema.messages import (
     HumanMessage,
     SystemMessage,
 )
-from langchain.schema.output import ChatGenerationChunk
+from oplangchain.schema.output import ChatGenerationChunk
 
 
 class ChatAnthropic(BaseChatModel, _AnthropicCommon):
@@ -32,7 +32,7 @@ class ChatAnthropic(BaseChatModel, _AnthropicCommon):
         .. code-block:: python
 
             import anthropic
-            from langchain.llms import Anthropic
+            from oplangchain.llms import Anthropic
             model = ChatAnthropic(model="<model_name>", anthropic_api_key="my-api-key")
     """
 

@@ -1,8 +1,8 @@
 import time
 from typing import Any, Dict, List, Optional, Union
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.schema import AgentAction, AgentFinish, LLMResult
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.schema import AgentAction, AgentFinish, LLMResult
 
 
 def import_infino() -> Any:

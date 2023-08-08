@@ -3,7 +3,7 @@ from typing import Any, List, Sequence
 
 from pydantic import BaseModel
 
-from langchain.schema import BaseDocumentTransformer, Document
+from oplangchain.schema import BaseDocumentTransformer, Document
 
 
 def _litm_reordering(documents: List[Document]) -> List[Document]:

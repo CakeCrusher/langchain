@@ -3,7 +3,7 @@ from typing import Any, Dict, Optional
 
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 
 class TwilioAPIWrapper(BaseModel):
@@ -17,7 +17,7 @@ class TwilioAPIWrapper(BaseModel):
     Example:
         .. code-block:: python
 
-            from langchain.utilities.twilio import TwilioAPIWrapper
+            from oplangchain.utilities.twilio import TwilioAPIWrapper
             twilio = TwilioAPIWrapper(
                 account_sid="ACxxx",
                 auth_token="xxx",

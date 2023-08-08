@@ -1,26 +1,26 @@
 """SQL agent."""
 from typing import Any, Dict, List, Optional
 
-from langchain.agents.agent import AgentExecutor, BaseSingleActionAgent
-from langchain.agents.agent_toolkits.sql.prompt import (
+from oplangchain.agents.agent import AgentExecutor, BaseSingleActionAgent
+from oplangchain.agents.agent_toolkits.sql.prompt import (
     SQL_FUNCTIONS_SUFFIX,
     SQL_PREFIX,
     SQL_SUFFIX,
 )
-from langchain.agents.agent_toolkits.sql.toolkit import SQLDatabaseToolkit
-from langchain.agents.agent_types import AgentType
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS
-from langchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.prompts.chat import (
+from oplangchain.agents.agent_toolkits.sql.toolkit import SQLDatabaseToolkit
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS
+from oplangchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.prompts.chat import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
 )
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.messages import AIMessage, SystemMessage
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.messages import AIMessage, SystemMessage
 
 
 def create_sql_agent(

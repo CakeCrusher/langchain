@@ -1,9 +1,9 @@
 """GitHub Toolkit."""
 from typing import Dict, List
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.tools import BaseTool
-from langchain.tools.github.prompt import (
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.tools import BaseTool
+from oplangchain.tools.github.prompt import (
     COMMENT_ON_ISSUE_PROMPT,
     CREATE_FILE_PROMPT,
     CREATE_PULL_REQUEST_PROMPT,
@@ -13,8 +13,8 @@ from langchain.tools.github.prompt import (
     READ_FILE_PROMPT,
     UPDATE_FILE_PROMPT,
 )
-from langchain.tools.github.tool import GitHubAction
-from langchain.utilities.github import GitHubAPIWrapper
+from oplangchain.tools.github.tool import GitHubAction
+from oplangchain.utilities.github import GitHubAPIWrapper
 
 
 class GitHubToolkit(BaseToolkit):

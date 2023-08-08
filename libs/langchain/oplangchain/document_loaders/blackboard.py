@@ -5,10 +5,10 @@ from pathlib import Path
 from typing import Any, List, Optional, Tuple
 from urllib.parse import unquote
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.directory import DirectoryLoader
-from langchain.document_loaders.pdf import PyPDFLoader
-from langchain.document_loaders.web_base import WebBaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.directory import DirectoryLoader
+from oplangchain.document_loaders.pdf import PyPDFLoader
+from oplangchain.document_loaders.web_base import WebBaseLoader
 
 
 class BlackboardLoader(WebBaseLoader):
@@ -23,7 +23,7 @@ class BlackboardLoader(WebBaseLoader):
     Example:
         .. code-block:: python
 
-            from langchain.document_loaders import BlackboardLoader
+            from oplangchain.document_loaders import BlackboardLoader
 
             loader = BlackboardLoader(
                 blackboard_course_url="https://blackboard.example.com/webapps/blackboard/execute/announcement?method=search&context=course_entry&course_id=_123456_1",

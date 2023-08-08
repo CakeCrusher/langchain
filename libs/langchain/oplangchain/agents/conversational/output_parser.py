@@ -1,9 +1,9 @@
 import re
 from typing import Union
 
-from langchain.agents.agent import AgentOutputParser
-from langchain.agents.conversational.prompt import FORMAT_INSTRUCTIONS
-from langchain.schema import AgentAction, AgentFinish, OutputParserException
+from oplangchain.agents.agent import AgentOutputParser
+from oplangchain.agents.conversational.prompt import FORMAT_INSTRUCTIONS
+from oplangchain.schema import AgentAction, AgentFinish, OutputParserException
 
 
 class ConvoOutputParser(AgentOutputParser):

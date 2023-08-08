@@ -4,8 +4,8 @@ import requests
 from pydantic import BaseModel, Extra, root_validator
 from typing_extensions import NotRequired, TypedDict
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 # Currently supported maximum batch size for embedding requests
 MAX_BATCH_SIZE = 256
@@ -31,11 +31,11 @@ class EmbaasEmbeddings(BaseModel, Embeddings):
         .. code-block:: python
 
             # Initialise with default model and instruction
-            from langchain.embeddings import EmbaasEmbeddings
+            from oplangchain.embeddings import EmbaasEmbeddings
             emb = EmbaasEmbeddings()
 
             # Initialise with custom model and instruction
-            from langchain.embeddings import EmbaasEmbeddings
+            from oplangchain.embeddings import EmbaasEmbeddings
             emb_model = "instructor-large"
             emb_inst = "Represent the Wikipedia document for retrieval"
             emb = EmbaasEmbeddings(

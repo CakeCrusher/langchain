@@ -2,8 +2,8 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 
 class CohereEmbeddings(BaseModel, Embeddings):
@@ -16,7 +16,7 @@ class CohereEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import CohereEmbeddings
+            from oplangchain.embeddings import CohereEmbeddings
             cohere = CohereEmbeddings(
                 model="embed-english-light-v2.0", cohere_api_key="my-api-key"
             )

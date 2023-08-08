@@ -1,7 +1,7 @@
 from typing import Any, Optional, Sequence
 
-from langchain.schema import BaseDocumentTransformer, Document
-from langchain.utils import get_from_env
+from oplangchain.schema import BaseDocumentTransformer, Document
+from oplangchain.utils import get_from_env
 
 
 class DoctranTextTranslator(BaseDocumentTransformer):
@@ -15,7 +15,7 @@ class DoctranTextTranslator(BaseDocumentTransformer):
     Example:
         .. code-block:: python
 
-        from langchain.document_transformers import DoctranTextTranslator
+        from oplangchain.document_transformers import DoctranTextTranslator
 
         # Pass in openai_api_key or set env var OPENAI_API_KEY
         qa_translator = DoctranTextTranslator(language="spanish")

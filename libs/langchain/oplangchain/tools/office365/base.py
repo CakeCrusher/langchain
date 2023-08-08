@@ -5,8 +5,8 @@ from typing import TYPE_CHECKING
 
 from pydantic import Field
 
-from langchain.tools.base import BaseTool
-from langchain.tools.office365.utils import authenticate
+from oplangchain.tools.base import BaseTool
+from oplangchain.tools.office365.utils import authenticate
 
 if TYPE_CHECKING:
     from O365 import Account

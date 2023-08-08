@@ -6,7 +6,7 @@ import aiohttp
 import requests
 from pydantic import BaseModel, Extra, Field, root_validator
 
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 
 class DataForSeoAPIWrapper(BaseModel):

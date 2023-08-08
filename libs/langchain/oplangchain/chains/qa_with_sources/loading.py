@@ -3,23 +3,23 @@ from __future__ import annotations
 
 from typing import Any, Mapping, Optional, Protocol
 
-from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
-from langchain.chains.combine_documents.map_rerank import MapRerankDocumentsChain
-from langchain.chains.combine_documents.reduce import ReduceDocumentsChain
-from langchain.chains.combine_documents.refine import RefineDocumentsChain
-from langchain.chains.combine_documents.stuff import StuffDocumentsChain
-from langchain.chains.llm import LLMChain
-from langchain.chains.qa_with_sources import (
+from oplangchain.chains.combine_documents.base import BaseCombineDocumentsChain
+from oplangchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
+from oplangchain.chains.combine_documents.map_rerank import MapRerankDocumentsChain
+from oplangchain.chains.combine_documents.reduce import ReduceDocumentsChain
+from oplangchain.chains.combine_documents.refine import RefineDocumentsChain
+from oplangchain.chains.combine_documents.stuff import StuffDocumentsChain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.qa_with_sources import (
     map_reduce_prompt,
     refine_prompts,
     stuff_prompt,
 )
-from langchain.chains.question_answering.map_rerank_prompt import (
+from oplangchain.chains.question_answering.map_rerank_prompt import (
     PROMPT as MAP_RERANK_PROMPT,
 )
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.prompt_template import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.prompt_template import BasePromptTemplate
 
 
 class LoadingCallable(Protocol):

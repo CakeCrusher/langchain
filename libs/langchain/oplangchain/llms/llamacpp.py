@@ -3,11 +3,11 @@ from typing import Any, Dict, Iterator, List, Optional
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.schema.output import GenerationChunk
-from langchain.utils import get_pydantic_field_names
-from langchain.utils.utils import build_extra_kwargs
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.schema.output import GenerationChunk
+from oplangchain.utils import get_pydantic_field_names
+from oplangchain.utils.utils import build_extra_kwargs
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class LlamaCpp(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import LlamaCpp
+            from oplangchain.llms import LlamaCpp
             llm = LlamaCpp(model_path="/path/to/llama/model")
     """
 
@@ -243,7 +243,7 @@ class LlamaCpp(LLM):
         Example:
             .. code-block:: python
 
-                from langchain.llms import LlamaCpp
+                from oplangchain.llms import LlamaCpp
                 llm = LlamaCpp(model_path="/path/to/local/llama/model.bin")
                 llm("This is a prompt.")
         """
@@ -289,7 +289,7 @@ class LlamaCpp(LLM):
         Example:
             .. code-block:: python
 
-                from langchain.llms import LlamaCpp
+                from oplangchain.llms import LlamaCpp
                 llm = LlamaCpp(
                     model_path="/path/to/local/model.bin",
                     temperature = 0.5

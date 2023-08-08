@@ -5,11 +5,11 @@ from typing import Any
 
 from pydantic import Field
 
-from langchain.chains.llm import LLMChain
-from langchain.evaluation.qa.generate_prompt import PROMPT
-from langchain.output_parsers.regex import RegexParser
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.output_parser import BaseLLMOutputParser
+from oplangchain.chains.llm import LLMChain
+from oplangchain.evaluation.qa.generate_prompt import PROMPT
+from oplangchain.output_parsers.regex import RegexParser
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.output_parser import BaseLLMOutputParser
 
 _QA_OUTPUT_PARSER = RegexParser(
     regex=r"QUESTION: (.*?)\n+ANSWER: (.*)", output_keys=["query", "answer"]

@@ -18,21 +18,21 @@ from typing import (
     Union,
 )
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManager,
     AsyncCallbackManagerForChainRun,
     CallbackManager,
     CallbackManagerForChainRun,
     Callbacks,
 )
-from langchain.load.dump import dumpd
-from langchain.schema import RUN_KEY, AgentAction, AgentFinish, RunInfo
-from langchain.tools import BaseTool
-from langchain.utilities.asyncio import asyncio_timeout
-from langchain.utils.input import get_color_mapping
+from oplangchain.load.dump import dumpd
+from oplangchain.schema import RUN_KEY, AgentAction, AgentFinish, RunInfo
+from oplangchain.tools import BaseTool
+from oplangchain.utilities.asyncio import asyncio_timeout
+from oplangchain.utils.input import get_color_mapping
 
 if TYPE_CHECKING:
-    from langchain.agents.agent import AgentExecutor
+    from oplangchain.agents.agent import AgentExecutor
 
 logger = logging.getLogger(__name__)
 

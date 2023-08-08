@@ -18,10 +18,10 @@ from typing import TYPE_CHECKING, Dict, Optional
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools import BaseTool
-from langchain.tools.steamship_image_generation.utils import make_image_public
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools import BaseTool
+from oplangchain.tools.steamship_image_generation.utils import make_image_public
+from oplangchain.utils import get_from_dict_or_env
 
 if TYPE_CHECKING:
     from steamship import Steamship

@@ -5,8 +5,8 @@ from typing import Union
 
 import yaml
 
-from langchain.llms import type_to_cls_dict
-from langchain.llms.base import BaseLLM
+from oplangchain.llms import type_to_cls_dict
+from oplangchain.llms.base import BaseLLM
 
 
 def load_llm_from_config(config: dict) -> BaseLLM:

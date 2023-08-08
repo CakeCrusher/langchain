@@ -2,16 +2,16 @@
 
 from typing import Any, Dict, Optional
 
-from langchain.agents.agent import AgentExecutor, BaseSingleActionAgent
-from langchain.agents.agent_toolkits.python.prompt import PREFIX
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
-from langchain.agents.types import AgentType
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.messages import SystemMessage
-from langchain.tools.python.tool import PythonREPLTool
+from oplangchain.agents.agent import AgentExecutor, BaseSingleActionAgent
+from oplangchain.agents.agent_toolkits.python.prompt import PREFIX
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
+from oplangchain.agents.types import AgentType
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.messages import SystemMessage
+from oplangchain.tools.python.tool import PythonREPLTool
 
 
 def create_python_agent(

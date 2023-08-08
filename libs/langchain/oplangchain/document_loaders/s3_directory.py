@@ -1,9 +1,9 @@
 """Loading logic for loading documents from an AWS S3 directory."""
 from typing import List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.s3_file import S3FileLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.s3_file import S3FileLoader
 
 
 class S3DirectoryLoader(BaseLoader):

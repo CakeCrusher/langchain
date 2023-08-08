@@ -1,4 +1,4 @@
-from langchain.output_parsers.regex import RegexParser
+from oplangchain.output_parsers.regex import RegexParser
 
 
 def load_output_parser(config: dict) -> dict:

@@ -1,6 +1,6 @@
 from typing import Any, List
 
-from langchain.document_loaders.parsers.language.code_segmenter import CodeSegmenter
+from oplangchain.document_loaders.parsers.language.code_segmenter import CodeSegmenter
 
 
 class JavaScriptSegmenter(CodeSegmenter):

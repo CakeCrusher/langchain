@@ -1,9 +1,9 @@
 """Module for parsing text files.."""
 from typing import Iterator
 
-from langchain.document_loaders.base import BaseBlobParser
-from langchain.document_loaders.blob_loaders import Blob
-from langchain.schema import Document
+from oplangchain.document_loaders.base import BaseBlobParser
+from oplangchain.document_loaders.blob_loaders import Blob
+from oplangchain.schema import Document
 
 
 class TextParser(BaseBlobParser):

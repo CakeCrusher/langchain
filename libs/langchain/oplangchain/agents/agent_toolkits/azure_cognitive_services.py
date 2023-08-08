@@ -3,14 +3,14 @@ from __future__ import annotations
 import sys
 from typing import List
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.tools.azure_cognitive_services import (
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.tools.azure_cognitive_services import (
     AzureCogsFormRecognizerTool,
     AzureCogsImageAnalysisTool,
     AzureCogsSpeech2TextTool,
     AzureCogsText2SpeechTool,
 )
-from langchain.tools.base import BaseTool
+from oplangchain.tools.base import BaseTool
 
 
 class AzureCognitiveServicesToolkit(BaseToolkit):

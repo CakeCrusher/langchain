@@ -3,10 +3,10 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
-from langchain.schema import (
+from oplangchain.schema import (
     BaseChatMessageHistory,
 )
-from langchain.schema.messages import (
+from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,
     HumanMessage,

@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Type
 
 from pydantic import root_validator
 
-from langchain.schema import BaseOutputParser, OutputParserException
+from oplangchain.schema import BaseOutputParser, OutputParserException
 
 
 class EnumOutputParser(BaseOutputParser):

@@ -24,10 +24,10 @@ from typing import (
 
 import numpy as np
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 if TYPE_CHECKING:
     from qdrant_client import grpc  # noqa
@@ -75,7 +75,7 @@ class Qdrant(VectorStore):
         .. code-block:: python
 
             from qdrant_client import QdrantClient
-            from langchain import Qdrant
+            from oplangchain import Qdrant
 
             client = QdrantClient()
             collection_name = "MyCollection"
@@ -1083,8 +1083,8 @@ class Qdrant(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Qdrant
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import Qdrant
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 qdrant = Qdrant.from_texts(texts, embeddings, "localhost")
         """
@@ -1259,8 +1259,8 @@ class Qdrant(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Qdrant
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import Qdrant
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 qdrant = await Qdrant.afrom_texts(texts, embeddings, "localhost")
         """

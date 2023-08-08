@@ -4,9 +4,9 @@ import os
 import tempfile
 from typing import Any, List, Optional
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
 
 
 class OBSFileLoader(BaseLoader):

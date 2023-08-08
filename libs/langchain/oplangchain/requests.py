@@ -1,5 +1,5 @@
 """DEPRECATED: Kept for backwards compatibility."""
-from langchain.utilities import Requests, RequestsWrapper, TextRequestsWrapper
+from oplangchain.utilities import Requests, RequestsWrapper, TextRequestsWrapper
 
 __all__ = [
     "Requests",

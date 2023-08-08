@@ -5,8 +5,8 @@ from typing import TYPE_CHECKING
 
 from pydantic import Field
 
-from langchain.tools.base import BaseTool
-from langchain.tools.gmail.utils import build_resource_service
+from oplangchain.tools.base import BaseTool
+from oplangchain.tools.gmail.utils import build_resource_service
 
 if TYPE_CHECKING:
     # This is for linting and IDE typehints

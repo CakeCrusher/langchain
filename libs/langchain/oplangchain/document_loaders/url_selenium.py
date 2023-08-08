@@ -6,8 +6,8 @@ from typing import TYPE_CHECKING, List, Literal, Optional, Union
 if TYPE_CHECKING:
     from selenium.webdriver import Chrome, Firefox
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 logger = logging.getLogger(__name__)
 

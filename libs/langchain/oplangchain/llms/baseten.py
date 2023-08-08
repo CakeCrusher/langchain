@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import Field
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ class Baseten(LLM):
 
     Example:
         .. code-block:: python
-            from langchain.llms import Baseten
+            from oplangchain.llms import Baseten
             my_model = Baseten(model="MODEL_ID")
             output = my_model("prompt")
     """

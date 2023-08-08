@@ -5,13 +5,13 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Field
 
-from langchain.callbacks.manager import CallbackManagerForChainRun
-from langchain.chains.base import Chain
-from langchain.chains.graph_qa.prompts import ENTITY_EXTRACTION_PROMPT, GRAPH_QA_PROMPT
-from langchain.chains.llm import LLMChain
-from langchain.graphs.networkx_graph import NetworkxEntityGraph, get_entities
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.callbacks.manager import CallbackManagerForChainRun
+from oplangchain.chains.base import Chain
+from oplangchain.chains.graph_qa.prompts import ENTITY_EXTRACTION_PROMPT, GRAPH_QA_PROMPT
+from oplangchain.chains.llm import LLMChain
+from oplangchain.graphs.networkx_graph import NetworkxEntityGraph, get_entities
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class GraphQAChain(Chain):

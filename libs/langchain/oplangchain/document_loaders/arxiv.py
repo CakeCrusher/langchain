@@ -1,8 +1,8 @@
 from typing import List, Optional
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.utilities.arxiv import ArxivAPIWrapper
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.utilities.arxiv import ArxivAPIWrapper
 
 
 class ArxivLoader(BaseLoader):

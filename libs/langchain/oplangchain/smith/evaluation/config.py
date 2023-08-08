@@ -5,17 +5,17 @@ from typing import Any, Dict, List, Optional, Union
 from langsmith import RunEvaluator
 from pydantic import BaseModel, Field
 
-from langchain.embeddings.base import Embeddings
-from langchain.evaluation.criteria.eval_chain import CRITERIA_TYPE
-from langchain.evaluation.embedding_distance.base import (
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.evaluation.criteria.eval_chain import CRITERIA_TYPE
+from oplangchain.evaluation.embedding_distance.base import (
     EmbeddingDistance as EmbeddingDistanceEnum,
 )
-from langchain.evaluation.schema import EvaluatorType, StringEvaluator
-from langchain.evaluation.string_distance.base import (
+from oplangchain.evaluation.schema import EvaluatorType, StringEvaluator
+from oplangchain.evaluation.string_distance.base import (
     StringDistance as StringDistanceEnum,
 )
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.prompt_template import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.prompt_template import BasePromptTemplate
 
 
 class EvalConfig(BaseModel):

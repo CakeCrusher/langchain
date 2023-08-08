@@ -12,10 +12,10 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms import BaseLLM
-from langchain.schema import Generation, LLMResult
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms import BaseLLM
+from oplangchain.schema import Generation, LLMResult
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 

@@ -1,11 +1,11 @@
 from typing import Any, Dict, Iterator, Optional
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseBlobParser
-from langchain.document_loaders.blob_loaders import Blob
-from langchain.document_loaders.parsers.language.javascript import JavaScriptSegmenter
-from langchain.document_loaders.parsers.language.python import PythonSegmenter
-from langchain.text_splitter import Language
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseBlobParser
+from oplangchain.document_loaders.blob_loaders import Blob
+from oplangchain.document_loaders.parsers.language.javascript import JavaScriptSegmenter
+from oplangchain.document_loaders.parsers.language.python import PythonSegmenter
+from oplangchain.text_splitter import Language
 
 LANGUAGE_EXTENSIONS: Dict[str, str] = {
     "py": Language.PYTHON,
@@ -37,9 +37,9 @@ class LanguageParser(BaseBlobParser):
 
         .. code-block:: python
 
-            from langchain.text_splitter.Language
-            from langchain.document_loaders.generic import GenericLoader
-            from langchain.document_loaders.parsers import LanguageParser
+            from oplangchain.text_splitter.Language
+            from oplangchain.document_loaders.generic import GenericLoader
+            from oplangchain.document_loaders.parsers import LanguageParser
 
             loader = GenericLoader.from_filesystem(
                 "./code",
@@ -53,7 +53,7 @@ class LanguageParser(BaseBlobParser):
 
         ... code-block:: python
 
-            from langchain.text_splitter import Language
+            from oplangchain.text_splitter import Language
 
             loader = GenericLoader.from_filesystem(
                 "./code",

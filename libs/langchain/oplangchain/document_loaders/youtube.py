@@ -9,8 +9,8 @@ from urllib.parse import parse_qs, urlparse
 from pydantic import root_validator
 from pydantic.dataclasses import dataclass
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +31,7 @@ class GoogleApiClient:
     Example:
         .. code-block:: python
 
-            from langchain.document_loaders import GoogleApiClient
+            from oplangchain.document_loaders import GoogleApiClient
             google_api_client = GoogleApiClient(
                 service_account_path=Path("path_to_your_sec_file.json")
             )
@@ -267,8 +267,8 @@ class GoogleApiYoutubeLoader(BaseLoader):
     Example:
         .. code-block:: python
 
-            from langchain.document_loaders import GoogleApiClient
-            from langchain.document_loaders import GoogleApiYoutubeLoader
+            from oplangchain.document_loaders import GoogleApiClient
+            from oplangchain.document_loaders import GoogleApiYoutubeLoader
             google_api_client = GoogleApiClient(
                 service_account_path=Path("path_to_your_sec_file.json")
             )

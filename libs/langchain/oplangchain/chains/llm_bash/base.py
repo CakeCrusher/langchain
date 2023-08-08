@@ -7,13 +7,13 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForChainRun
-from langchain.chains.base import Chain
-from langchain.chains.llm import LLMChain
-from langchain.chains.llm_bash.prompt import PROMPT
-from langchain.schema import BasePromptTemplate, OutputParserException
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.utilities.bash import BashProcess
+from oplangchain.callbacks.manager import CallbackManagerForChainRun
+from oplangchain.chains.base import Chain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.llm_bash.prompt import PROMPT
+from oplangchain.schema import BasePromptTemplate, OutputParserException
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.utilities.bash import BashProcess
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +24,7 @@ class LLMBashChain(Chain):
     Example:
         .. code-block:: python
 
-            from langchain import LLMBashChain, OpenAI
+            from oplangchain import LLMBashChain, OpenAI
             llm_bash = LLMBashChain.from_llm(OpenAI())
     """
 

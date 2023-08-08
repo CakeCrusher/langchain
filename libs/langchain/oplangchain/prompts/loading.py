@@ -6,11 +6,11 @@ from typing import Union
 
 import yaml
 
-from langchain.output_parsers.regex import RegexParser
-from langchain.prompts.few_shot import FewShotPromptTemplate
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import BaseLLMOutputParser, BasePromptTemplate, StrOutputParser
-from langchain.utilities.loading import try_load_from_hub
+from oplangchain.output_parsers.regex import RegexParser
+from oplangchain.prompts.few_shot import FewShotPromptTemplate
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema import BaseLLMOutputParser, BasePromptTemplate, StrOutputParser
+from oplangchain.utilities.loading import try_load_from_hub
 
 URL_BASE = "https://raw.githubusercontent.com/hwchase17/langchain-hub/master/prompts/"
 logger = logging.getLogger(__name__)
@@ -116,7 +116,7 @@ def _load_prompt(config: dict) -> PromptTemplate:
 
 
 def load_prompt(path: Union[str, Path]) -> BasePromptTemplate:
-    """Unified method for loading a prompt from LangChainHub or local fs."""
+    """Unified method for loading a prompt from oplangchainHub or local fs."""
     if hub_result := try_load_from_hub(
         path, _load_prompt_from_file, "prompts", {"py", "json", "yaml"}
     ):

@@ -5,9 +5,9 @@ from typing import TYPE_CHECKING, List
 
 from pydantic import BaseModel, Field
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
 
 if TYPE_CHECKING:
     from O365.drive import File

@@ -1,9 +1,9 @@
 """Callback Handler that prints to std out."""
 from typing import Any, Dict, List, Optional, Union
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.schema import AgentAction, AgentFinish, LLMResult
-from langchain.utils.input import print_text
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.schema import AgentAction, AgentFinish, LLMResult
+from oplangchain.utils.input import print_text
 
 
 class StdOutCallbackHandler(BaseCallbackHandler):

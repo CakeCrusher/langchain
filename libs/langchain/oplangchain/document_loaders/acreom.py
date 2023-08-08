@@ -3,8 +3,8 @@ import re
 from pathlib import Path
 from typing import Iterator, List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class AcreomLoader(BaseLoader):

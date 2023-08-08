@@ -8,11 +8,11 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Union
 import yaml
 from pydantic import Field, root_validator
 
-from langchain.load.serializable import Serializable
-from langchain.schema.document import Document
-from langchain.schema.output_parser import BaseOutputParser
-from langchain.schema.prompt import PromptValue
-from langchain.schema.runnable import Runnable, RunnableConfig
+from oplangchain.load.serializable import Serializable
+from oplangchain.schema.document import Document
+from oplangchain.schema.output_parser import BaseOutputParser
+from oplangchain.schema.prompt import PromptValue
+from oplangchain.schema.runnable import Runnable, RunnableConfig
 
 
 class BasePromptTemplate(Serializable, Runnable[Dict, PromptValue], ABC):
@@ -176,8 +176,8 @@ def format_document(doc: Document, prompt: BasePromptTemplate) -> str:
     Example:
         .. code-block:: python
 
-            from langchain.schema import Document
-            from langchain.prompts import PromptTemplate
+            from oplangchain.schema import Document
+            from oplangchain.prompts import PromptTemplate
             doc = Document(page_content="This is a joke", metadata={"page": "1"})
             prompt = PromptTemplate.from_template("Page {page}: {page_content}")
             format_document(doc, prompt)

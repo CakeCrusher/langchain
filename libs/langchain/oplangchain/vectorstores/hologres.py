@@ -6,10 +6,10 @@ import logging
 import uuid
 from typing import Any, Dict, Iterable, List, Optional, Tuple, Type
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
+from oplangchain.vectorstores.base import VectorStore
 
 ADA_TOKEN_COUNT = 1536
 _LANGCHAIN_DEFAULT_TABLE_NAME = "langchain_pg_embedding"
@@ -394,8 +394,8 @@ class Hologres(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Hologres
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import Hologres
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 text_embeddings = embeddings.embed_documents(texts)
                 text_embedding_pairs = list(zip(texts, text_embeddings))

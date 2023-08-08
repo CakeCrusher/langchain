@@ -9,17 +9,17 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import Extra
 
-from langchain.callbacks.manager import CallbackManagerForChainRun, Callbacks
-from langchain.chains import ReduceDocumentsChain
-from langchain.chains.base import Chain
-from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
-from langchain.chains.combine_documents.stuff import StuffDocumentsChain
-from langchain.chains.llm import LLMChain
-from langchain.docstore.document import Document
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.text_splitter import TextSplitter
+from oplangchain.callbacks.manager import CallbackManagerForChainRun, Callbacks
+from oplangchain.chains import ReduceDocumentsChain
+from oplangchain.chains.base import Chain
+from oplangchain.chains.combine_documents.base import BaseCombineDocumentsChain
+from oplangchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
+from oplangchain.chains.combine_documents.stuff import StuffDocumentsChain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.docstore.document import Document
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.text_splitter import TextSplitter
 
 
 class MapReduceChain(Chain):

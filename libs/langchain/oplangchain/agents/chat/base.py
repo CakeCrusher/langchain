@@ -2,25 +2,25 @@ from typing import Any, List, Optional, Sequence, Tuple
 
 from pydantic import Field
 
-from langchain.agents.agent import Agent, AgentOutputParser
-from langchain.agents.chat.output_parser import ChatOutputParser
-from langchain.agents.chat.prompt import (
+from oplangchain.agents.agent import Agent, AgentOutputParser
+from oplangchain.agents.chat.output_parser import ChatOutputParser
+from oplangchain.agents.chat.prompt import (
     FORMAT_INSTRUCTIONS,
     HUMAN_MESSAGE,
     SYSTEM_MESSAGE_PREFIX,
     SYSTEM_MESSAGE_SUFFIX,
 )
-from langchain.agents.utils import validate_tools_single_input
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.prompts.chat import (
+from oplangchain.agents.utils import validate_tools_single_input
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.prompts.chat import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
     SystemMessagePromptTemplate,
 )
-from langchain.schema import AgentAction, BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools.base import BaseTool
+from oplangchain.schema import AgentAction, BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools.base import BaseTool
 
 
 class ChatAgent(Agent):

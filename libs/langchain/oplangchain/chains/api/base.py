@@ -5,16 +5,16 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
 )
-from langchain.chains.api.prompt import API_RESPONSE_PROMPT, API_URL_PROMPT
-from langchain.chains.base import Chain
-from langchain.chains.llm import LLMChain
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.utilities.requests import TextRequestsWrapper
+from oplangchain.chains.api.prompt import API_RESPONSE_PROMPT, API_URL_PROMPT
+from oplangchain.chains.base import Chain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.utilities.requests import TextRequestsWrapper
 
 
 class APIChain(Chain):

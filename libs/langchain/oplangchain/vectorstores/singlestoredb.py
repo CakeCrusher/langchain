@@ -17,14 +17,14 @@ from typing import (
 
 from sqlalchemy.pool import QueuePool
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore, VectorStoreRetriever
-from langchain.vectorstores.utils import DistanceStrategy
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore, VectorStoreRetriever
+from oplangchain.vectorstores.utils import DistanceStrategy
 
 DEFAULT_DISTANCE_STRATEGY = DistanceStrategy.DOT_PRODUCT
 
@@ -148,8 +148,8 @@ class SingleStoreDB(VectorStore):
 
             .. code-block:: python
 
-                from langchain.embeddings import OpenAIEmbeddings
-                from langchain.vectorstores import SingleStoreDB
+                from oplangchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores import SingleStoreDB
 
                 vectorstore = SingleStoreDB(
                     OpenAIEmbeddings(),
@@ -160,8 +160,8 @@ class SingleStoreDB(VectorStore):
 
             .. code-block:: python
 
-                from langchain.embeddings import OpenAIEmbeddings
-                from langchain.vectorstores import SingleStoreDB
+                from oplangchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores import SingleStoreDB
 
                 vectorstore = SingleStoreDB(
                     OpenAIEmbeddings(),
@@ -180,8 +180,8 @@ class SingleStoreDB(VectorStore):
 
             .. code-block:: python
 
-                from langchain.embeddings import OpenAIEmbeddings
-                from langchain.vectorstores import SingleStoreDB
+                from oplangchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores import SingleStoreDB
 
                 os.environ['SINGLESTOREDB_URL'] = 'me:p455w0rd@s2-host.com/my_db'
                 vectorstore = SingleStoreDB(OpenAIEmbeddings())
@@ -306,8 +306,8 @@ class SingleStoreDB(VectorStore):
 
         Examples:
             .. code-block:: python
-                from langchain.vectorstores import SingleStoreDB
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores import SingleStoreDB
+                from oplangchain.embeddings import OpenAIEmbeddings
                 s2 = SingleStoreDB.from_documents(
                     docs,
                     OpenAIEmbeddings(),
@@ -420,8 +420,8 @@ class SingleStoreDB(VectorStore):
         This is intended to be a quick way to get started.
         Example:
             .. code-block:: python
-                from langchain.vectorstores import SingleStoreDB
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores import SingleStoreDB
+                from oplangchain.embeddings import OpenAIEmbeddings
                 s2 = SingleStoreDB.from_texts(
                     texts,
                     OpenAIEmbeddings(),

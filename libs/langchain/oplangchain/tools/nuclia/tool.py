@@ -18,11 +18,11 @@ from typing import Any, Dict, Optional, Type, Union
 import requests
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForToolRun,
     CallbackManagerForToolRun,
 )
-from langchain.tools.base import BaseTool
+from oplangchain.tools.base import BaseTool
 
 logger = logging.getLogger(__name__)
 

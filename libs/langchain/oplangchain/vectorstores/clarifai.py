@@ -7,9 +7,9 @@ from typing import Any, Iterable, List, Optional, Tuple
 
 import requests
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
 
 logger = logging.getLogger(__name__)
 
@@ -22,8 +22,8 @@ class Clarifai(VectorStore):
     Example:
         .. code-block:: python
 
-                from langchain.vectorstores import Clarifai
-                from langchain.embeddings.openai import OpenAIEmbeddings
+                from oplangchain.vectorstores import Clarifai
+                from oplangchain.embeddings.openai import OpenAIEmbeddings
 
                 embeddings = OpenAIEmbeddings()
                 vectorstore = Clarifai("langchain_store", embeddings.embed_query)

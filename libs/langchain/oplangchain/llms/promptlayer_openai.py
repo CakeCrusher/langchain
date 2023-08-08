@@ -1,12 +1,12 @@
 import datetime
 from typing import Any, List, Optional
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms import OpenAI, OpenAIChat
-from langchain.schema import LLMResult
+from oplangchain.llms import OpenAI, OpenAIChat
+from oplangchain.schema import LLMResult
 
 
 class PromptLayerOpenAI(OpenAI):
@@ -29,7 +29,7 @@ class PromptLayerOpenAI(OpenAI):
     Example:
         .. code-block:: python
 
-            from langchain.llms import PromptLayerOpenAI
+            from oplangchain.llms import PromptLayerOpenAI
             openai = PromptLayerOpenAI(model_name="text-davinci-003")
     """
 
@@ -138,7 +138,7 @@ class PromptLayerOpenAIChat(OpenAIChat):
     Example:
         .. code-block:: python
 
-            from langchain.llms import PromptLayerOpenAIChat
+            from oplangchain.llms import PromptLayerOpenAIChat
             openaichat = PromptLayerOpenAIChat(model_name="gpt-3.5-turbo")
     """
 

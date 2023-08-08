@@ -3,10 +3,10 @@ from typing import Dict, List
 
 from pydantic import Extra, Field, root_validator
 
-from langchain.chains.conversation.prompt import PROMPT
-from langchain.chains.llm import LLMChain
-from langchain.memory.buffer import ConversationBufferMemory
-from langchain.schema import BaseMemory, BasePromptTemplate
+from oplangchain.chains.conversation.prompt import PROMPT
+from oplangchain.chains.llm import LLMChain
+from oplangchain.memory.buffer import ConversationBufferMemory
+from oplangchain.schema import BaseMemory, BasePromptTemplate
 
 
 class ConversationChain(LLMChain):
@@ -15,7 +15,7 @@ class ConversationChain(LLMChain):
     Example:
         .. code-block:: python
 
-            from langchain import ConversationChain, OpenAI
+            from oplangchain import ConversationChain, OpenAI
 
             conversation = ConversationChain(llm=OpenAI())
     """

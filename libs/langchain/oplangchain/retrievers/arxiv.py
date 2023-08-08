@@ -1,8 +1,8 @@
 from typing import List
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.schema import BaseRetriever, Document
-from langchain.utilities.arxiv import ArxivAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.schema import BaseRetriever, Document
+from oplangchain.utilities.arxiv import ArxivAPIWrapper
 
 
 class ArxivRetriever(BaseRetriever, ArxivAPIWrapper):

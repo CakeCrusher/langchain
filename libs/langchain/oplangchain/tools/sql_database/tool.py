@@ -4,16 +4,16 @@ from typing import Any, Dict, Optional
 
 from pydantic import BaseModel, Extra, Field, root_validator
 
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.callbacks.manager import (
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForToolRun,
     CallbackManagerForToolRun,
 )
-from langchain.chains.llm import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain.utilities.sql_database import SQLDatabase
-from langchain.tools.base import BaseTool
-from langchain.tools.sql_database.prompt import QUERY_CHECKER
+from oplangchain.chains.llm import LLMChain
+from oplangchain.prompts import PromptTemplate
+from oplangchain.utilities.sql_database import SQLDatabase
+from oplangchain.tools.base import BaseTool
+from oplangchain.tools.sql_database.prompt import QUERY_CHECKER
 
 
 class BaseSQLDatabaseTool(BaseModel):

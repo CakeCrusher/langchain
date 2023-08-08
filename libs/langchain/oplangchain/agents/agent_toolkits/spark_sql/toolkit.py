@@ -3,16 +3,16 @@ from typing import List
 
 from pydantic import Field
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools import BaseTool
-from langchain.tools.spark_sql.tool import (
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools import BaseTool
+from oplangchain.tools.spark_sql.tool import (
     InfoSparkSQLTool,
     ListSparkSQLTool,
     QueryCheckerTool,
     QuerySparkSQLTool,
 )
-from langchain.utilities.spark_sql import SparkSQL
+from oplangchain.utilities.spark_sql import SparkSQL
 
 
 class SparkSQLToolkit(BaseToolkit):

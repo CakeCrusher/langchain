@@ -1,3 +1,3 @@
-from langchain.tools.nuclia.tool import NucliaUnderstandingAPI
+from oplangchain.tools.nuclia.tool import NucliaUnderstandingAPI
 
 __all__ = ["NucliaUnderstandingAPI"]

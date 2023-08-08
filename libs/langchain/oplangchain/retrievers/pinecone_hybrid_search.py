@@ -5,9 +5,9 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.embeddings.base import Embeddings
-from langchain.schema import BaseRetriever, Document
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import BaseRetriever, Document
 
 
 def hash_text(text: str) -> str:

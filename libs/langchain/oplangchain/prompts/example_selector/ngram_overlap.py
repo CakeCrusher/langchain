@@ -8,8 +8,8 @@ from typing import Dict, List
 import numpy as np
 from pydantic import BaseModel, root_validator
 
-from langchain.prompts.example_selector.base import BaseExampleSelector
-from langchain.prompts.prompt import PromptTemplate
+from oplangchain.prompts.example_selector.base import BaseExampleSelector
+from oplangchain.prompts.prompt import PromptTemplate
 
 
 def ngram_overlap_score(source: List[str], example: List[str]) -> float:

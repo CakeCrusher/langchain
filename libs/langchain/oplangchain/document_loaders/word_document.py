@@ -7,9 +7,9 @@ from urllib.parse import urlparse
 
 import requests
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
 
 
 class Docx2txtLoader(BaseLoader, ABC):
@@ -76,7 +76,7 @@ class UnstructuredWordDocumentLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredWordDocumentLoader
+    from oplangchain.document_loaders import UnstructuredWordDocumentLoader
 
     loader = UnstructuredWordDocumentLoader(
         "example.docx", mode="elements", strategy="fast",

@@ -3,8 +3,8 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any, Dict, List
 
-from langchain.load.serializable import Serializable
-from langchain.schema.messages import AIMessage, BaseMessage, HumanMessage
+from oplangchain.load.serializable import Serializable
+from oplangchain.schema.messages import AIMessage, BaseMessage, HumanMessage
 
 
 class BaseMemory(Serializable, ABC):

@@ -1,11 +1,11 @@
 from typing import List, Optional, TypedDict, Union
 
-from langchain.chains.sql_database.prompt import PROMPT, SQL_PROMPTS
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.output_parser import NoOpOutputParser
-from langchain.schema.prompt_template import BasePromptTemplate
-from langchain.schema.runnable import RunnableMap, RunnableSequence
-from langchain.utilities.sql_database import SQLDatabase
+from oplangchain.chains.sql_database.prompt import PROMPT, SQL_PROMPTS
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.output_parser import NoOpOutputParser
+from oplangchain.schema.prompt_template import BasePromptTemplate
+from oplangchain.schema.runnable import RunnableMap, RunnableSequence
+from oplangchain.utilities.sql_database import SQLDatabase
 
 
 def _strip(text: str) -> str:

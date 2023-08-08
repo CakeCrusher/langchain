@@ -2,9 +2,9 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import root_validator
 
-from langchain.memory.chat_memory import BaseChatMemory, BaseMemory
-from langchain.memory.utils import get_prompt_input_key
-from langchain.schema.messages import get_buffer_string
+from oplangchain.memory.chat_memory import BaseChatMemory, BaseMemory
+from oplangchain.memory.utils import get_prompt_input_key
+from oplangchain.schema.messages import get_buffer_string
 
 
 class ConversationBufferMemory(BaseChatMemory):

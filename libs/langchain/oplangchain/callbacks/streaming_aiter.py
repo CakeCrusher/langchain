@@ -3,8 +3,8 @@ from __future__ import annotations
 import asyncio
 from typing import Any, AsyncIterator, Dict, List, Literal, Union, cast
 
-from langchain.callbacks.base import AsyncCallbackHandler
-from langchain.schema.output import LLMResult
+from oplangchain.callbacks.base import AsyncCallbackHandler
+from oplangchain.schema.output import LLMResult
 
 # TODO If used by two LLM runs in parallel this won't work as expected
 

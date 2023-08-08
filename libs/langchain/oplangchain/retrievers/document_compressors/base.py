@@ -5,8 +5,8 @@ from typing import List, Optional, Sequence, Union
 
 from pydantic import BaseModel
 
-from langchain.callbacks.manager import Callbacks
-from langchain.schema import BaseDocumentTransformer, Document
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.schema import BaseDocumentTransformer, Document
 
 
 class BaseDocumentCompressor(BaseModel, ABC):

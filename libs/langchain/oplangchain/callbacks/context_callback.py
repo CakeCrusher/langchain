@@ -3,8 +3,8 @@ import os
 from typing import Any, Dict, List
 from uuid import UUID
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.schema import (
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.schema import (
     BaseMessage,
     LLMResult,
 )
@@ -45,8 +45,8 @@ class ContextCallbackHandler(BaseCallbackHandler):
         ImportError: if the `context-python` package is not installed.
 
     Chat Example:
-        >>> from langchain.llms import ChatOpenAI
-        >>> from langchain.callbacks import ContextCallbackHandler
+        >>> from oplangchain.llms import ChatOpenAI
+        >>> from oplangchain.callbacks import ContextCallbackHandler
         >>> context_callback = ContextCallbackHandler(
         ...     token="<CONTEXT_TOKEN_HERE>",
         ... )
@@ -63,9 +63,9 @@ class ContextCallbackHandler(BaseCallbackHandler):
         >>> chat(messages)
 
     Chain Example:
-        >>> from langchain import LLMChain
-        >>> from langchain.llms import ChatOpenAI
-        >>> from langchain.callbacks import ContextCallbackHandler
+        >>> from oplangchain import LLMChain
+        >>> from oplangchain.llms import ChatOpenAI
+        >>> from oplangchain.callbacks import ContextCallbackHandler
         >>> context_callback = ContextCallbackHandler(
         ...     token="<CONTEXT_TOKEN_HERE>",
         ... )

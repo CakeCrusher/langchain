@@ -2,7 +2,7 @@ import importlib
 import logging
 from typing import Any, Callable, List, Optional
 
-from langchain.embeddings.self_hosted import SelfHostedEmbeddings
+from oplangchain.embeddings.self_hosted import SelfHostedEmbeddings
 
 DEFAULT_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 DEFAULT_INSTRUCT_MODEL = "hkunlp/instructor-large"
@@ -69,7 +69,7 @@ class SelfHostedHuggingFaceEmbeddings(SelfHostedEmbeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import SelfHostedHuggingFaceEmbeddings
+            from oplangchain.embeddings import SelfHostedHuggingFaceEmbeddings
             import runhouse as rh
             model_name = "sentence-transformers/all-mpnet-base-v2"
             gpu = rh.cluster(name="rh-a10x", instance_type="A100:1")
@@ -112,7 +112,7 @@ class SelfHostedHuggingFaceInstructEmbeddings(SelfHostedHuggingFaceEmbeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import SelfHostedHuggingFaceInstructEmbeddings
+            from oplangchain.embeddings import SelfHostedHuggingFaceInstructEmbeddings
             import runhouse as rh
             model_name = "hkunlp/instructor-large"
             gpu = rh.cluster(name='rh-a10x', instance_type='A100:1')

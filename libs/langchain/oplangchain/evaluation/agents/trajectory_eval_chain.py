@@ -19,21 +19,21 @@ from typing import (
 
 from pydantic import Extra, Field
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
     Callbacks,
 )
-from langchain.chains.llm import LLMChain
-from langchain.chat_models.base import BaseChatModel
-from langchain.evaluation.agents.trajectory_eval_prompt import (
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.evaluation.agents.trajectory_eval_prompt import (
     EVAL_CHAT_PROMPT,
     TOOL_FREE_EVAL_CHAT_PROMPT,
 )
-from langchain.evaluation.schema import AgentTrajectoryEvaluator, LLMEvalChain
-from langchain.schema import AgentAction, BaseOutputParser, OutputParserException
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools.base import BaseTool
+from oplangchain.evaluation.schema import AgentTrajectoryEvaluator, LLMEvalChain
+from oplangchain.schema import AgentAction, BaseOutputParser, OutputParserException
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools.base import BaseTool
 
 
 class TrajectoryEval(TypedDict):
@@ -96,10 +96,10 @@ class TrajectoryEvalChain(AgentTrajectoryEvaluator, LLMEvalChain):
 
     .. code-block:: python
 
-        from langchain.agents import AgentType, initialize_agent
-        from langchain.chat_models import ChatOpenAI
-        from langchain.evaluation import TrajectoryEvalChain
-        from langchain.tools import tool
+        from oplangchain.agents import AgentType, initialize_agent
+        from oplangchain.chat_models import ChatOpenAI
+        from oplangchain.evaluation import TrajectoryEvalChain
+        from oplangchain.tools import tool
 
         @tool
         def geography_answers(country: str, question: str) -> str:

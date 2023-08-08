@@ -4,14 +4,14 @@ from __future__ import annotations
 import asyncio
 from typing import Any, Callable, Dict, Optional, Sequence
 
-from langchain import LLMChain, PromptTemplate
-from langchain.callbacks.manager import Callbacks
-from langchain.retrievers.document_compressors.base import BaseDocumentCompressor
-from langchain.retrievers.document_compressors.chain_extract_prompt import (
+from oplangchain import LLMChain, PromptTemplate
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.retrievers.document_compressors.base import BaseDocumentCompressor
+from oplangchain.retrievers.document_compressors.chain_extract_prompt import (
     prompt_template,
 )
-from langchain.schema import BaseOutputParser, Document
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema import BaseOutputParser, Document
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 def default_get_input(query: str, doc: Document) -> Dict[str, Any]:

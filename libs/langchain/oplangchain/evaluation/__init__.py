@@ -11,7 +11,7 @@ names of the evaluators to load.
 
 .. code-block:: python
 
-    from langchain.evaluation import load_evaluator
+    from oplangchain.evaluation import load_evaluator
 
     evaluator = load_evaluator("qa")
     evaluator.evaluate_strings(
@@ -29,7 +29,7 @@ name of the dataset to load.
 
 .. code-block:: python
 
-        from langchain.evaluation import load_dataset
+        from oplangchain.evaluation import load_dataset
         ds = load_dataset("llm-math")
 
 **Some common use cases for evaluation include:**
@@ -52,30 +52,30 @@ These evaluators implement one of the following interfaces:
 These interfaces enable easier composability and usage within a higher level evaluation framework.
 
 """  # noqa: E501
-from langchain.evaluation.agents import TrajectoryEvalChain
-from langchain.evaluation.comparison import (
+from oplangchain.evaluation.agents import TrajectoryEvalChain
+from oplangchain.evaluation.comparison import (
     LabeledPairwiseStringEvalChain,
     PairwiseStringEvalChain,
 )
-from langchain.evaluation.criteria import (
+from oplangchain.evaluation.criteria import (
     Criteria,
     CriteriaEvalChain,
     LabeledCriteriaEvalChain,
 )
-from langchain.evaluation.embedding_distance import (
+from oplangchain.evaluation.embedding_distance import (
     EmbeddingDistance,
     EmbeddingDistanceEvalChain,
     PairwiseEmbeddingDistanceEvalChain,
 )
-from langchain.evaluation.loading import load_dataset, load_evaluator, load_evaluators
-from langchain.evaluation.qa import ContextQAEvalChain, CotQAEvalChain, QAEvalChain
-from langchain.evaluation.schema import (
+from oplangchain.evaluation.loading import load_dataset, load_evaluator, load_evaluators
+from oplangchain.evaluation.qa import ContextQAEvalChain, CotQAEvalChain, QAEvalChain
+from oplangchain.evaluation.schema import (
     AgentTrajectoryEvaluator,
     EvaluatorType,
     PairwiseStringEvaluator,
     StringEvaluator,
 )
-from langchain.evaluation.string_distance import (
+from oplangchain.evaluation.string_distance import (
     PairwiseStringDistanceEvalChain,
     StringDistance,
     StringDistanceEvalChain,

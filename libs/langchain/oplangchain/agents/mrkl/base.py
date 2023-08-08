@@ -5,17 +5,17 @@ from typing import Any, Callable, List, NamedTuple, Optional, Sequence
 
 from pydantic import Field
 
-from langchain.agents.agent import Agent, AgentExecutor, AgentOutputParser
-from langchain.agents.agent_types import AgentType
-from langchain.agents.mrkl.output_parser import MRKLOutputParser
-from langchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS, PREFIX, SUFFIX
-from langchain.agents.tools import Tool
-from langchain.agents.utils import validate_tools_single_input
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools.base import BaseTool
+from oplangchain.agents.agent import Agent, AgentExecutor, AgentOutputParser
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.mrkl.output_parser import MRKLOutputParser
+from oplangchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS, PREFIX, SUFFIX
+from oplangchain.agents.tools import Tool
+from oplangchain.agents.utils import validate_tools_single_input
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains import LLMChain
+from oplangchain.prompts import PromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools.base import BaseTool
 
 
 class ChainConfig(NamedTuple):
@@ -143,8 +143,8 @@ class MRKLChain(AgentExecutor):
     Example:
         .. code-block:: python
 
-            from langchain import OpenAI, MRKLChain
-            from langchain.chains.mrkl.base import ChainConfig
+            from oplangchain import OpenAI, MRKLChain
+            from oplangchain.chains.mrkl.base import ChainConfig
             llm = OpenAI(temperature=0)
             prompt = PromptTemplate(...)
             chains = [...]
@@ -171,8 +171,8 @@ class MRKLChain(AgentExecutor):
         Example:
             .. code-block:: python
 
-                from langchain import LLMMathChain, OpenAI, SerpAPIWrapper, MRKLChain
-                from langchain.chains.mrkl.base import ChainConfig
+                from oplangchain import LLMMathChain, OpenAI, SerpAPIWrapper, MRKLChain
+                from oplangchain.chains.mrkl.base import ChainConfig
                 llm = OpenAI(temperature=0)
                 search = SerpAPIWrapper()
                 llm_math_chain = LLMMathChain(llm=llm)

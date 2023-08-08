@@ -5,9 +5,9 @@ from typing import Any, Dict, List, Optional, Type
 
 from pydantic import BaseModel, Extra
 
-from langchain.embeddings.base import Embeddings
-from langchain.prompts.example_selector.base import BaseExampleSelector
-from langchain.vectorstores.base import VectorStore
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.prompts.example_selector.base import BaseExampleSelector
+from oplangchain.vectorstores.base import VectorStore
 
 
 def sorted_values(values: Dict[str, str]) -> List[Any]:

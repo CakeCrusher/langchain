@@ -1,18 +1,18 @@
 """Agent for working with xorbits objects."""
 from typing import Any, Dict, List, Optional
 
-from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_toolkits.xorbits.prompt import (
+from oplangchain.agents.agent import AgentExecutor
+from oplangchain.agents.agent_toolkits.xorbits.prompt import (
     NP_PREFIX,
     NP_SUFFIX,
     PD_PREFIX,
     PD_SUFFIX,
 )
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.llms.base import BaseLLM
-from langchain.tools.python.tool import PythonAstREPLTool
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.llms.base import BaseLLM
+from oplangchain.tools.python.tool import PythonAstREPLTool
 
 
 def create_xorbits_agent(

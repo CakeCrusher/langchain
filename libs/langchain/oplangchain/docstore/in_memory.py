@@ -1,8 +1,8 @@
 """Simple in memory docstore in the form of a dict."""
 from typing import Dict, List, Optional, Union
 
-from langchain.docstore.base import AddableMixin, Docstore
-from langchain.docstore.document import Document
+from oplangchain.docstore.base import AddableMixin, Docstore
+from oplangchain.docstore.document import Document
 
 
 class InMemoryDocstore(Docstore, AddableMixin):

@@ -2,8 +2,8 @@ from typing import Any, Dict, List, Optional
 
 import requests
 
-from langchain.memory.chat_memory import BaseChatMemory
-from langchain.schema.messages import get_buffer_string
+from oplangchain.memory.chat_memory import BaseChatMemory
+from oplangchain.schema.messages import get_buffer_string
 
 MANAGED_URL = "https://api.getmetal.io/v1/motorhead"
 # LOCAL_URL = "http://localhost:8080"

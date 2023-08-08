@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Optional
 
 import requests
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
 
 logger = logging.getLogger(__name__)
 
@@ -145,7 +145,7 @@ class KoboldApiLLM(LLM):
         Example:
             .. code-block:: python
 
-                from langchain.llms import KoboldApiLLM
+                from oplangchain.llms import KoboldApiLLM
 
                 llm = KoboldApiLLM(endpoint="http://localhost:5000")
                 llm("Write a story about dragons.")

@@ -3,15 +3,15 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.llms.openai import OpenAI
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools import BaseTool
-from langchain.tools.vectorstore.tool import (
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.llms.openai import OpenAI
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools import BaseTool
+from oplangchain.tools.vectorstore.tool import (
     VectorStoreQATool,
     VectorStoreQAWithSourcesTool,
 )
-from langchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.base import VectorStore
 
 
 class VectorStoreInfo(BaseModel):

@@ -4,9 +4,9 @@ This module contains some logic to help assemble more sophisticated parsers.
 """
 from typing import Iterator, Mapping, Optional
 
-from langchain.document_loaders.base import BaseBlobParser
-from langchain.document_loaders.blob_loaders.schema import Blob
-from langchain.schema import Document
+from oplangchain.document_loaders.base import BaseBlobParser
+from oplangchain.document_loaders.blob_loaders.schema import Blob
+from oplangchain.schema import Document
 
 
 class MimeTypeBasedParser(BaseBlobParser):
@@ -21,7 +21,7 @@ class MimeTypeBasedParser(BaseBlobParser):
 
         .. code-block:: python
 
-        from langchain.document_loaders.parsers.generic import MimeTypeBasedParser
+        from oplangchain.document_loaders.parsers.generic import MimeTypeBasedParser
 
         parser = MimeTypeBasedParser(
             handlers={

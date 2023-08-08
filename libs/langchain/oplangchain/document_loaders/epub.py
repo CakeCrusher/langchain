@@ -1,7 +1,7 @@
 """Loads EPub files."""
 from typing import List
 
-from langchain.document_loaders.unstructured import (
+from oplangchain.document_loaders.unstructured import (
     UnstructuredFileLoader,
     satisfies_min_unstructured_version,
 )
@@ -19,7 +19,7 @@ class UnstructuredEPubLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredEPubLoader
+    from oplangchain.document_loaders import UnstructuredEPubLoader
 
     loader = UnstructuredEPubLoader(
         "example.epub", mode="elements", strategy="fast",

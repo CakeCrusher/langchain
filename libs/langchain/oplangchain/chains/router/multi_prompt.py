@@ -3,13 +3,13 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Mapping, Optional
 
-from langchain.chains import ConversationChain
-from langchain.chains.llm import LLMChain
-from langchain.chains.router.base import MultiRouteChain, RouterChain
-from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
-from langchain.chains.router.multi_prompt_prompt import MULTI_PROMPT_ROUTER_TEMPLATE
-from langchain.prompts import PromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.chains import ConversationChain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.router.base import MultiRouteChain, RouterChain
+from oplangchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
+from oplangchain.chains.router.multi_prompt_prompt import MULTI_PROMPT_ROUTER_TEMPLATE
+from oplangchain.prompts import PromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class MultiPromptChain(MultiRouteChain):

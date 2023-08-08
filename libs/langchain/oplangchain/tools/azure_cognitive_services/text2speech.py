@@ -6,9 +6,9 @@ from typing import Any, Dict, Optional
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 

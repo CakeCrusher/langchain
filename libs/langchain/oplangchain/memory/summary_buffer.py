@@ -2,9 +2,9 @@ from typing import Any, Dict, List
 
 from pydantic import root_validator
 
-from langchain.memory.chat_memory import BaseChatMemory
-from langchain.memory.summary import SummarizerMixin
-from langchain.schema.messages import BaseMessage, get_buffer_string
+from oplangchain.memory.chat_memory import BaseChatMemory
+from oplangchain.memory.summary import SummarizerMixin
+from oplangchain.schema.messages import BaseMessage, get_buffer_string
 
 
 class ConversationSummaryBufferMemory(BaseChatMemory, SummarizerMixin):

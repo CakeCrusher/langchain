@@ -1,5 +1,5 @@
 """String distance evaluators."""
-from langchain.evaluation.string_distance.base import (
+from oplangchain.evaluation.string_distance.base import (
     PairwiseStringDistanceEvalChain,
     StringDistance,
     StringDistanceEvalChain,

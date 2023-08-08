@@ -1,7 +1,7 @@
 """Loader that uses unstructured to load HTML files."""
 from typing import List
 
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
 
 
 class UnstructuredHTMLLoader(UnstructuredFileLoader):
@@ -16,7 +16,7 @@ class UnstructuredHTMLLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredHTMLLoader
+    from oplangchain.document_loaders import UnstructuredHTMLLoader
 
     loader = UnstructuredHTMLLoader(
         "example.html", mode="elements", strategy="fast",

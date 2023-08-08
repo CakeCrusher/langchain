@@ -4,11 +4,11 @@ from typing import TYPE_CHECKING, List
 
 from pydantic import Field
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.tools import BaseTool
-from langchain.tools.amadeus.closest_airport import AmadeusClosestAirport
-from langchain.tools.amadeus.flight_search import AmadeusFlightSearch
-from langchain.tools.amadeus.utils import authenticate
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.tools import BaseTool
+from oplangchain.tools.amadeus.closest_airport import AmadeusClosestAirport
+from oplangchain.tools.amadeus.flight_search import AmadeusFlightSearch
+from oplangchain.tools.amadeus.utils import authenticate
 
 if TYPE_CHECKING:
     from amadeus import Client

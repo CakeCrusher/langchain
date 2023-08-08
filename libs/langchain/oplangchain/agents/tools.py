@@ -1,11 +1,11 @@
 """Interface for tools."""
 from typing import List, Optional
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForToolRun,
     CallbackManagerForToolRun,
 )
-from langchain.tools.base import BaseTool, Tool, tool
+from oplangchain.tools.base import BaseTool, Tool, tool
 
 
 class InvalidTool(BaseTool):

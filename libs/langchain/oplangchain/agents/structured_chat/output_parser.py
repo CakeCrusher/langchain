@@ -7,11 +7,11 @@ from typing import Optional, Union
 
 from pydantic import Field
 
-from langchain.agents.agent import AgentOutputParser
-from langchain.agents.structured_chat.prompt import FORMAT_INSTRUCTIONS
-from langchain.output_parsers import OutputFixingParser
-from langchain.schema import AgentAction, AgentFinish, OutputParserException
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.agents.agent import AgentOutputParser
+from oplangchain.agents.structured_chat.prompt import FORMAT_INSTRUCTIONS
+from oplangchain.output_parsers import OutputFixingParser
+from oplangchain.schema import AgentAction, AgentFinish, OutputParserException
+from oplangchain.schema.language_model import BaseLanguageModel
 
 logger = logging.getLogger(__name__)
 

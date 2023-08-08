@@ -16,9 +16,9 @@ from typing import (
     Union,
 )
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
 
 if TYPE_CHECKING:
     import marqo
@@ -44,7 +44,7 @@ class Marqo(VectorStore):
         .. code-block:: python
 
             import marqo
-            from langchain.vectorstores import Marqo
+            from oplangchain.vectorstores import Marqo
             client = marqo.Client(url=os.environ["MARQO_URL"], ...)
             vectorstore = Marqo(client, index_name)
 
@@ -396,7 +396,7 @@ class Marqo(VectorStore):
         Example:
         .. code-block:: python
 
-                from langchain.vectorstores import Marqo
+                from oplangchain.vectorstores import Marqo
 
                 datastore = Marqo(texts=['text'], index_name='my-first-index',
                 url='http://localhost:8882')

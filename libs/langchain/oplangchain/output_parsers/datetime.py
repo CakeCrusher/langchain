@@ -2,8 +2,8 @@ import random
 from datetime import datetime, timedelta
 from typing import List
 
-from langchain.schema import BaseOutputParser, OutputParserException
-from langchain.utils import comma_list
+from oplangchain.schema import BaseOutputParser, OutputParserException
+from oplangchain.utils import comma_list
 
 
 def _generate_random_datetime_strings(

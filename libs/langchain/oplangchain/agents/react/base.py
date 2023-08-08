@@ -3,18 +3,18 @@ from typing import Any, List, Optional, Sequence
 
 from pydantic import Field
 
-from langchain.agents.agent import Agent, AgentExecutor, AgentOutputParser
-from langchain.agents.agent_types import AgentType
-from langchain.agents.react.output_parser import ReActOutputParser
-from langchain.agents.react.textworld_prompt import TEXTWORLD_PROMPT
-from langchain.agents.react.wiki_prompt import WIKI_PROMPT
-from langchain.agents.tools import Tool
-from langchain.agents.utils import validate_tools_single_input
-from langchain.docstore.base import Docstore
-from langchain.docstore.document import Document
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools.base import BaseTool
+from oplangchain.agents.agent import Agent, AgentExecutor, AgentOutputParser
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.react.output_parser import ReActOutputParser
+from oplangchain.agents.react.textworld_prompt import TEXTWORLD_PROMPT
+from oplangchain.agents.react.wiki_prompt import WIKI_PROMPT
+from oplangchain.agents.tools import Tool
+from oplangchain.agents.utils import validate_tools_single_input
+from oplangchain.docstore.base import Docstore
+from oplangchain.docstore.document import Document
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools.base import BaseTool
 
 
 class ReActDocstoreAgent(Agent):
@@ -137,7 +137,7 @@ class ReActChain(AgentExecutor):
     Example:
         .. code-block:: python
 
-            from langchain import ReActChain, OpenAI
+            from oplangchain import ReActChain, OpenAI
             react = ReAct(llm=OpenAI())
     """
 

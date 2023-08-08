@@ -2,7 +2,7 @@ from typing import Any, Dict
 
 from pydantic import root_validator
 
-from langchain.llms.openai import BaseOpenAI
+from oplangchain.llms.openai import BaseOpenAI
 
 
 class OpenLM(BaseOpenAI):

@@ -1,9 +1,9 @@
 """Fake ChatModel for testing purposes."""
 from typing import Any, Dict, List, Optional
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.chat_models.base import SimpleChatModel
-from langchain.schema.messages import BaseMessage
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.chat_models.base import SimpleChatModel
+from oplangchain.schema.messages import BaseMessage
 
 
 class FakeListChatModel(SimpleChatModel):

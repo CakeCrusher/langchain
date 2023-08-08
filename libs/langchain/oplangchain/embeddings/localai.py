@@ -25,8 +25,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env, get_pydantic_field_names
 
 logger = logging.getLogger(__name__)
 
@@ -127,7 +127,7 @@ class LocalAIEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import LocalAIEmbeddings
+            from oplangchain.embeddings import LocalAIEmbeddings
             openai = LocalAIEmbeddings(
                 openai_api_key="random-key",
                 openai_api_base="http://localhost:8080"

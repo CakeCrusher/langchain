@@ -2,8 +2,8 @@ from typing import Any, Callable, Dict, List
 
 from pydantic import BaseModel, root_validator
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class ApifyDatasetLoader(BaseLoader, BaseModel):
@@ -13,8 +13,8 @@ class ApifyDatasetLoader(BaseLoader, BaseModel):
     Example:
         .. code-block:: python
 
-            from langchain.document_loaders import ApifyDatasetLoader
-            from langchain.schema import Document
+            from oplangchain.document_loaders import ApifyDatasetLoader
+            from oplangchain.schema import Document
 
             loader = ApifyDatasetLoader(
                 dataset_id="YOUR-DATASET-ID",

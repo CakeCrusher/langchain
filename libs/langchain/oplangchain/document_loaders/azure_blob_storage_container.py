@@ -1,11 +1,11 @@
 """Loading logic for loading documents from an Azure Blob Storage container."""
 from typing import List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.azure_blob_storage_file import (
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.azure_blob_storage_file import (
     AzureBlobStorageFileLoader,
 )
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class AzureBlobStorageContainerLoader(BaseLoader):

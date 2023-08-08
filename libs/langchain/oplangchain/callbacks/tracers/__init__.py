@@ -1,12 +1,12 @@
 """Tracers that record execution of LangChain runs."""
 
-from langchain.callbacks.tracers.langchain import LangChainTracer
-from langchain.callbacks.tracers.langchain_v1 import LangChainTracerV1
-from langchain.callbacks.tracers.stdout import (
+from oplangchain.callbacks.tracers.langchain import LangChainTracer
+from oplangchain.callbacks.tracers.langchain_v1 import LangChainTracerV1
+from oplangchain.callbacks.tracers.stdout import (
     ConsoleCallbackHandler,
     FunctionCallbackHandler,
 )
-from langchain.callbacks.tracers.wandb import WandbTracer
+from oplangchain.callbacks.tracers.wandb import WandbTracer
 
 __all__ = [
     "LangChainTracer",

@@ -17,33 +17,33 @@ from typing import (
 from pydantic import Field, root_validator
 
 import langchain
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.callbacks.manager import (
     AsyncCallbackManager,
     AsyncCallbackManagerForLLMRun,
     CallbackManager,
     CallbackManagerForLLMRun,
     Callbacks,
 )
-from langchain.load.dump import dumpd, dumps
-from langchain.prompts.base import StringPromptValue
-from langchain.prompts.chat import ChatPromptValue
-from langchain.schema import (
+from oplangchain.load.dump import dumpd, dumps
+from oplangchain.prompts.base import StringPromptValue
+from oplangchain.prompts.chat import ChatPromptValue
+from oplangchain.schema import (
     ChatGeneration,
     ChatResult,
     LLMResult,
     PromptValue,
     RunInfo,
 )
-from langchain.schema.language_model import BaseLanguageModel, LanguageModelInput
-from langchain.schema.messages import (
+from oplangchain.schema.language_model import BaseLanguageModel, LanguageModelInput
+from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,
     BaseMessageChunk,
     HumanMessage,
 )
-from langchain.schema.output import ChatGenerationChunk
-from langchain.schema.runnable import RunnableConfig
+from oplangchain.schema.output import ChatGenerationChunk
+from oplangchain.schema.runnable import RunnableConfig
 
 
 def _get_verbosity() -> bool:

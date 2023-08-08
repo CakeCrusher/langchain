@@ -5,9 +5,9 @@ from typing import Any, Optional
 
 from pydantic import Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utilities.duckduckgo_search import DuckDuckGoSearchAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.duckduckgo_search import DuckDuckGoSearchAPIWrapper
 
 
 class DuckDuckGoSearchRun(BaseTool):

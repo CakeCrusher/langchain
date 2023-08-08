@@ -11,8 +11,8 @@ Input to this tool should be a comma separated list,
 import json
 from typing import Optional
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools import BaseTool
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools import BaseTool
 
 
 class YouTubeSearchTool(BaseTool):

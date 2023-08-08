@@ -7,11 +7,11 @@ from uuid import uuid4
 
 import numpy as np
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 
 def _default_schema(index_name: str) -> Dict:
@@ -78,7 +78,7 @@ class Weaviate(VectorStore):
         .. code-block:: python
 
             import weaviate
-            from langchain.vectorstores import Weaviate
+            from oplangchain.vectorstores import Weaviate
             client = weaviate.Client(url=os.environ["WEAVIATE_URL"], ...)
             weaviate = Weaviate(client, index_name, text_key)
 
@@ -392,8 +392,8 @@ class Weaviate(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain.vectorstores.weaviate import Weaviate
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores.weaviate import Weaviate
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 weaviate = Weaviate.from_texts(
                     texts,

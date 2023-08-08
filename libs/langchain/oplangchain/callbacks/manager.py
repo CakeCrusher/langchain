@@ -26,7 +26,7 @@ from uuid import UUID
 from tenacity import RetryCallState
 
 import langchain
-from langchain.callbacks.base import (
+from oplangchain.callbacks.base import (
     BaseCallbackHandler,
     BaseCallbackManager,
     Callbacks,
@@ -36,19 +36,19 @@ from langchain.callbacks.base import (
     RunManagerMixin,
     ToolManagerMixin,
 )
-from langchain.callbacks.openai_info import OpenAICallbackHandler
-from langchain.callbacks.stdout import StdOutCallbackHandler
-from langchain.callbacks.tracers.langchain import LangChainTracer
-from langchain.callbacks.tracers.langchain_v1 import LangChainTracerV1, TracerSessionV1
-from langchain.callbacks.tracers.stdout import ConsoleCallbackHandler
-from langchain.callbacks.tracers.wandb import WandbTracer
-from langchain.schema import (
+from oplangchain.callbacks.openai_info import OpenAICallbackHandler
+from oplangchain.callbacks.stdout import StdOutCallbackHandler
+from oplangchain.callbacks.tracers.langchain import LangChainTracer
+from oplangchain.callbacks.tracers.langchain_v1 import LangChainTracerV1, TracerSessionV1
+from oplangchain.callbacks.tracers.stdout import ConsoleCallbackHandler
+from oplangchain.callbacks.tracers.wandb import WandbTracer
+from oplangchain.schema import (
     AgentAction,
     AgentFinish,
     Document,
     LLMResult,
 )
-from langchain.schema.messages import BaseMessage, get_buffer_string
+from oplangchain.schema.messages import BaseMessage, get_buffer_string
 
 if TYPE_CHECKING:
     from langsmith import Client as LangSmithClient
@@ -1038,7 +1038,7 @@ class AsyncCallbackManagerForRetrieverRun(
 
 
 class CallbackManager(BaseCallbackManager):
-    """Callback manager that handles callbacks from langchain."""
+    """Callback manager that handles callbacks from oplangchain."""
 
     def on_llm_start(
         self,
@@ -1307,7 +1307,7 @@ class CallbackManager(BaseCallbackManager):
 
 
 class AsyncCallbackManager(BaseCallbackManager):
-    """Async callback manager that handles callbacks from LangChain."""
+    """Async callback manager that handles callbacks from oplangchain."""
 
     @property
     def is_async(self) -> bool:

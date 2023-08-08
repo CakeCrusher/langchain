@@ -4,7 +4,7 @@ UnifiedObjectives v0.2 principles ("uo-*") adapted from https://examine.dev/docs
 # flake8: noqa
 from typing import Dict
 
-from langchain.chains.constitutional_ai.models import ConstitutionalPrinciple
+from oplangchain.chains.constitutional_ai.models import ConstitutionalPrinciple
 
 PRINCIPLES: Dict[str, ConstitutionalPrinciple] = {
     "harmful1": ConstitutionalPrinciple(

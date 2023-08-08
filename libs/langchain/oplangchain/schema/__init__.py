@@ -1,8 +1,8 @@
 """**Schemas** are the LangChain Base Classes and Interfaces."""
-from langchain.schema.agent import AgentAction, AgentFinish
-from langchain.schema.document import BaseDocumentTransformer, Document
-from langchain.schema.memory import BaseChatMessageHistory, BaseMemory
-from langchain.schema.messages import (
+from oplangchain.schema.agent import AgentAction, AgentFinish
+from oplangchain.schema.document import BaseDocumentTransformer, Document
+from oplangchain.schema.memory import BaseChatMessageHistory, BaseMemory
+from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,
     ChatMessage,
@@ -15,22 +15,22 @@ from langchain.schema.messages import (
     messages_from_dict,
     messages_to_dict,
 )
-from langchain.schema.output import (
+from oplangchain.schema.output import (
     ChatGeneration,
     ChatResult,
     Generation,
     LLMResult,
     RunInfo,
 )
-from langchain.schema.output_parser import (
+from oplangchain.schema.output_parser import (
     BaseLLMOutputParser,
     BaseOutputParser,
     OutputParserException,
     StrOutputParser,
 )
-from langchain.schema.prompt import PromptValue
-from langchain.schema.prompt_template import BasePromptTemplate, format_document
-from langchain.schema.retriever import BaseRetriever
+from oplangchain.schema.prompt import PromptValue
+from oplangchain.schema.prompt_template import BasePromptTemplate, format_document
+from oplangchain.schema.retriever import BaseRetriever
 
 RUN_KEY = "__run"
 Memory = BaseMemory

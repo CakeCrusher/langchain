@@ -3,9 +3,9 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +23,7 @@ class Replicate(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import Replicate
+            from oplangchain.llms import Replicate
             replicate = Replicate(model="stability-ai/stable-diffusion: \
                                          27b93a2413e7f36cd83da926f365628\
                                          0b2931564ff050bf9575f1fdf9bcd7478",

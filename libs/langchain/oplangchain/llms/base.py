@@ -39,27 +39,27 @@ from tenacity import (
 )
 
 import langchain
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.callbacks.manager import (
     AsyncCallbackManager,
     AsyncCallbackManagerForLLMRun,
     CallbackManager,
     CallbackManagerForLLMRun,
     Callbacks,
 )
-from langchain.load.dump import dumpd
-from langchain.prompts.base import StringPromptValue
-from langchain.prompts.chat import ChatPromptValue
-from langchain.schema import (
+from oplangchain.load.dump import dumpd
+from oplangchain.prompts.base import StringPromptValue
+from oplangchain.prompts.chat import ChatPromptValue
+from oplangchain.schema import (
     Generation,
     LLMResult,
     PromptValue,
     RunInfo,
 )
-from langchain.schema.language_model import BaseLanguageModel, LanguageModelInput
-from langchain.schema.messages import AIMessage, BaseMessage, get_buffer_string
-from langchain.schema.output import GenerationChunk
-from langchain.schema.runnable import RunnableConfig
+from oplangchain.schema.language_model import BaseLanguageModel, LanguageModelInput
+from oplangchain.schema.messages import AIMessage, BaseMessage, get_buffer_string
+from oplangchain.schema.output import GenerationChunk
+from oplangchain.schema.runnable import RunnableConfig
 
 logger = logging.getLogger(__name__)
 

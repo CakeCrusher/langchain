@@ -4,12 +4,12 @@ from typing import Optional
 
 from pydantic.fields import Field
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForToolRun,
     CallbackManagerForToolRun,
 )
-from langchain.tools.base import BaseTool
-from langchain.utilities.google_serper import GoogleSerperAPIWrapper
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.google_serper import GoogleSerperAPIWrapper
 
 
 class GoogleSerperRun(BaseTool):

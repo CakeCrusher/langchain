@@ -3,8 +3,8 @@ import json
 import uuid
 from typing import Any, Sequence
 
-from langchain.schema.document import BaseDocumentTransformer, Document
-from langchain.tools.nuclia.tool import NucliaUnderstandingAPI
+from oplangchain.schema.document import BaseDocumentTransformer, Document
+from oplangchain.tools.nuclia.tool import NucliaUnderstandingAPI
 
 
 class NucliaTextTransformer(BaseDocumentTransformer):

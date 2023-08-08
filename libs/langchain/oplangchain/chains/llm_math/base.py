@@ -9,15 +9,15 @@ from typing import Any, Dict, List, Optional
 import numexpr
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
 )
-from langchain.chains.base import Chain
-from langchain.chains.llm import LLMChain
-from langchain.chains.llm_math.prompt import PROMPT
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.chains.base import Chain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.llm_math.prompt import PROMPT
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class LLMMathChain(Chain):
@@ -26,7 +26,7 @@ class LLMMathChain(Chain):
     Example:
         .. code-block:: python
 
-            from langchain import LLMMathChain, OpenAI
+            from oplangchain import LLMMathChain, OpenAI
             llm_math = LLMMathChain.from_llm(OpenAI())
     """
 

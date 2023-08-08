@@ -1,7 +1,7 @@
 """Loads Markdown files."""
 from typing import List
 
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
 
 
 class UnstructuredMarkdownLoader(UnstructuredFileLoader):
@@ -16,7 +16,7 @@ class UnstructuredMarkdownLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredMarkdownLoader
+    from oplangchain.document_loaders import UnstructuredMarkdownLoader
 
     loader = UnstructuredMarkdownLoader(
         "example.md", mode="elements", strategy="fast",

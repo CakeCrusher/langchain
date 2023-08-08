@@ -1,16 +1,16 @@
 from typing import Dict, Type, Union
 
-from langchain.agents.agent import BaseSingleActionAgent
-from langchain.agents.agent_types import AgentType
-from langchain.agents.chat.base import ChatAgent
-from langchain.agents.conversational.base import ConversationalAgent
-from langchain.agents.conversational_chat.base import ConversationalChatAgent
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
-from langchain.agents.openai_functions_multi_agent.base import OpenAIMultiFunctionsAgent
-from langchain.agents.react.base import ReActDocstoreAgent
-from langchain.agents.self_ask_with_search.base import SelfAskWithSearchAgent
-from langchain.agents.structured_chat.base import StructuredChatAgent
+from oplangchain.agents.agent import BaseSingleActionAgent
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.chat.base import ChatAgent
+from oplangchain.agents.conversational.base import ConversationalAgent
+from oplangchain.agents.conversational_chat.base import ConversationalChatAgent
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
+from oplangchain.agents.openai_functions_multi_agent.base import OpenAIMultiFunctionsAgent
+from oplangchain.agents.react.base import ReActDocstoreAgent
+from oplangchain.agents.self_ask_with_search.base import SelfAskWithSearchAgent
+from oplangchain.agents.structured_chat.base import StructuredChatAgent
 
 AGENT_TYPE = Union[Type[BaseSingleActionAgent], Type[OpenAIMultiFunctionsAgent]]
 

@@ -1,26 +1,26 @@
 """Loading datasets and evaluators."""
 from typing import Any, Dict, List, Optional, Sequence, Type, Union
 
-from langchain.chains.base import Chain
-from langchain.chat_models.openai import ChatOpenAI
-from langchain.evaluation.agents.trajectory_eval_chain import TrajectoryEvalChain
-from langchain.evaluation.comparison import PairwiseStringEvalChain
-from langchain.evaluation.comparison.eval_chain import LabeledPairwiseStringEvalChain
-from langchain.evaluation.criteria.eval_chain import (
+from oplangchain.chains.base import Chain
+from oplangchain.chat_models.openai import ChatOpenAI
+from oplangchain.evaluation.agents.trajectory_eval_chain import TrajectoryEvalChain
+from oplangchain.evaluation.comparison import PairwiseStringEvalChain
+from oplangchain.evaluation.comparison.eval_chain import LabeledPairwiseStringEvalChain
+from oplangchain.evaluation.criteria.eval_chain import (
     CriteriaEvalChain,
     LabeledCriteriaEvalChain,
 )
-from langchain.evaluation.embedding_distance.base import (
+from oplangchain.evaluation.embedding_distance.base import (
     EmbeddingDistanceEvalChain,
     PairwiseEmbeddingDistanceEvalChain,
 )
-from langchain.evaluation.qa import ContextQAEvalChain, CotQAEvalChain, QAEvalChain
-from langchain.evaluation.schema import EvaluatorType, LLMEvalChain
-from langchain.evaluation.string_distance.base import (
+from oplangchain.evaluation.qa import ContextQAEvalChain, CotQAEvalChain, QAEvalChain
+from oplangchain.evaluation.schema import EvaluatorType, LLMEvalChain
+from oplangchain.evaluation.string_distance.base import (
     PairwiseStringDistanceEvalChain,
     StringDistanceEvalChain,
 )
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 def load_dataset(uri: str) -> List[Dict]:
@@ -42,7 +42,7 @@ def load_dataset(uri: str) -> List[Dict]:
     --------
     .. code-block:: python
 
-        from langchain.evaluation import load_dataset
+        from oplangchain.evaluation import load_dataset
         ds = load_dataset("llm-math")
     """  # noqa: E501
     try:
@@ -97,7 +97,7 @@ def load_evaluator(
 
     Examples
     --------
-    >>> from langchain.evaluation import load_evaluator, EvaluatorType
+    >>> from oplangchain.evaluation import load_evaluator, EvaluatorType
     >>> evaluator = load_evaluator(EvaluatorType.QA)
     """
     llm = llm or ChatOpenAI(model="gpt-4", temperature=0)
@@ -142,7 +142,7 @@ def load_evaluators(
 
     Examples
     --------
-    >>> from langchain.evaluation import load_evaluators, EvaluatorType
+    >>> from oplangchain.evaluation import load_evaluators, EvaluatorType
     >>> evaluators = [EvaluatorType.QA, EvaluatorType.CRITERIA]
     >>> loaded_evaluators = load_evaluators(evaluators, criteria="helpfulness")
     """

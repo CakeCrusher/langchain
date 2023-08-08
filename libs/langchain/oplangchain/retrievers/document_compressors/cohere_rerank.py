@@ -4,10 +4,10 @@ from typing import TYPE_CHECKING, Dict, Optional, Sequence
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import Callbacks
-from langchain.retrievers.document_compressors.base import BaseDocumentCompressor
-from langchain.schema import Document
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.retrievers.document_compressors.base import BaseDocumentCompressor
+from oplangchain.schema import Document
+from oplangchain.utils import get_from_dict_or_env
 
 if TYPE_CHECKING:
     from cohere import Client

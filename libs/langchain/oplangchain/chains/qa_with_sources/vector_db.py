@@ -5,14 +5,14 @@ from typing import Any, Dict, List
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
 )
-from langchain.chains.combine_documents.stuff import StuffDocumentsChain
-from langchain.chains.qa_with_sources.base import BaseQAWithSourcesChain
-from langchain.docstore.document import Document
-from langchain.vectorstores.base import VectorStore
+from oplangchain.chains.combine_documents.stuff import StuffDocumentsChain
+from oplangchain.chains.qa_with_sources.base import BaseQAWithSourcesChain
+from oplangchain.docstore.document import Document
+from oplangchain.vectorstores.base import VectorStore
 
 
 class VectorDBQAWithSourcesChain(BaseQAWithSourcesChain):
@@ -67,7 +67,7 @@ class VectorDBQAWithSourcesChain(BaseQAWithSourcesChain):
     def raise_deprecation(cls, values: Dict) -> Dict:
         warnings.warn(
             "`VectorDBQAWithSourcesChain` is deprecated - "
-            "please use `from langchain.chains import RetrievalQAWithSourcesChain`"
+            "please use `from oplangchain.chains import RetrievalQAWithSourcesChain`"
         )
         return values
 

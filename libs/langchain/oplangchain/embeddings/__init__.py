@@ -14,48 +14,48 @@ from different APIs and services.
 import logging
 from typing import Any
 
-from langchain.embeddings.aleph_alpha import (
+from oplangchain.embeddings.aleph_alpha import (
     AlephAlphaAsymmetricSemanticEmbedding,
     AlephAlphaSymmetricSemanticEmbedding,
 )
-from langchain.embeddings.awa import AwaEmbeddings
-from langchain.embeddings.bedrock import BedrockEmbeddings
-from langchain.embeddings.clarifai import ClarifaiEmbeddings
-from langchain.embeddings.cohere import CohereEmbeddings
-from langchain.embeddings.dashscope import DashScopeEmbeddings
-from langchain.embeddings.deepinfra import DeepInfraEmbeddings
-from langchain.embeddings.edenai import EdenAiEmbeddings
-from langchain.embeddings.elasticsearch import ElasticsearchEmbeddings
-from langchain.embeddings.embaas import EmbaasEmbeddings
-from langchain.embeddings.fake import DeterministicFakeEmbedding, FakeEmbeddings
-from langchain.embeddings.google_palm import GooglePalmEmbeddings
-from langchain.embeddings.gpt4all import GPT4AllEmbeddings
-from langchain.embeddings.huggingface import (
+from oplangchain.embeddings.awa import AwaEmbeddings
+from oplangchain.embeddings.bedrock import BedrockEmbeddings
+from oplangchain.embeddings.clarifai import ClarifaiEmbeddings
+from oplangchain.embeddings.cohere import CohereEmbeddings
+from oplangchain.embeddings.dashscope import DashScopeEmbeddings
+from oplangchain.embeddings.deepinfra import DeepInfraEmbeddings
+from oplangchain.embeddings.edenai import EdenAiEmbeddings
+from oplangchain.embeddings.elasticsearch import ElasticsearchEmbeddings
+from oplangchain.embeddings.embaas import EmbaasEmbeddings
+from oplangchain.embeddings.fake import DeterministicFakeEmbedding, FakeEmbeddings
+from oplangchain.embeddings.google_palm import GooglePalmEmbeddings
+from oplangchain.embeddings.gpt4all import GPT4AllEmbeddings
+from oplangchain.embeddings.huggingface import (
     HuggingFaceEmbeddings,
     HuggingFaceInstructEmbeddings,
 )
-from langchain.embeddings.huggingface_hub import HuggingFaceHubEmbeddings
-from langchain.embeddings.jina import JinaEmbeddings
-from langchain.embeddings.llamacpp import LlamaCppEmbeddings
-from langchain.embeddings.localai import LocalAIEmbeddings
-from langchain.embeddings.minimax import MiniMaxEmbeddings
-from langchain.embeddings.mlflow_gateway import MlflowAIGatewayEmbeddings
-from langchain.embeddings.modelscope_hub import ModelScopeEmbeddings
-from langchain.embeddings.mosaicml import MosaicMLInstructorEmbeddings
-from langchain.embeddings.nlpcloud import NLPCloudEmbeddings
-from langchain.embeddings.octoai_embeddings import OctoAIEmbeddings
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.embeddings.sagemaker_endpoint import SagemakerEndpointEmbeddings
-from langchain.embeddings.self_hosted import SelfHostedEmbeddings
-from langchain.embeddings.self_hosted_hugging_face import (
+from oplangchain.embeddings.huggingface_hub import HuggingFaceHubEmbeddings
+from oplangchain.embeddings.jina import JinaEmbeddings
+from oplangchain.embeddings.llamacpp import LlamaCppEmbeddings
+from oplangchain.embeddings.localai import LocalAIEmbeddings
+from oplangchain.embeddings.minimax import MiniMaxEmbeddings
+from oplangchain.embeddings.mlflow_gateway import MlflowAIGatewayEmbeddings
+from oplangchain.embeddings.modelscope_hub import ModelScopeEmbeddings
+from oplangchain.embeddings.mosaicml import MosaicMLInstructorEmbeddings
+from oplangchain.embeddings.nlpcloud import NLPCloudEmbeddings
+from oplangchain.embeddings.octoai_embeddings import OctoAIEmbeddings
+from oplangchain.embeddings.openai import OpenAIEmbeddings
+from oplangchain.embeddings.sagemaker_endpoint import SagemakerEndpointEmbeddings
+from oplangchain.embeddings.self_hosted import SelfHostedEmbeddings
+from oplangchain.embeddings.self_hosted_hugging_face import (
     SelfHostedHuggingFaceEmbeddings,
     SelfHostedHuggingFaceInstructEmbeddings,
 )
-from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
-from langchain.embeddings.spacy_embeddings import SpacyEmbeddings
-from langchain.embeddings.tensorflow_hub import TensorflowHubEmbeddings
-from langchain.embeddings.vertexai import VertexAIEmbeddings
-from langchain.embeddings.xinference import XinferenceEmbeddings
+from oplangchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+from oplangchain.embeddings.spacy_embeddings import SpacyEmbeddings
+from oplangchain.embeddings.tensorflow_hub import TensorflowHubEmbeddings
+from oplangchain.embeddings.vertexai import VertexAIEmbeddings
+from oplangchain.embeddings.xinference import XinferenceEmbeddings
 
 logger = logging.getLogger(__name__)
 
@@ -105,9 +105,9 @@ class HypotheticalDocumentEmbedder:
     def __init__(self, *args: Any, **kwargs: Any):
         logger.warning(
             "Using a deprecated class. Please use "
-            "`from langchain.chains import HypotheticalDocumentEmbedder` instead"
+            "`from oplangchain.chains import HypotheticalDocumentEmbedder` instead"
         )
-        from langchain.chains.hyde.base import HypotheticalDocumentEmbedder as H
+        from oplangchain.chains.hyde.base import HypotheticalDocumentEmbedder as H
 
         return H(*args, **kwargs)  # type: ignore
 
@@ -115,8 +115,8 @@ class HypotheticalDocumentEmbedder:
     def from_llm(cls, *args: Any, **kwargs: Any) -> Any:
         logger.warning(
             "Using a deprecated class. Please use "
-            "`from langchain.chains import HypotheticalDocumentEmbedder` instead"
+            "`from oplangchain.chains import HypotheticalDocumentEmbedder` instead"
         )
-        from langchain.chains.hyde.base import HypotheticalDocumentEmbedder as H
+        from oplangchain.chains.hyde.base import HypotheticalDocumentEmbedder as H
 
         return H.from_llm(*args, **kwargs)

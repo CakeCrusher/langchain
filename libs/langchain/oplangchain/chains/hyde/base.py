@@ -9,12 +9,12 @@ from typing import Any, Dict, List, Optional
 import numpy as np
 from pydantic import Extra
 
-from langchain.callbacks.manager import CallbackManagerForChainRun
-from langchain.chains.base import Chain
-from langchain.chains.hyde.prompts import PROMPT_MAP
-from langchain.chains.llm import LLMChain
-from langchain.embeddings.base import Embeddings
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.callbacks.manager import CallbackManagerForChainRun
+from oplangchain.chains.base import Chain
+from oplangchain.chains.hyde.prompts import PROMPT_MAP
+from oplangchain.chains.llm import LLMChain
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class HypotheticalDocumentEmbedder(Chain, Embeddings):

@@ -3,11 +3,11 @@ from typing import List, Optional
 import aiohttp
 import requests
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from langchain.schema import BaseRetriever, Document
+from oplangchain.schema import BaseRetriever, Document
 
 
 class DataberryRetriever(BaseRetriever):

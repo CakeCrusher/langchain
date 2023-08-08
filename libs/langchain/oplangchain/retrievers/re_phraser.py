@@ -1,14 +1,14 @@
 import logging
 from typing import List
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from langchain.chains.llm import LLMChain
-from langchain.llms.base import BaseLLM
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import BaseRetriever, Document
+from oplangchain.chains.llm import LLMChain
+from oplangchain.llms.base import BaseLLM
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema import BaseRetriever, Document
 
 logger = logging.getLogger(__name__)
 

@@ -5,7 +5,7 @@ from pgvector.sqlalchemy import Vector
 from sqlalchemy.dialects.postgresql import JSON, UUID
 from sqlalchemy.orm import Session, relationship
 
-from langchain.vectorstores.pgvector import BaseModel
+from oplangchain.vectorstores.pgvector import BaseModel
 
 
 class CollectionStore(BaseModel):

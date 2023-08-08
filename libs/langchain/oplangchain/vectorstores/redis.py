@@ -22,15 +22,15 @@ from typing import (
 import numpy as np
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utilities.redis import get_client
-from langchain.utils import get_from_dict_or_env
-from langchain.vectorstores.base import VectorStore, VectorStoreRetriever
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utilities.redis import get_client
+from oplangchain.utils import get_from_dict_or_env
+from oplangchain.vectorstores.base import VectorStore, VectorStoreRetriever
 
 logger = logging.getLogger(__name__)
 
@@ -103,8 +103,8 @@ class Redis(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.vectorstores import Redis
-            from langchain.embeddings import OpenAIEmbeddings
+            from oplangchain.vectorstores import Redis
+            from oplangchain.embeddings import OpenAIEmbeddings
 
             embeddings = OpenAIEmbeddings()
             vectorstore = Redis(
@@ -393,8 +393,8 @@ class Redis(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain.vectorstores import Redis
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores import Redis
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 redisearch, keys = RediSearch.from_texts_return_keys(
                     texts,
@@ -456,8 +456,8 @@ class Redis(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain.vectorstores import Redis
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores import Redis
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 redisearch = RediSearch.from_texts(
                     texts,

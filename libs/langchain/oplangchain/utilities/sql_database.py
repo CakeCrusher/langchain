@@ -10,7 +10,7 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.exc import ProgrammingError, SQLAlchemyError
 from sqlalchemy.schema import CreateTable
 
-from langchain.utils import get_from_env
+from oplangchain.utils import get_from_env
 
 
 def _format_index(index: sqlalchemy.engine.interfaces.ReflectedIndex) -> str:

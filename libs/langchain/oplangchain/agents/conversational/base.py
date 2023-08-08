@@ -5,16 +5,16 @@ from typing import Any, List, Optional, Sequence
 
 from pydantic import Field
 
-from langchain.agents.agent import Agent, AgentOutputParser
-from langchain.agents.agent_types import AgentType
-from langchain.agents.conversational.output_parser import ConvoOutputParser
-from langchain.agents.conversational.prompt import FORMAT_INSTRUCTIONS, PREFIX, SUFFIX
-from langchain.agents.utils import validate_tools_single_input
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools.base import BaseTool
+from oplangchain.agents.agent import Agent, AgentOutputParser
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.conversational.output_parser import ConvoOutputParser
+from oplangchain.agents.conversational.prompt import FORMAT_INSTRUCTIONS, PREFIX, SUFFIX
+from oplangchain.agents.utils import validate_tools_single_input
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains import LLMChain
+from oplangchain.prompts import PromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools.base import BaseTool
 
 
 class ConversationalAgent(Agent):

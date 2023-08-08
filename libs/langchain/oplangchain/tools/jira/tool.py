@@ -11,11 +11,11 @@ To use this tool, you must first set as environment variables:
 Below is a sample script that uses the Jira tool:
 
 ```python
-from langchain.agents import AgentType
-from langchain.agents import initialize_agent
-from langchain.agents.agent_toolkits.jira.toolkit import JiraToolkit
-from langchain.llms import OpenAI
-from langchain.utilities.jira import JiraAPIWrapper
+from oplangchain.agents import AgentType
+from oplangchain.agents import initialize_agent
+from oplangchain.agents.agent_toolkits.jira.toolkit import JiraToolkit
+from oplangchain.llms import OpenAI
+from oplangchain.utilities.jira import JiraAPIWrapper
 
 llm = OpenAI(temperature=0)
 jira = JiraAPIWrapper()
@@ -32,9 +32,9 @@ from typing import Optional
 
 from pydantic import Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utilities.jira import JiraAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.jira import JiraAPIWrapper
 
 
 class JiraAction(BaseTool):

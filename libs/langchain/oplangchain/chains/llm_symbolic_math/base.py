@@ -6,15 +6,15 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Extra
 
-from langchain.base_language import BaseLanguageModel
-from langchain.callbacks.manager import (
+from oplangchain.base_language import BaseLanguageModel
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
 )
-from langchain.chains.base import Chain
-from langchain.chains.llm import LLMChain
-from langchain.chains.llm_symbolic_math.prompt import PROMPT
-from langchain.prompts.base import BasePromptTemplate
+from oplangchain.chains.base import Chain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.llm_symbolic_math.prompt import PROMPT
+from oplangchain.prompts.base import BasePromptTemplate
 
 
 class LLMSymbolicMathChain(Chain):
@@ -23,7 +23,7 @@ class LLMSymbolicMathChain(Chain):
     Example:
         .. code-block:: python
 
-            from langchain import LLMSymbolicMathChain, OpenAI
+            from oplangchain import LLMSymbolicMathChain, OpenAI
             llm_symbolic_math = LLMSymbolicMathChain.from_llm(OpenAI())
     """
 

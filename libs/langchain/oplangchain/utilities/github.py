@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 if TYPE_CHECKING:
     from github.Issue import Issue

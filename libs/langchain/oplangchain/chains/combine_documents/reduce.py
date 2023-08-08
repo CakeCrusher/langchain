@@ -6,9 +6,9 @@ from typing import Any, Callable, List, Optional, Protocol, Tuple
 
 from pydantic import Extra
 
-from langchain.callbacks.manager import Callbacks
-from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
-from langchain.docstore.document import Document
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.chains.combine_documents.base import BaseCombineDocumentsChain
+from oplangchain.docstore.document import Document
 
 
 class CombineDocsProtocol(Protocol):
@@ -98,11 +98,11 @@ class ReduceDocumentsChain(BaseCombineDocumentsChain):
     Example:
         .. code-block:: python
 
-            from langchain.chains import (
+            from oplangchain.chains import (
                 StuffDocumentsChain, LLMChain, ReduceDocumentsChain
             )
-            from langchain.prompts import PromptTemplate
-            from langchain.llms import OpenAI
+            from oplangchain.prompts import PromptTemplate
+            from oplangchain.llms import OpenAI
 
             # This controls how each document will be formatted. Specifically,
             # it will be passed to `format_document` - see that function for more

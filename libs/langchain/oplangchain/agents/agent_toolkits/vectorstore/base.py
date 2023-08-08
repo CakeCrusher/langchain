@@ -1,16 +1,16 @@
 """VectorStore agent."""
 from typing import Any, Dict, Optional
 
-from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_toolkits.vectorstore.prompt import PREFIX, ROUTER_PREFIX
-from langchain.agents.agent_toolkits.vectorstore.toolkit import (
+from oplangchain.agents.agent import AgentExecutor
+from oplangchain.agents.agent_toolkits.vectorstore.prompt import PREFIX, ROUTER_PREFIX
+from oplangchain.agents.agent_toolkits.vectorstore.toolkit import (
     VectorStoreRouterToolkit,
     VectorStoreToolkit,
 )
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 def create_vectorstore_agent(

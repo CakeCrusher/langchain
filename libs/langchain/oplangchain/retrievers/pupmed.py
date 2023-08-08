@@ -1,4 +1,4 @@
-from langchain.retrievers.pubmed import PubMedRetriever
+from oplangchain.retrievers.pubmed import PubMedRetriever
 
 __all__ = [
     "PubMedRetriever",

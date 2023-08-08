@@ -13,23 +13,23 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.chat_models.base import BaseChatModel
-from langchain.schema import (
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.schema import (
     ChatGeneration,
     ChatResult,
 )
-from langchain.schema.messages import (
+from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,
     ChatMessage,
     HumanMessage,
     SystemMessage,
 )
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 if TYPE_CHECKING:
     import google.generativeai as genai
@@ -226,7 +226,7 @@ class ChatGooglePalm(BaseChatModel, BaseModel):
     Example:
         .. code-block:: python
 
-            from langchain.chat_models import ChatGooglePalm
+            from oplangchain.chat_models import ChatGooglePalm
             chat = ChatGooglePalm()
 
     """

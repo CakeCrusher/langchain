@@ -1,8 +1,8 @@
 from typing import Iterator, List, Optional
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.utilities.brave_search import BraveSearchWrapper
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.utilities.brave_search import BraveSearchWrapper
 
 
 class BraveSearchLoader(BaseLoader):

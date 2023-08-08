@@ -20,15 +20,15 @@ from typing import (
 import numpy as np
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.schema import BaseRetriever
-from langchain.utils import get_from_env
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import BaseRetriever
+from oplangchain.utils import get_from_env
+from oplangchain.vectorstores.base import VectorStore
 
 logger = logging.getLogger()
 

@@ -27,8 +27,8 @@ from multiple components. Prompt classes and functions make constructing
                     ChatPromptValue
 
 """  # noqa: E501
-from langchain.prompts.base import StringPromptTemplate
-from langchain.prompts.chat import (
+from oplangchain.prompts.base import StringPromptTemplate
+from oplangchain.prompts.chat import (
     AIMessagePromptTemplate,
     BaseChatPromptTemplate,
     ChatMessagePromptTemplate,
@@ -37,21 +37,21 @@ from langchain.prompts.chat import (
     MessagesPlaceholder,
     SystemMessagePromptTemplate,
 )
-from langchain.prompts.example_selector import (
+from oplangchain.prompts.example_selector import (
     LengthBasedExampleSelector,
     MaxMarginalRelevanceExampleSelector,
     NGramOverlapExampleSelector,
     SemanticSimilarityExampleSelector,
 )
-from langchain.prompts.few_shot import (
+from oplangchain.prompts.few_shot import (
     FewShotChatMessagePromptTemplate,
     FewShotPromptTemplate,
 )
-from langchain.prompts.few_shot_with_templates import FewShotPromptWithTemplates
-from langchain.prompts.loading import load_prompt
-from langchain.prompts.pipeline import PipelinePromptTemplate
-from langchain.prompts.prompt import Prompt, PromptTemplate
-from langchain.schema.prompt_template import BasePromptTemplate
+from oplangchain.prompts.few_shot_with_templates import FewShotPromptWithTemplates
+from oplangchain.prompts.loading import load_prompt
+from oplangchain.prompts.pipeline import PipelinePromptTemplate
+from oplangchain.prompts.prompt import Prompt, PromptTemplate
+from oplangchain.schema.prompt_template import BasePromptTemplate
 
 __all__ = [
     "AIMessagePromptTemplate",

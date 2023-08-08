@@ -2,9 +2,9 @@
 import logging
 from typing import Any, Iterator, List, Optional, Sequence
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.news import NewsURLLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.news import NewsURLLoader
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +26,7 @@ class RSSFeedLoader(BaseLoader):
     Example:
         .. code-block:: python
 
-            from langchain.document_loaders import RSSFeedLoader
+            from oplangchain.document_loaders import RSSFeedLoader
 
             loader = RSSFeedLoader(
                 urls=["<url-1>", "<url-2>"],

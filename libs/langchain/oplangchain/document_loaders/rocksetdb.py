@@ -1,7 +1,7 @@
 from typing import Any, Callable, Iterator, List, Optional, Tuple
 
-from langchain.document_loaders.base import BaseLoader
-from langchain.schema import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.schema import Document
 
 
 def default_joiner(docs: List[Tuple[str, Any]]) -> str:
@@ -28,13 +28,13 @@ class RocksetLoader(BaseLoader):
             # collection as Documents, with the `text` column used as
             # the content
 
-            from langchain.document_loaders import RocksetLoader
+            from oplangchain.document_loaders import RocksetLoader
             from rockset import RocksetClient, Regions, models
 
             loader = RocksetLoader(
                 RocksetClient(Regions.usw2a1, "<api key>"),
                 models.QueryRequestSql(
-                    query="select * from langchain_demo limit 3"
+                    query="select * from oplangchain_demo limit 3"
                 ),
                 ["text"]
             )

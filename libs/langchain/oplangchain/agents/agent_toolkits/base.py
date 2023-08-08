@@ -4,7 +4,7 @@ from typing import List
 
 from pydantic import BaseModel
 
-from langchain.tools import BaseTool
+from oplangchain.tools import BaseTool
 
 
 class BaseToolkit(BaseModel, ABC):

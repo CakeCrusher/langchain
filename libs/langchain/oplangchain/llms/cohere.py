@@ -12,13 +12,13 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
-from langchain.utils import get_from_dict_or_env
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -71,7 +71,7 @@ class Cohere(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import Cohere
+            from oplangchain.llms import Cohere
             cohere = Cohere(model="gptd-instruct-tft", cohere_api_key="my-api-key")
     """
 

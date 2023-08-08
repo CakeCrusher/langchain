@@ -1,12 +1,12 @@
-from langchain.retrievers.document_compressors.base import DocumentCompressorPipeline
-from langchain.retrievers.document_compressors.chain_extract import (
+from oplangchain.retrievers.document_compressors.base import DocumentCompressorPipeline
+from oplangchain.retrievers.document_compressors.chain_extract import (
     LLMChainExtractor,
 )
-from langchain.retrievers.document_compressors.chain_filter import (
+from oplangchain.retrievers.document_compressors.chain_filter import (
     LLMChainFilter,
 )
-from langchain.retrievers.document_compressors.cohere_rerank import CohereRerank
-from langchain.retrievers.document_compressors.embeddings_filter import (
+from oplangchain.retrievers.document_compressors.cohere_rerank import CohereRerank
+from oplangchain.retrievers.document_compressors.embeddings_filter import (
     EmbeddingsFilter,
 )
 

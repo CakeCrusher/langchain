@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, root_validator
 
-from langchain.schema import Document
+from oplangchain.schema import Document
 
 logger = logging.getLogger(__name__)
 
@@ -36,7 +36,7 @@ class ArxivAPIWrapper(BaseModel):
     Example:
         .. code-block:: python
 
-            from langchain.utilities.arxiv import ArxivAPIWrapper
+            from oplangchain.utilities.arxiv import ArxivAPIWrapper
             arxiv = ArxivAPIWrapper(
                 top_k_results = 3,
                 ARXIV_MAX_QUERY_LENGTH = 300,

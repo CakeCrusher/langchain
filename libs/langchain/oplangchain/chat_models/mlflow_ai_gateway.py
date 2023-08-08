@@ -5,16 +5,16 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import BaseModel, Extra
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.chat_models.base import BaseChatModel
-from langchain.schema import (
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.schema import (
     ChatGeneration,
     ChatResult,
 )
-from langchain.schema.messages import (
+from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,
     ChatMessage,
@@ -46,7 +46,7 @@ class ChatMLflowAIGateway(BaseChatModel):
     Example:
         .. code-block:: python
 
-            from langchain.chat_models import ChatMLflowAIGateway
+            from oplangchain.chat_models import ChatMLflowAIGateway
 
             chat = ChatMLflowAIGateway(
                 gateway_uri="<your-mlflow-ai-gateway-uri>",

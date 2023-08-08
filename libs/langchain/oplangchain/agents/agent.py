@@ -12,33 +12,33 @@ from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple, Union
 import yaml
 from pydantic import BaseModel, root_validator
 
-from langchain.agents.agent_iterator import AgentExecutorIterator
-from langchain.agents.agent_types import AgentType
-from langchain.agents.tools import InvalidTool
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
+from oplangchain.agents.agent_iterator import AgentExecutorIterator
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.tools import InvalidTool
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     AsyncCallbackManagerForToolRun,
     CallbackManagerForChainRun,
     CallbackManagerForToolRun,
     Callbacks,
 )
-from langchain.chains.base import Chain
-from langchain.chains.llm import LLMChain
-from langchain.prompts.few_shot import FewShotPromptTemplate
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import (
+from oplangchain.chains.base import Chain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.prompts.few_shot import FewShotPromptTemplate
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema import (
     AgentAction,
     AgentFinish,
     BaseOutputParser,
     BasePromptTemplate,
     OutputParserException,
 )
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.messages import BaseMessage
-from langchain.tools.base import BaseTool
-from langchain.utilities.asyncio import asyncio_timeout
-from langchain.utils.input import get_color_mapping
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.messages import BaseMessage
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.asyncio import asyncio_timeout
+from oplangchain.utils.input import get_color_mapping
 
 logger = logging.getLogger(__name__)
 

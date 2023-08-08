@@ -4,7 +4,7 @@
 import warnings
 from typing import Any
 
-from langchain.tools.human.tool import HumanInputRun
+from oplangchain.tools.human.tool import HumanInputRun
 
 
 def StdInInquireTool(*args: Any, **kwargs: Any) -> HumanInputRun:

@@ -2,8 +2,8 @@
 from datetime import datetime, timedelta
 from typing import List, Optional
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class DatadogLogsLoader(BaseLoader):

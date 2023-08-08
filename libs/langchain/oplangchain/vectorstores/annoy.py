@@ -10,12 +10,12 @@ from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple
 
 import numpy as np
 
-from langchain.docstore.base import Docstore
-from langchain.docstore.document import Document
-from langchain.docstore.in_memory import InMemoryDocstore
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.base import Docstore
+from oplangchain.docstore.document import Document
+from oplangchain.docstore.in_memory import InMemoryDocstore
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 INDEX_METRICS = frozenset(["angular", "euclidean", "manhattan", "hamming", "dot"])
 DEFAULT_METRIC = "angular"
@@ -41,7 +41,7 @@ class Annoy(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain import Annoy
+            from oplangchain import Annoy
             db = Annoy(embedding_function, index, docstore, index_to_docstore_id)
 
     """
@@ -351,8 +351,8 @@ class Annoy(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Annoy
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import Annoy
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 index = Annoy.from_texts(texts, embeddings)
         """
@@ -391,8 +391,8 @@ class Annoy(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Annoy
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import Annoy
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 text_embeddings = embeddings.embed_documents(texts)
                 text_embedding_pairs = list(zip(texts, text_embeddings))

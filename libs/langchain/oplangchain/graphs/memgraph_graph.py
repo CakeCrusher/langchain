@@ -1,4 +1,4 @@
-from langchain.graphs.neo4j_graph import Neo4jGraph
+from oplangchain.graphs.neo4j_graph import Neo4jGraph
 
 SCHEMA_QUERY = """
 CALL llm_util.schema("prompt_ready")

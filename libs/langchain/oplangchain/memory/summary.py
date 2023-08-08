@@ -4,15 +4,15 @@ from typing import Any, Dict, List, Type
 
 from pydantic import BaseModel, root_validator
 
-from langchain.chains.llm import LLMChain
-from langchain.memory.chat_memory import BaseChatMemory
-from langchain.memory.prompt import SUMMARY_PROMPT
-from langchain.schema import (
+from oplangchain.chains.llm import LLMChain
+from oplangchain.memory.chat_memory import BaseChatMemory
+from oplangchain.memory.prompt import SUMMARY_PROMPT
+from oplangchain.schema import (
     BaseChatMessageHistory,
     BasePromptTemplate,
 )
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.messages import BaseMessage, SystemMessage, get_buffer_string
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.messages import BaseMessage, SystemMessage, get_buffer_string
 
 
 class SummarizerMixin(BaseModel):

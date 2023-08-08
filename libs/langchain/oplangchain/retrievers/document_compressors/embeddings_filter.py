@@ -3,17 +3,17 @@ from typing import Callable, Dict, Optional, Sequence
 import numpy as np
 from pydantic import root_validator
 
-from langchain.callbacks.manager import Callbacks
-from langchain.document_transformers.embeddings_redundant_filter import (
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.document_transformers.embeddings_redundant_filter import (
     _get_embeddings_from_stateful_docs,
     get_stateful_documents,
 )
-from langchain.embeddings.base import Embeddings
-from langchain.retrievers.document_compressors.base import (
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.retrievers.document_compressors.base import (
     BaseDocumentCompressor,
 )
-from langchain.schema import Document
-from langchain.utils.math import cosine_similarity
+from oplangchain.schema import Document
+from oplangchain.utils.math import cosine_similarity
 
 
 class EmbeddingsFilter(BaseDocumentCompressor):

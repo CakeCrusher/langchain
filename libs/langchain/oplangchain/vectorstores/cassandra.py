@@ -10,10 +10,10 @@ import numpy as np
 if typing.TYPE_CHECKING:
     from cassandra.cluster import Session
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 CVST = TypeVar("CVST", bound="Cassandra")
 
@@ -27,8 +27,8 @@ class Cassandra(VectorStore):
     Example:
         .. code-block:: python
 
-                from langchain.vectorstores import Cassandra
-                from langchain.embeddings.openai import OpenAIEmbeddings
+                from oplangchain.vectorstores import Cassandra
+                from oplangchain.embeddings.openai import OpenAIEmbeddings
 
                 embeddings = OpenAIEmbeddings()
                 session = ...

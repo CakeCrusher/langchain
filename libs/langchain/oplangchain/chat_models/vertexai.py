@@ -4,20 +4,20 @@ from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.chat_models.base import BaseChatModel
-from langchain.llms.vertexai import _VertexAICommon, is_codey_model
-from langchain.schema import (
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.llms.vertexai import _VertexAICommon, is_codey_model
+from oplangchain.schema import (
     ChatGeneration,
     ChatResult,
 )
-from langchain.schema.messages import (
+from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,
     HumanMessage,
     SystemMessage,
 )
-from langchain.utilities.vertexai import raise_vertex_import_error
+from oplangchain.utilities.vertexai import raise_vertex_import_error
 
 if TYPE_CHECKING:
     from vertexai.language_models import ChatMessage, InputOutputTextPair

@@ -19,14 +19,14 @@ from typing import (
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.chat_models.base import BaseChatModel
-from langchain.llms.base import create_base_retry_decorator
-from langchain.schema import ChatGeneration, ChatResult
-from langchain.schema.messages import (
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.llms.base import create_base_retry_decorator
+from oplangchain.schema import ChatGeneration, ChatResult
+from oplangchain.schema.messages import (
     AIMessage,
     AIMessageChunk,
     BaseMessage,
@@ -40,8 +40,8 @@ from langchain.schema.messages import (
     SystemMessage,
     SystemMessageChunk,
 )
-from langchain.schema.output import ChatGenerationChunk
-from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
+from oplangchain.schema.output import ChatGenerationChunk
+from oplangchain.utils import get_from_dict_or_env, get_pydantic_field_names
 
 if TYPE_CHECKING:
     import tiktoken
@@ -190,7 +190,7 @@ class ChatOpenAI(BaseChatModel):
     Example:
         .. code-block:: python
 
-            from langchain.chat_models import ChatOpenAI
+            from oplangchain.chat_models import ChatOpenAI
             openai = ChatOpenAI(model_name="gpt-3.5-turbo")
     """
 

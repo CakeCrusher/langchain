@@ -6,11 +6,11 @@ import requests
 from pydantic import BaseModel, root_validator, validator
 from typing_extensions import NotRequired, TypedDict
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseBlobParser, BaseLoader
-from langchain.document_loaders.blob_loaders import Blob
-from langchain.text_splitter import TextSplitter
-from langchain.utils import get_from_dict_or_env
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseBlobParser, BaseLoader
+from oplangchain.document_loaders.blob_loaders import Blob
+from oplangchain.text_splitter import TextSplitter
+from oplangchain.utils import get_from_dict_or_env
 
 EMBAAS_DOC_API_URL = "https://api.embaas.io/v1/document/extract-text/bytes/"
 
@@ -82,13 +82,13 @@ class EmbaasBlobLoader(BaseEmbaasLoader, BaseBlobParser):
         .. code-block:: python
 
             # Default parsing
-            from langchain.document_loaders.embaas import EmbaasBlobLoader
+            from oplangchain.document_loaders.embaas import EmbaasBlobLoader
             loader = EmbaasBlobLoader()
             blob = Blob.from_path(path="example.mp3")
             documents = loader.parse(blob=blob)
 
             # Custom api parameters (create embeddings automatically)
-            from langchain.document_loaders.embaas import EmbaasBlobLoader
+            from oplangchain.document_loaders.embaas import EmbaasBlobLoader
             loader = EmbaasBlobLoader(
                 params={
                     "should_embed": True,
@@ -188,12 +188,12 @@ class EmbaasLoader(BaseEmbaasLoader, BaseLoader):
         .. code-block:: python
 
             # Default parsing
-            from langchain.document_loaders.embaas import EmbaasLoader
+            from oplangchain.document_loaders.embaas import EmbaasLoader
             loader = EmbaasLoader(file_path="example.mp3")
             documents = loader.load()
 
             # Custom api parameters (create embeddings automatically)
-            from langchain.document_loaders.embaas import EmbaasBlobLoader
+            from oplangchain.document_loaders.embaas import EmbaasBlobLoader
             loader = EmbaasBlobLoader(
                 file_path="example.pdf",
                 params={

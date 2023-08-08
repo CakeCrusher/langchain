@@ -3,9 +3,9 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utilities.scenexplain import SceneXplainAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.scenexplain import SceneXplainAPIWrapper
 
 
 class SceneXplainInput(BaseModel):

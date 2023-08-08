@@ -5,12 +5,12 @@ from typing import List, Optional, Type, Union
 
 from pydantic import BaseModel, Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForToolRun,
     CallbackManagerForToolRun,
 )
-from langchain.tools.base import BaseTool
-from langchain.utilities.bash import BashProcess
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.bash import BashProcess
 
 
 class ShellInput(BaseModel):

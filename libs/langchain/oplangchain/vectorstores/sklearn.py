@@ -10,11 +10,11 @@ from abc import ABC, abstractmethod
 from typing import Any, Dict, Iterable, List, Literal, Optional, Tuple, Type
 from uuid import uuid4
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utils import guard_import
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import guard_import
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 DEFAULT_K = 4  # Number of Documents to return.
 DEFAULT_FETCH_K = 20  # Number of Documents to initially fetch during MMR search.

@@ -4,10 +4,10 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.embeddings.base import Embeddings
-from langchain.schema import BaseRetriever, Document
-from langchain.vectorstores.milvus import Milvus
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import BaseRetriever, Document
+from oplangchain.vectorstores.milvus import Milvus
 
 # TODO: Update to MilvusClient + Hybrid Search when available
 

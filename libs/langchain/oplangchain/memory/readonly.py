@@ -1,6 +1,6 @@
 from typing import Any, Dict, List
 
-from langchain.schema import BaseMemory
+from oplangchain.schema import BaseMemory
 
 
 class ReadOnlySharedMemory(BaseMemory):

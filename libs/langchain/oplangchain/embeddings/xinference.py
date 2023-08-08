@@ -1,7 +1,7 @@
 """Wrapper around Xinference embedding models."""
 from typing import Any, List, Optional
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 
 class XinferenceEmbeddings(Embeddings):
@@ -41,7 +41,7 @@ class XinferenceEmbeddings(Embeddings):
     Example:
     .. code-block:: python
 
-        from langchain.embeddings import XinferenceEmbeddings
+        from oplangchain.embeddings import XinferenceEmbeddings
 
         xinference = XinferenceEmbeddings(
             server_url="http://0.0.0.0:9997",

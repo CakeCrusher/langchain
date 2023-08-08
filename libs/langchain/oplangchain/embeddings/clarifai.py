@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -19,7 +19,7 @@ class ClarifaiEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import ClarifaiEmbeddings
+            from oplangchain.embeddings import ClarifaiEmbeddings
             clarifai = ClarifaiEmbeddings(
                 model="embed-english-light-v2.0", clarifai_api_key="my-api-key"
             )

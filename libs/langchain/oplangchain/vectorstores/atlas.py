@@ -7,9 +7,9 @@ from typing import Any, Iterable, List, Optional, Type
 
 import numpy as np
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
 
 logger = logging.getLogger(__name__)
 
@@ -22,8 +22,8 @@ class AtlasDB(VectorStore):
     Example:
         .. code-block:: python
 
-                from langchain.vectorstores import AtlasDB
-                from langchain.embeddings.openai import OpenAIEmbeddings
+                from oplangchain.vectorstores import AtlasDB
+                from oplangchain.embeddings.openai import OpenAIEmbeddings
 
                 embeddings = OpenAIEmbeddings()
                 vectorstore = AtlasDB("my_project", embeddings.embed_query)

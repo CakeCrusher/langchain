@@ -3,9 +3,9 @@
 from importlib import metadata
 from typing import Optional
 
-from langchain.agents import MRKLChain, ReActChain, SelfAskWithSearchChain
-from langchain.cache import BaseCache
-from langchain.chains import (
+from oplangchain.agents import MRKLChain, ReActChain, SelfAskWithSearchChain
+from oplangchain.cache import BaseCache
+from oplangchain.chains import (
     ConversationChain,
     LLMBashChain,
     LLMChain,
@@ -15,8 +15,8 @@ from langchain.chains import (
     VectorDBQA,
     VectorDBQAWithSourcesChain,
 )
-from langchain.docstore import InMemoryDocstore, Wikipedia
-from langchain.llms import (
+from oplangchain.docstore import InMemoryDocstore, Wikipedia
+from oplangchain.llms import (
     Anthropic,
     Banana,
     CerebriumAI,
@@ -34,24 +34,24 @@ from langchain.llms import (
     StochasticAI,
     Writer,
 )
-from langchain.llms.huggingface_pipeline import HuggingFacePipeline
-from langchain.prompts import (
+from oplangchain.llms.huggingface_pipeline import HuggingFacePipeline
+from oplangchain.prompts import (
     FewShotPromptTemplate,
     Prompt,
     PromptTemplate,
 )
-from langchain.schema.prompt_template import BasePromptTemplate
-from langchain.utilities.arxiv import ArxivAPIWrapper
-from langchain.utilities.golden_query import GoldenQueryAPIWrapper
-from langchain.utilities.google_search import GoogleSearchAPIWrapper
-from langchain.utilities.google_serper import GoogleSerperAPIWrapper
-from langchain.utilities.powerbi import PowerBIDataset
-from langchain.utilities.searx_search import SearxSearchWrapper
-from langchain.utilities.serpapi import SerpAPIWrapper
-from langchain.utilities.sql_database import SQLDatabase
-from langchain.utilities.wikipedia import WikipediaAPIWrapper
-from langchain.utilities.wolfram_alpha import WolframAlphaAPIWrapper
-from langchain.vectorstores import FAISS, ElasticVectorSearch
+from oplangchain.schema.prompt_template import BasePromptTemplate
+from oplangchain.utilities.arxiv import ArxivAPIWrapper
+from oplangchain.utilities.golden_query import GoldenQueryAPIWrapper
+from oplangchain.utilities.google_search import GoogleSearchAPIWrapper
+from oplangchain.utilities.google_serper import GoogleSerperAPIWrapper
+from oplangchain.utilities.powerbi import PowerBIDataset
+from oplangchain.utilities.searx_search import SearxSearchWrapper
+from oplangchain.utilities.serpapi import SerpAPIWrapper
+from oplangchain.utilities.sql_database import SQLDatabase
+from oplangchain.utilities.wikipedia import WikipediaAPIWrapper
+from oplangchain.utilities.wolfram_alpha import WolframAlphaAPIWrapper
+from oplangchain.vectorstores import FAISS, ElasticVectorSearch
 
 try:
     __version__ = metadata.version(__package__)

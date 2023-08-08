@@ -6,11 +6,11 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple, Union, cast
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import Callbacks
-from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
-from langchain.chains.llm import LLMChain
-from langchain.docstore.document import Document
-from langchain.output_parsers.regex import RegexParser
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.chains.combine_documents.base import BaseCombineDocumentsChain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.docstore.document import Document
+from oplangchain.output_parsers.regex import RegexParser
 
 
 class MapRerankDocumentsChain(BaseCombineDocumentsChain):
@@ -23,10 +23,10 @@ class MapRerankDocumentsChain(BaseCombineDocumentsChain):
     Example:
         .. code-block:: python
 
-            from langchain.chains import StuffDocumentsChain, LLMChain
-            from langchain.prompts import PromptTemplate
-            from langchain.llms import OpenAI
-            from langchain.output_parsers.regex import RegexParser
+            from oplangchain.chains import StuffDocumentsChain, LLMChain
+            from oplangchain.prompts import PromptTemplate
+            from oplangchain.llms import OpenAI
+            from oplangchain.output_parsers.regex import RegexParser
 
             document_variable_name = "context"
             llm = OpenAI()

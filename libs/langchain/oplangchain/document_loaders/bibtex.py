@@ -3,9 +3,9 @@ import re
 from pathlib import Path
 from typing import Any, Iterator, List, Mapping, Optional
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.utilities.bibtex import BibtexparserWrapper
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.utilities.bibtex import BibtexparserWrapper
 
 logger = logging.getLogger(__name__)
 

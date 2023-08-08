@@ -5,15 +5,15 @@ import logging
 from copy import deepcopy
 from typing import TYPE_CHECKING, Any, Dict, List, Tuple, Union
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.callbacks.utils import (
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.callbacks.utils import (
     BaseMetadataCallbackHandler,
     flatten_dict,
     import_pandas,
     import_spacy,
     import_textstat,
 )
-from langchain.schema import AgentAction, AgentFinish, LLMResult
+from oplangchain.schema import AgentAction, AgentFinish, LLMResult
 
 if TYPE_CHECKING:
     import flytekit

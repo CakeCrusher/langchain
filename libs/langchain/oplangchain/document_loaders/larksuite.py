@@ -3,8 +3,8 @@ import json
 import urllib.request
 from typing import Any, Iterator, List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class LarkSuiteDocLoader(BaseLoader):

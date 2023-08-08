@@ -1,7 +1,7 @@
 """Loads OpenOffice ODT files."""
 from typing import Any, List
 
-from langchain.document_loaders.unstructured import (
+from oplangchain.document_loaders.unstructured import (
     UnstructuredFileLoader,
     validate_unstructured_version,
 )
@@ -18,7 +18,7 @@ class UnstructuredODTLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredODTLoader
+    from oplangchain.document_loaders import UnstructuredODTLoader
 
     loader = UnstructuredODTLoader(
         "example.odt", mode="elements", strategy="fast",

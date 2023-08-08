@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 
 class BedrockEmbeddings(BaseModel, Embeddings):
@@ -25,7 +25,7 @@ class BedrockEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.bedrock_embeddings import BedrockEmbeddings
+            from oplangchain.bedrock_embeddings import BedrockEmbeddings
             
             region_name ="us-east-1"
             credentials_profile_name = "default"

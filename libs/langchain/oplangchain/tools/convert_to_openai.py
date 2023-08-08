@@ -1,6 +1,6 @@
 from typing import TypedDict
 
-from langchain.tools import BaseTool, StructuredTool
+from oplangchain.tools import BaseTool, StructuredTool
 
 
 class FunctionDescription(TypedDict):

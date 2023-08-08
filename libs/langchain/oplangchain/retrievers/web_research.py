@@ -4,22 +4,22 @@ from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from langchain.chains import LLMChain
-from langchain.chains.prompt_selector import ConditionalPromptSelector
-from langchain.document_loaders import AsyncHtmlLoader
-from langchain.document_transformers import Html2TextTransformer
-from langchain.llms import LlamaCpp
-from langchain.llms.base import BaseLLM
-from langchain.output_parsers.pydantic import PydanticOutputParser
-from langchain.prompts import BasePromptTemplate, PromptTemplate
-from langchain.schema import BaseRetriever, Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.utilities import GoogleSearchAPIWrapper
-from langchain.vectorstores.base import VectorStore
+from oplangchain.chains import LLMChain
+from oplangchain.chains.prompt_selector import ConditionalPromptSelector
+from oplangchain.document_loaders import AsyncHtmlLoader
+from oplangchain.document_transformers import Html2TextTransformer
+from oplangchain.llms import LlamaCpp
+from oplangchain.llms.base import BaseLLM
+from oplangchain.output_parsers.pydantic import PydanticOutputParser
+from oplangchain.prompts import BasePromptTemplate, PromptTemplate
+from oplangchain.schema import BaseRetriever, Document
+from oplangchain.text_splitter import RecursiveCharacterTextSplitter
+from oplangchain.utilities import GoogleSearchAPIWrapper
+from oplangchain.vectorstores.base import VectorStore
 
 logger = logging.getLogger(__name__)
 

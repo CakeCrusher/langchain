@@ -5,13 +5,13 @@ from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForChainRun
-from langchain.chains.base import Chain
-from langchain.chains.elasticsearch_database.prompts import ANSWER_PROMPT, DSL_PROMPT
-from langchain.chains.llm import LLMChain
-from langchain.output_parsers.json import SimpleJsonOutputParser
-from langchain.schema import BaseLLMOutputParser, BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.callbacks.manager import CallbackManagerForChainRun
+from oplangchain.chains.base import Chain
+from oplangchain.chains.elasticsearch_database.prompts import ANSWER_PROMPT, DSL_PROMPT
+from oplangchain.chains.llm import LLMChain
+from oplangchain.output_parsers.json import SimpleJsonOutputParser
+from oplangchain.schema import BaseLLMOutputParser, BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
 
 if TYPE_CHECKING:
     from elasticsearch import Elasticsearch
@@ -25,7 +25,7 @@ class ElasticsearchDatabaseChain(Chain):
     Example:
         .. code-block:: python
 
-            from langchain import ElasticsearchDatabaseChain, OpenAI
+            from oplangchain import ElasticsearchDatabaseChain, OpenAI
             from elasticsearch import Elasticsearch
 
             database = Elasticsearch("http://localhost:9200")

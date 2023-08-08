@@ -2,7 +2,7 @@ from typing import Any, Dict, List
 
 from pydantic import BaseModel, root_validator
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 
 class GPT4AllEmbeddings(BaseModel, Embeddings):
@@ -13,7 +13,7 @@ class GPT4AllEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import GPT4AllEmbeddings
+            from oplangchain.embeddings import GPT4AllEmbeddings
 
             embeddings = GPT4AllEmbeddings()
     """

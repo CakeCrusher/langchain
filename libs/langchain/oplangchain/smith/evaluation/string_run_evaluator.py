@@ -7,17 +7,17 @@ from typing import Any, Dict, List, Optional
 from langsmith import EvaluationResult, RunEvaluator
 from langsmith.schemas import DataType, Example, Run
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
 )
-from langchain.chains.base import Chain
-from langchain.evaluation.schema import StringEvaluator
-from langchain.load.dump import dumpd
-from langchain.load.load import load
-from langchain.load.serializable import Serializable
-from langchain.schema import RUN_KEY, messages_from_dict
-from langchain.schema.messages import BaseMessage, get_buffer_string
+from oplangchain.chains.base import Chain
+from oplangchain.evaluation.schema import StringEvaluator
+from oplangchain.load.dump import dumpd
+from oplangchain.load.load import load
+from oplangchain.load.serializable import Serializable
+from oplangchain.schema import RUN_KEY, messages_from_dict
+from oplangchain.schema.messages import BaseMessage, get_buffer_string
 
 
 def _get_messages_from_run_dict(messages: List[dict]) -> List[BaseMessage]:

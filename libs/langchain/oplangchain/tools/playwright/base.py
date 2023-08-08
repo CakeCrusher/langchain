@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Optional, Tuple, Type
 
 from pydantic import root_validator
 
-from langchain.tools.base import BaseTool
+from oplangchain.tools.base import BaseTool
 
 if TYPE_CHECKING:
     from playwright.async_api import Browser as AsyncBrowser

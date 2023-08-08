@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, List, Optional
 
-from langchain.utils import get_from_env
+from oplangchain.utils import get_from_env
 
 if TYPE_CHECKING:
     from elasticsearch import Elasticsearch
     from elasticsearch.client import MlClient
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 
 class ElasticsearchEmbeddings(Embeddings):
@@ -68,7 +68,7 @@ class ElasticsearchEmbeddings(Embeddings):
         Example:
             .. code-block:: python
 
-                from langchain.embeddings import ElasticsearchEmbeddings
+                from oplangchain.embeddings import ElasticsearchEmbeddings
 
                 # Define the model ID and input field name (if different from default)
                 model_id = "your_model_id"
@@ -141,7 +141,7 @@ class ElasticsearchEmbeddings(Embeddings):
 
                 from elasticsearch import Elasticsearch
 
-                from langchain.embeddings import ElasticsearchEmbeddings
+                from oplangchain.embeddings import ElasticsearchEmbeddings
 
                 # Define the model ID and input field name (if different from default)
                 model_id = "your_model_id"

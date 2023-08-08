@@ -5,9 +5,9 @@ from typing import Any, Iterable, List, Optional
 
 import numpy as np
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.embeddings.base import Embeddings
-from langchain.schema import BaseRetriever, Document
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import BaseRetriever, Document
 
 
 def create_index(contexts: List[str], embeddings: Embeddings) -> np.ndarray:

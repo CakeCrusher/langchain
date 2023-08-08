@@ -6,7 +6,7 @@ from typing import Any, Dict, Optional
 
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 
 class GooglePlacesAPIWrapper(BaseModel):
@@ -25,7 +25,7 @@ class GooglePlacesAPIWrapper(BaseModel):
         .. code-block:: python
 
 
-            from langchain import GooglePlacesAPIWrapper
+            from oplangchain import GooglePlacesAPIWrapper
             gplaceapi = GooglePlacesAPIWrapper()
     """
 

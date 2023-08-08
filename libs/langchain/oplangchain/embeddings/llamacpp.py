@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Extra, Field, root_validator
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 
 class LlamaCppEmbeddings(BaseModel, Embeddings):
@@ -15,7 +15,7 @@ class LlamaCppEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import LlamaCppEmbeddings
+            from oplangchain.embeddings import LlamaCppEmbeddings
             llama = LlamaCppEmbeddings(model_path="/path/to/model.bin")
     """
 

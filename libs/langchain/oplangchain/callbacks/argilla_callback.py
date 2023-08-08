@@ -2,8 +2,8 @@ import os
 import warnings
 from typing import Any, Dict, List, Optional, Union
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.schema import AgentAction, AgentFinish, LLMResult
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.schema import AgentAction, AgentFinish, LLMResult
 
 
 class ArgillaCallbackHandler(BaseCallbackHandler):
@@ -31,8 +31,8 @@ class ArgillaCallbackHandler(BaseCallbackHandler):
         FileNotFoundError: if the `FeedbackDataset` retrieval from Argilla fails.
 
     Examples:
-        >>> from langchain.llms import OpenAI
-        >>> from langchain.callbacks import ArgillaCallbackHandler
+        >>> from oplangchain.llms import OpenAI
+        >>> from oplangchain.callbacks import ArgillaCallbackHandler
         >>> argilla_callback = ArgillaCallbackHandler(
         ...     dataset_name="my-dataset",
         ...     workspace_name="my-workspace",

@@ -5,7 +5,7 @@ and answers the question. The prompt is based on the paper from
 Zheng, et. al. https://arxiv.org/abs/2306.05685
 """
 # flake8: noqa
-from langchain.prompts import PromptTemplate
+from oplangchain.prompts import PromptTemplate
 
 template = """Act as a fair judge and rate the two responses to the question below.\
  Choose the response that best followed the instructions and answered the question.\

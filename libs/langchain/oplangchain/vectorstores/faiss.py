@@ -11,12 +11,12 @@ from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple
 
 import numpy as np
 
-from langchain.docstore.base import AddableMixin, Docstore
-from langchain.docstore.document import Document
-from langchain.docstore.in_memory import InMemoryDocstore
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import DistanceStrategy, maximal_marginal_relevance
+from oplangchain.docstore.base import AddableMixin, Docstore
+from oplangchain.docstore.document import Document
+from oplangchain.docstore.in_memory import InMemoryDocstore
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import DistanceStrategy, maximal_marginal_relevance
 
 
 def dependable_faiss_import(no_avx2: Optional[bool] = None) -> Any:
@@ -54,7 +54,7 @@ class FAISS(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain import FAISS
+            from oplangchain import FAISS
             faiss = FAISS(embedding_function, index, docstore, index_to_docstore_id)
 
     """
@@ -599,8 +599,8 @@ class FAISS(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import FAISS
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import FAISS
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 faiss = FAISS.from_texts(texts, embeddings)
         """
@@ -635,8 +635,8 @@ class FAISS(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import FAISS
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import FAISS
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 text_embeddings = embeddings.embed_documents(texts)
                 text_embedding_pairs = list(zip(texts, text_embeddings))

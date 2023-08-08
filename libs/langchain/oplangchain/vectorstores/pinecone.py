@@ -7,10 +7,10 @@ from typing import Any, Callable, Iterable, List, Optional, Tuple
 
 import numpy as np
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import DistanceStrategy, maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import DistanceStrategy, maximal_marginal_relevance
 
 logger = logging.getLogger(__name__)
 
@@ -23,8 +23,8 @@ class Pinecone(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.vectorstores import Pinecone
-            from langchain.embeddings.openai import OpenAIEmbeddings
+            from oplangchain.vectorstores import Pinecone
+            from oplangchain.embeddings.openai import OpenAIEmbeddings
             import pinecone
 
             # The environment should be the one specified next to the API key
@@ -295,8 +295,8 @@ class Pinecone(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Pinecone
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import Pinecone
+                from oplangchain.embeddings import OpenAIEmbeddings
                 import pinecone
 
                 # The environment should be the one specified next to the API key

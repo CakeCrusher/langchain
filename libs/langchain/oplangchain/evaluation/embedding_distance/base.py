@@ -5,17 +5,17 @@ from typing import Any, Dict, List, Optional
 import numpy as np
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
     Callbacks,
 )
-from langchain.chains.base import Chain
-from langchain.embeddings.base import Embeddings
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.evaluation.schema import PairwiseStringEvaluator, StringEvaluator
-from langchain.schema import RUN_KEY
-from langchain.utils.math import cosine_similarity
+from oplangchain.chains.base import Chain
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.embeddings.openai import OpenAIEmbeddings
+from oplangchain.evaluation.schema import PairwiseStringEvaluator, StringEvaluator
+from oplangchain.schema import RUN_KEY
+from oplangchain.utils.math import cosine_similarity
 
 
 class EmbeddingDistance(str, Enum):

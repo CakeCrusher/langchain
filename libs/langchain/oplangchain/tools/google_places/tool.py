@@ -4,9 +4,9 @@ from typing import Optional, Type
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utilities.google_places_api import GooglePlacesAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.google_places_api import GooglePlacesAPIWrapper
 
 
 class GooglePlacesSchema(BaseModel):

@@ -1,5 +1,5 @@
 # flake8: noqa
-from langchain import PromptTemplate
+from oplangchain import PromptTemplate
 
 SONG_DATA_SOURCE = """\
 ```json

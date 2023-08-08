@@ -2,9 +2,9 @@
 from typing import Any, Iterator, Mapping, Optional, Sequence, Union
 from urllib.parse import urlparse
 
-from langchain.document_loaders.base import BaseBlobParser
-from langchain.document_loaders.blob_loaders import Blob
-from langchain.schema import Document
+from oplangchain.document_loaders.base import BaseBlobParser
+from oplangchain.document_loaders.blob_loaders import Blob
+from oplangchain.schema import Document
 
 
 class PyPDFParser(BaseBlobParser):

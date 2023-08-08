@@ -7,7 +7,7 @@ from pydantic.class_validators import root_validator
 from pydantic.main import BaseModel
 from typing_extensions import Literal
 
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 
 class GoogleSerperAPIWrapper(BaseModel):
@@ -22,7 +22,7 @@ class GoogleSerperAPIWrapper(BaseModel):
     Example:
         .. code-block:: python
 
-            from langchain import GoogleSerperAPIWrapper
+            from oplangchain import GoogleSerperAPIWrapper
             google_serper = GoogleSerperAPIWrapper()
     """
 

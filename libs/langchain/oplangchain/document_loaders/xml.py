@@ -1,7 +1,7 @@
 """Loads Microsoft Excel files."""
 from typing import Any, List
 
-from langchain.document_loaders.unstructured import (
+from oplangchain.document_loaders.unstructured import (
     UnstructuredFileLoader,
     validate_unstructured_version,
 )
@@ -18,7 +18,7 @@ class UnstructuredXMLLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredXMLLoader
+    from oplangchain.document_loaders import UnstructuredXMLLoader
 
     loader = UnstructuredXMLLoader(
         "example.xml", mode="elements", strategy="fast",

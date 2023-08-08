@@ -17,11 +17,11 @@ from typing import (
 
 import numpy as np
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utils import xor_args
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import xor_args
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 if TYPE_CHECKING:
     import chromadb
@@ -57,8 +57,8 @@ class Chroma(VectorStore):
     Example:
         .. code-block:: python
 
-                from langchain.vectorstores import Chroma
-                from langchain.embeddings.openai import OpenAIEmbeddings
+                from oplangchain.vectorstores import Chroma
+                from oplangchain.embeddings.openai import OpenAIEmbeddings
 
                 embeddings = OpenAIEmbeddings()
                 vectorstore = Chroma("langchain_store", embeddings)

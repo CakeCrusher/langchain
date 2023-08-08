@@ -4,59 +4,59 @@ import warnings
 from typing import Any, Dict, List, Optional, Callable, Tuple
 from mypy_extensions import Arg, KwArg
 
-from langchain.agents.tools import Tool
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import Callbacks
-from langchain.chains.api import news_docs, open_meteo_docs, podcast_docs, tmdb_docs
-from langchain.chains.api.base import APIChain
-from langchain.chains.llm_math.base import LLMMathChain
-from langchain.utilities.requests import TextRequestsWrapper
-from langchain.tools.arxiv.tool import ArxivQueryRun
-from langchain.tools.golden_query.tool import GoldenQueryRun
-from langchain.tools.pubmed.tool import PubmedQueryRun
-from langchain.tools.base import BaseTool
-from langchain.tools.bing_search.tool import BingSearchRun
-from langchain.tools.ddg_search.tool import DuckDuckGoSearchRun
-from langchain.tools.google_search.tool import GoogleSearchResults, GoogleSearchRun
-from langchain.tools.metaphor_search.tool import MetaphorSearchResults
-from langchain.tools.google_serper.tool import GoogleSerperResults, GoogleSerperRun
-from langchain.tools.graphql.tool import BaseGraphQLTool
-from langchain.tools.human.tool import HumanInputRun
-from langchain.tools.python.tool import PythonREPLTool
-from langchain.tools.requests.tool import (
+from oplangchain.agents.tools import Tool
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.chains.api import news_docs, open_meteo_docs, podcast_docs, tmdb_docs
+from oplangchain.chains.api.base import APIChain
+from oplangchain.chains.llm_math.base import LLMMathChain
+from oplangchain.utilities.requests import TextRequestsWrapper
+from oplangchain.tools.arxiv.tool import ArxivQueryRun
+from oplangchain.tools.golden_query.tool import GoldenQueryRun
+from oplangchain.tools.pubmed.tool import PubmedQueryRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.tools.bing_search.tool import BingSearchRun
+from oplangchain.tools.ddg_search.tool import DuckDuckGoSearchRun
+from oplangchain.tools.google_search.tool import GoogleSearchResults, GoogleSearchRun
+from oplangchain.tools.metaphor_search.tool import MetaphorSearchResults
+from oplangchain.tools.google_serper.tool import GoogleSerperResults, GoogleSerperRun
+from oplangchain.tools.graphql.tool import BaseGraphQLTool
+from oplangchain.tools.human.tool import HumanInputRun
+from oplangchain.tools.python.tool import PythonREPLTool
+from oplangchain.tools.requests.tool import (
     RequestsDeleteTool,
     RequestsGetTool,
     RequestsPatchTool,
     RequestsPostTool,
     RequestsPutTool,
 )
-from langchain.tools.scenexplain.tool import SceneXplainTool
-from langchain.tools.searx_search.tool import SearxSearchResults, SearxSearchRun
-from langchain.tools.shell.tool import ShellTool
-from langchain.tools.sleep.tool import SleepTool
-from langchain.tools.wikipedia.tool import WikipediaQueryRun
-from langchain.tools.wolfram_alpha.tool import WolframAlphaQueryRun
-from langchain.tools.openweathermap.tool import OpenWeatherMapQueryRun
-from langchain.tools.dataforseo_api_search import DataForSeoAPISearchRun
-from langchain.tools.dataforseo_api_search import DataForSeoAPISearchResults
-from langchain.utilities import ArxivAPIWrapper
-from langchain.utilities import GoldenQueryAPIWrapper
-from langchain.utilities import PubMedAPIWrapper
-from langchain.utilities.bing_search import BingSearchAPIWrapper
-from langchain.utilities.duckduckgo_search import DuckDuckGoSearchAPIWrapper
-from langchain.utilities.google_search import GoogleSearchAPIWrapper
-from langchain.utilities.google_serper import GoogleSerperAPIWrapper
-from langchain.utilities.metaphor_search import MetaphorSearchAPIWrapper
-from langchain.utilities.awslambda import LambdaWrapper
-from langchain.utilities.graphql import GraphQLAPIWrapper
-from langchain.utilities.searx_search import SearxSearchWrapper
-from langchain.utilities.serpapi import SerpAPIWrapper
-from langchain.utilities.twilio import TwilioAPIWrapper
-from langchain.utilities.wikipedia import WikipediaAPIWrapper
-from langchain.utilities.wolfram_alpha import WolframAlphaAPIWrapper
-from langchain.utilities.openweathermap import OpenWeatherMapAPIWrapper
-from langchain.utilities.dataforseo_api_search import DataForSeoAPIWrapper
+from oplangchain.tools.scenexplain.tool import SceneXplainTool
+from oplangchain.tools.searx_search.tool import SearxSearchResults, SearxSearchRun
+from oplangchain.tools.shell.tool import ShellTool
+from oplangchain.tools.sleep.tool import SleepTool
+from oplangchain.tools.wikipedia.tool import WikipediaQueryRun
+from oplangchain.tools.wolfram_alpha.tool import WolframAlphaQueryRun
+from oplangchain.tools.openweathermap.tool import OpenWeatherMapQueryRun
+from oplangchain.tools.dataforseo_api_search import DataForSeoAPISearchRun
+from oplangchain.tools.dataforseo_api_search import DataForSeoAPISearchResults
+from oplangchain.utilities import ArxivAPIWrapper
+from oplangchain.utilities import GoldenQueryAPIWrapper
+from oplangchain.utilities import PubMedAPIWrapper
+from oplangchain.utilities.bing_search import BingSearchAPIWrapper
+from oplangchain.utilities.duckduckgo_search import DuckDuckGoSearchAPIWrapper
+from oplangchain.utilities.google_search import GoogleSearchAPIWrapper
+from oplangchain.utilities.google_serper import GoogleSerperAPIWrapper
+from oplangchain.utilities.metaphor_search import MetaphorSearchAPIWrapper
+from oplangchain.utilities.awslambda import LambdaWrapper
+from oplangchain.utilities.graphql import GraphQLAPIWrapper
+from oplangchain.utilities.searx_search import SearxSearchWrapper
+from oplangchain.utilities.serpapi import SerpAPIWrapper
+from oplangchain.utilities.twilio import TwilioAPIWrapper
+from oplangchain.utilities.wikipedia import WikipediaAPIWrapper
+from oplangchain.utilities.wolfram_alpha import WolframAlphaAPIWrapper
+from oplangchain.utilities.openweathermap import OpenWeatherMapAPIWrapper
+from oplangchain.utilities.dataforseo_api_search import DataForSeoAPIWrapper
 
 
 def _get_python_repl() -> BaseTool:

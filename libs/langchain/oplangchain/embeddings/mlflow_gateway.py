@@ -4,7 +4,7 @@ from typing import Any, Iterator, List, Optional
 
 from pydantic import BaseModel
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 
 def _chunk(texts: List[str], size: int) -> Iterator[List[str]]:
@@ -22,7 +22,7 @@ class MlflowAIGatewayEmbeddings(Embeddings, BaseModel):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import MlflowAIGatewayEmbeddings
+            from oplangchain.embeddings import MlflowAIGatewayEmbeddings
 
             embeddings = MlflowAIGatewayEmbeddings(
                 gateway_uri="<your-mlflow-ai-gateway-uri>",

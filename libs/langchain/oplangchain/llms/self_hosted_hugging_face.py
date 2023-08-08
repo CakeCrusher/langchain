@@ -4,9 +4,9 @@ from typing import Any, Callable, List, Mapping, Optional
 
 from pydantic import Extra
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.self_hosted import SelfHostedPipeline
-from langchain.llms.utils import enforce_stop_tokens
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.self_hosted import SelfHostedPipeline
+from oplangchain.llms.utils import enforce_stop_tokens
 
 DEFAULT_MODEL_ID = "gpt2"
 DEFAULT_TASK = "text-generation"
@@ -125,7 +125,7 @@ class SelfHostedHuggingFaceLLM(SelfHostedPipeline):
     Example using from_model_id:
         .. code-block:: python
 
-            from langchain.llms import SelfHostedHuggingFaceLLM
+            from oplangchain.llms import SelfHostedHuggingFaceLLM
             import runhouse as rh
             gpu = rh.cluster(name="rh-a10x", instance_type="A100:1")
             hf = SelfHostedHuggingFaceLLM(
@@ -135,7 +135,7 @@ class SelfHostedHuggingFaceLLM(SelfHostedPipeline):
     Example passing fn that generates a pipeline (bc the pipeline is not serializable):
         .. code-block:: python
 
-            from langchain.llms import SelfHostedHuggingFaceLLM
+            from oplangchain.llms import SelfHostedHuggingFaceLLM
             from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
             import runhouse as rh
 

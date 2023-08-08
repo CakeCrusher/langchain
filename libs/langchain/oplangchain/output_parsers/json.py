@@ -5,7 +5,7 @@ import re
 from json import JSONDecodeError
 from typing import Any, List
 
-from langchain.schema import BaseOutputParser, OutputParserException
+from oplangchain.schema import BaseOutputParser, OutputParserException
 
 
 def parse_json_markdown(json_string: str) -> dict:

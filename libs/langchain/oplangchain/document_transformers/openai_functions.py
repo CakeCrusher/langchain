@@ -3,11 +3,11 @@ from typing import Any, Dict, Optional, Sequence, Type, Union
 
 from pydantic import BaseModel
 
-from langchain.chains.llm import LLMChain
-from langchain.chains.openai_functions import create_tagging_chain
-from langchain.prompts import ChatPromptTemplate
-from langchain.schema import BaseDocumentTransformer, Document
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.openai_functions import create_tagging_chain
+from oplangchain.prompts import ChatPromptTemplate
+from oplangchain.schema import BaseDocumentTransformer, Document
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class OpenAIMetadataTagger(BaseDocumentTransformer, BaseModel):
@@ -16,9 +16,9 @@ class OpenAIMetadataTagger(BaseDocumentTransformer, BaseModel):
     Example:
         .. code-block:: python
 
-                from langchain.chat_models import ChatOpenAI
-                from langchain.document_transformers import OpenAIMetadataTagger
-                from langchain.schema import Document
+                from oplangchain.chat_models import ChatOpenAI
+                from oplangchain.document_transformers import OpenAIMetadataTagger
+                from oplangchain.schema import Document
 
                 schema = {
                     "properties": {
@@ -99,9 +99,9 @@ def create_metadata_tagger(
     Example:
         .. code-block:: python
 
-                from langchain.chat_models import ChatOpenAI
-                from langchain.document_transformers import create_metadata_tagger
-                from langchain.schema import Document
+                from oplangchain.chat_models import ChatOpenAI
+                from oplangchain.document_transformers import create_metadata_tagger
+                from oplangchain.schema import Document
 
                 schema = {
                     "properties": {

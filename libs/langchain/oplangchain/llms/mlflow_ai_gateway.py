@@ -4,8 +4,8 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import BaseModel, Extra
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
 
 
 class Params(BaseModel, extra=Extra.allow):
@@ -28,7 +28,7 @@ class MlflowAIGateway(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import MlflowAIGateway
+            from oplangchain.llms import MlflowAIGateway
 
             completions = MlflowAIGateway(
                 gateway_uri="<your-mlflow-ai-gateway-uri>",

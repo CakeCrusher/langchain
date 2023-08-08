@@ -4,9 +4,9 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Iterator, List, Optional, Sequence
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.utilities.openweathermap import OpenWeatherMapAPIWrapper
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.utilities.openweathermap import OpenWeatherMapAPIWrapper
 
 
 class WeatherDataLoader(BaseLoader):

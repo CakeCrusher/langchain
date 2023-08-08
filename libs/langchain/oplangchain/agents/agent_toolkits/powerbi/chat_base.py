@@ -1,19 +1,19 @@
 """Power BI agent."""
 from typing import Any, Dict, List, Optional
 
-from langchain.agents import AgentExecutor
-from langchain.agents.agent import AgentOutputParser
-from langchain.agents.agent_toolkits.powerbi.prompt import (
+from oplangchain.agents import AgentExecutor
+from oplangchain.agents.agent import AgentOutputParser
+from oplangchain.agents.agent_toolkits.powerbi.prompt import (
     POWERBI_CHAT_PREFIX,
     POWERBI_CHAT_SUFFIX,
 )
-from langchain.agents.agent_toolkits.powerbi.toolkit import PowerBIToolkit
-from langchain.agents.conversational_chat.base import ConversationalChatAgent
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chat_models.base import BaseChatModel
-from langchain.memory import ConversationBufferMemory
-from langchain.memory.chat_memory import BaseChatMemory
-from langchain.utilities.powerbi import PowerBIDataset
+from oplangchain.agents.agent_toolkits.powerbi.toolkit import PowerBIToolkit
+from oplangchain.agents.conversational_chat.base import ConversationalChatAgent
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.memory import ConversationBufferMemory
+from oplangchain.memory.chat_memory import BaseChatMemory
+from oplangchain.utilities.powerbi import PowerBIDataset
 
 
 def create_pbi_chat_agent(

@@ -4,11 +4,11 @@ import logging
 from pathlib import Path
 from typing import Any, List, Optional, Type, Union
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.html_bs import BSHTMLLoader
-from langchain.document_loaders.text import TextLoader
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.html_bs import BSHTMLLoader
+from oplangchain.document_loaders.text import TextLoader
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
 
 FILE_LOADER_TYPE = Union[
     Type[UnstructuredFileLoader], Type[TextLoader], Type[BSHTMLLoader]

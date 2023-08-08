@@ -2,9 +2,9 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import BaseLLM
-from langchain.schema.output import Generation, LLMResult
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import BaseLLM
+from oplangchain.schema.output import Generation, LLMResult
 
 
 class VLLM(BaseLLM):

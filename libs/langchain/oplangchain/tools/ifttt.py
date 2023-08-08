@@ -36,8 +36,8 @@ from typing import Optional
 
 import requests
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
 
 
 class IFTTTWebhook(BaseTool):

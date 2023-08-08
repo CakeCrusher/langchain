@@ -4,14 +4,14 @@ from typing import Any, AsyncIterator, Callable, Dict, Iterator, List, Mapping, 
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import LLM
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.output import GenerationChunk
-from langchain.utils import check_package_version, get_from_dict_or_env
+from oplangchain.llms.base import LLM
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.output import GenerationChunk
+from oplangchain.utils import check_package_version, get_from_dict_or_env
 
 
 class _AnthropicCommon(BaseLanguageModel):
@@ -128,7 +128,7 @@ class Anthropic(LLM, _AnthropicCommon):
         .. code-block:: python
 
             import anthropic
-            from langchain.llms import Anthropic
+            from oplangchain.llms import Anthropic
             model = Anthropic(model="<model_name>", anthropic_api_key="my-api-key")
 
             # Simplest invocation, automatically wrapped with HUMAN_PROMPT
@@ -147,7 +147,7 @@ class Anthropic(LLM, _AnthropicCommon):
         """Raise warning that this class is deprecated."""
         warnings.warn(
             "This Anthropic LLM is deprecated. "
-            "Please use `from langchain.chat_models import ChatAnthropic` instead"
+            "Please use `from oplangchain.chat_models import ChatAnthropic` instead"
         )
         return values
 

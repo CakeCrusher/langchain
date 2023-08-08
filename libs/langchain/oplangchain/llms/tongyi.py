@@ -13,10 +13,10 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.schema import Generation, LLMResult
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.schema import Generation, LLMResult
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -94,7 +94,7 @@ class Tongyi(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import Tongyi
+            from oplangchain.llms import Tongyi
             Tongyi = tongyi()
     """
 

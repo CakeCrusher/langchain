@@ -3,8 +3,8 @@ from __future__ import annotations
 
 from typing import Any, List, Literal, Optional
 
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.docarray.base import (
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.docarray.base import (
     DocArrayIndex,
     _check_docarray_import,
 )

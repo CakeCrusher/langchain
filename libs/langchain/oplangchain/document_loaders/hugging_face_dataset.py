@@ -1,8 +1,8 @@
 """Loads HuggingFace datasets."""
 from typing import Iterator, List, Mapping, Optional, Sequence, Union
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class HuggingFaceDatasetLoader(BaseLoader):

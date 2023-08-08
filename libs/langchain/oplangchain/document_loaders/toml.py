@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 from typing import Iterator, List, Union
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class TomlLoader(BaseLoader):

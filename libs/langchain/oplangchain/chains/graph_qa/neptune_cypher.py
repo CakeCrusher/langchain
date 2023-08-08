@@ -5,16 +5,16 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Field
 
-from langchain.base_language import BaseLanguageModel
-from langchain.callbacks.manager import CallbackManagerForChainRun
-from langchain.chains.base import Chain
-from langchain.chains.graph_qa.prompts import (
+from oplangchain.base_language import BaseLanguageModel
+from oplangchain.callbacks.manager import CallbackManagerForChainRun
+from oplangchain.chains.base import Chain
+from oplangchain.chains.graph_qa.prompts import (
     CYPHER_QA_PROMPT,
     NEPTUNE_OPENCYPHER_GENERATION_PROMPT,
 )
-from langchain.chains.llm import LLMChain
-from langchain.graphs import NeptuneGraph
-from langchain.prompts.base import BasePromptTemplate
+from oplangchain.chains.llm import LLMChain
+from oplangchain.graphs import NeptuneGraph
+from oplangchain.prompts.base import BasePromptTemplate
 
 INTERMEDIATE_STEPS_KEY = "intermediate_steps"
 

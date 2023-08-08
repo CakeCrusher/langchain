@@ -1,5 +1,5 @@
 # flake8: noqa
-from langchain.prompts import PromptTemplate
+from oplangchain.prompts import PromptTemplate
 
 REFINE_PROMPT_TMPL = (
     "Your job is to produce a final summary\n"

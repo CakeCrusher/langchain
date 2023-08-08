@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import List
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.tools import BaseTool
-from langchain.tools.json.tool import JsonGetValueTool, JsonListKeysTool, JsonSpec
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.tools import BaseTool
+from oplangchain.tools.json.tool import JsonGetValueTool, JsonListKeysTool, JsonSpec
 
 
 class JsonToolkit(BaseToolkit):

@@ -4,11 +4,11 @@ from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from langchain.schema import BaseRetriever, Document
+from oplangchain.schema import BaseRetriever, Document
 
 if TYPE_CHECKING:
     from zep_python import MemorySearchResult

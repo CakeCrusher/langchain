@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Mapping, Optional
 import requests
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 DEFAULT_MODEL_ID = "sentence-transformers/clip-ViT-B-32"
 
@@ -21,7 +21,7 @@ class DeepInfraEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import DeepInfraEmbeddings
+            from oplangchain.embeddings import DeepInfraEmbeddings
             deepinfra_emb = DeepInfraEmbeddings(
                 model_id="sentence-transformers/clip-ViT-B-32",
                 deepinfra_api_token="my-api-key"

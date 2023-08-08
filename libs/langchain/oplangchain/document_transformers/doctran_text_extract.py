@@ -1,7 +1,7 @@
 from typing import Any, List, Optional, Sequence
 
-from langchain.schema import BaseDocumentTransformer, Document
-from langchain.utils import get_from_env
+from oplangchain.schema import BaseDocumentTransformer, Document
+from oplangchain.utils import get_from_env
 
 
 class DoctranPropertyExtractor(BaseDocumentTransformer):
@@ -15,7 +15,7 @@ class DoctranPropertyExtractor(BaseDocumentTransformer):
     Example:
         .. code-block:: python
 
-            from langchain.document_transformers import DoctranPropertyExtractor
+            from oplangchain.document_transformers import DoctranPropertyExtractor
 
             properties = [
                 {

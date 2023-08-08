@@ -1,12 +1,12 @@
 from typing import Any, List, Tuple, Union
 
-from langchain.agents.agent import AgentOutputParser, BaseSingleActionAgent
-from langchain.agents.xml.prompt import agent_instructions
-from langchain.callbacks.base import Callbacks
-from langchain.chains.llm import LLMChain
-from langchain.prompts.chat import AIMessagePromptTemplate, ChatPromptTemplate
-from langchain.schema import AgentAction, AgentFinish
-from langchain.tools.base import BaseTool
+from oplangchain.agents.agent import AgentOutputParser, BaseSingleActionAgent
+from oplangchain.agents.xml.prompt import agent_instructions
+from oplangchain.callbacks.base import Callbacks
+from oplangchain.chains.llm import LLMChain
+from oplangchain.prompts.chat import AIMessagePromptTemplate, ChatPromptTemplate
+from oplangchain.schema import AgentAction, AgentFinish
+from oplangchain.tools.base import BaseTool
 
 
 class XMLAgentOutputParser(AgentOutputParser):
@@ -41,8 +41,8 @@ class XMLAgent(BaseSingleActionAgent):
 
         .. code-block:: python
 
-            from langchain.agents import XMLAgent
-            from langchain
+            from oplangchain.agents import XMLAgent
+            from oplangchain
 
             tools = ...
             model =

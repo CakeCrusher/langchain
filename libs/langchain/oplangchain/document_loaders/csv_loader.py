@@ -1,9 +1,9 @@
 import csv
 from typing import Any, Dict, List, Optional
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.unstructured import (
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.unstructured import (
     UnstructuredFileLoader,
     validate_unstructured_version,
 )
@@ -88,7 +88,7 @@ class UnstructuredCSVLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders.csv_loader import UnstructuredCSVLoader
+    from oplangchain.document_loaders.csv_loader import UnstructuredCSVLoader
 
     loader = UnstructuredCSVLoader("stanley-cups.csv", mode="elements")
     docs = loader.load()

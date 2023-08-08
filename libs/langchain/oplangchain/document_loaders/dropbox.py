@@ -15,8 +15,8 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, root_validator
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class DropboxLoader(BaseLoader, BaseModel):
@@ -125,7 +125,7 @@ class DropboxLoader(BaseLoader, BaseModel):
             file_extension = os.path.splitext(file_path)[1].lower()
 
             if file_extension == ".pdf":
-                from langchain.document_loaders import UnstructuredPDFLoader
+                from oplangchain.document_loaders import UnstructuredPDFLoader
 
                 # Download it to a temporary file.
                 temp_dir = tempfile.TemporaryDirectory()

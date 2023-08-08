@@ -10,11 +10,11 @@ from uuid import UUID
 
 from langsmith import Client
 
-from langchain.callbacks.tracers.base import BaseTracer
-from langchain.callbacks.tracers.schemas import Run, TracerSession
-from langchain.env import get_runtime_environment
-from langchain.load.dump import dumpd
-from langchain.schema.messages import BaseMessage
+from oplangchain.callbacks.tracers.base import BaseTracer
+from oplangchain.callbacks.tracers.schemas import Run, TracerSession
+from oplangchain.env import get_runtime_environment
+from oplangchain.load.dump import dumpd
+from oplangchain.schema.messages import BaseMessage
 
 logger = logging.getLogger(__name__)
 _LOGGED = set()

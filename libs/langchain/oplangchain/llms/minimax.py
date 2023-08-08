@@ -12,11 +12,11 @@ from typing import (
 import requests
 from pydantic import BaseModel, Extra, Field, PrivateAttr, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import LLM
-from langchain.utils import get_from_dict_or_env
+from oplangchain.llms.base import LLM
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -59,7 +59,7 @@ class Minimax(LLM):
     or pass them as a named parameter to the constructor.
     Example:
      .. code-block:: python
-         from langchain.llms.minimax import Minimax
+         from oplangchain.llms.minimax import Minimax
          minimax = Minimax(model="<model_name>", minimax_api_key="my-api-key",
           minimax_group_id="my-group-id")
     """

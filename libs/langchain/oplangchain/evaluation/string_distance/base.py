@@ -5,14 +5,14 @@ from typing import Any, Callable, Dict, List, Optional
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
     Callbacks,
 )
-from langchain.chains.base import Chain
-from langchain.evaluation.schema import PairwiseStringEvaluator, StringEvaluator
-from langchain.schema import RUN_KEY
+from oplangchain.chains.base import Chain
+from oplangchain.evaluation.schema import PairwiseStringEvaluator, StringEvaluator
+from oplangchain.schema import RUN_KEY
 
 
 def _load_rapidfuzz() -> Any:
@@ -169,7 +169,7 @@ class StringDistanceEvalChain(StringEvaluator, _RapidFuzzChainMixin):
     Examples
     ----------
 
-    >>> from langchain.evaluation import StringDistanceEvalChain
+    >>> from oplangchain.evaluation import StringDistanceEvalChain
     >>> evaluator = StringDistanceEvalChain()
     >>> evaluator.evaluate_strings(
             prediction="Mindy is the CTO",
@@ -178,7 +178,7 @@ class StringDistanceEvalChain(StringEvaluator, _RapidFuzzChainMixin):
 
     Using the `load_evaluator` function:
 
-    >>> from langchain.evaluation import load_evaluator
+    >>> from oplangchain.evaluation import load_evaluator
     >>> evaluator = load_evaluator("string_distance")
     >>> evaluator.evaluate_strings(
             prediction="The answer is three",

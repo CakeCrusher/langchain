@@ -1,8 +1,8 @@
 """Agent for working with pandas objects."""
 from typing import Any, Dict, List, Optional, Tuple
 
-from langchain.agents.agent import AgentExecutor, BaseSingleActionAgent
-from langchain.agents.agent_toolkits.pandas.prompt import (
+from oplangchain.agents.agent import AgentExecutor, BaseSingleActionAgent
+from oplangchain.agents.agent_toolkits.pandas.prompt import (
     FUNCTIONS_WITH_DF,
     FUNCTIONS_WITH_MULTI_DF,
     MULTI_DF_PREFIX,
@@ -13,15 +13,15 @@ from langchain.agents.agent_toolkits.pandas.prompt import (
     SUFFIX_WITH_DF,
     SUFFIX_WITH_MULTI_DF,
 )
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
-from langchain.agents.types import AgentType
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.messages import SystemMessage
-from langchain.tools.python.tool import PythonAstREPLTool
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
+from oplangchain.agents.types import AgentType
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.messages import SystemMessage
+from oplangchain.tools.python.tool import PythonAstREPLTool
 
 
 def _get_multi_prompt(

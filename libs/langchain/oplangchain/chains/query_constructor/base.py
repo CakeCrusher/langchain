@@ -4,14 +4,14 @@ from __future__ import annotations
 import json
 from typing import Any, Callable, List, Optional, Sequence
 
-from langchain import FewShotPromptTemplate, LLMChain
-from langchain.chains.query_constructor.ir import (
+from oplangchain import FewShotPromptTemplate, LLMChain
+from oplangchain.chains.query_constructor.ir import (
     Comparator,
     Operator,
     StructuredQuery,
 )
-from langchain.chains.query_constructor.parser import get_parser
-from langchain.chains.query_constructor.prompt import (
+from oplangchain.chains.query_constructor.parser import get_parser
+from oplangchain.chains.query_constructor.prompt import (
     DEFAULT_EXAMPLES,
     DEFAULT_PREFIX,
     DEFAULT_SCHEMA,
@@ -20,10 +20,10 @@ from langchain.chains.query_constructor.prompt import (
     EXAMPLES_WITH_LIMIT,
     SCHEMA_WITH_LIMIT,
 )
-from langchain.chains.query_constructor.schema import AttributeInfo
-from langchain.output_parsers.json import parse_and_check_json_markdown
-from langchain.schema import BaseOutputParser, BasePromptTemplate, OutputParserException
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.chains.query_constructor.schema import AttributeInfo
+from oplangchain.output_parsers.json import parse_and_check_json_markdown
+from oplangchain.schema import BaseOutputParser, BasePromptTemplate, OutputParserException
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class StructuredQueryOutputParser(BaseOutputParser[StructuredQuery]):

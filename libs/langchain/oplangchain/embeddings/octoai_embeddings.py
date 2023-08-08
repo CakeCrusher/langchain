@@ -2,8 +2,8 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import BaseModel, Extra, Field, root_validator
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 DEFAULT_EMBED_INSTRUCTION = "Represent this input: "
 DEFAULT_QUERY_INSTRUCTION = "Represent the question for retrieving similar documents: "

@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Any, Dict, Iterator, List, Optional, Tuple
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class SnowflakeLoader(BaseLoader):

@@ -1,8 +1,8 @@
 from typing import List
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.schema import BaseRetriever, Document
-from langchain.utilities.pupmed import PubMedAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.schema import BaseRetriever, Document
+from oplangchain.utilities.pupmed import PubMedAPIWrapper
 
 
 class PubMedRetriever(BaseRetriever, PubMedAPIWrapper):

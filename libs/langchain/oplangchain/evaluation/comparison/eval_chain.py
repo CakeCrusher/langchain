@@ -5,18 +5,18 @@ from typing import Any, Dict, List, Optional, Union
 
 from pydantic import Extra, Field
 
-from langchain.callbacks.manager import Callbacks
-from langchain.chains.constitutional_ai.models import ConstitutionalPrinciple
-from langchain.chains.llm import LLMChain
-from langchain.evaluation.comparison.prompt import PROMPT, PROMPT_WITH_REFERENCE
-from langchain.evaluation.criteria.eval_chain import (
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.chains.constitutional_ai.models import ConstitutionalPrinciple
+from oplangchain.chains.llm import LLMChain
+from oplangchain.evaluation.comparison.prompt import PROMPT, PROMPT_WITH_REFERENCE
+from oplangchain.evaluation.criteria.eval_chain import (
     CRITERIA_TYPE,
     Criteria,
 )
-from langchain.evaluation.schema import LLMEvalChain, PairwiseStringEvaluator
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import RUN_KEY, BaseOutputParser
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.evaluation.schema import LLMEvalChain, PairwiseStringEvaluator
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema import RUN_KEY, BaseOutputParser
+from oplangchain.schema.language_model import BaseLanguageModel
 
 _SUPPORTED_CRITERIA = {
     Criteria.CONCISENESS: "Is the submission concise and to the point?",
@@ -147,8 +147,8 @@ class PairwiseStringEvalChain(PairwiseStringEvaluator, LLMEvalChain, LLMChain):
         output_parser (BaseOutputParser): The output parser for the chain.
 
     Example:
-        >>> from langchain.chat_models import ChatOpenAI
-        >>> from langchain.evaluation.comparison import PairwiseStringEvalChain
+        >>> from oplangchain.chat_models import ChatOpenAI
+        >>> from oplangchain.evaluation.comparison import PairwiseStringEvalChain
         >>> llm = ChatOpenAI(temperature=0)
         >>> chain = PairwiseStringEvalChain.from_llm(llm=llm)
         >>> result = chain.evaluate_string_pairs(

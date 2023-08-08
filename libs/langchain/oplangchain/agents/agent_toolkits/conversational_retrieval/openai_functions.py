@@ -1,17 +1,17 @@
 from typing import Any, List, Optional
 
-from langchain.agents.agent import AgentExecutor
-from langchain.agents.openai_functions_agent.agent_token_buffer_memory import (
+from oplangchain.agents.agent import AgentExecutor
+from oplangchain.agents.openai_functions_agent.agent_token_buffer_memory import (
     AgentTokenBufferMemory,
 )
-from langchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
-from langchain.chat_models.openai import ChatOpenAI
-from langchain.memory.token_buffer import ConversationTokenBufferMemory
-from langchain.prompts.chat import MessagesPlaceholder
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.schema.memory import BaseMemory
-from langchain.schema.messages import SystemMessage
-from langchain.tools.base import BaseTool
+from oplangchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
+from oplangchain.chat_models.openai import ChatOpenAI
+from oplangchain.memory.token_buffer import ConversationTokenBufferMemory
+from oplangchain.prompts.chat import MessagesPlaceholder
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.memory import BaseMemory
+from oplangchain.schema.messages import SystemMessage
+from oplangchain.tools.base import BaseTool
 
 
 def _get_default_system_message() -> SystemMessage:

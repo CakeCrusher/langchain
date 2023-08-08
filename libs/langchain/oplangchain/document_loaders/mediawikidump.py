@@ -3,8 +3,8 @@ import logging
 from pathlib import Path
 from typing import List, Optional, Sequence, Union
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 logger = logging.getLogger(__name__)
 
@@ -15,14 +15,14 @@ class MWDumpLoader(BaseLoader):
     Example:
         .. code-block:: python
 
-            from langchain.document_loaders import MWDumpLoader
+            from oplangchain.document_loaders import MWDumpLoader
 
             loader = MWDumpLoader(
                 file_path="myWiki.xml",
                 encoding="utf8"
             )
             docs = loader.load()
-            from langchain.text_splitter import RecursiveCharacterTextSplitter
+            from oplangchain.text_splitter import RecursiveCharacterTextSplitter
             text_splitter = RecursiveCharacterTextSplitter(
                 chunk_size=1000, chunk_overlap=0
             )

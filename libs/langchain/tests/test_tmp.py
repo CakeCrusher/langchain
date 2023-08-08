@@ -1,4 +1,4 @@
-from langchain.chains.openai_functions.openapi import get_openapi_chain
+from oplangchain.chains.openai_functions.openapi import get_openapi_chain
 
 
 def test_tmp() -> None:

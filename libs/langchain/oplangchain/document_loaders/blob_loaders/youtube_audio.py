@@ -1,7 +1,7 @@
 from typing import Iterable, List
 
-from langchain.document_loaders.blob_loaders import FileSystemBlobLoader
-from langchain.document_loaders.blob_loaders.schema import Blob, BlobLoader
+from oplangchain.document_loaders.blob_loaders import FileSystemBlobLoader
+from oplangchain.document_loaders.blob_loaders.schema import Blob, BlobLoader
 
 
 class YoutubeAudioLoader(BlobLoader):

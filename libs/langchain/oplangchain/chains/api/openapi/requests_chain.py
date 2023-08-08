@@ -4,11 +4,11 @@ import json
 import re
 from typing import Any
 
-from langchain.chains.api.openapi.prompts import REQUEST_TEMPLATE
-from langchain.chains.llm import LLMChain
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import BaseOutputParser
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.chains.api.openapi.prompts import REQUEST_TEMPLATE
+from oplangchain.chains.llm import LLMChain
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema import BaseOutputParser
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class APIRequesterOutputParser(BaseOutputParser):

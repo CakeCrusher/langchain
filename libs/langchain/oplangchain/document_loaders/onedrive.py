@@ -10,9 +10,9 @@ from typing import TYPE_CHECKING, Dict, List, Optional, Type, Union
 
 from pydantic import BaseModel, BaseSettings, Field, FilePath, SecretStr
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.onedrive_file import OneDriveFileLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.onedrive_file import OneDriveFileLoader
 
 if TYPE_CHECKING:
     from O365 import Account

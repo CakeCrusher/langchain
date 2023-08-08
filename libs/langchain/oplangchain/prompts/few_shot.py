@@ -5,15 +5,15 @@ from typing import Any, Dict, List, Optional, Union
 
 from pydantic import BaseModel, Extra, Field, root_validator
 
-from langchain.prompts.base import (
+from oplangchain.prompts.base import (
     DEFAULT_FORMATTER_MAPPING,
     StringPromptTemplate,
     check_valid_template,
 )
-from langchain.prompts.chat import BaseChatPromptTemplate, BaseMessagePromptTemplate
-from langchain.prompts.example_selector.base import BaseExampleSelector
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema.messages import BaseMessage, get_buffer_string
+from oplangchain.prompts.chat import BaseChatPromptTemplate, BaseMessagePromptTemplate
+from oplangchain.prompts.example_selector.base import BaseExampleSelector
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema.messages import BaseMessage, get_buffer_string
 
 
 class _FewShotPromptTemplateMixin(BaseModel):
@@ -190,7 +190,7 @@ class FewShotChatMessagePromptTemplate(
 
         .. code-block:: python
 
-            from langchain.prompts import (
+            from oplangchain.prompts import (
                 FewShotChatMessagePromptTemplate,
                 ChatPromptTemplate
             )
@@ -223,9 +223,9 @@ class FewShotChatMessagePromptTemplate(
 
         .. code-block:: python
 
-            from langchain.prompts import SemanticSimilarityExampleSelector
-            from langchain.embeddings import OpenAIEmbeddings
-            from langchain.vectorstores import Chroma
+            from oplangchain.prompts import SemanticSimilarityExampleSelector
+            from oplangchain.embeddings import OpenAIEmbeddings
+            from oplangchain.vectorstores import Chroma
 
             examples = [
                 {"input": "2+2", "output": "4"},
@@ -246,9 +246,9 @@ class FewShotChatMessagePromptTemplate(
                 vectorstore=vectorstore
             )
 
-            from langchain.schema import SystemMessage
-            from langchain.prompts import HumanMessagePromptTemplate
-            from langchain.prompts.few_shot import FewShotChatMessagePromptTemplate
+            from oplangchain.schema import SystemMessage
+            from oplangchain.prompts import HumanMessagePromptTemplate
+            from oplangchain.prompts.few_shot import FewShotChatMessagePromptTemplate
 
             few_shot_prompt = FewShotChatMessagePromptTemplate(
                 # Which variable(s) will be passed to the example selector.
@@ -274,7 +274,7 @@ class FewShotChatMessagePromptTemplate(
             print(final_prompt.format_messages(input="What's 3+3?"))
 
             # Use within an LLM
-            from langchain.chat_models import ChatAnthropic
+            from oplangchain.chat_models import ChatAnthropic
             chain = final_prompt | ChatAnthropic()
             chain.invoke({"input": "What's 3+3?"})
     """

@@ -3,10 +3,10 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class Clarifai(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import Clarifai
+            from oplangchain.llms import Clarifai
             clarifai_llm = Clarifai(pat=CLARIFAI_PAT, \
                 user_id=USER_ID, app_id=APP_ID, model_id=MODEL_ID)
     """

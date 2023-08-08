@@ -3,8 +3,8 @@ import itertools
 import re
 from typing import Any, Callable, Generator, Iterable, List, Optional
 
-from langchain.document_loaders.web_base import WebBaseLoader
-from langchain.schema import Document
+from oplangchain.document_loaders.web_base import WebBaseLoader
+from oplangchain.schema import Document
 
 
 def _default_parsing_function(content: Any) -> str:

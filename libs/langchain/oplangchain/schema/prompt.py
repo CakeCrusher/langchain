@@ -3,8 +3,8 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import List
 
-from langchain.load.serializable import Serializable
-from langchain.schema.messages import BaseMessage
+from oplangchain.load.serializable import Serializable
+from oplangchain.schema.messages import BaseMessage
 
 
 class PromptValue(Serializable, ABC):

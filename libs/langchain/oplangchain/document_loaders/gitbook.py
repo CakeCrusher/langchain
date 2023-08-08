@@ -2,8 +2,8 @@
 from typing import Any, List, Optional
 from urllib.parse import urljoin, urlparse
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.web_base import WebBaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.web_base import WebBaseLoader
 
 
 class GitbookLoader(WebBaseLoader):

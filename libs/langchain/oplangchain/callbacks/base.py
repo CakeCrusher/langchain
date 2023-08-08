@@ -5,10 +5,10 @@ from typing import TYPE_CHECKING, Any, Dict, List, Optional, Sequence, Union
 from uuid import UUID
 
 if TYPE_CHECKING:
-    from langchain.schema.agent import AgentAction, AgentFinish
-    from langchain.schema.document import Document
-    from langchain.schema.messages import BaseMessage
-    from langchain.schema.output import LLMResult
+    from oplangchain.schema.agent import AgentAction, AgentFinish
+    from oplangchain.schema.document import Document
+    from oplangchain.schema.messages import BaseMessage
+    from oplangchain.schema.output import LLMResult
 
 
 class RetrieverManagerMixin:
@@ -231,7 +231,7 @@ class BaseCallbackHandler(
     CallbackManagerMixin,
     RunManagerMixin,
 ):
-    """Base callback handler that can be used to handle callbacks from langchain."""
+    """Base callback handler that can be used to handle callbacks from oplangchain."""
 
     raise_error: bool = False
 
@@ -269,7 +269,7 @@ class BaseCallbackHandler(
 
 
 class AsyncCallbackHandler(BaseCallbackHandler):
-    """Async callback handler that can be used to handle callbacks from langchain."""
+    """Async callback handler that can be used to handle callbacks from oplangchain."""
 
     async def on_llm_start(
         self,
@@ -473,7 +473,7 @@ class AsyncCallbackHandler(BaseCallbackHandler):
 
 
 class BaseCallbackManager(CallbackManagerMixin):
-    """Base callback manager that handles callbacks from LangChain."""
+    """Base callback manager that handles callbacks from oplangchain."""
 
     def __init__(
         self,

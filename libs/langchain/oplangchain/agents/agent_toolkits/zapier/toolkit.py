@@ -1,10 +1,10 @@
 """Zapier Toolkit."""
 from typing import List
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.tools import BaseTool
-from langchain.tools.zapier.tool import ZapierNLARunAction
-from langchain.utilities.zapier import ZapierNLAWrapper
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.tools import BaseTool
+from oplangchain.tools.zapier.tool import ZapierNLARunAction
+from oplangchain.utilities.zapier import ZapierNLAWrapper
 
 
 class ZapierToolkit(BaseToolkit):

@@ -3,11 +3,11 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Generic, List, Optional, TypeVar, Union
 
-from langchain.load.serializable import Serializable
-from langchain.schema.messages import BaseMessage
-from langchain.schema.output import ChatGeneration, Generation
-from langchain.schema.prompt import PromptValue
-from langchain.schema.runnable import Runnable, RunnableConfig
+from oplangchain.load.serializable import Serializable
+from oplangchain.schema.messages import BaseMessage
+from oplangchain.schema.output import ChatGeneration, Generation
+from oplangchain.schema.prompt import PromptValue
+from oplangchain.schema.runnable import Runnable, RunnableConfig
 
 T = TypeVar("T")
 

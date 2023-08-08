@@ -4,10 +4,10 @@ from typing import Any, Dict, List, Optional, Sequence, Union
 
 from pydantic import Field
 
-from langchain.memory.chat_memory import BaseMemory
-from langchain.memory.utils import get_prompt_input_key
-from langchain.schema import Document
-from langchain.vectorstores.base import VectorStoreRetriever
+from oplangchain.memory.chat_memory import BaseMemory
+from oplangchain.memory.utils import get_prompt_input_key
+from oplangchain.schema import Document
+from oplangchain.vectorstores.base import VectorStoreRetriever
 
 
 class VectorStoreRetrieverMemory(BaseMemory):

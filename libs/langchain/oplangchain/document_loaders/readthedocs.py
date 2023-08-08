@@ -2,8 +2,8 @@
 from pathlib import Path
 from typing import Any, List, Optional, Tuple, Union
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class ReadTheDocsLoader(BaseLoader):

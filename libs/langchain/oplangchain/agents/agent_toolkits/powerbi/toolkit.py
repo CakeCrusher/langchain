@@ -3,29 +3,29 @@ from typing import List, Optional, Union
 
 from pydantic import Field
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.chat_models.base import BaseChatModel
-from langchain.prompts import PromptTemplate
-from langchain.prompts.chat import (
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.prompts import PromptTemplate
+from oplangchain.prompts.chat import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
     SystemMessagePromptTemplate,
 )
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools import BaseTool
-from langchain.tools.powerbi.prompt import (
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools import BaseTool
+from oplangchain.tools.powerbi.prompt import (
     QUESTION_TO_QUERY_BASE,
     SINGLE_QUESTION_TO_QUERY,
     USER_INPUT,
 )
-from langchain.tools.powerbi.tool import (
+from oplangchain.tools.powerbi.tool import (
     InfoPowerBITool,
     ListPowerBITool,
     QueryPowerBITool,
 )
-from langchain.utilities.powerbi import PowerBIDataset
+from oplangchain.utilities.powerbi import PowerBIDataset
 
 
 class PowerBIToolkit(BaseToolkit):

@@ -16,10 +16,10 @@ from typing import (
 
 import numpy as np
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 if TYPE_CHECKING:
     from pymongo.collection import Collection
@@ -42,8 +42,8 @@ class MongoDBAtlasVectorSearch(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.vectorstores import MongoDBAtlasVectorSearch
-            from langchain.embeddings.openai import OpenAIEmbeddings
+            from oplangchain.vectorstores import MongoDBAtlasVectorSearch
+            from oplangchain.embeddings.openai import OpenAIEmbeddings
             from pymongo import MongoClient
 
             mongo_client = MongoClient("<YOUR-CONNECTION-STRING>")
@@ -320,8 +320,8 @@ class MongoDBAtlasVectorSearch(VectorStore):
             .. code-block:: python
                 from pymongo import MongoClient
 
-                from langchain.vectorstores import MongoDBAtlasVectorSearch
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain.vectorstores import MongoDBAtlasVectorSearch
+                from oplangchain.embeddings import OpenAIEmbeddings
 
                 mongo_client = MongoClient("<YOUR-CONNECTION-STRING>")
                 collection = mongo_client["<db_name>"]["<collection_name>"]

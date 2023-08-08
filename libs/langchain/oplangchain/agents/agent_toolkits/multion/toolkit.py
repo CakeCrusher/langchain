@@ -3,10 +3,10 @@ from __future__ import annotations
 
 from typing import List
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.tools import BaseTool
-from langchain.tools.multion.create_session import MultionCreateSession
-from langchain.tools.multion.update_session import MultionUpdateSession
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.tools import BaseTool
+from oplangchain.tools.multion.create_session import MultionCreateSession
+from oplangchain.tools.multion.update_session import MultionUpdateSession
 
 
 class MultionToolkit(BaseToolkit):

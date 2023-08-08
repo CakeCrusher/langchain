@@ -2,7 +2,7 @@
 from pathlib import Path
 from typing import Callable, Iterable, Iterator, Optional, Sequence, TypeVar, Union
 
-from langchain.document_loaders.blob_loaders.schema import Blob, BlobLoader
+from oplangchain.document_loaders.blob_loaders.schema import Blob, BlobLoader
 
 T = TypeVar("T")
 
@@ -43,7 +43,7 @@ class FileSystemBlobLoader(BlobLoader):
 
     .. code-block:: python
 
-        from langchain.document_loaders.blob_loaders import FileSystemBlobLoader
+        from oplangchain.document_loaders.blob_loaders import FileSystemBlobLoader
         loader = FileSystemBlobLoader("/path/to/directory")
         for blob in loader.yield_blobs():
             print(blob)

@@ -3,11 +3,11 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import LLM
+from oplangchain.llms.base import LLM
 
 
 class CTransformers(LLM):
@@ -19,7 +19,7 @@ class CTransformers(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import CTransformers
+            from oplangchain.llms import CTransformers
 
             llm = CTransformers(model="/path/to/ggml-gpt-2.bin", model_type="gpt2")
     """

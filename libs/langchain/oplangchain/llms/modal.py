@@ -4,9 +4,9 @@ from typing import Any, Dict, List, Mapping, Optional
 import requests
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class Modal(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import Modal
+            from oplangchain.llms import Modal
             modal = Modal(endpoint_url="")
 
     """

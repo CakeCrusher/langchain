@@ -2,10 +2,10 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
+from oplangchain.utils import get_from_dict_or_env
 
 DEFAULT_REPO_ID = "gpt2"
 VALID_TASKS = ("text2text-generation", "text-generation", "summarization")
@@ -23,7 +23,7 @@ class HuggingFaceHub(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import HuggingFaceHub
+            from oplangchain.llms import HuggingFaceHub
             hf = HuggingFaceHub(repo_id="gpt2", huggingfacehub_api_token="my-api-key")
     """
 

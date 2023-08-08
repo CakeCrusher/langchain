@@ -6,12 +6,12 @@ from typing import Any, List, Optional, Union
 
 import yaml
 
-from langchain.agents.agent import BaseMultiActionAgent, BaseSingleActionAgent
-from langchain.agents.tools import Tool
-from langchain.agents.types import AGENT_TO_CLASS
-from langchain.chains.loading import load_chain, load_chain_from_config
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.utilities.loading import try_load_from_hub
+from oplangchain.agents.agent import BaseMultiActionAgent, BaseSingleActionAgent
+from oplangchain.agents.tools import Tool
+from oplangchain.agents.types import AGENT_TO_CLASS
+from oplangchain.chains.loading import load_chain, load_chain_from_config
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.utilities.loading import try_load_from_hub
 
 logger = logging.getLogger(__file__)
 
@@ -88,7 +88,7 @@ def load_agent_from_config(
 def load_agent(
     path: Union[str, Path], **kwargs: Any
 ) -> Union[BaseSingleActionAgent, BaseMultiActionAgent]:
-    """Unified method for loading an agent from LangChainHub or local fs.
+    """Unified method for loading an agent from oplangchainHub or local fs.
 
     Args:
         path: Path to the agent file.

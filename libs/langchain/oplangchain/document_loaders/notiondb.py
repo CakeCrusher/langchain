@@ -4,8 +4,8 @@ from typing import Any, Dict, List, Optional
 
 import requests
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 NOTION_BASE_URL = "https://api.notion.com/v1"
 DATABASE_URL = NOTION_BASE_URL + "/databases/{database_id}/query"

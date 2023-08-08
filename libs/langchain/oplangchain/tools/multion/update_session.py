@@ -2,8 +2,8 @@ from typing import TYPE_CHECKING, Optional, Type
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
 
 if TYPE_CHECKING:
     # This is for linting and IDE typehints

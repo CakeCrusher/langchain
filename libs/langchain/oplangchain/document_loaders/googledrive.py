@@ -15,8 +15,8 @@ from typing import Any, Dict, List, Optional, Sequence, Union
 
 from pydantic import BaseModel, root_validator, validator
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 

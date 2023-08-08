@@ -2,8 +2,8 @@ from typing import Any, Dict, List
 
 from pydantic import BaseModel, root_validator
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 
 class NLPCloudEmbeddings(BaseModel, Embeddings):
@@ -14,7 +14,7 @@ class NLPCloudEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import NLPCloudEmbeddings
+            from oplangchain.embeddings import NLPCloudEmbeddings
 
             embeddings = NLPCloudEmbeddings()
     """

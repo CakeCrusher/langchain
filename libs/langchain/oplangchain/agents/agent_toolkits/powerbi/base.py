@@ -1,18 +1,18 @@
 """Power BI agent."""
 from typing import Any, Dict, List, Optional
 
-from langchain.agents import AgentExecutor
-from langchain.agents.agent_toolkits.powerbi.prompt import (
+from oplangchain.agents import AgentExecutor
+from oplangchain.agents.agent_toolkits.powerbi.prompt import (
     POWERBI_PREFIX,
     POWERBI_SUFFIX,
 )
-from langchain.agents.agent_toolkits.powerbi.toolkit import PowerBIToolkit
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.utilities.powerbi import PowerBIDataset
+from oplangchain.agents.agent_toolkits.powerbi.toolkit import PowerBIToolkit
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.utilities.powerbi import PowerBIDataset
 
 
 def create_pbi_agent(

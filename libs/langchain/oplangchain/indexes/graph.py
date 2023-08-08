@@ -3,13 +3,13 @@ from typing import Optional, Type
 
 from pydantic import BaseModel
 
-from langchain import BasePromptTemplate
-from langchain.chains.llm import LLMChain
-from langchain.graphs.networkx_graph import NetworkxEntityGraph, parse_triples
-from langchain.indexes.prompts.knowledge_triplet_extraction import (
+from oplangchain import BasePromptTemplate
+from oplangchain.chains.llm import LLMChain
+from oplangchain.graphs.networkx_graph import NetworkxEntityGraph, parse_triples
+from oplangchain.indexes.prompts.knowledge_triplet_extraction import (
     KNOWLEDGE_TRIPLE_EXTRACTION_PROMPT,
 )
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class GraphIndexCreator(BaseModel):

@@ -5,9 +5,9 @@ from typing import Dict, Iterator, List, Literal, Optional, Union
 import requests
 from pydantic import BaseModel, root_validator, validator
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.utils import get_from_dict_or_env
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.utils import get_from_dict_or_env
 
 
 class BaseGitHubLoader(BaseLoader, BaseModel, ABC):

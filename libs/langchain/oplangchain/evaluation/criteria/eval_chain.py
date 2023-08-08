@@ -5,13 +5,13 @@ from typing import Any, Dict, List, Mapping, Optional, Union
 
 from pydantic import Extra, Field
 
-from langchain.callbacks.manager import Callbacks
-from langchain.chains.constitutional_ai.models import ConstitutionalPrinciple
-from langchain.chains.llm import LLMChain
-from langchain.evaluation.criteria.prompt import PROMPT, PROMPT_WITH_REFERENCES
-from langchain.evaluation.schema import LLMEvalChain, StringEvaluator
-from langchain.schema import RUN_KEY, BaseOutputParser, BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.callbacks.manager import Callbacks
+from oplangchain.chains.constitutional_ai.models import ConstitutionalPrinciple
+from oplangchain.chains.llm import LLMChain
+from oplangchain.evaluation.criteria.prompt import PROMPT, PROMPT_WITH_REFERENCES
+from oplangchain.evaluation.schema import LLMEvalChain, StringEvaluator
+from oplangchain.schema import RUN_KEY, BaseOutputParser, BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class Criteria(str, Enum):
@@ -169,8 +169,8 @@ class CriteriaEvalChain(StringEvaluator, LLMEvalChain, LLMChain):
 
     Examples
     --------
-    >>> from langchain.chat_models import ChatAnthropic
-    >>> from langchain.evaluation.criteria import CriteriaEvalChain
+    >>> from oplangchain.chat_models import ChatAnthropic
+    >>> from oplangchain.evaluation.criteria import CriteriaEvalChain
     >>> llm = ChatAnthropic(temperature=0)
     >>> criteria = {"my-custom-criterion": "Is the submission the most amazing ever?"}
     >>> evaluator = CriteriaEvalChain.from_llm(llm=llm, criteria=criteria)
@@ -181,8 +181,8 @@ class CriteriaEvalChain(StringEvaluator, LLMEvalChain, LLMChain):
         'score': 0,
     }
 
-    >>> from langchain.chat_models import ChatOpenAI
-    >>> from langchain.evaluation.criteria import LabeledCriteriaEvalChain
+    >>> from oplangchain.chat_models import ChatOpenAI
+    >>> from oplangchain.evaluation.criteria import LabeledCriteriaEvalChain
     >>> llm = ChatOpenAI(model="gpt-4", temperature=0)
     >>> criteria = "correctness"
     >>> evaluator = LabeledCriteriaEvalChain.from_llm(
@@ -316,8 +316,8 @@ class CriteriaEvalChain(StringEvaluator, LLMEvalChain, LLMChain):
 
         Examples
         --------
-        >>> from langchain.llms import OpenAI
-        >>> from langchain.evaluation.criteria import LabeledCriteriaEvalChain
+        >>> from oplangchain.llms import OpenAI
+        >>> from oplangchain.evaluation.criteria import LabeledCriteriaEvalChain
         >>> llm = OpenAI()
         >>> criteria = {
                 "hallucination": (
@@ -404,8 +404,8 @@ class CriteriaEvalChain(StringEvaluator, LLMEvalChain, LLMChain):
 
         Examples
         --------
-        >>> from langchain.llms import OpenAI
-        >>> from langchain.evaluation.criteria import CriteriaEvalChain
+        >>> from oplangchain.llms import OpenAI
+        >>> from oplangchain.evaluation.criteria import CriteriaEvalChain
         >>> llm = OpenAI()
         >>> criteria = "conciseness"
         >>> chain = CriteriaEvalChain.from_llm(llm=llm, criteria=criteria)
@@ -459,8 +459,8 @@ class CriteriaEvalChain(StringEvaluator, LLMEvalChain, LLMChain):
 
         Examples
         --------
-        >>> from langchain.llms import OpenAI
-        >>> from langchain.evaluation.criteria import CriteriaEvalChain
+        >>> from oplangchain.llms import OpenAI
+        >>> from oplangchain.evaluation.criteria import CriteriaEvalChain
         >>> llm = OpenAI()
         >>> criteria = "conciseness"
         >>> chain = CriteriaEvalChain.from_llm(llm=llm, criteria=criteria)
@@ -536,8 +536,8 @@ class LabeledCriteriaEvalChain(CriteriaEvalChain):
 
         Examples
         --------
-        >>> from langchain.llms import OpenAI
-        >>> from langchain.evaluation.criteria import LabeledCriteriaEvalChain
+        >>> from oplangchain.llms import OpenAI
+        >>> from oplangchain.evaluation.criteria import LabeledCriteriaEvalChain
         >>> llm = OpenAI()
         >>> criteria = {
                 "hallucination": (

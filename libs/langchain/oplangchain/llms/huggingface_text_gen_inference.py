@@ -2,12 +2,12 @@ from typing import Any, AsyncIterator, Dict, Iterator, List, Optional
 
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import LLM
-from langchain.schema.output import GenerationChunk
+from oplangchain.llms.base import LLM
+from oplangchain.schema.output import GenerationChunk
 
 
 class HuggingFaceTextGenInference(LLM):
@@ -57,7 +57,7 @@ class HuggingFaceTextGenInference(LLM):
             print(llm("What is Deep Learning?"))
             
             # Streaming response example
-            from langchain.callbacks import streaming_stdout
+            from oplangchain.callbacks import streaming_stdout
             
             callbacks = [streaming_stdout.StreamingStdOutCallbackHandler()]
             llm = HuggingFaceTextGenInference(

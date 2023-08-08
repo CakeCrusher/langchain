@@ -9,25 +9,25 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
 )
-from langchain.chains import ReduceDocumentsChain
-from langchain.chains.base import Chain
-from langchain.chains.combine_documents.base import BaseCombineDocumentsChain
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
-from langchain.chains.combine_documents.stuff import StuffDocumentsChain
-from langchain.chains.llm import LLMChain
-from langchain.chains.qa_with_sources.loading import load_qa_with_sources_chain
-from langchain.chains.qa_with_sources.map_reduce_prompt import (
+from oplangchain.chains import ReduceDocumentsChain
+from oplangchain.chains.base import Chain
+from oplangchain.chains.combine_documents.base import BaseCombineDocumentsChain
+from oplangchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
+from oplangchain.chains.combine_documents.stuff import StuffDocumentsChain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.qa_with_sources.loading import load_qa_with_sources_chain
+from oplangchain.chains.qa_with_sources.map_reduce_prompt import (
     COMBINE_PROMPT,
     EXAMPLE_PROMPT,
     QUESTION_PROMPT,
 )
-from langchain.docstore.document import Document
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.docstore.document import Document
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class BaseQAWithSourcesChain(Chain, ABC):

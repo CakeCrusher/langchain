@@ -1,8 +1,8 @@
 from typing import Any, List, Optional, Union
 
-from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.agents.agent import AgentExecutor
+from oplangchain.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 def create_csv_agent(

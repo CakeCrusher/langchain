@@ -28,7 +28,7 @@ Agents select and use **Tools** and **Toolkits** for actions.
     AgentAction, AgentFinish
     
 """  # noqa: E501
-from langchain.agents.agent import (
+from oplangchain.agents.agent import (
     Agent,
     AgentExecutor,
     AgentOutputParser,
@@ -36,8 +36,8 @@ from langchain.agents.agent import (
     BaseSingleActionAgent,
     LLMSingleActionAgent,
 )
-from langchain.agents.agent_iterator import AgentExecutorIterator
-from langchain.agents.agent_toolkits import (
+from oplangchain.agents.agent_iterator import AgentExecutorIterator
+from oplangchain.agents.agent_toolkits import (
     create_csv_agent,
     create_json_agent,
     create_openapi_agent,
@@ -51,24 +51,24 @@ from langchain.agents.agent_toolkits import (
     create_vectorstore_router_agent,
     create_xorbits_agent,
 )
-from langchain.agents.agent_types import AgentType
-from langchain.agents.conversational.base import ConversationalAgent
-from langchain.agents.conversational_chat.base import ConversationalChatAgent
-from langchain.agents.initialize import initialize_agent
-from langchain.agents.load_tools import (
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.conversational.base import ConversationalAgent
+from oplangchain.agents.conversational_chat.base import ConversationalChatAgent
+from oplangchain.agents.initialize import initialize_agent
+from oplangchain.agents.load_tools import (
     get_all_tool_names,
     load_huggingface_tool,
     load_tools,
 )
-from langchain.agents.loading import load_agent
-from langchain.agents.mrkl.base import MRKLChain, ZeroShotAgent
-from langchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
-from langchain.agents.openai_functions_multi_agent.base import OpenAIMultiFunctionsAgent
-from langchain.agents.react.base import ReActChain, ReActTextWorldAgent
-from langchain.agents.self_ask_with_search.base import SelfAskWithSearchChain
-from langchain.agents.structured_chat.base import StructuredChatAgent
-from langchain.agents.tools import Tool, tool
-from langchain.agents.xml.base import XMLAgent
+from oplangchain.agents.loading import load_agent
+from oplangchain.agents.mrkl.base import MRKLChain, ZeroShotAgent
+from oplangchain.agents.openai_functions_agent.base import OpenAIFunctionsAgent
+from oplangchain.agents.openai_functions_multi_agent.base import OpenAIMultiFunctionsAgent
+from oplangchain.agents.react.base import ReActChain, ReActTextWorldAgent
+from oplangchain.agents.self_ask_with_search.base import SelfAskWithSearchChain
+from oplangchain.agents.structured_chat.base import StructuredChatAgent
+from oplangchain.agents.tools import Tool, tool
+from oplangchain.agents.xml.base import XMLAgent
 
 __all__ = [
     "Agent",

@@ -3,9 +3,9 @@ import json
 import uuid
 from typing import List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.tools.nuclia.tool import NucliaUnderstandingAPI
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.tools.nuclia.tool import NucliaUnderstandingAPI
 
 
 class NucliaLoader(BaseLoader):

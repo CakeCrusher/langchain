@@ -4,7 +4,7 @@ from typing import Any, Dict, List
 
 from pydantic import root_validator
 
-from langchain.schema import BaseOutputParser
+from oplangchain.schema import BaseOutputParser
 
 
 class CombiningOutputParser(BaseOutputParser):

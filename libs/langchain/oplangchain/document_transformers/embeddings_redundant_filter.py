@@ -4,9 +4,9 @@ from typing import Any, Callable, List, Sequence
 import numpy as np
 from pydantic import BaseModel, Field
 
-from langchain.embeddings.base import Embeddings
-from langchain.schema import BaseDocumentTransformer, Document
-from langchain.utils.math import cosine_similarity
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import BaseDocumentTransformer, Document
+from oplangchain.utils.math import cosine_similarity
 
 
 class _DocumentWithState(Document):

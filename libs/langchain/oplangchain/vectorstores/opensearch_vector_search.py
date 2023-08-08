@@ -7,11 +7,11 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import numpy as np
 
-from langchain.embeddings.base import Embeddings
-from langchain.schema import Document
-from langchain.utils import get_from_dict_or_env
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import Document
+from oplangchain.utils import get_from_dict_or_env
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 IMPORT_OPENSEARCH_PY_ERROR = (
     "Could not import OpenSearch. Please install it with `pip install opensearch-py`."
@@ -320,7 +320,7 @@ class OpenSearchVectorSearch(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain import OpenSearchVectorSearch
+            from oplangchain import OpenSearchVectorSearch
             opensearch_vector_search = OpenSearchVectorSearch(
                 "http://localhost:9200",
                 "embeddings",
@@ -671,8 +671,8 @@ class OpenSearchVectorSearch(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import OpenSearchVectorSearch
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import OpenSearchVectorSearch
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 opensearch_vector_search = OpenSearchVectorSearch.from_texts(
                     texts,

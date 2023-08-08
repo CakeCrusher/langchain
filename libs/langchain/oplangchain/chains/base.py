@@ -11,18 +11,18 @@ import yaml
 from pydantic import Field, root_validator, validator
 
 import langchain
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.callbacks.manager import (
     AsyncCallbackManager,
     AsyncCallbackManagerForChainRun,
     CallbackManager,
     CallbackManagerForChainRun,
     Callbacks,
 )
-from langchain.load.dump import dumpd
-from langchain.load.serializable import Serializable
-from langchain.schema import RUN_KEY, BaseMemory, RunInfo
-from langchain.schema.runnable import Runnable, RunnableConfig
+from oplangchain.load.dump import dumpd
+from oplangchain.load.serializable import Serializable
+from oplangchain.schema import RUN_KEY, BaseMemory, RunInfo
+from oplangchain.schema.runnable import Runnable, RunnableConfig
 
 logger = logging.getLogger(__name__)
 

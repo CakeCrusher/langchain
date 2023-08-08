@@ -19,7 +19,7 @@ import requests
 from pydantic import BaseModel, Extra, root_validator
 from requests import Request, Session
 
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 
 class ZapierNLAWrapper(BaseModel):

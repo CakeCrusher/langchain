@@ -22,15 +22,15 @@ from typing import (
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import BaseLLM, create_base_retry_decorator
-from langchain.schema import Generation, LLMResult
-from langchain.schema.output import GenerationChunk
-from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
-from langchain.utils.utils import build_extra_kwargs
+from oplangchain.llms.base import BaseLLM, create_base_retry_decorator
+from oplangchain.schema import Generation, LLMResult
+from oplangchain.schema.output import GenerationChunk
+from oplangchain.utils import get_from_dict_or_env, get_pydantic_field_names
+from oplangchain.utils.utils import build_extra_kwargs
 
 logger = logging.getLogger(__name__)
 
@@ -201,7 +201,7 @@ class BaseOpenAI(BaseLLM):
             warnings.warn(
                 "You are trying to use a chat model. This way of initializing it is "
                 "no longer supported. Instead, please use: "
-                "`from langchain.chat_models import ChatOpenAI`"
+                "`from oplangchain.chat_models import ChatOpenAI`"
             )
             return OpenAIChat(**data)
         return super().__new__(cls)
@@ -625,7 +625,7 @@ class OpenAI(BaseOpenAI):
     Example:
         .. code-block:: python
 
-            from langchain.llms import OpenAI
+            from oplangchain.llms import OpenAI
             openai = OpenAI(model_name="text-davinci-003")
     """
 
@@ -646,7 +646,7 @@ class AzureOpenAI(BaseOpenAI):
     Example:
         .. code-block:: python
 
-            from langchain.llms import AzureOpenAI
+            from oplangchain.llms import AzureOpenAI
             openai = AzureOpenAI(model_name="text-davinci-003")
     """
 
@@ -701,7 +701,7 @@ class OpenAIChat(BaseLLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import OpenAIChat
+            from oplangchain.llms import OpenAIChat
             openaichat = OpenAIChat(model_name="gpt-3.5-turbo")
     """
 
@@ -786,7 +786,7 @@ class OpenAIChat(BaseLLM):
         warnings.warn(
             "You are trying to use a chat model. This way of initializing it is "
             "no longer supported. Instead, please use: "
-            "`from langchain.chat_models import ChatOpenAI`"
+            "`from oplangchain.chat_models import ChatOpenAI`"
         )
         return values
 

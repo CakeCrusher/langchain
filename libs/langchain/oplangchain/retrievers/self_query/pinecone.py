@@ -1,6 +1,6 @@
 from typing import Dict, Tuple, Union
 
-from langchain.chains.query_constructor.ir import (
+from oplangchain.chains.query_constructor.ir import (
     Comparator,
     Comparison,
     Operation,

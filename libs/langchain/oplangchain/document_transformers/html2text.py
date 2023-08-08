@@ -1,13 +1,13 @@
 from typing import Any, Sequence
 
-from langchain.schema import BaseDocumentTransformer, Document
+from oplangchain.schema import BaseDocumentTransformer, Document
 
 
 class Html2TextTransformer(BaseDocumentTransformer):
     """Replace occurrences of a particular search pattern with a replacement string
     Example:
         .. code-block:: python
-            from langchain.document_transformers import Html2TextTransformer
+            from oplangchain.document_transformers import Html2TextTransformer
             html2text=Html2TextTransformer()
             docs_transform=html2text.transform_documents(docs)
     """

@@ -5,9 +5,9 @@ from typing import Any, Callable, List, Mapping, Optional
 
 from pydantic import Extra
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
 
 logger = logging.getLogger(__name__)
 
@@ -74,7 +74,7 @@ class SelfHostedPipeline(LLM):
     Example for custom pipeline and inference functions:
         .. code-block:: python
 
-            from langchain.llms import SelfHostedPipeline
+            from oplangchain.llms import SelfHostedPipeline
             from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
             import runhouse as rh
 
@@ -97,7 +97,7 @@ class SelfHostedPipeline(LLM):
     Example for <2GB model (can be serialized and sent directly to the server):
         .. code-block:: python
 
-            from langchain.llms import SelfHostedPipeline
+            from oplangchain.llms import SelfHostedPipeline
             import runhouse as rh
             gpu = rh.cluster(name="rh-a10x", instance_type="A100:1")
             my_model = ...
@@ -109,7 +109,7 @@ class SelfHostedPipeline(LLM):
     Example passing model path for larger models:
         .. code-block:: python
 
-            from langchain.llms import SelfHostedPipeline
+            from oplangchain.llms import SelfHostedPipeline
             import runhouse as rh
             import pickle
             from transformers import pipeline

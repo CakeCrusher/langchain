@@ -8,10 +8,10 @@ from uuid import UUID
 
 from langsmith import Client, RunEvaluator
 
-from langchain.callbacks.manager import tracing_v2_enabled
-from langchain.callbacks.tracers.base import BaseTracer
-from langchain.callbacks.tracers.langchain import _get_client
-from langchain.callbacks.tracers.schemas import Run
+from oplangchain.callbacks.manager import tracing_v2_enabled
+from oplangchain.callbacks.tracers.base import BaseTracer
+from oplangchain.callbacks.tracers.langchain import _get_client
+from oplangchain.callbacks.tracers.schemas import Run
 
 logger = logging.getLogger(__name__)
 

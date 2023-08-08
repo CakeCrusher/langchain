@@ -3,11 +3,11 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Iterator, List, Literal, Optional, Sequence, Union
 
-from langchain.document_loaders.base import BaseBlobParser, BaseLoader
-from langchain.document_loaders.blob_loaders import BlobLoader, FileSystemBlobLoader
-from langchain.document_loaders.parsers.registry import get_parser
-from langchain.schema import Document
-from langchain.text_splitter import TextSplitter
+from oplangchain.document_loaders.base import BaseBlobParser, BaseLoader
+from oplangchain.document_loaders.blob_loaders import BlobLoader, FileSystemBlobLoader
+from oplangchain.document_loaders.parsers.registry import get_parser
+from oplangchain.schema import Document
+from oplangchain.text_splitter import TextSplitter
 
 _PathLike = Union[str, Path]
 
@@ -24,8 +24,8 @@ class GenericLoader(BaseLoader):
 
         .. code-block:: python
 
-        from langchain.document_loaders import GenericLoader
-        from langchain.document_loaders.blob_loaders import FileSystemBlobLoader
+        from oplangchain.document_loaders import GenericLoader
+        from oplangchain.document_loaders.blob_loaders import FileSystemBlobLoader
 
         loader = GenericLoader.from_filesystem(
             path="path/to/directory",
@@ -54,7 +54,7 @@ class GenericLoader(BaseLoader):
 
         ... code-block:: python
 
-            from langchain.document_loaders.parsers.pdf import PyPDFParser
+            from oplangchain.document_loaders.parsers.pdf import PyPDFParser
 
             # Recursively load all text files in a directory.
             loader = GenericLoader.from_filesystem(

@@ -17,11 +17,11 @@ from typing import (
 
 from pydantic import PrivateAttr
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import LLM
+from oplangchain.llms.base import LLM
 
 if TYPE_CHECKING:
     import openllm
@@ -59,7 +59,7 @@ class OpenLLM(LLM):
     Example running an LLM model locally managed by OpenLLM:
         .. code-block:: python
 
-            from langchain.llms import OpenLLM
+            from oplangchain.llms import OpenLLM
             llm = OpenLLM(
                 model_name='flan-t5',
                 model_id='google/flan-t5-large',
@@ -71,7 +71,7 @@ class OpenLLM(LLM):
     If you have a OpenLLM server running, you can also use it remotely:
         .. code-block:: python
 
-            from langchain.llms import OpenLLM
+            from oplangchain.llms import OpenLLM
             llm = OpenLLM(server_url='http://localhost:3000')
             llm("What is the difference between a duck and a goose?")
     """

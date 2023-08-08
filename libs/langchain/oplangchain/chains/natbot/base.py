@@ -6,12 +6,12 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForChainRun
-from langchain.chains.base import Chain
-from langchain.chains.llm import LLMChain
-from langchain.chains.natbot.prompt import PROMPT
-from langchain.llms.openai import OpenAI
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.callbacks.manager import CallbackManagerForChainRun
+from oplangchain.chains.base import Chain
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.natbot.prompt import PROMPT
+from oplangchain.llms.openai import OpenAI
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class NatBotChain(Chain):
@@ -20,7 +20,7 @@ class NatBotChain(Chain):
     Example:
         .. code-block:: python
 
-            from langchain import NatBotChain
+            from oplangchain import NatBotChain
             natbot = NatBotChain.from_default("Buy me a new hat.")
     """
 

@@ -9,9 +9,9 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 from pydantic import BaseSettings
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
 
 logger = logging.getLogger()
 

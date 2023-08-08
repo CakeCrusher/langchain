@@ -18,15 +18,15 @@ from pydantic import (
 )
 from pydantic.main import ModelMetaclass
 
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.callbacks.manager import (
     AsyncCallbackManager,
     AsyncCallbackManagerForToolRun,
     CallbackManager,
     CallbackManagerForToolRun,
     Callbacks,
 )
-from langchain.schema.runnable import Runnable, RunnableConfig
+from oplangchain.schema.runnable import Runnable, RunnableConfig
 
 
 class SchemaAnnotationError(TypeError):

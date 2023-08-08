@@ -7,10 +7,10 @@ import time
 import uuid
 from typing import TYPE_CHECKING, Any, Iterable, List, Optional, Type
 
-from langchain.docstore.document import Document
-from langchain.embeddings import TensorflowHubEmbeddings
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings import TensorflowHubEmbeddings
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
 
 if TYPE_CHECKING:
     from google.cloud import storage

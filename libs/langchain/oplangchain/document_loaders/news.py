@@ -2,8 +2,8 @@
 import logging
 from typing import Any, Iterator, List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ class NewsURLLoader(BaseLoader):
     Example:
         .. code-block:: python
 
-            from langchain.document_loaders import NewsURLLoader
+            from oplangchain.document_loaders import NewsURLLoader
 
             loader = NewsURLLoader(
                 urls=["<url-1>", "<url-2>"],

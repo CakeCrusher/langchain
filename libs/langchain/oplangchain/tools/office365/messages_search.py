@@ -8,9 +8,9 @@ from typing import Any, Dict, List, Optional, Type
 
 from pydantic import BaseModel, Extra, Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.office365.base import O365BaseTool
-from langchain.tools.office365.utils import clean_body
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.office365.base import O365BaseTool
+from oplangchain.tools.office365.utils import clean_body
 
 
 class SearchEmailsInput(BaseModel):

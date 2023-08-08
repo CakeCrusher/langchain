@@ -25,9 +25,9 @@ from typing import (
 
 from pydantic import Field
 
-from langchain.callbacks.base import BaseCallbackManager, Callbacks
-from langchain.load.dump import dumpd
-from langchain.load.serializable import Serializable
+from oplangchain.callbacks.base import BaseCallbackManager, Callbacks
+from oplangchain.load.dump import dumpd
+from oplangchain.load.serializable import Serializable
 
 
 async def _gated_coro(semaphore: asyncio.Semaphore, coro: Coroutine) -> Any:
@@ -168,7 +168,7 @@ class Runnable(Generic[Input, Output], ABC):
         config: Optional[RunnableConfig],
         run_type: Optional[str] = None,
     ) -> Output:
-        from langchain.callbacks.manager import CallbackManager
+        from oplangchain.callbacks.manager import CallbackManager
 
         config = config or {}
         callback_manager = CallbackManager.configure(
@@ -219,7 +219,7 @@ class RunnableWithFallbacks(Serializable, Runnable[Input, Output]):
         yield from self.fallbacks
 
     def invoke(self, input: Input, config: Optional[RunnableConfig] = None) -> Output:
-        from langchain.callbacks.manager import CallbackManager
+        from oplangchain.callbacks.manager import CallbackManager
 
         # setup callbacks
         config = config or {}
@@ -262,7 +262,7 @@ class RunnableWithFallbacks(Serializable, Runnable[Input, Output]):
     async def ainvoke(
         self, input: Input, config: Optional[RunnableConfig] = None
     ) -> Output:
-        from langchain.callbacks.manager import AsyncCallbackManager
+        from oplangchain.callbacks.manager import AsyncCallbackManager
 
         # setup callbacks
         config = config or {}
@@ -310,7 +310,7 @@ class RunnableWithFallbacks(Serializable, Runnable[Input, Output]):
         *,
         max_concurrency: Optional[int] = None,
     ) -> List[Output]:
-        from langchain.callbacks.manager import CallbackManager
+        from oplangchain.callbacks.manager import CallbackManager
 
         # setup callbacks
         configs = self._get_config_list(config, len(inputs))
@@ -372,7 +372,7 @@ class RunnableWithFallbacks(Serializable, Runnable[Input, Output]):
         *,
         max_concurrency: Optional[int] = None,
     ) -> List[Output]:
-        from langchain.callbacks.manager import (
+        from oplangchain.callbacks.manager import (
             AsyncCallbackManager,
             AsyncCallbackManagerForChainRun,
         )
@@ -493,7 +493,7 @@ class RunnableSequence(Serializable, Runnable[Input, Output]):
             )
 
     def invoke(self, input: Input, config: Optional[RunnableConfig] = None) -> Output:
-        from langchain.callbacks.manager import CallbackManager
+        from oplangchain.callbacks.manager import CallbackManager
 
         # setup callbacks
         config = config or {}
@@ -532,7 +532,7 @@ class RunnableSequence(Serializable, Runnable[Input, Output]):
     async def ainvoke(
         self, input: Input, config: Optional[RunnableConfig] = None
     ) -> Output:
-        from langchain.callbacks.manager import AsyncCallbackManager
+        from oplangchain.callbacks.manager import AsyncCallbackManager
 
         # setup callbacks
         config = config or {}
@@ -575,7 +575,7 @@ class RunnableSequence(Serializable, Runnable[Input, Output]):
         *,
         max_concurrency: Optional[int] = None,
     ) -> List[Output]:
-        from langchain.callbacks.manager import CallbackManager
+        from oplangchain.callbacks.manager import CallbackManager
 
         # setup callbacks
         configs = self._get_config_list(config, len(inputs))
@@ -628,7 +628,7 @@ class RunnableSequence(Serializable, Runnable[Input, Output]):
         *,
         max_concurrency: Optional[int] = None,
     ) -> List[Output]:
-        from langchain.callbacks.manager import (
+        from oplangchain.callbacks.manager import (
             AsyncCallbackManager,
             AsyncCallbackManagerForChainRun,
         )
@@ -688,7 +688,7 @@ class RunnableSequence(Serializable, Runnable[Input, Output]):
     def stream(
         self, input: Input, config: Optional[RunnableConfig] = None
     ) -> Iterator[Output]:
-        from langchain.callbacks.manager import CallbackManager
+        from oplangchain.callbacks.manager import CallbackManager
 
         # setup callbacks
         config = config or {}
@@ -751,7 +751,7 @@ class RunnableSequence(Serializable, Runnable[Input, Output]):
     async def astream(
         self, input: Input, config: Optional[RunnableConfig] = None
     ) -> AsyncIterator[Output]:
-        from langchain.callbacks.manager import AsyncCallbackManager
+        from oplangchain.callbacks.manager import AsyncCallbackManager
 
         # setup callbacks
         config = config or {}
@@ -840,7 +840,7 @@ class RunnableMap(Serializable, Runnable[Input, Dict[str, Any]]):
     def invoke(
         self, input: Input, config: Optional[RunnableConfig] = None
     ) -> Dict[str, Any]:
-        from langchain.callbacks.manager import CallbackManager
+        from oplangchain.callbacks.manager import CallbackManager
 
         # setup callbacks
         config = config or {}
@@ -882,7 +882,7 @@ class RunnableMap(Serializable, Runnable[Input, Dict[str, Any]]):
     async def ainvoke(
         self, input: Input, config: Optional[RunnableConfig] = None
     ) -> Dict[str, Any]:
-        from langchain.callbacks.manager import AsyncCallbackManager
+        from oplangchain.callbacks.manager import AsyncCallbackManager
 
         # setup callbacks
         config = config or {}

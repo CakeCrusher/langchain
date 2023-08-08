@@ -9,8 +9,8 @@ from typing import List, Optional, Type
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.office365.base import O365BaseTool
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.office365.base import O365BaseTool
 
 
 class SendEventSchema(BaseModel):

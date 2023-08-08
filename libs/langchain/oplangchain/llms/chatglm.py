@@ -3,9 +3,9 @@ from typing import Any, List, Mapping, Optional
 
 import requests
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
 
 logger = logging.getLogger(__name__)
 
@@ -16,7 +16,7 @@ class ChatGLM(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import ChatGLM
+            from oplangchain.llms import ChatGLM
             endpoint_url = (
                 "http://127.0.0.1:8000"
             )

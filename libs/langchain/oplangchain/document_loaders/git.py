@@ -1,8 +1,8 @@
 import os
 from typing import Callable, List, Optional
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class GitLoader(BaseLoader):

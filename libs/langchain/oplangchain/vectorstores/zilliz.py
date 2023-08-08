@@ -3,8 +3,8 @@ from __future__ import annotations
 import logging
 from typing import Any, List, Optional
 
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.milvus import Milvus
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.milvus import Milvus
 
 logger = logging.getLogger(__name__)
 
@@ -66,8 +66,8 @@ class Zilliz(Milvus):
     Example:
         .. code-block:: python
 
-        from langchain import Zilliz
-        from langchain.embeddings import OpenAIEmbeddings
+        from oplangchain import Zilliz
+        from oplangchain.embeddings import OpenAIEmbeddings
 
         embedding = OpenAIEmbeddings()
         # Connect to a Zilliz instance

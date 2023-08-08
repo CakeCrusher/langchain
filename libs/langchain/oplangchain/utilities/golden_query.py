@@ -5,7 +5,7 @@ from typing import Dict, Optional
 import requests
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 GOLDEN_BASE_URL = "https://golden.com"
 GOLDEN_TIMEOUT = 5000

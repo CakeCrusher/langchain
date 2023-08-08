@@ -6,9 +6,9 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import BaseModel, validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.utils import get_from_dict_or_env
 
 
 class AzureMLEndpointClient(object):

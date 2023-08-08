@@ -9,12 +9,12 @@ from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple
 
 import numpy as np
 
-from langchain.docstore.base import AddableMixin, Docstore
-from langchain.docstore.document import Document
-from langchain.docstore.in_memory import InMemoryDocstore
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import DistanceStrategy
+from oplangchain.docstore.base import AddableMixin, Docstore
+from oplangchain.docstore.document import Document
+from oplangchain.docstore.in_memory import InMemoryDocstore
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import DistanceStrategy
 
 
 def normalize(x: np.ndarray) -> np.ndarray:
@@ -44,8 +44,8 @@ class ScaNN(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import HuggingFaceEmbeddings
-            from langchain.vectorstores import ScaNN
+            from oplangchain.embeddings import HuggingFaceEmbeddings
+            from oplangchain.vectorstores import ScaNN
 
             db = ScaNN.from_texts(
                 ['foo', 'bar', 'barz', 'qux'],
@@ -382,8 +382,8 @@ class ScaNN(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import ScaNN
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import ScaNN
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 scann = ScaNN.from_texts(texts, embeddings)
         """
@@ -418,8 +418,8 @@ class ScaNN(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import ScaNN
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import ScaNN
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 text_embeddings = embeddings.embed_documents(texts)
                 text_embedding_pairs = list(zip(texts, text_embeddings))

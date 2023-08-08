@@ -7,19 +7,19 @@ from typing import Any, Callable, Dict, List, Mapping, Optional
 import yaml
 from pydantic import Field
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.chat_models.base import BaseChatModel
-from langchain.llms.utils import enforce_stop_tokens
-from langchain.schema.messages import (
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.llms.utils import enforce_stop_tokens
+from oplangchain.schema.messages import (
     BaseMessage,
     HumanMessage,
     _message_from_dict,
     messages_to_dict,
 )
-from langchain.schema.output import ChatGeneration, ChatResult
+from oplangchain.schema.output import ChatGeneration, ChatResult
 
 
 def _display_messages(messages: List[BaseMessage]) -> None:

@@ -4,10 +4,10 @@ from typing import TYPE_CHECKING, Any, Iterable, List, Optional, Tuple, Type
 import numpy as np
 from pydantic import Field
 
-from langchain.embeddings.base import Embeddings
-from langchain.schema import Document
-from langchain.vectorstores import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import Document
+from oplangchain.vectorstores import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 if TYPE_CHECKING:
     from docarray import BaseDoc

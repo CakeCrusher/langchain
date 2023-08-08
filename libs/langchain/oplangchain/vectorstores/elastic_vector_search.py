@@ -15,10 +15,10 @@ from typing import (
     Union,
 )
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
+from oplangchain.vectorstores.base import VectorStore
 
 if TYPE_CHECKING:
     from elasticsearch import Elasticsearch
@@ -67,8 +67,8 @@ class ElasticVectorSearch(VectorStore, ABC):
     Example:
         .. code-block:: python
 
-            from langchain import ElasticVectorSearch
-            from langchain.embeddings import OpenAIEmbeddings
+            from oplangchain import ElasticVectorSearch
+            from oplangchain.embeddings import OpenAIEmbeddings
 
             embedding = OpenAIEmbeddings()
             elastic_vector_search = ElasticVectorSearch(
@@ -103,8 +103,8 @@ class ElasticVectorSearch(VectorStore, ABC):
     Example:
         .. code-block:: python
 
-            from langchain import ElasticVectorSearch
-            from langchain.embeddings import OpenAIEmbeddings
+            from oplangchain import ElasticVectorSearch
+            from oplangchain.embeddings import OpenAIEmbeddings
 
             embedding = OpenAIEmbeddings()
 
@@ -282,8 +282,8 @@ class ElasticVectorSearch(VectorStore, ABC):
         Example:
             .. code-block:: python
 
-                from langchain import ElasticVectorSearch
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import ElasticVectorSearch
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 elastic_vector_search = ElasticVectorSearch.from_texts(
                     texts,

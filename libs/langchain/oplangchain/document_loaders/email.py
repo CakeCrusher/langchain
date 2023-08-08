@@ -2,9 +2,9 @@
 import os
 from typing import Any, List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.unstructured import (
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.unstructured import (
     UnstructuredFileLoader,
     satisfies_min_unstructured_version,
 )
@@ -21,14 +21,14 @@ class UnstructuredEmailLoader(UnstructuredFileLoader):
 
     Example
     -------
-    from langchain.document_loaders import UnstructuredEmailLoader
+    from oplangchain.document_loaders import UnstructuredEmailLoader
 
     loader = UnstructuredEmailLoader("example_data/fake-email.eml", mode="elements")
     loader.load()
 
     Example
     -------
-    from langchain.document_loaders import UnstructuredEmailLoader
+    from oplangchain.document_loaders import UnstructuredEmailLoader
 
     loader = UnstructuredEmailLoader(
         "example_data/fake-email-attachment.eml",

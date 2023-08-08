@@ -1,12 +1,12 @@
 """Load agent."""
 from typing import Any, Optional, Sequence
 
-from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_types import AgentType
-from langchain.agents.loading import AGENT_TO_CLASS, load_agent
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools.base import BaseTool
+from oplangchain.agents.agent import AgentExecutor
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.loading import AGENT_TO_CLASS, load_agent
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools.base import BaseTool
 
 
 def initialize_agent(

@@ -4,8 +4,8 @@ from __future__ import annotations
 import os
 from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Optional, Sequence
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 if TYPE_CHECKING:
     import mastodon

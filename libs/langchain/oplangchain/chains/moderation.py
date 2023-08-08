@@ -3,9 +3,9 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import CallbackManagerForChainRun
-from langchain.chains.base import Chain
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForChainRun
+from oplangchain.chains.base import Chain
+from oplangchain.utils import get_from_dict_or_env
 
 
 class OpenAIModerationChain(Chain):
@@ -20,7 +20,7 @@ class OpenAIModerationChain(Chain):
     Example:
         .. code-block:: python
 
-            from langchain.chains import OpenAIModerationChain
+            from oplangchain.chains import OpenAIModerationChain
             moderation = OpenAIModerationChain()
     """
 

@@ -10,9 +10,9 @@ from typing import Any, Iterable, List, Optional, Tuple, Type
 import requests
 from pydantic import Field
 
-from langchain.embeddings.base import Embeddings
-from langchain.schema import Document
-from langchain.vectorstores.base import VectorStore, VectorStoreRetriever
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import Document
+from oplangchain.vectorstores.base import VectorStore, VectorStoreRetriever
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ class Vectara(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.vectorstores import Vectara
+            from oplangchain.vectorstores import Vectara
 
             vectorstore = Vectara(
                 vectara_customer_id=vectara_customer_id,
@@ -365,7 +365,7 @@ class Vectara(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Vectara
+                from oplangchain import Vectara
                 vectara = Vectara.from_texts(
                     texts,
                     vectara_customer_id=customer_id,
@@ -393,7 +393,7 @@ class Vectara(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Vectara
+                from oplangchain import Vectara
                 vectara = Vectara.from_files(
                     files_list,
                     vectara_customer_id=customer_id,

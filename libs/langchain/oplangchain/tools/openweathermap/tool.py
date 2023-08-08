@@ -4,9 +4,9 @@ from typing import Optional
 
 from pydantic import Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utilities import OpenWeatherMapAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities import OpenWeatherMapAPIWrapper
 
 
 class OpenWeatherMapQueryRun(BaseTool):

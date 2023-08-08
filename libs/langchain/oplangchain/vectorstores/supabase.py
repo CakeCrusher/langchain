@@ -16,10 +16,10 @@ from typing import (
 
 import numpy as np
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 if TYPE_CHECKING:
     import supabase
@@ -43,9 +43,9 @@ class SupabaseVectorStore(VectorStore):
 
     .. code-block:: python
 
-        from langchain.embeddings.openai import OpenAIEmbeddings
-        from langchain.schema import Document
-        from langchain.vectorstores import SupabaseVectorStore
+        from oplangchain.embeddings.openai import OpenAIEmbeddings
+        from oplangchain.schema import Document
+        from oplangchain.vectorstores import SupabaseVectorStore
         from supabase.client import create_client
 
         docs = [
@@ -65,8 +65,8 @@ class SupabaseVectorStore(VectorStore):
 
     .. code-block:: python
 
-        from langchain.embeddings.openai import OpenAIEmbeddings
-        from langchain.vectorstores import SupabaseVectorStore
+        from oplangchain.embeddings.openai import OpenAIEmbeddings
+        from oplangchain.vectorstores import SupabaseVectorStore
         from supabase.client import create_client
 
 

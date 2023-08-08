@@ -18,53 +18,53 @@ and retrieve the data that are 'most similar' to the embedded query.
 
     Embeddings, Document
 """  # noqa: E501
-from langchain.vectorstores.alibabacloud_opensearch import (
+from oplangchain.vectorstores.alibabacloud_opensearch import (
     AlibabaCloudOpenSearch,
     AlibabaCloudOpenSearchSettings,
 )
-from langchain.vectorstores.analyticdb import AnalyticDB
-from langchain.vectorstores.annoy import Annoy
-from langchain.vectorstores.atlas import AtlasDB
-from langchain.vectorstores.awadb import AwaDB
-from langchain.vectorstores.azuresearch import AzureSearch
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.cassandra import Cassandra
-from langchain.vectorstores.chroma import Chroma
-from langchain.vectorstores.clarifai import Clarifai
-from langchain.vectorstores.clickhouse import Clickhouse, ClickhouseSettings
-from langchain.vectorstores.deeplake import DeepLake
-from langchain.vectorstores.docarray import DocArrayHnswSearch, DocArrayInMemorySearch
-from langchain.vectorstores.elastic_vector_search import (
+from oplangchain.vectorstores.analyticdb import AnalyticDB
+from oplangchain.vectorstores.annoy import Annoy
+from oplangchain.vectorstores.atlas import AtlasDB
+from oplangchain.vectorstores.awadb import AwaDB
+from oplangchain.vectorstores.azuresearch import AzureSearch
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.cassandra import Cassandra
+from oplangchain.vectorstores.chroma import Chroma
+from oplangchain.vectorstores.clarifai import Clarifai
+from oplangchain.vectorstores.clickhouse import Clickhouse, ClickhouseSettings
+from oplangchain.vectorstores.deeplake import DeepLake
+from oplangchain.vectorstores.docarray import DocArrayHnswSearch, DocArrayInMemorySearch
+from oplangchain.vectorstores.elastic_vector_search import (
     ElasticKnnSearch,
     ElasticVectorSearch,
 )
-from langchain.vectorstores.faiss import FAISS
-from langchain.vectorstores.hologres import Hologres
-from langchain.vectorstores.lancedb import LanceDB
-from langchain.vectorstores.marqo import Marqo
-from langchain.vectorstores.matching_engine import MatchingEngine
-from langchain.vectorstores.meilisearch import Meilisearch
-from langchain.vectorstores.milvus import Milvus
-from langchain.vectorstores.mongodb_atlas import MongoDBAtlasVectorSearch
-from langchain.vectorstores.myscale import MyScale, MyScaleSettings
-from langchain.vectorstores.opensearch_vector_search import OpenSearchVectorSearch
-from langchain.vectorstores.pgembedding import PGEmbedding
-from langchain.vectorstores.pgvector import PGVector
-from langchain.vectorstores.pinecone import Pinecone
-from langchain.vectorstores.qdrant import Qdrant
-from langchain.vectorstores.redis import Redis
-from langchain.vectorstores.rocksetdb import Rockset
-from langchain.vectorstores.scann import ScaNN
-from langchain.vectorstores.singlestoredb import SingleStoreDB
-from langchain.vectorstores.sklearn import SKLearnVectorStore
-from langchain.vectorstores.starrocks import StarRocks
-from langchain.vectorstores.supabase import SupabaseVectorStore
-from langchain.vectorstores.tair import Tair
-from langchain.vectorstores.tigris import Tigris
-from langchain.vectorstores.typesense import Typesense
-from langchain.vectorstores.vectara import Vectara
-from langchain.vectorstores.weaviate import Weaviate
-from langchain.vectorstores.zilliz import Zilliz
+from oplangchain.vectorstores.faiss import FAISS
+from oplangchain.vectorstores.hologres import Hologres
+from oplangchain.vectorstores.lancedb import LanceDB
+from oplangchain.vectorstores.marqo import Marqo
+from oplangchain.vectorstores.matching_engine import MatchingEngine
+from oplangchain.vectorstores.meilisearch import Meilisearch
+from oplangchain.vectorstores.milvus import Milvus
+from oplangchain.vectorstores.mongodb_atlas import MongoDBAtlasVectorSearch
+from oplangchain.vectorstores.myscale import MyScale, MyScaleSettings
+from oplangchain.vectorstores.opensearch_vector_search import OpenSearchVectorSearch
+from oplangchain.vectorstores.pgembedding import PGEmbedding
+from oplangchain.vectorstores.pgvector import PGVector
+from oplangchain.vectorstores.pinecone import Pinecone
+from oplangchain.vectorstores.qdrant import Qdrant
+from oplangchain.vectorstores.redis import Redis
+from oplangchain.vectorstores.rocksetdb import Rockset
+from oplangchain.vectorstores.scann import ScaNN
+from oplangchain.vectorstores.singlestoredb import SingleStoreDB
+from oplangchain.vectorstores.sklearn import SKLearnVectorStore
+from oplangchain.vectorstores.starrocks import StarRocks
+from oplangchain.vectorstores.supabase import SupabaseVectorStore
+from oplangchain.vectorstores.tair import Tair
+from oplangchain.vectorstores.tigris import Tigris
+from oplangchain.vectorstores.typesense import Typesense
+from oplangchain.vectorstores.vectara import Vectara
+from oplangchain.vectorstores.weaviate import Weaviate
+from oplangchain.vectorstores.zilliz import Zilliz
 
 __all__ = [
     "AlibabaCloudOpenSearch",

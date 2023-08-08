@@ -2,9 +2,9 @@ from typing import Dict, List
 
 from pydantic import root_validator
 
-from langchain.embeddings.base import Embeddings
-from langchain.llms.vertexai import _VertexAICommon
-from langchain.utilities.vertexai import raise_vertex_import_error
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.llms.vertexai import _VertexAICommon
+from oplangchain.utilities.vertexai import raise_vertex_import_error
 
 
 class VertexAIEmbeddings(_VertexAICommon, Embeddings):

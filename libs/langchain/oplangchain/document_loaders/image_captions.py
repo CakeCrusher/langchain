@@ -8,8 +8,8 @@ from typing import Any, List, Tuple, Union
 
 import requests
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 class ImageCaptionLoader(BaseLoader):

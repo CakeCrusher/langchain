@@ -5,9 +5,9 @@ from uuid import uuid4
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.docstore.document import Document
-from langchain.schema import BaseRetriever
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.docstore.document import Document
+from oplangchain.schema import BaseRetriever
 
 
 class WeaviateHybridSearchRetriever(BaseRetriever):

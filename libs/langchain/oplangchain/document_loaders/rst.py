@@ -1,7 +1,7 @@
 """Loads RST files."""
 from typing import Any, List
 
-from langchain.document_loaders.unstructured import (
+from oplangchain.document_loaders.unstructured import (
     UnstructuredFileLoader,
     validate_unstructured_version,
 )
@@ -18,7 +18,7 @@ class UnstructuredRSTLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredRSTLoader
+    from oplangchain.document_loaders import UnstructuredRSTLoader
 
     loader = UnstructuredRSTLoader(
         "example.rst", mode="elements", strategy="fast",

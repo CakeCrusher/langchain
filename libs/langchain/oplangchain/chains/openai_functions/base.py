@@ -14,15 +14,15 @@ from typing import (
 
 from pydantic import BaseModel
 
-from langchain.base_language import BaseLanguageModel
-from langchain.chains import LLMChain
-from langchain.output_parsers.openai_functions import (
+from oplangchain.base_language import BaseLanguageModel
+from oplangchain.chains import LLMChain
+from oplangchain.output_parsers.openai_functions import (
     JsonOutputFunctionsParser,
     PydanticAttrOutputFunctionsParser,
     PydanticOutputFunctionsParser,
 )
-from langchain.prompts import BasePromptTemplate
-from langchain.schema import BaseLLMOutputParser
+from oplangchain.prompts import BasePromptTemplate
+from oplangchain.schema import BaseLLMOutputParser
 
 PYTHON_TO_JSON_TYPES = {
     "str": "string",
@@ -220,9 +220,9 @@ def create_openai_fn_chain(
     Example:
         .. code-block:: python
 
-                from langchain.chains.openai_functions import create_openai_fn_chain
-                from langchain.chat_models import ChatOpenAI
-                from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
+                from oplangchain.chains.openai_functions import create_openai_fn_chain
+                from oplangchain.chat_models import ChatOpenAI
+                from oplangchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 
                 from pydantic import BaseModel, Field
 
@@ -306,9 +306,9 @@ def create_structured_output_chain(
     Example:
         .. code-block:: python
 
-                from langchain.chains.openai_functions import create_structured_output_chain
-                from langchain.chat_models import ChatOpenAI
-                from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
+                from oplangchain.chains.openai_functions import create_structured_output_chain
+                from oplangchain.chat_models import ChatOpenAI
+                from oplangchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 
                 from pydantic import BaseModel, Field
 

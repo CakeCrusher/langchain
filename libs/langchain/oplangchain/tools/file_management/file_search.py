@@ -4,9 +4,9 @@ from typing import Optional, Type
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.tools.file_management.utils import (
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.tools.file_management.utils import (
     INVALID_PATH_TEMPLATE,
     BaseFileToolMixin,
     FileValidationError,

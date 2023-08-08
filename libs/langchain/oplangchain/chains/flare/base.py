@@ -7,19 +7,19 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 import numpy as np
 from pydantic import Field
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     CallbackManagerForChainRun,
 )
-from langchain.chains.base import Chain
-from langchain.chains.flare.prompts import (
+from oplangchain.chains.base import Chain
+from oplangchain.chains.flare.prompts import (
     PROMPT,
     QUESTION_GENERATOR_PROMPT,
     FinishedOutputParser,
 )
-from langchain.chains.llm import LLMChain
-from langchain.llms import OpenAI
-from langchain.schema import BasePromptTemplate, BaseRetriever, Generation
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.chains.llm import LLMChain
+from oplangchain.llms import OpenAI
+from oplangchain.schema import BasePromptTemplate, BaseRetriever, Generation
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class _ResponseChain(LLMChain):

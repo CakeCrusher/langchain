@@ -3,9 +3,9 @@ from typing import Dict, Iterator, List, Union
 
 import requests
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseBlobParser
-from langchain.document_loaders.blob_loaders import Blob
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseBlobParser
+from oplangchain.document_loaders.blob_loaders import Blob
 
 logger = logging.getLogger(__name__)
 

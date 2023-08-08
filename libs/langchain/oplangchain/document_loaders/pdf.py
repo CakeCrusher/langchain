@@ -12,10 +12,10 @@ from urllib.parse import urlparse
 
 import requests
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.blob_loaders import Blob
-from langchain.document_loaders.parsers.pdf import (
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.blob_loaders import Blob
+from oplangchain.document_loaders.parsers.pdf import (
     AmazonTextractPDFParser,
     PDFMinerParser,
     PDFPlumberParser,
@@ -23,8 +23,8 @@ from langchain.document_loaders.parsers.pdf import (
     PyPDFium2Parser,
     PyPDFParser,
 )
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
-from langchain.utils import get_from_dict_or_env
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__file__)
 
@@ -40,7 +40,7 @@ class UnstructuredPDFLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredPDFLoader
+    from oplangchain.document_loaders import UnstructuredPDFLoader
 
     loader = UnstructuredPDFLoader(
         "example.pdf", mode="elements", strategy="fast",
@@ -473,7 +473,7 @@ class AmazonTextractPDFLoader(BasePDFLoader):
 
     Example:
         .. code-block:: python
-            from langchain.document_loaders import AmazonTextractPDFLoader
+            from oplangchain.document_loaders import AmazonTextractPDFLoader
             loader = AmazonTextractPDFLoader(
                 file_path="s3://pdfs/myfile.pdf"
             )

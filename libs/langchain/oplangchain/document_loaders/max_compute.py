@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import Any, Iterator, List, Optional, Sequence
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.utilities.max_compute import MaxComputeAPIWrapper
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.utilities.max_compute import MaxComputeAPIWrapper
 
 
 class MaxComputeLoader(BaseLoader):

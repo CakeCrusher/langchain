@@ -3,9 +3,9 @@ from typing import Any, Dict, List, Mapping, Optional, Set
 
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
 
 
 class GPT4All(LLM):
@@ -17,7 +17,7 @@ class GPT4All(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import GPT4All
+            from oplangchain.llms import GPT4All
             model = GPT4All(model="./models/gpt4all-model.bin", n_threads=8)
 
             # Simplest invocation

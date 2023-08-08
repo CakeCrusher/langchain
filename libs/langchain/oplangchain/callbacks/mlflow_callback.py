@@ -7,8 +7,8 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.callbacks.utils import (
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.callbacks.utils import (
     BaseMetadataCallbackHandler,
     flatten_dict,
     hash_string,
@@ -16,8 +16,8 @@ from langchain.callbacks.utils import (
     import_spacy,
     import_textstat,
 )
-from langchain.schema import AgentAction, AgentFinish, LLMResult
-from langchain.utils import get_from_dict_or_env
+from oplangchain.schema import AgentAction, AgentFinish, LLMResult
+from oplangchain.utils import get_from_dict_or_env
 
 
 def import_mlflow() -> Any:

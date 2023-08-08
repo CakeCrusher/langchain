@@ -2,9 +2,9 @@
 from abc import ABC, abstractmethod
 from typing import Iterator, List, Optional
 
-from langchain.document_loaders.blob_loaders import Blob
-from langchain.schema import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter, TextSplitter
+from oplangchain.document_loaders.blob_loaders import Blob
+from oplangchain.schema import Document
+from oplangchain.text_splitter import RecursiveCharacterTextSplitter, TextSplitter
 
 
 class BaseLoader(ABC):

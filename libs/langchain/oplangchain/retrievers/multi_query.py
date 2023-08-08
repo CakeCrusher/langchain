@@ -3,12 +3,12 @@ from typing import List
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.chains.llm import LLMChain
-from langchain.llms.base import BaseLLM
-from langchain.output_parsers.pydantic import PydanticOutputParser
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import BaseRetriever, Document
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.chains.llm import LLMChain
+from oplangchain.llms.base import BaseLLM
+from oplangchain.output_parsers.pydantic import PydanticOutputParser
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema import BaseRetriever, Document
 
 logger = logging.getLogger(__name__)
 

@@ -1,7 +1,7 @@
 from typing import Any, Dict, List, Tuple
 
-from langchain.prompts.chat import ChatPromptTemplate
-from langchain.schema import AgentAction
+from oplangchain.prompts.chat import ChatPromptTemplate
+from oplangchain.schema import AgentAction
 
 
 class AgentScratchPadChatPromptTemplate(ChatPromptTemplate):

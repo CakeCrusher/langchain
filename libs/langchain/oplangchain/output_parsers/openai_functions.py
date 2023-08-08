@@ -3,12 +3,12 @@ from typing import Any, Dict, List, Type, Union
 
 from pydantic import BaseModel, root_validator
 
-from langchain.schema import (
+from oplangchain.schema import (
     ChatGeneration,
     Generation,
     OutputParserException,
 )
-from langchain.schema.output_parser import BaseGenerationOutputParser
+from oplangchain.schema.output_parser import BaseGenerationOutputParser
 
 
 class OutputFunctionsParser(BaseGenerationOutputParser[Any]):

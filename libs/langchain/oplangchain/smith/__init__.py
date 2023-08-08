@@ -10,9 +10,9 @@ An example of this is shown below, assuming you've created a LangSmith dataset c
 .. code-block:: python
 
     from langsmith import Client
-    from langchain.chat_models import ChatOpenAI
-    from langchain.chains import LLMChain
-    from langchain.smith import RunEvalConfig, run_on_dataset
+    from oplangchain.chat_models import ChatOpenAI
+    from oplangchain.chains import LLMChain
+    from oplangchain.smith import RunEvalConfig, run_on_dataset
 
     # Chains may have memory. Passing in a constructor function lets the
     # evaluation framework avoid cross-contamination between runs.
@@ -51,7 +51,7 @@ or LangSmith's `RunEvaluator` classes.
 .. code-block:: python
 
     from typing import Optional
-    from langchain.evaluation import StringEvaluator
+    from oplangchain.evaluation import StringEvaluator
 
     class MyStringEvaluator(StringEvaluator):
         
@@ -88,7 +88,7 @@ or LangSmith's `RunEvaluator` classes.
 - :func:`run_on_dataset <langchain.smith.evaluation.runner_utils.run_on_dataset>`: Function to evaluate a chain, agent, or other LangChain component over a dataset.
 - :class:`RunEvalConfig <langchain.smith.evaluation.config.RunEvalConfig>`: Class representing the configuration for running evaluation. You can select evaluators by :class:`EvaluatorType <langchain.evaluation.schema.EvaluatorType>` or config, or you can pass in `custom_evaluators`
 """  # noqa: E501
-from langchain.smith.evaluation import (
+from oplangchain.smith.evaluation import (
     RunEvalConfig,
     arun_on_dataset,
     run_on_dataset,

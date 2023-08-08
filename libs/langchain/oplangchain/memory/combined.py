@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Set
 
 from pydantic import validator
 
-from langchain.memory.chat_memory import BaseChatMemory
-from langchain.schema import BaseMemory
+from oplangchain.memory.chat_memory import BaseChatMemory
+from oplangchain.schema import BaseMemory
 
 
 class CombinedMemory(BaseMemory):

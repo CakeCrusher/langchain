@@ -1,8 +1,8 @@
 """Loads HN."""
 from typing import Any, List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.web_base import WebBaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.web_base import WebBaseLoader
 
 
 class HNLoader(WebBaseLoader):

@@ -4,7 +4,7 @@ from typing import List
 import numpy as np
 from pydantic import BaseModel
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 
 class FakeEmbeddings(Embeddings, BaseModel):

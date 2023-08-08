@@ -4,10 +4,10 @@ from __future__ import annotations
 import uuid
 from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Optional, Tuple, Type
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_env
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_env
+from oplangchain.vectorstores.base import VectorStore
 
 if TYPE_CHECKING:
     from meilisearch import Client
@@ -59,8 +59,8 @@ class Meilisearch(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.vectorstores import Meilisearch
-            from langchain.embeddings.openai import OpenAIEmbeddings
+            from oplangchain.vectorstores import Meilisearch
+            from oplangchain.embeddings.openai import OpenAIEmbeddings
             import meilisearch
 
             # api_key is optional; provide it if your meilisearch instance requires it
@@ -282,8 +282,8 @@ class Meilisearch(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import Meilisearch
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import Meilisearch
+                from oplangchain.embeddings import OpenAIEmbeddings
                 import meilisearch
 
                 # The environment should be the one specified next to the API key

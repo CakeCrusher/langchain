@@ -7,9 +7,9 @@ from typing import Any, Dict, List, Mapping, Optional, Set
 
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
 
 
 class RWKV(LLM, BaseModel):
@@ -21,7 +21,7 @@ class RWKV(LLM, BaseModel):
     Example:
         .. code-block:: python
 
-            from langchain.llms import RWKV
+            from oplangchain.llms import RWKV
             model = RWKV(model="./models/rwkv-3b-fp16.bin", strategy="cpu fp32")
 
             # Simplest invocation

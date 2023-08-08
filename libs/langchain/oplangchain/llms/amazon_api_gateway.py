@@ -3,13 +3,13 @@ from typing import Any, Dict, List, Mapping, Optional
 import requests
 from pydantic import Extra
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
 
 
 class ContentHandlerAmazonAPIGateway:
-    """Adapter to prepare the inputs from Langchain to a format
+    """Adapter to prepare the inputs from oplangchain to a format
     that LLM model expects.
 
     It also provides helper function to extract

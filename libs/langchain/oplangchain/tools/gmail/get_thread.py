@@ -2,8 +2,8 @@ from typing import Dict, Optional, Type
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.gmail.base import GmailBaseTool
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.gmail.base import GmailBaseTool
 
 
 class GetThreadSchema(BaseModel):

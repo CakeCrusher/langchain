@@ -2,9 +2,9 @@ import json
 import re
 from typing import Union
 
-from langchain.agents.agent import AgentOutputParser
-from langchain.agents.chat.prompt import FORMAT_INSTRUCTIONS
-from langchain.schema import AgentAction, AgentFinish, OutputParserException
+from oplangchain.agents.agent import AgentOutputParser
+from oplangchain.agents.chat.prompt import FORMAT_INSTRUCTIONS
+from oplangchain.schema import AgentAction, AgentFinish, OutputParserException
 
 FINAL_ANSWER_ACTION = "Final Answer:"
 

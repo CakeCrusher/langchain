@@ -3,9 +3,9 @@ import urllib
 from datetime import datetime
 from typing import Iterator, List, Optional
 
-from langchain.document_loaders.base import BaseLoader
-from langchain.schema import Document
-from langchain.utils import get_from_env
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.schema import Document
+from oplangchain.utils import get_from_env
 
 LINK_NOTE_TEMPLATE = "joplin://x-callback-url/openNote?id={id}"
 

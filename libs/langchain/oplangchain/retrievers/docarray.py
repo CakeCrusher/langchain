@@ -3,10 +3,10 @@ from typing import Any, Dict, List, Optional, Union
 
 import numpy as np
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.embeddings.base import Embeddings
-from langchain.schema import BaseRetriever, Document
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.schema import BaseRetriever, Document
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 
 class SearchType(str, Enum):

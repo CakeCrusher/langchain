@@ -1,7 +1,7 @@
 """Loads rich text files."""
 from typing import Any, List
 
-from langchain.document_loaders.unstructured import (
+from oplangchain.document_loaders.unstructured import (
     UnstructuredFileLoader,
     satisfies_min_unstructured_version,
 )
@@ -18,7 +18,7 @@ class UnstructuredRTFLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredRTFLoader
+    from oplangchain.document_loaders import UnstructuredRTFLoader
 
     loader = UnstructuredRTFLoader(
         "example.rtf", mode="elements", strategy="fast",

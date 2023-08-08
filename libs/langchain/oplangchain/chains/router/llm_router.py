@@ -5,15 +5,15 @@ from typing import Any, Dict, List, Optional, Type, cast
 
 from pydantic import root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForChainRun,
     CallbackManagerForChainRun,
 )
-from langchain.chains import LLMChain
-from langchain.chains.router.base import RouterChain
-from langchain.output_parsers.json import parse_and_check_json_markdown
-from langchain.schema import BaseOutputParser, BasePromptTemplate, OutputParserException
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.chains import LLMChain
+from oplangchain.chains.router.base import RouterChain
+from oplangchain.output_parsers.json import parse_and_check_json_markdown
+from oplangchain.schema import BaseOutputParser, BasePromptTemplate, OutputParserException
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class LLMRouterChain(RouterChain):

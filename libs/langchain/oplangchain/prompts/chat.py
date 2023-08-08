@@ -7,14 +7,14 @@ from typing import Any, Callable, List, Sequence, Tuple, Type, TypeVar, Union
 
 from pydantic import Field, root_validator
 
-from langchain.load.serializable import Serializable
-from langchain.prompts.base import StringPromptTemplate
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import (
+from oplangchain.load.serializable import Serializable
+from oplangchain.prompts.base import StringPromptTemplate
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema import (
     BasePromptTemplate,
     PromptValue,
 )
-from langchain.schema.messages import (
+from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,
     ChatMessage,
@@ -325,7 +325,7 @@ class ChatPromptTemplate(BaseChatPromptTemplate, ABC):
 
         .. code-block:: python
 
-            from langchain.prompts import ChatPromptTemplate
+            from oplangchain.prompts import ChatPromptTemplate
 
             template = ChatPromptTemplate.from_messages([
                 ("system", "You are a helpful AI bot. Your name is {name}."),
@@ -568,7 +568,7 @@ class ChatPromptTemplate(BaseChatPromptTemplate, ABC):
 
             .. code-block:: python
 
-                from langchain.prompts import ChatPromptTemplate
+                from oplangchain.prompts import ChatPromptTemplate
 
                 template = ChatPromptTemplate.from_messages(
                     [

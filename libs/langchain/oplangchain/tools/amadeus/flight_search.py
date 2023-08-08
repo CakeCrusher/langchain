@@ -4,8 +4,8 @@ from typing import Dict, Optional, Type
 
 from pydantic import BaseModel, Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.amadeus.base import AmadeusBaseTool
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.amadeus.base import AmadeusBaseTool
 
 logger = logging.getLogger(__name__)
 

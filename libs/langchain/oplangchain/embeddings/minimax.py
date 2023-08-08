@@ -12,8 +12,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -55,7 +55,7 @@ class MiniMaxEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import MiniMaxEmbeddings
+            from oplangchain.embeddings import MiniMaxEmbeddings
             embeddings = MiniMaxEmbeddings()
 
             query_text = "This is a test query."

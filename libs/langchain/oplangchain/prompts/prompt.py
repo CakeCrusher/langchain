@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Optional, Union
 
 from pydantic import root_validator
 
-from langchain.prompts.base import (
+from oplangchain.prompts.base import (
     DEFAULT_FORMATTER_MAPPING,
     StringPromptTemplate,
     _get_jinja2_variables_from_template,
@@ -27,7 +27,7 @@ class PromptTemplate(StringPromptTemplate):
 
         .. code-block:: python
 
-            from langchain import PromptTemplate
+            from oplangchain import PromptTemplate
 
             # Instantiation using from_template (recommended)
             prompt = PromptTemplate.from_template("Say {foo}")

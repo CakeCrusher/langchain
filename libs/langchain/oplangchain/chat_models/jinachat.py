@@ -24,12 +24,12 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.chat_models.base import BaseChatModel
-from langchain.schema import (
+from oplangchain.chat_models.base import BaseChatModel
+from oplangchain.schema import (
     AIMessage,
     BaseMessage,
     ChatGeneration,
@@ -38,15 +38,15 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage,
 )
-from langchain.schema.messages import (
+from oplangchain.schema.messages import (
     AIMessageChunk,
     BaseMessageChunk,
     ChatMessageChunk,
     HumanMessageChunk,
     SystemMessageChunk,
 )
-from langchain.schema.output import ChatGenerationChunk
-from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
+from oplangchain.schema.output import ChatGenerationChunk
+from oplangchain.utils import get_from_dict_or_env, get_pydantic_field_names
 
 logger = logging.getLogger(__name__)
 
@@ -146,7 +146,7 @@ class JinaChat(BaseChatModel):
     Example:
         .. code-block:: python
 
-            from langchain.chat_models import JinaChat
+            from oplangchain.chat_models import JinaChat
             chat = JinaChat()
     """
 

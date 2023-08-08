@@ -1,10 +1,10 @@
 from typing import Any, List, Mapping, Optional
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import LLM
+from oplangchain.llms.base import LLM
 
 
 class FakeListLLM(LLM):

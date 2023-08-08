@@ -1,5 +1,5 @@
-from langchain.schema import BaseRetriever
-from langchain.tools import Tool
+from oplangchain.schema import BaseRetriever
+from oplangchain.tools import Tool
 
 
 def create_retriever_tool(

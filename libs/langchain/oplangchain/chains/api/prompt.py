@@ -1,5 +1,5 @@
 # flake8: noqa
-from langchain.prompts.prompt import PromptTemplate
+from oplangchain.prompts.prompt import PromptTemplate
 
 API_URL_PROMPT_TEMPLATE = """You are given the below API Documentation:
 {api_docs}

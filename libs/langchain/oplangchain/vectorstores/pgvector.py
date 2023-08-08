@@ -20,13 +20,13 @@ import sqlalchemy
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Session, declarative_base
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
+from oplangchain.vectorstores.base import VectorStore
 
 if TYPE_CHECKING:
-    from langchain.vectorstores._pgvector_data_models import CollectionStore
+    from oplangchain.vectorstores._pgvector_data_models import CollectionStore
 
 
 class DistanceStrategy(str, enum.Enum):
@@ -70,8 +70,8 @@ class PGVector(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.vectorstores import PGVector
-            from langchain.embeddings.openai import OpenAIEmbeddings
+            from oplangchain.vectorstores import PGVector
+            from oplangchain.embeddings.openai import OpenAIEmbeddings
 
             CONNECTION_STRING = "postgresql+psycopg2://hwc@localhost:5432/test3"
             COLLECTION_NAME = "state_of_the_union_test"
@@ -115,7 +115,7 @@ class PGVector(VectorStore):
         """
         self._conn = self.connect()
         # self.create_vector_extension()
-        from langchain.vectorstores._pgvector_data_models import (
+        from oplangchain.vectorstores._pgvector_data_models import (
             CollectionStore,
             EmbeddingStore,
         )
@@ -469,8 +469,8 @@ class PGVector(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain import PGVector
-                from langchain.embeddings import OpenAIEmbeddings
+                from oplangchain import PGVector
+                from oplangchain.embeddings import OpenAIEmbeddings
                 embeddings = OpenAIEmbeddings()
                 text_embeddings = embeddings.embed_documents(texts)
                 text_embedding_pairs = list(zip(texts, text_embeddings))

@@ -2,10 +2,10 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
+from oplangchain.utils import get_from_dict_or_env
 
 
 class OctoAIEndpoint(LLM):
@@ -21,7 +21,7 @@ class OctoAIEndpoint(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms.octoai_endpoint  import OctoAIEndpoint
+            from oplangchain.llms.octoai_endpoint  import OctoAIEndpoint
             OctoAIEndpoint(
                 octoai_api_token="octoai-api-key",
                 endpoint_url="https://mpt-7b-demo-kk0powt97tmb.octoai.cloud/generate",

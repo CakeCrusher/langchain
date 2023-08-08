@@ -4,9 +4,9 @@ from typing import Optional
 
 from pydantic import Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utilities.arxiv import ArxivAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.arxiv import ArxivAPIWrapper
 
 
 class ArxivQueryRun(BaseTool):

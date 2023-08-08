@@ -2,8 +2,8 @@ import re
 from pathlib import Path
 from typing import List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 def concatenate_rows(date: str, sender: str, text: str) -> str:

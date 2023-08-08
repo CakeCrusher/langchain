@@ -3,8 +3,8 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any, Optional
 
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.utils import get_from_env
+from oplangchain.callbacks.base import BaseCallbackHandler
+from oplangchain.utils import get_from_env
 
 if TYPE_CHECKING:
     from whylogs.api.logger.logger import Logger

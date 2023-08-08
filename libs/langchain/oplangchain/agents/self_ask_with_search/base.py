@@ -3,17 +3,17 @@ from typing import Any, Sequence, Union
 
 from pydantic import Field
 
-from langchain.agents.agent import Agent, AgentExecutor, AgentOutputParser
-from langchain.agents.agent_types import AgentType
-from langchain.agents.self_ask_with_search.output_parser import SelfAskOutputParser
-from langchain.agents.self_ask_with_search.prompt import PROMPT
-from langchain.agents.tools import Tool
-from langchain.agents.utils import validate_tools_single_input
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools.base import BaseTool
-from langchain.utilities.google_serper import GoogleSerperAPIWrapper
-from langchain.utilities.serpapi import SerpAPIWrapper
+from oplangchain.agents.agent import Agent, AgentExecutor, AgentOutputParser
+from oplangchain.agents.agent_types import AgentType
+from oplangchain.agents.self_ask_with_search.output_parser import SelfAskOutputParser
+from oplangchain.agents.self_ask_with_search.prompt import PROMPT
+from oplangchain.agents.tools import Tool
+from oplangchain.agents.utils import validate_tools_single_input
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.google_serper import GoogleSerperAPIWrapper
+from oplangchain.utilities.serpapi import SerpAPIWrapper
 
 
 class SelfAskWithSearchAgent(Agent):
@@ -64,7 +64,7 @@ class SelfAskWithSearchChain(AgentExecutor):
     Example:
         .. code-block:: python
 
-            from langchain import SelfAskWithSearchChain, OpenAI, GoogleSerperAPIWrapper
+            from oplangchain import SelfAskWithSearchChain, OpenAI, GoogleSerperAPIWrapper
             search_chain = GoogleSerperAPIWrapper()
             self_ask = SelfAskWithSearchChain(llm=OpenAI(), search_chain=search_chain)
     """

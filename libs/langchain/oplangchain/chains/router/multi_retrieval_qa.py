@@ -3,19 +3,19 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Mapping, Optional
 
-from langchain.chains import ConversationChain
-from langchain.chains.base import Chain
-from langchain.chains.conversation.prompt import DEFAULT_TEMPLATE
-from langchain.chains.retrieval_qa.base import BaseRetrievalQA, RetrievalQA
-from langchain.chains.router.base import MultiRouteChain
-from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
-from langchain.chains.router.multi_retrieval_prompt import (
+from oplangchain.chains import ConversationChain
+from oplangchain.chains.base import Chain
+from oplangchain.chains.conversation.prompt import DEFAULT_TEMPLATE
+from oplangchain.chains.retrieval_qa.base import BaseRetrievalQA, RetrievalQA
+from oplangchain.chains.router.base import MultiRouteChain
+from oplangchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
+from oplangchain.chains.router.multi_retrieval_prompt import (
     MULTI_RETRIEVAL_ROUTER_TEMPLATE,
 )
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import PromptTemplate
-from langchain.schema import BaseRetriever
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.chat_models import ChatOpenAI
+from oplangchain.prompts import PromptTemplate
+from oplangchain.schema import BaseRetriever
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 class MultiRetrievalQAChain(MultiRouteChain):

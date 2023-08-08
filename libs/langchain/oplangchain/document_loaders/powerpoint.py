@@ -2,7 +2,7 @@
 import os
 from typing import List
 
-from langchain.document_loaders.unstructured import UnstructuredFileLoader
+from oplangchain.document_loaders.unstructured import UnstructuredFileLoader
 
 
 class UnstructuredPowerPointLoader(UnstructuredFileLoader):
@@ -17,7 +17,7 @@ class UnstructuredPowerPointLoader(UnstructuredFileLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredPowerPointLoader
+    from oplangchain.document_loaders import UnstructuredPowerPointLoader
 
     loader = UnstructuredPowerPointLoader(
         "example.pptx", mode="elements", strategy="fast",

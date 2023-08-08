@@ -5,9 +5,9 @@ import logging
 from enum import Enum
 from typing import Any, Iterable, List, Optional, Tuple
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
 
 logger = logging.getLogger(__name__)
 
@@ -27,8 +27,8 @@ class Rockset(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.vectorstores import Rockset
-            from langchain.embeddings.openai import OpenAIEmbeddings
+            from oplangchain.vectorstores import Rockset
+            from oplangchain.embeddings.openai import OpenAIEmbeddings
             import rockset
 
             # Make sure you use the right host (region) for your Rockset instance

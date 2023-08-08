@@ -26,8 +26,8 @@ from tenacity import (
     wait_exponential,
 )
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env, get_pydantic_field_names
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env, get_pydantic_field_names
 
 logger = logging.getLogger(__name__)
 
@@ -128,7 +128,7 @@ class OpenAIEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import OpenAIEmbeddings
+            from oplangchain.embeddings import OpenAIEmbeddings
             openai = OpenAIEmbeddings(openai_api_key="my-api-key")
 
     In order to use the library with Microsoft Azure endpoints, you need to set
@@ -147,7 +147,7 @@ class OpenAIEmbeddings(BaseModel, Embeddings):
             os.environ["OPENAI_API_VERSION"] = "2023-05-15"
             os.environ["OPENAI_PROXY"] = "http://your-corporate-proxy:8080"
 
-            from langchain.embeddings.openai import OpenAIEmbeddings
+            from oplangchain.embeddings.openai import OpenAIEmbeddings
             embeddings = OpenAIEmbeddings(
                 deployment="your-embeddings-deployment-name",
                 model="your-embeddings-model-name",

@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, root_validator
 
-from langchain.schema import Document
+from oplangchain.schema import Document
 
 logger = logging.getLogger(__name__)
 

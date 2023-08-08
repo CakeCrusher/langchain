@@ -4,10 +4,10 @@ from __future__ import annotations
 import uuid
 from typing import TYPE_CHECKING, Any, Iterable, List, Optional, Tuple, Union
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_env
-from langchain.vectorstores.base import VectorStore
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_env
+from oplangchain.vectorstores.base import VectorStore
 
 if TYPE_CHECKING:
     from typesense.client import Client
@@ -22,8 +22,8 @@ class Typesense(VectorStore):
     Example:
         .. code-block:: python
 
-            from langchain.embedding.openai import OpenAIEmbeddings
-            from langchain.vectorstores import Typesense
+            from oplangchain.embedding.openai import OpenAIEmbeddings
+            from oplangchain.vectorstores import Typesense
             import typesense
 
             node = {
@@ -213,8 +213,8 @@ class Typesense(VectorStore):
         Example:
             .. code-block:: python
 
-                from langchain.embedding.openai import OpenAIEmbeddings
-                from langchain.vectorstores import Typesense
+                from oplangchain.embedding.openai import OpenAIEmbeddings
+                from oplangchain.vectorstores import Typesense
 
                 # Pass in typesense_api_key as kwarg or set env var "TYPESENSE_API_KEY".
                 vectorstore = Typesense(

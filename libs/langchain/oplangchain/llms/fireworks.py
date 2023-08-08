@@ -14,13 +14,13 @@ from typing import (
 import requests
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import BaseLLM
-from langchain.schema import Generation, LLMResult
-from langchain.utils import get_from_dict_or_env
+from oplangchain.llms.base import BaseLLM
+from oplangchain.schema import Generation, LLMResult
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 
@@ -173,7 +173,7 @@ class FireworksChat(BaseLLM):
     call can be passed in, even if not explicitly saved on this class.
     Example:
         .. code-block:: python
-            from langchain.llms import FireworksChat
+            from oplangchain.llms import FireworksChat
             fireworkschat = FireworksChat(model_id=""fireworks-llama-v2-13b-chat"")
     """
 
@@ -268,7 +268,7 @@ class Fireworks(BaseFireworks):
     call can be passed in, even if not explicitly saved on this class.
     Example:
         .. code-block:: python
-            from langchain.llms import fireworks
+            from oplangchain.llms import fireworks
             llm = Fireworks(model_id="fireworks-llama-v2-13b")
     """
 

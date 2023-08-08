@@ -3,17 +3,17 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.chat_models.base import SimpleChatModel
-from langchain.llms.azureml_endpoint import AzureMLEndpointClient, ContentFormatterBase
-from langchain.schema.messages import (
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.chat_models.base import SimpleChatModel
+from oplangchain.llms.azureml_endpoint import AzureMLEndpointClient, ContentFormatterBase
+from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,
     ChatMessage,
     HumanMessage,
     SystemMessage,
 )
-from langchain.utils import get_from_dict_or_env
+from oplangchain.utils import get_from_dict_or_env
 
 
 class LlamaContentFormatter(ContentFormatterBase):

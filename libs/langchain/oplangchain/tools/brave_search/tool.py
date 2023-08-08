@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import Any, Optional
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utilities.brave_search import BraveSearchWrapper
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.brave_search import BraveSearchWrapper
 
 
 class BraveSearch(BaseTool):

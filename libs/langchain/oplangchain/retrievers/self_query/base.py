@@ -4,20 +4,20 @@ from typing import Any, Dict, List, Optional, Type, cast
 
 from pydantic import BaseModel, Field, root_validator
 
-from langchain import LLMChain
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.chains.query_constructor.base import load_query_constructor_chain
-from langchain.chains.query_constructor.ir import StructuredQuery, Visitor
-from langchain.chains.query_constructor.schema import AttributeInfo
-from langchain.retrievers.self_query.chroma import ChromaTranslator
-from langchain.retrievers.self_query.deeplake import DeepLakeTranslator
-from langchain.retrievers.self_query.myscale import MyScaleTranslator
-from langchain.retrievers.self_query.pinecone import PineconeTranslator
-from langchain.retrievers.self_query.qdrant import QdrantTranslator
-from langchain.retrievers.self_query.weaviate import WeaviateTranslator
-from langchain.schema import BaseRetriever, Document
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.vectorstores import (
+from oplangchain import LLMChain
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.chains.query_constructor.base import load_query_constructor_chain
+from oplangchain.chains.query_constructor.ir import StructuredQuery, Visitor
+from oplangchain.chains.query_constructor.schema import AttributeInfo
+from oplangchain.retrievers.self_query.chroma import ChromaTranslator
+from oplangchain.retrievers.self_query.deeplake import DeepLakeTranslator
+from oplangchain.retrievers.self_query.myscale import MyScaleTranslator
+from oplangchain.retrievers.self_query.pinecone import PineconeTranslator
+from oplangchain.retrievers.self_query.qdrant import QdrantTranslator
+from oplangchain.retrievers.self_query.weaviate import WeaviateTranslator
+from oplangchain.schema import BaseRetriever, Document
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.vectorstores import (
     Chroma,
     DeepLake,
     MyScale,

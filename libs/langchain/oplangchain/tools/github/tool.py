@@ -11,9 +11,9 @@ from typing import Optional
 
 from pydantic import Field
 
-from langchain.callbacks.manager import CallbackManagerForToolRun
-from langchain.tools.base import BaseTool
-from langchain.utilities.github import GitHubAPIWrapper
+from oplangchain.callbacks.manager import CallbackManagerForToolRun
+from oplangchain.tools.base import BaseTool
+from oplangchain.utilities.github import GitHubAPIWrapper
 
 
 class GitHubAction(BaseTool):

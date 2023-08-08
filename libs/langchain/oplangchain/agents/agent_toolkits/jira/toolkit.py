@@ -1,16 +1,16 @@
 from typing import Dict, List
 
-from langchain.agents.agent_toolkits.base import BaseToolkit
-from langchain.tools import BaseTool
-from langchain.tools.jira.prompt import (
+from oplangchain.agents.agent_toolkits.base import BaseToolkit
+from oplangchain.tools import BaseTool
+from oplangchain.tools.jira.prompt import (
     JIRA_CATCH_ALL_PROMPT,
     JIRA_CONFLUENCE_PAGE_CREATE_PROMPT,
     JIRA_GET_ALL_PROJECTS_PROMPT,
     JIRA_ISSUE_CREATE_PROMPT,
     JIRA_JQL_PROMPT,
 )
-from langchain.tools.jira.tool import JiraAction
-from langchain.utilities.jira import JiraAPIWrapper
+from oplangchain.tools.jira.tool import JiraAction
+from oplangchain.utilities.jira import JiraAPIWrapper
 
 
 class JiraToolkit(BaseToolkit):

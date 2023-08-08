@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Mapping, Optional, Tuple
 import requests
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.embeddings.base import Embeddings
-from langchain.utils import get_from_dict_or_env
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.utils import get_from_dict_or_env
 
 
 class MosaicMLInstructorEmbeddings(BaseModel, Embeddings):
@@ -17,7 +17,7 @@ class MosaicMLInstructorEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.llms import MosaicMLInstructorEmbeddings
+            from oplangchain.llms import MosaicMLInstructorEmbeddings
             endpoint_url = (
                 "https://models.hosted-on.mosaicml.hosting/instructor-large/v1/predict"
             )

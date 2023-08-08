@@ -12,8 +12,8 @@ chain against specified criteria.
 Examples
 --------
 Using a pre-defined criterion:
->>> from langchain.llms import OpenAI
->>> from langchain.evaluation.criteria import CriteriaEvalChain
+>>> from oplangchain.llms import OpenAI
+>>> from oplangchain.evaluation.criteria import CriteriaEvalChain
 
 >>> llm = OpenAI()
 >>> criteria = "conciseness"
@@ -26,8 +26,8 @@ Using a pre-defined criterion:
 
 Using a custom criterion:
 
->>> from langchain.llms import OpenAI
->>> from langchain.evaluation.criteria import LabeledCriteriaEvalChain
+>>> from oplangchain.llms import OpenAI
+>>> from oplangchain.evaluation.criteria import LabeledCriteriaEvalChain
 
 >>> llm = OpenAI()
 >>> criteria = {
@@ -47,7 +47,7 @@ Using a custom criterion:
     )
 """  # noqa: E501
 
-from langchain.evaluation.criteria.eval_chain import (
+from oplangchain.evaluation.criteria.eval_chain import (
     Criteria,
     CriteriaEvalChain,
     LabeledCriteriaEvalChain,

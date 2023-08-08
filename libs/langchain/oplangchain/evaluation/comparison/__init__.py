@@ -6,8 +6,8 @@ preferences, measuring similarity / semantic equivalence between outputs,
 or any other comparison task.
 
 Example:
-    >>> from langchain.chat_models import ChatOpenAI
-    >>> from langchain.evaluation.comparison import PairwiseStringEvalChain
+    >>> from oplangchain.chat_models import ChatOpenAI
+    >>> from oplangchain.evaluation.comparison import PairwiseStringEvalChain
     >>> llm = ChatOpenAI(temperature=0)
     >>> chain = PairwiseStringEvalChain.from_llm(llm=llm)
     >>> result = chain.evaluate_string_pairs(
@@ -27,7 +27,7 @@ Example:
     # .     " by explaining what the formula means.\\n[[B]]"
     # }
 """
-from langchain.evaluation.comparison.eval_chain import (
+from oplangchain.evaluation.comparison.eval_chain import (
     LabeledPairwiseStringEvalChain,
     PairwiseStringEvalChain,
 )

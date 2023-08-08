@@ -1,7 +1,7 @@
 from typing import Tuple
 
-from langchain.prompts import PromptTemplate
-from langchain.schema import BaseOutputParser
+from oplangchain.prompts import PromptTemplate
+from oplangchain.schema import BaseOutputParser
 
 
 class FinishedOutputParser(BaseOutputParser[Tuple[str, bool]]):

@@ -10,7 +10,7 @@ from langsmith.schemas import RunBase as BaseRunV2
 from langsmith.schemas import RunTypeEnum as RunTypeEnumDep
 from pydantic import BaseModel, Field, root_validator
 
-from langchain.schema import LLMResult
+from oplangchain.schema import LLMResult
 
 
 def RunTypeEnum() -> RunTypeEnumDep:

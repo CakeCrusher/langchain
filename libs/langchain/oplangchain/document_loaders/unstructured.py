@@ -3,8 +3,8 @@ import collections
 from abc import ABC, abstractmethod
 from typing import IO, Any, Callable, Dict, List, Sequence, Union
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
 
 
 def satisfies_min_unstructured_version(min_version: str) -> bool:
@@ -143,7 +143,7 @@ class UnstructuredFileLoader(UnstructuredBaseLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredFileLoader
+    from oplangchain.document_loaders import UnstructuredFileLoader
 
     loader = UnstructuredFileLoader(
         "example.pdf", mode="elements", strategy="fast",
@@ -228,7 +228,7 @@ class UnstructuredAPIFileLoader(UnstructuredFileLoader):
 
     Examples
     ```python
-    from langchain.document_loaders import UnstructuredAPIFileLoader
+    from oplangchain.document_loaders import UnstructuredAPIFileLoader
 
     loader = UnstructuredFileAPILoader(
         "example.pdf", mode="elements", strategy="fast", api_key="MY_API_KEY",
@@ -288,7 +288,7 @@ class UnstructuredFileIOLoader(UnstructuredBaseLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredFileIOLoader
+    from oplangchain.document_loaders import UnstructuredFileIOLoader
 
     with open("example.pdf", "rb") as f:
         loader = UnstructuredFileIOLoader(
@@ -339,7 +339,7 @@ class UnstructuredAPIFileIOLoader(UnstructuredFileIOLoader):
 
     Examples
     --------
-    from langchain.document_loaders import UnstructuredAPIFileLoader
+    from oplangchain.document_loaders import UnstructuredAPIFileLoader
 
     with open("example.pdf", "rb") as f:
         loader = UnstructuredFileAPILoader(

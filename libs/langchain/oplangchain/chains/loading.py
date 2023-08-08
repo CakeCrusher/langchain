@@ -5,30 +5,30 @@ from typing import Any, Union
 
 import yaml
 
-from langchain.chains import ReduceDocumentsChain
-from langchain.chains.api.base import APIChain
-from langchain.chains.base import Chain
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
-from langchain.chains.combine_documents.map_rerank import MapRerankDocumentsChain
-from langchain.chains.combine_documents.refine import RefineDocumentsChain
-from langchain.chains.combine_documents.stuff import StuffDocumentsChain
-from langchain.chains.graph_qa.cypher import GraphCypherQAChain
-from langchain.chains.hyde.base import HypotheticalDocumentEmbedder
-from langchain.chains.llm import LLMChain
-from langchain.chains.llm_bash.base import LLMBashChain
-from langchain.chains.llm_checker.base import LLMCheckerChain
-from langchain.chains.llm_math.base import LLMMathChain
-from langchain.chains.llm_requests import LLMRequestsChain
-from langchain.chains.qa_with_sources.base import QAWithSourcesChain
-from langchain.chains.qa_with_sources.vector_db import VectorDBQAWithSourcesChain
-from langchain.chains.retrieval_qa.base import RetrievalQA, VectorDBQA
-from langchain.llms.loading import load_llm, load_llm_from_config
-from langchain.prompts.loading import (
+from oplangchain.chains import ReduceDocumentsChain
+from oplangchain.chains.api.base import APIChain
+from oplangchain.chains.base import Chain
+from oplangchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
+from oplangchain.chains.combine_documents.map_rerank import MapRerankDocumentsChain
+from oplangchain.chains.combine_documents.refine import RefineDocumentsChain
+from oplangchain.chains.combine_documents.stuff import StuffDocumentsChain
+from oplangchain.chains.graph_qa.cypher import GraphCypherQAChain
+from oplangchain.chains.hyde.base import HypotheticalDocumentEmbedder
+from oplangchain.chains.llm import LLMChain
+from oplangchain.chains.llm_bash.base import LLMBashChain
+from oplangchain.chains.llm_checker.base import LLMCheckerChain
+from oplangchain.chains.llm_math.base import LLMMathChain
+from oplangchain.chains.llm_requests import LLMRequestsChain
+from oplangchain.chains.qa_with_sources.base import QAWithSourcesChain
+from oplangchain.chains.qa_with_sources.vector_db import VectorDBQAWithSourcesChain
+from oplangchain.chains.retrieval_qa.base import RetrievalQA, VectorDBQA
+from oplangchain.llms.loading import load_llm, load_llm_from_config
+from oplangchain.prompts.loading import (
     _load_output_parser,
     load_prompt,
     load_prompt_from_config,
 )
-from langchain.utilities.loading import try_load_from_hub
+from oplangchain.utilities.loading import try_load_from_hub
 
 URL_BASE = "https://raw.githubusercontent.com/hwchase17/langchain-hub/master/chains/"
 
@@ -298,7 +298,7 @@ def _load_map_rerank_documents_chain(
 
 
 def _load_pal_chain(config: dict, **kwargs: Any) -> Any:
-    from langchain_experimental.pal_chain import PALChain
+    from oplangchain_experimental.pal_chain import PALChain
 
     if "llm_chain" in config:
         llm_chain_config = config.pop("llm_chain")
@@ -373,7 +373,7 @@ def _load_sql_database_chain(config: dict, **kwargs: Any) -> Any:
         prompt = load_prompt_from_config(prompt_config)
     else:
         prompt = None
-    from langchain_experimental.sql import SQLDatabaseChain
+    from oplangchain_experimental.sql import SQLDatabaseChain
 
     return SQLDatabaseChain.from_llm(llm, database, prompt=prompt, **config)
 
@@ -555,7 +555,7 @@ def load_chain_from_config(config: dict, **kwargs: Any) -> Chain:
 
 
 def load_chain(path: Union[str, Path], **kwargs: Any) -> Chain:
-    """Unified method for loading a chain from LangChainHub or local fs."""
+    """Unified method for loading a chain from oplangchainHub or local fs."""
     if hub_result := try_load_from_hub(
         path, _load_chain_from_file, "chains", {"json", "yaml"}, **kwargs
     ):

@@ -12,15 +12,15 @@ from typing import (
     Union,
 )
 
-from langchain.load.serializable import Serializable
-from langchain.schema.messages import BaseMessage, get_buffer_string
-from langchain.schema.output import LLMResult
-from langchain.schema.prompt import PromptValue
-from langchain.schema.runnable import Runnable
-from langchain.utils import get_pydantic_field_names
+from oplangchain.load.serializable import Serializable
+from oplangchain.schema.messages import BaseMessage, get_buffer_string
+from oplangchain.schema.output import LLMResult
+from oplangchain.schema.prompt import PromptValue
+from oplangchain.schema.runnable import Runnable
+from oplangchain.utils import get_pydantic_field_names
 
 if TYPE_CHECKING:
-    from langchain.callbacks.manager import Callbacks
+    from oplangchain.callbacks.manager import Callbacks
 
 
 def _get_token_ids_default_method(text: str) -> List[int]:

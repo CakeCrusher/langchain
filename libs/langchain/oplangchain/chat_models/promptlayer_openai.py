@@ -2,13 +2,13 @@
 import datetime
 from typing import Any, Dict, List, Optional
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import ChatResult
-from langchain.schema.messages import BaseMessage
+from oplangchain.chat_models import ChatOpenAI
+from oplangchain.schema import ChatResult
+from oplangchain.schema.messages import BaseMessage
 
 
 class PromptLayerChatOpenAI(ChatOpenAI):
@@ -31,7 +31,7 @@ class PromptLayerChatOpenAI(ChatOpenAI):
     Example:
         .. code-block:: python
 
-            from langchain.chat_models import PromptLayerChatOpenAI
+            from oplangchain.chat_models import PromptLayerChatOpenAI
             openai = PromptLayerChatOpenAI(model_name="gpt-3.5-turbo")
     """
 

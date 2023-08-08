@@ -2,7 +2,7 @@ from typing import Any, List, Optional
 
 from pydantic import BaseModel, Extra
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 
 class ModelScopeEmbeddings(BaseModel, Embeddings):
@@ -13,7 +13,7 @@ class ModelScopeEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import ModelScopeEmbeddings
+            from oplangchain.embeddings import ModelScopeEmbeddings
             model_id = "damo/nlp_corom_sentence-embedding_english-base"
             embed = ModelScopeEmbeddings(model_id=model_id, model_revision="v1.0.0")
     """

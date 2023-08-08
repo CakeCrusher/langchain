@@ -1,13 +1,13 @@
 from typing import Any, List
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from langchain.retrievers.document_compressors.base import (
+from oplangchain.retrievers.document_compressors.base import (
     BaseDocumentCompressor,
 )
-from langchain.schema import BaseRetriever, Document
+from oplangchain.schema import BaseRetriever, Document
 
 
 class ContextualCompressionRetriever(BaseRetriever):

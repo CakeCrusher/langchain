@@ -4,7 +4,7 @@ from typing import List
 import requests
 from pydantic import BaseModel, Field
 
-from langchain.schema import Document
+from oplangchain.schema import Document
 
 
 class BraveSearchWrapper(BaseModel):

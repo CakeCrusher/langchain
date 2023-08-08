@@ -5,13 +5,13 @@ from abc import ABC, abstractmethod
 from inspect import signature
 from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
-from langchain.load.dump import dumpd
-from langchain.load.serializable import Serializable
-from langchain.schema.document import Document
-from langchain.schema.runnable import Runnable, RunnableConfig
+from oplangchain.load.dump import dumpd
+from oplangchain.load.serializable import Serializable
+from oplangchain.schema.document import Document
+from oplangchain.schema.runnable import Runnable, RunnableConfig
 
 if TYPE_CHECKING:
-    from langchain.callbacks.manager import (
+    from oplangchain.callbacks.manager import (
         AsyncCallbackManagerForRetrieverRun,
         CallbackManagerForRetrieverRun,
         Callbacks,
@@ -164,7 +164,7 @@ class BaseRetriever(Serializable, Runnable[str, List[Document]], ABC):
         Returns:
             List of relevant documents
         """
-        from langchain.callbacks.manager import CallbackManager
+        from oplangchain.callbacks.manager import CallbackManager
 
         callback_manager = CallbackManager.configure(
             callbacks,
@@ -220,7 +220,7 @@ class BaseRetriever(Serializable, Runnable[str, List[Document]], ABC):
         Returns:
             List of relevant documents
         """
-        from langchain.callbacks.manager import AsyncCallbackManager
+        from oplangchain.callbacks.manager import AsyncCallbackManager
 
         callback_manager = AsyncCallbackManager.configure(
             callbacks,

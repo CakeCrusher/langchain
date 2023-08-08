@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING, Any, Generator, List, Mapping, Optional, Union
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
 
 if TYPE_CHECKING:
     from xinference.client import RESTfulChatModelHandle, RESTfulGenerateModelHandle
@@ -46,7 +46,7 @@ class Xinference(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import Xinference
+            from oplangchain.llms import Xinference
 
             llm = Xinference(
                 server_url="http://0.0.0.0:9997",

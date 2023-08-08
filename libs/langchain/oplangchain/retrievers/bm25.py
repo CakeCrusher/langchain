@@ -7,8 +7,8 @@ from __future__ import annotations
 
 from typing import Any, Callable, Dict, Iterable, List, Optional
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.schema import BaseRetriever, Document
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.schema import BaseRetriever, Document
 
 
 def default_preprocessing_func(text: str) -> List[str]:

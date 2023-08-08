@@ -2,7 +2,7 @@ from typing import Any, List
 
 from pydantic import BaseModel, Extra
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 DEFAULT_MODEL_URL = "https://tfhub.dev/google/universal-sentence-encoder-multilingual/3"
 
@@ -15,7 +15,7 @@ class TensorflowHubEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import TensorflowHubEmbeddings
+            from oplangchain.embeddings import TensorflowHubEmbeddings
             url = "https://tfhub.dev/google/universal-sentence-encoder-multilingual/3"
             tf = TensorflowHubEmbeddings(model_url=url)
     """

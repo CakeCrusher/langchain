@@ -26,12 +26,12 @@
 
     AIMessage, BaseMessage, HumanMessage
 """  # noqa: E501
-from langchain.memory.buffer import (
+from oplangchain.memory.buffer import (
     ConversationBufferMemory,
     ConversationStringBufferMemory,
 )
-from langchain.memory.buffer_window import ConversationBufferWindowMemory
-from langchain.memory.chat_message_histories import (
+from oplangchain.memory.buffer_window import ConversationBufferWindowMemory
+from oplangchain.memory.chat_message_histories import (
     CassandraChatMessageHistory,
     ChatMessageHistory,
     CosmosDBChatMessageHistory,
@@ -45,22 +45,22 @@ from langchain.memory.chat_message_histories import (
     StreamlitChatMessageHistory,
     ZepChatMessageHistory,
 )
-from langchain.memory.combined import CombinedMemory
-from langchain.memory.entity import (
+from oplangchain.memory.combined import CombinedMemory
+from oplangchain.memory.entity import (
     ConversationEntityMemory,
     InMemoryEntityStore,
     RedisEntityStore,
     SQLiteEntityStore,
 )
-from langchain.memory.kg import ConversationKGMemory
-from langchain.memory.motorhead_memory import MotorheadMemory
-from langchain.memory.readonly import ReadOnlySharedMemory
-from langchain.memory.simple import SimpleMemory
-from langchain.memory.summary import ConversationSummaryMemory
-from langchain.memory.summary_buffer import ConversationSummaryBufferMemory
-from langchain.memory.token_buffer import ConversationTokenBufferMemory
-from langchain.memory.vectorstore import VectorStoreRetrieverMemory
-from langchain.memory.zep_memory import ZepMemory
+from oplangchain.memory.kg import ConversationKGMemory
+from oplangchain.memory.motorhead_memory import MotorheadMemory
+from oplangchain.memory.readonly import ReadOnlySharedMemory
+from oplangchain.memory.simple import SimpleMemory
+from oplangchain.memory.summary import ConversationSummaryMemory
+from oplangchain.memory.summary_buffer import ConversationSummaryBufferMemory
+from oplangchain.memory.token_buffer import ConversationTokenBufferMemory
+from oplangchain.memory.vectorstore import VectorStoreRetrieverMemory
+from oplangchain.memory.zep_memory import ZepMemory
 
 __all__ = [
     "CassandraChatMessageHistory",

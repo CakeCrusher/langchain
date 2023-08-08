@@ -2,8 +2,8 @@ from typing import Any, Callable, List
 
 from pydantic import Extra
 
-from langchain.embeddings.base import Embeddings
-from langchain.llms import SelfHostedPipeline
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.llms import SelfHostedPipeline
 
 
 def _embed_documents(pipeline: Any, *args: Any, **kwargs: Any) -> List[List[float]]:
@@ -28,7 +28,7 @@ class SelfHostedEmbeddings(SelfHostedPipeline, Embeddings):
     Example using a model load function:
         .. code-block:: python
 
-            from langchain.embeddings import SelfHostedEmbeddings
+            from oplangchain.embeddings import SelfHostedEmbeddings
             from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
             import runhouse as rh
 
@@ -46,7 +46,7 @@ class SelfHostedEmbeddings(SelfHostedPipeline, Embeddings):
     Example passing in a pipeline path:
         .. code-block:: python
 
-            from langchain.embeddings import SelfHostedHFEmbeddings
+            from oplangchain.embeddings import SelfHostedHFEmbeddings
             import runhouse as rh
             from transformers import pipeline
 

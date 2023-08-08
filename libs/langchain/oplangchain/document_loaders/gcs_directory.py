@@ -1,9 +1,9 @@
 """Loading logic for loading documents from an GCS directory."""
 from typing import List
 
-from langchain.docstore.document import Document
-from langchain.document_loaders.base import BaseLoader
-from langchain.document_loaders.gcs_file import GCSFileLoader
+from oplangchain.docstore.document import Document
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.document_loaders.gcs_file import GCSFileLoader
 
 
 class GCSDirectoryLoader(BaseLoader):

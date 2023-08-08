@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Extra, Field
 
-from langchain.embeddings.base import Embeddings
+from oplangchain.embeddings.base import Embeddings
 
 DEFAULT_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 DEFAULT_INSTRUCT_MODEL = "hkunlp/instructor-large"
@@ -20,7 +20,7 @@ class HuggingFaceEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import HuggingFaceEmbeddings
+            from oplangchain.embeddings import HuggingFaceEmbeddings
 
             model_name = "sentence-transformers/all-mpnet-base-v2"
             model_kwargs = {'device': 'cpu'}
@@ -100,7 +100,7 @@ class HuggingFaceInstructEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import HuggingFaceInstructEmbeddings
+            from oplangchain.embeddings import HuggingFaceInstructEmbeddings
 
             model_name = "hkunlp/instructor-large"
             model_kwargs = {'device': 'cpu'}

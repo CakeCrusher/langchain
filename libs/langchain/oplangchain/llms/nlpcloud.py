@@ -2,9 +2,9 @@ from typing import Any, Dict, List, Mapping, Optional
 
 from pydantic import Extra, root_validator
 
-from langchain.callbacks.manager import CallbackManagerForLLMRun
-from langchain.llms.base import LLM
-from langchain.utils import get_from_dict_or_env
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
+from oplangchain.llms.base import LLM
+from oplangchain.utils import get_from_dict_or_env
 
 
 class NLPCloud(LLM):
@@ -16,7 +16,7 @@ class NLPCloud(LLM):
     Example:
         .. code-block:: python
 
-            from langchain.llms import NLPCloud
+            from oplangchain.llms import NLPCloud
             nlpcloud = NLPCloud(model="finetuned-gpt-neox-20b")
     """
 

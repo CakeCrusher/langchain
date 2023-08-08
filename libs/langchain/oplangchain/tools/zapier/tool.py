@@ -45,10 +45,10 @@ os.environ["OPENAI_API_KEY"] = os.environ.get("OPENAI_API_KEY", "")
 # get from https://nla.zapier.com/docs/authentication/
 os.environ["ZAPIER_NLA_API_KEY"] = os.environ.get("ZAPIER_NLA_API_KEY", "")
 
-from langchain.llms import OpenAI
-from langchain.agents import initialize_agent
-from langchain.agents.agent_toolkits import ZapierToolkit
-from langchain.utilities.zapier import ZapierNLAWrapper
+from oplangchain.llms import OpenAI
+from oplangchain.agents import initialize_agent
+from oplangchain.agents.agent_toolkits import ZapierToolkit
+from oplangchain.utilities.zapier import ZapierNLAWrapper
 
 ## step 0. expose gmail 'find email' and slack 'send channel message' actions
 
@@ -81,13 +81,13 @@ from typing import Any, Dict, Optional
 
 from pydantic import Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForToolRun,
     CallbackManagerForToolRun,
 )
-from langchain.tools.base import BaseTool
-from langchain.tools.zapier.prompt import BASE_ZAPIER_TOOL_PROMPT
-from langchain.utilities.zapier import ZapierNLAWrapper
+from oplangchain.tools.base import BaseTool
+from oplangchain.tools.zapier.prompt import BASE_ZAPIER_TOOL_PROMPT
+from oplangchain.utilities.zapier import ZapierNLAWrapper
 
 
 class ZapierNLARunAction(BaseTool):

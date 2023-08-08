@@ -6,7 +6,7 @@ from functools import lru_cache
 def get_runtime_environment() -> dict:
     """Get information about the LangChain runtime environment."""
     # Lazy import to avoid circular imports
-    from langchain import __version__
+    from oplangchain import __version__
 
     return {
         "library_version": __version__,

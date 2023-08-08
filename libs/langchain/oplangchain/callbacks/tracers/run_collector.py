@@ -3,8 +3,8 @@
 from typing import Any, List, Optional, Union
 from uuid import UUID
 
-from langchain.callbacks.tracers.base import BaseTracer
-from langchain.callbacks.tracers.schemas import Run
+from oplangchain.callbacks.tracers.base import BaseTracer
+from oplangchain.callbacks.tracers.schemas import Run
 
 
 class RunCollectorCallbackHandler(BaseTracer):

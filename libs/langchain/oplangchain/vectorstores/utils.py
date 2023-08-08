@@ -5,7 +5,7 @@ from typing import List
 
 import numpy as np
 
-from langchain.utils.math import cosine_similarity
+from oplangchain.utils.math import cosine_similarity
 
 
 class DistanceStrategy(str, Enum):

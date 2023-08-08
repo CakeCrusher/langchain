@@ -5,10 +5,10 @@ from typing import TYPE_CHECKING, Any, Dict, List, Sequence
 
 from pydantic import Field
 
-from langchain.load.serializable import Serializable
+from oplangchain.load.serializable import Serializable
 
 if TYPE_CHECKING:
-    from langchain.prompts.chat import ChatPromptTemplate
+    from oplangchain.prompts.chat import ChatPromptTemplate
 
 
 def get_buffer_string(
@@ -27,7 +27,7 @@ def get_buffer_string(
     Example:
         .. code-block:: python
 
-            from langchain.schema import AIMessage, HumanMessage
+            from oplangchain.schema import AIMessage, HumanMessage
 
             messages = [
                 HumanMessage(content="Hi, how are you?"),
@@ -81,7 +81,7 @@ class BaseMessage(Serializable):
         return True
 
     def __add__(self, other: Any) -> ChatPromptTemplate:
-        from langchain.prompts.chat import ChatPromptTemplate
+        from oplangchain.prompts.chat import ChatPromptTemplate
 
         prompt = ChatPromptTemplate(messages=[self])
         return prompt + other

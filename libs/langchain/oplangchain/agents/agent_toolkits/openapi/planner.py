@@ -7,8 +7,8 @@ from typing import Any, Callable, Dict, List, Optional
 import yaml
 from pydantic import Field
 
-from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_toolkits.openapi.planner_prompt import (
+from oplangchain.agents.agent import AgentExecutor
+from oplangchain.agents.agent_toolkits.openapi.planner_prompt import (
     API_CONTROLLER_PROMPT,
     API_CONTROLLER_TOOL_DESCRIPTION,
     API_CONTROLLER_TOOL_NAME,
@@ -25,19 +25,19 @@ from langchain.agents.agent_toolkits.openapi.planner_prompt import (
     REQUESTS_PATCH_TOOL_DESCRIPTION,
     REQUESTS_POST_TOOL_DESCRIPTION,
 )
-from langchain.agents.agent_toolkits.openapi.spec import ReducedOpenAPISpec
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.agents.tools import Tool
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.llms.openai import OpenAI
-from langchain.memory import ReadOnlySharedMemory
-from langchain.prompts import PromptTemplate
-from langchain.schema import BasePromptTemplate
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.tools.base import BaseTool
-from langchain.tools.requests.tool import BaseRequestsTool
-from langchain.utilities.requests import RequestsWrapper
+from oplangchain.agents.agent_toolkits.openapi.spec import ReducedOpenAPISpec
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.agents.tools import Tool
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.llms.openai import OpenAI
+from oplangchain.memory import ReadOnlySharedMemory
+from oplangchain.prompts import PromptTemplate
+from oplangchain.schema import BasePromptTemplate
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.tools.base import BaseTool
+from oplangchain.tools.requests.tool import BaseRequestsTool
+from oplangchain.utilities.requests import RequestsWrapper
 
 #
 # Requests tools with LLM-instructed extraction of truncated responses.

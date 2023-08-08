@@ -2,17 +2,17 @@ from typing import Any, List, Optional, Type
 
 from pydantic import BaseModel, Extra, Field
 
-from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
-from langchain.chains.retrieval_qa.base import RetrievalQA
-from langchain.document_loaders.base import BaseLoader
-from langchain.embeddings.base import Embeddings
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.llms.openai import OpenAI
-from langchain.schema import Document
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.text_splitter import RecursiveCharacterTextSplitter, TextSplitter
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.chroma import Chroma
+from oplangchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
+from oplangchain.chains.retrieval_qa.base import RetrievalQA
+from oplangchain.document_loaders.base import BaseLoader
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.embeddings.openai import OpenAIEmbeddings
+from oplangchain.llms.openai import OpenAI
+from oplangchain.schema import Document
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.text_splitter import RecursiveCharacterTextSplitter, TextSplitter
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.chroma import Chroma
 
 
 def _get_default_text_splitter() -> TextSplitter:

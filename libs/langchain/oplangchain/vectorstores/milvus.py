@@ -7,10 +7,10 @@ from uuid import uuid4
 
 import numpy as np
 
-from langchain.docstore.document import Document
-from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.base import VectorStore
-from langchain.vectorstores.utils import maximal_marginal_relevance
+from oplangchain.docstore.document import Document
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.vectorstores.base import VectorStore
+from oplangchain.vectorstores.utils import maximal_marginal_relevance
 
 logger = logging.getLogger(__name__)
 
@@ -83,8 +83,8 @@ class Milvus(VectorStore):
     Example:
         .. code-block:: python
 
-        from langchain import Milvus
-        from langchain.embeddings import OpenAIEmbeddings
+        from oplangchain import Milvus
+        from oplangchain.embeddings import OpenAIEmbeddings
 
         embedding = OpenAIEmbeddings()
         # Connect to a milvus instance on localhost

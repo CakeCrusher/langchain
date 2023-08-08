@@ -1,7 +1,7 @@
 import datetime
 from typing import Any, Optional, Sequence, Union
 
-from langchain.utils import check_package_version
+from oplangchain.utils import check_package_version
 
 try:
     check_package_version("lark", gte_version="1.1.5")
@@ -14,7 +14,7 @@ except ImportError:
     Transformer = object  # type: ignore
     Lark = object  # type: ignore
 
-from langchain.chains.query_constructor.ir import (
+from oplangchain.chains.query_constructor.ir import (
     Comparator,
     Comparison,
     FilterDirective,

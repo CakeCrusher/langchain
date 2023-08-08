@@ -5,14 +5,14 @@ from typing import Any, Dict, List, Literal, Optional
 from aiohttp import ClientSession
 from pydantic import Extra, Field, root_validator
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForLLMRun,
     CallbackManagerForLLMRun,
 )
-from langchain.llms.base import LLM
-from langchain.llms.utils import enforce_stop_tokens
-from langchain.requests import Requests
-from langchain.utils import get_from_dict_or_env
+from oplangchain.llms.base import LLM
+from oplangchain.llms.utils import enforce_stop_tokens
+from oplangchain.requests import Requests
+from oplangchain.utils import get_from_dict_or_env
 
 logger = logging.getLogger(__name__)
 

@@ -6,25 +6,25 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
 
 from pydantic import Extra, Field
 
-from langchain.callbacks.manager import (
+from oplangchain.callbacks.manager import (
     AsyncCallbackManager,
     AsyncCallbackManagerForChainRun,
     CallbackManager,
     CallbackManagerForChainRun,
     Callbacks,
 )
-from langchain.chains.base import Chain
-from langchain.load.dump import dumpd
-from langchain.prompts.prompt import PromptTemplate
-from langchain.schema import (
+from oplangchain.chains.base import Chain
+from oplangchain.load.dump import dumpd
+from oplangchain.prompts.prompt import PromptTemplate
+from oplangchain.schema import (
     BaseLLMOutputParser,
     BasePromptTemplate,
     LLMResult,
     PromptValue,
     StrOutputParser,
 )
-from langchain.schema.language_model import BaseLanguageModel
-from langchain.utils.input import get_colored_text
+from oplangchain.schema.language_model import BaseLanguageModel
+from oplangchain.utils.input import get_colored_text
 
 
 class LLMChain(Chain):
@@ -33,7 +33,7 @@ class LLMChain(Chain):
     Example:
         .. code-block:: python
 
-            from langchain import LLMChain, OpenAI, PromptTemplate
+            from oplangchain import LLMChain, OpenAI, PromptTemplate
             prompt_template = "Tell me a {adjective} joke"
             prompt = PromptTemplate(
                 input_variables=["adjective"], template=prompt_template

@@ -4,9 +4,9 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from pydantic import Field
 
-from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.schema import BaseRetriever, Document
-from langchain.vectorstores.base import VectorStore
+from oplangchain.callbacks.manager import CallbackManagerForRetrieverRun
+from oplangchain.schema import BaseRetriever, Document
+from oplangchain.vectorstores.base import VectorStore
 
 
 def _get_hours_passed(time: datetime.datetime, ref_time: datetime.datetime) -> float:

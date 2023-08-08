@@ -4,11 +4,11 @@ import concurrent.futures
 from pathlib import Path
 from typing import Iterator, Literal, Optional, Sequence, Union
 
-from langchain.document_loaders.base import BaseBlobParser
-from langchain.document_loaders.blob_loaders import BlobLoader, FileSystemBlobLoader
-from langchain.document_loaders.generic import GenericLoader
-from langchain.document_loaders.parsers.registry import get_parser
-from langchain.schema import Document
+from oplangchain.document_loaders.base import BaseBlobParser
+from oplangchain.document_loaders.blob_loaders import BlobLoader, FileSystemBlobLoader
+from oplangchain.document_loaders.generic import GenericLoader
+from oplangchain.document_loaders.parsers.registry import get_parser
+from oplangchain.schema import Document
 
 _PathLike = Union[str, Path]
 

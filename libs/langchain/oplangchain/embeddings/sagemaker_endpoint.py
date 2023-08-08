@@ -2,8 +2,8 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Extra, root_validator
 
-from langchain.embeddings.base import Embeddings
-from langchain.llms.sagemaker_endpoint import ContentHandlerBase
+from oplangchain.embeddings.base import Embeddings
+from oplangchain.llms.sagemaker_endpoint import ContentHandlerBase
 
 
 class EmbeddingsContentHandler(ContentHandlerBase[List[str], List[List[float]]]):
@@ -32,7 +32,7 @@ class SagemakerEndpointEmbeddings(BaseModel, Embeddings):
     Example:
         .. code-block:: python
 
-            from langchain.embeddings import SagemakerEndpointEmbeddings
+            from oplangchain.embeddings import SagemakerEndpointEmbeddings
             endpoint_name = (
                 "my-endpoint-name"
             )
@@ -75,7 +75,7 @@ class SagemakerEndpointEmbeddings(BaseModel, Embeddings):
      Example:
         .. code-block:: python
 
-        from langchain.embeddings.sagemaker_endpoint import EmbeddingsContentHandler
+        from oplangchain.embeddings.sagemaker_endpoint import EmbeddingsContentHandler
 
         class ContentHandler(EmbeddingsContentHandler):
                 content_type = "application/json"

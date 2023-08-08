@@ -1,17 +1,17 @@
 """OpenAPI spec agent."""
 from typing import Any, Dict, List, Optional
 
-from langchain.agents.agent import AgentExecutor
-from langchain.agents.agent_toolkits.openapi.prompt import (
+from oplangchain.agents.agent import AgentExecutor
+from oplangchain.agents.agent_toolkits.openapi.prompt import (
     OPENAPI_PREFIX,
     OPENAPI_SUFFIX,
 )
-from langchain.agents.agent_toolkits.openapi.toolkit import OpenAPIToolkit
-from langchain.agents.mrkl.base import ZeroShotAgent
-from langchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS
-from langchain.callbacks.base import BaseCallbackManager
-from langchain.chains.llm import LLMChain
-from langchain.schema.language_model import BaseLanguageModel
+from oplangchain.agents.agent_toolkits.openapi.toolkit import OpenAPIToolkit
+from oplangchain.agents.mrkl.base import ZeroShotAgent
+from oplangchain.agents.mrkl.prompt import FORMAT_INSTRUCTIONS
+from oplangchain.callbacks.base import BaseCallbackManager
+from oplangchain.chains.llm import LLMChain
+from oplangchain.schema.language_model import BaseLanguageModel
 
 
 def create_openapi_agent(
