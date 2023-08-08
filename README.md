@@ -3,6 +3,7 @@ This is a fork of [LangChain](https://github.com/langchain-ai/langchain) intende
 1. Replace `from langchain` with `from oplangchain`
 2. Replace `^\s*import langchain\s*$` with `import oplangchain`
 3. Replace `return langchain` with `return oplangchain`
+4. Replace `if langchain.` with `if oplangchain.`
 
 # 🦜️🔗 LangChain
 

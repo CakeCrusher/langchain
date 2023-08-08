@@ -423,7 +423,7 @@ class BaseChatModel(BaseLanguageModel[BaseMessageChunk], ABC):
             "run_manager"
         )
         disregard_cache = self.cache is not None and not self.cache
-        if langchain.llm_cache is None or disregard_cache:
+        if oplangchain.llm_cache is None or disregard_cache:
             # This happens when langchain.cache is None, but self.cache is True
             if self.cache is not None and self.cache:
                 raise ValueError(
@@ -462,7 +462,7 @@ class BaseChatModel(BaseLanguageModel[BaseMessageChunk], ABC):
             "run_manager"
         )
         disregard_cache = self.cache is not None and not self.cache
-        if langchain.llm_cache is None or disregard_cache:
+        if oplangchain.llm_cache is None or disregard_cache:
             # This happens when langchain.cache is None, but self.cache is True
             if self.cache is not None and self.cache:
                 raise ValueError(
