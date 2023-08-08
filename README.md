@@ -1,9 +1,11 @@
 # oplangchain
 This is a fork of [LangChain](https://github.com/langchain-ai/langchain) intended to opperate in the following (undesirable) way.
+0. Activate `poetry shell` then activate `venv`
 1. Replace `from langchain` with `from oplangchain`
 2. Replace `^\s*import langchain\s*$` with `import oplangchain`
 3. Replace `return langchain` with `return oplangchain`
 4. Replace `if langchain.` with `if oplangchain.`
+5. To sync with `upstream` change the `.\libs\langchain\oplangchain` to `.\libs\langchain\langchain`
 
 # 🦜️🔗 LangChain
 
