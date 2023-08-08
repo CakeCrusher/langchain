@@ -47,7 +47,7 @@ from oplangchain.schema.runnable import RunnableConfig
 
 
 def _get_verbosity() -> bool:
-    return langchain.verbose
+    return oplangchain.verbose
 
 
 class BaseChatModel(BaseLanguageModel[BaseMessageChunk], ABC):

@@ -65,7 +65,7 @@ logger = logging.getLogger(__name__)
 
 
 def _get_verbosity() -> bool:
-    return langchain.verbose
+    return oplangchain.verbose
 
 
 @functools.lru_cache

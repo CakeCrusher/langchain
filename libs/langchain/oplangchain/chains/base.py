@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 
 def _get_verbosity() -> bool:
-    return langchain.verbose
+    return oplangchain.verbose
 
 
 class Chain(Serializable, Runnable[Dict[str, Any], Dict[str, Any]], ABC):

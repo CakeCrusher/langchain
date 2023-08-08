@@ -77,7 +77,7 @@ tracing_v2_callback_var: ContextVar[
 
 
 def _get_debug() -> bool:
-    return langchain.debug
+    return oplangchain.debug
 
 
 @contextmanager
