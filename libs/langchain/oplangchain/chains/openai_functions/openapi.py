@@ -244,6 +244,7 @@ def get_openapi_chain(
     params: Optional[Dict] = None,
     **kwargs: Any,
 ) -> SequentialChain:
+    print("get_openapi_chain STARTING")
     """Create a chain for querying an API from a OpenAPI spec.
 
     Args:

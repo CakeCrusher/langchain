@@ -1,3 +1,9 @@
+# oplangchain
+This is a fork of [LangChain](https://github.com/langchain-ai/langchain) intended to opperate in the following (undesirable) way.
+1. Its base state is with the `libs\langchain\oplangchain` directory wrapping `langchain` with oplangchain having imported all of the `langchain` modules.
+2. Whenever `langchain` needs to be synced with the upstream [LangChain](https://github.com/langchain-ai/langchain) it will be extracted out of `oplangchain` and be positioned `libs\langchain\langchain` (its original configutation).
+3. Once synced return it back to base state.
+
 # 🦜️🔗 LangChain
 
 ⚡ Building applications with LLMs through composability ⚡
