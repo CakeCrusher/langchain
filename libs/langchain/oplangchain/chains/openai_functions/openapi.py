@@ -175,9 +175,6 @@ def openapi_spec_to_openai_fn(
         method = _name_to_call_map[name]["method"]
         url = _name_to_call_map[name]["url"]
         path_params = fn_args.pop("path_params", {})
-        path_params = {
-            "url": "https://eforms.com/download/2018/01/Non-Disclosure-Agreement-Template.pdf"
-        }
         url = _format_url(url, path_params)
         if False:  # testing purposes
             print("Name: ", name)

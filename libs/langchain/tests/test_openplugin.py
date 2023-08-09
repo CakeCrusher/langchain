@@ -42,8 +42,10 @@ test_success_plugins = [
             }
         ],
         "truncate": False,
-    }
+    },
 ]
+
+
 test_root_url_fail_plugins = [
     {
         "name": "askyourpdf",
@@ -247,7 +249,6 @@ def test_full_suite() -> None:
         f"\"{test_plugin['name']}\" json_response: ",
         json.dumps(json_response, indent=2),
     )
-    assert 1 == 2
     try:
         return {
             "role": "function",
