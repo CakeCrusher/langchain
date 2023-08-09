@@ -21,6 +21,7 @@ from openapi_schema_pydantic import (
     Schema,
 )
 from pydantic import ValidationError
+from urllib.parse import urlparse
 
 logger = logging.getLogger(__name__)
 
@@ -198,12 +199,18 @@ class OpenAPISpec(OpenAPI):
         return cls.parse_obj(spec_dict)
 
     @classmethod
-    def from_text(cls, text: str) -> "OpenAPISpec":
+    def from_text(cls, text: str, openapi_url: str = "") -> "OpenAPISpec":
         """Get an OpenAPI spec from a text."""
         try:
             spec_dict = json.loads(text)
         except json.JSONDecodeError:
             spec_dict = yaml.safe_load(text)
+
+        if "servers" not in spec_dict and openapi_url:
+            parsed_url = urlparse(openapi_url)
+            root_url = f"{parsed_url.scheme}://{parsed_url.netloc}"
+            spec_dict["servers"] = [{"url": root_url}]
+
         return cls.from_spec_dict(spec_dict)
 
     @classmethod
@@ -219,7 +226,7 @@ class OpenAPISpec(OpenAPI):
     def from_url(cls, url: str) -> "OpenAPISpec":
         """Get an OpenAPI spec from a URL."""
         response = requests.get(url)
-        return cls.from_text(response.text)
+        return cls.from_text(response.text, url)
 
     @property
     def base_url(self) -> str:

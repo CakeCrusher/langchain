@@ -153,6 +153,13 @@ def openapi_spec_to_openai_fn(
                 },
             }
             functions.append(fn)
+            print(
+                f"Assigning \"{fn['name']}\"",
+                {
+                    "method": method,
+                    "url": api_op.base_url + api_op.path,
+                },
+            )
             _name_to_call_map[fn["name"]] = {
                 "method": method,
                 "url": api_op.base_url + api_op.path,
@@ -168,10 +175,21 @@ def openapi_spec_to_openai_fn(
         method = _name_to_call_map[name]["method"]
         url = _name_to_call_map[name]["url"]
         path_params = fn_args.pop("path_params", {})
+        path_params = {
+            "url": "https://eforms.com/download/2018/01/Non-Disclosure-Agreement-Template.pdf"
+        }
         url = _format_url(url, path_params)
+        if False:  # testing purposes
+            print("Name: ", name)
+            print(f"Making request to {url} with method {method}")
+            print(f"Headers: {headers}")
+            print(f"Params: {params}")
+            print(f"fn_args: {fn_args}")
         if "data" in fn_args and isinstance(fn_args["data"], dict):
             fn_args["data"] = json.dumps(fn_args["data"])
         _kwargs = {**fn_args, **kwargs}
+        if False:  # testing purposes
+            print(f"Other arguments: {_kwargs}")
         if headers is not None:
             if "headers" in _kwargs:
                 _kwargs["headers"].update(headers)
