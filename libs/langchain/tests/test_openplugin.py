@@ -32,6 +32,17 @@ test_success_plugins = [
         ],
         "truncate": False,
     },
+    {
+        "name": "twtData",
+        "openapi_url": "https://www.twtdata.com/openapi.yaml",
+        "messages": [
+            {
+                "role": "user",
+                "content": "show me the amount of people @Sebasti54919704 is following",
+            }
+        ],
+        "truncate": False,
+    }
 ]
 test_root_url_fail_plugins = [
     {
@@ -79,7 +90,7 @@ test_root_url_fail_plugins = [
         "truncate": False,
     },
 ]
-test_plugin = test_root_url_fail_plugins[1]
+test_plugin = test_success_plugins[2]
 
 
 def test_full_suite() -> None:
@@ -236,6 +247,7 @@ def test_full_suite() -> None:
         f"\"{test_plugin['name']}\" json_response: ",
         json.dumps(json_response, indent=2),
     )
+    assert 1 == 2
     try:
         return {
             "role": "function",
