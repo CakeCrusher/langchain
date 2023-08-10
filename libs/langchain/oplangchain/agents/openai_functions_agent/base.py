@@ -76,10 +76,7 @@ def _create_function_message(
             content = str(observation)
     else:
         content = observation
-    return FunctionMessage(
-        name=agent_action.tool,
-        content=content,
-    )
+    return FunctionMessage(name=agent_action.tool, content=content,)
 
 
 def _format_intermediate_steps(
@@ -210,14 +207,11 @@ class OpenAIFunctionsAgent(BaseSingleActionAgent):
         messages = prompt.to_messages()
         if with_functions:
             predicted_message = self.llm.predict_messages(
-                messages,
-                functions=self.functions,
-                callbacks=callbacks,
+                messages, functions=self.functions, callbacks=callbacks,
             )
         else:
             predicted_message = self.llm.predict_messages(
-                messages,
-                callbacks=callbacks,
+                messages, callbacks=callbacks,
             )
         agent_decision = _parse_ai_message(predicted_message)
         return agent_decision
@@ -331,8 +325,7 @@ class OpenAIFunctionsAgent(BaseSingleActionAgent):
         if not isinstance(llm, ChatOpenAI):
             raise ValueError("Only supported with ChatOpenAI models.")
         prompt = cls.create_prompt(
-            extra_prompt_messages=extra_prompt_messages,
-            system_message=system_message,
+            extra_prompt_messages=extra_prompt_messages, system_message=system_message,
         )
         return cls(
             llm=llm,

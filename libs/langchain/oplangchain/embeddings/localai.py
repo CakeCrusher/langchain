@@ -198,16 +198,10 @@ class LocalAIEmbeddings(BaseModel, Embeddings):
             values, "openai_api_key", "OPENAI_API_KEY"
         )
         values["openai_api_base"] = get_from_dict_or_env(
-            values,
-            "openai_api_base",
-            "OPENAI_API_BASE",
-            default="",
+            values, "openai_api_base", "OPENAI_API_BASE", default="",
         )
         values["openai_proxy"] = get_from_dict_or_env(
-            values,
-            "openai_proxy",
-            "OPENAI_PROXY",
-            default="",
+            values, "openai_proxy", "OPENAI_PROXY", default="",
         )
 
         default_api_version = ""
@@ -218,10 +212,7 @@ class LocalAIEmbeddings(BaseModel, Embeddings):
             default=default_api_version,
         )
         values["openai_organization"] = get_from_dict_or_env(
-            values,
-            "openai_organization",
-            "OPENAI_ORGANIZATION",
-            default="",
+            values, "openai_organization", "OPENAI_ORGANIZATION", default="",
         )
         try:
             import openai
@@ -262,11 +253,7 @@ class LocalAIEmbeddings(BaseModel, Embeddings):
             # See: https://github.com/openai/openai-python/issues/418#issuecomment-1525939500
             # replace newlines, which can negatively affect performance.
             text = text.replace("\n", " ")
-        return embed_with_retry(
-            self,
-            input=[text],
-            **self._invocation_params,
-        )["data"][
+        return embed_with_retry(self, input=[text], **self._invocation_params,)["data"][
             0
         ]["embedding"]
 
@@ -278,11 +265,7 @@ class LocalAIEmbeddings(BaseModel, Embeddings):
             # replace newlines, which can negatively affect performance.
             text = text.replace("\n", " ")
         return (
-            await async_embed_with_retry(
-                self,
-                input=[text],
-                **self._invocation_params,
-            )
+            await async_embed_with_retry(self, input=[text], **self._invocation_params,)
         )["data"][0]["embedding"]
 
     def embed_documents(

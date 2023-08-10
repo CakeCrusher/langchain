@@ -21,11 +21,7 @@ def test_function_message_dict_to_function_message() -> None:
     content = json.dumps({"result": "Example #1"})
     name = "test_function"
     result = _convert_dict_to_message(
-        {
-            "role": "function",
-            "name": name,
-            "content": content,
-        }
+        {"role": "function", "name": name, "content": content,}
     )
     assert isinstance(result, FunctionMessage)
     assert result.name == name
@@ -63,10 +59,7 @@ def mock_completion() -> dict:
         "choices": [
             {
                 "index": 0,
-                "message": {
-                    "role": "assistant",
-                    "content": "Bar Baz",
-                },
+                "message": {"role": "assistant", "content": "Bar Baz",},
                 "finish_reason": "stop",
             }
         ],
@@ -86,9 +79,7 @@ def test_openai_predict(mock_completion: dict) -> None:
 
     mock_client.create = mock_create
     with patch.object(
-        llm,
-        "client",
-        mock_client,
+        llm, "client", mock_client,
     ):
         res = llm.predict("bar")
         assert res == "Bar Baz"
@@ -108,9 +99,7 @@ async def test_openai_apredict(mock_completion: dict) -> None:
 
     mock_client.create = mock_create
     with patch.object(
-        llm,
-        "client",
-        mock_client,
+        llm, "client", mock_client,
     ):
         res = llm.predict("bar")
         assert res == "Bar Baz"

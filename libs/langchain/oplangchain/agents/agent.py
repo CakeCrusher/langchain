@@ -549,9 +549,7 @@ class Agent(BaseSingleActionAgent):
         """Construct an agent from an LLM and tools."""
         cls._validate_tools(tools)
         llm_chain = LLMChain(
-            llm=llm,
-            prompt=cls.create_prompt(tools),
-            callback_manager=callback_manager,
+            llm=llm, prompt=cls.create_prompt(tools), callback_manager=callback_manager,
         )
         tool_names = [tool.name for tool in tools]
         _output_parser = output_parser or cls._get_default_output_parser()
@@ -620,16 +618,12 @@ class ExceptionTool(BaseTool):
     """Description of the tool."""
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         return query
 
     async def _arun(
-        self,
-        query: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         return query
 
@@ -1131,10 +1125,7 @@ s
         # Invalid tools won't be in the map, so we return False.
         if agent_action.tool in name_to_tool_map:
             if name_to_tool_map[agent_action.tool].return_direct:
-                return AgentFinish(
-                    {self.agent.return_values[0]: observation},
-                    "",
-                )
+                return AgentFinish({self.agent.return_values[0]: observation}, "",)
         return None
 
     def _prepare_intermediate_steps(

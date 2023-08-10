@@ -54,11 +54,7 @@ class ZillizRetriever(BaseRetriever):
         self.store.add_texts(texts, metadatas)
 
     def _get_relevant_documents(
-        self,
-        query: str,
-        *,
-        run_manager: CallbackManagerForRetrieverRun,
-        **kwargs: Any,
+        self, query: str, *, run_manager: CallbackManagerForRetrieverRun, **kwargs: Any,
     ) -> List[Document]:
         return self.retriever.get_relevant_documents(
             query, run_manager=run_manager.get_child(), **kwargs

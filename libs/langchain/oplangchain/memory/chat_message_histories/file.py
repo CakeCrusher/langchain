@@ -3,9 +3,7 @@ import logging
 from pathlib import Path
 from typing import List
 
-from oplangchain.schema import (
-    BaseChatMessageHistory,
-)
+from oplangchain.schema import BaseChatMessageHistory
 from oplangchain.schema.messages import (
     BaseMessage,
     messages_from_dict,

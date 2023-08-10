@@ -20,9 +20,7 @@ class WikipediaQueryRun(BaseTool):
     api_wrapper: WikipediaAPIWrapper
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the Wikipedia tool."""
         return self.api_wrapper.run(query)

@@ -239,11 +239,7 @@ class ScaNN(VectorStore):
         """
         embedding = self.embedding.embed_query(query)
         docs = self.similarity_search_with_score_by_vector(
-            embedding,
-            k,
-            filter=filter,
-            fetch_k=fetch_k,
-            **kwargs,
+            embedding, k, filter=filter, fetch_k=fetch_k, **kwargs,
         )
         return docs
 
@@ -268,11 +264,7 @@ class ScaNN(VectorStore):
             List of Documents most similar to the embedding.
         """
         docs_and_scores = self.similarity_search_with_score_by_vector(
-            embedding,
-            k,
-            filter=filter,
-            fetch_k=fetch_k,
-            **kwargs,
+            embedding, k, filter=filter, fetch_k=fetch_k, **kwargs,
         )
         return [doc for doc, _ in docs_and_scores]
 
@@ -389,12 +381,7 @@ class ScaNN(VectorStore):
         """
         embeddings = embedding.embed_documents(texts)
         return cls.__from(
-            texts,
-            embeddings,
-            embedding,
-            metadatas=metadatas,
-            ids=ids,
-            **kwargs,
+            texts, embeddings, embedding, metadatas=metadatas, ids=ids, **kwargs,
         )
 
     @classmethod
@@ -428,12 +415,7 @@ class ScaNN(VectorStore):
         texts = [t[0] for t in text_embeddings]
         embeddings = [t[1] for t in text_embeddings]
         return cls.__from(
-            texts,
-            embeddings,
-            embedding,
-            metadatas=metadatas,
-            ids=ids,
-            **kwargs,
+            texts, embeddings, embedding, metadatas=metadatas, ids=ids, **kwargs,
         )
 
     def save_local(self, folder_path: str, index_name: str = "index") -> None:
@@ -526,11 +508,7 @@ class ScaNN(VectorStore):
                 " ScaNN constructor to normalize scores"
             )
         docs_and_scores = self.similarity_search_with_score(
-            query,
-            k=k,
-            filter=filter,
-            fetch_k=fetch_k,
-            **kwargs,
+            query, k=k, filter=filter, fetch_k=fetch_k, **kwargs,
         )
         docs_and_rel_scores = [
             (doc, relevance_score_fn(score)) for doc, score in docs_and_scores

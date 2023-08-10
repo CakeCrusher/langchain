@@ -34,8 +34,7 @@ class GraphQLAPIWrapper(BaseModel):
             )
         headers = values.get("custom_headers")
         transport = RequestsHTTPTransport(
-            url=values["graphql_endpoint"],
-            headers=headers,
+            url=values["graphql_endpoint"], headers=headers,
         )
         client = Client(transport=transport, fetch_schema_from_transport=True)
         values["gql_client"] = client

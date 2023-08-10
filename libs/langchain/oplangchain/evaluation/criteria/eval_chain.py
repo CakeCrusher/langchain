@@ -89,15 +89,11 @@ class CriteriaResultOutputParser(BaseOutputParser[dict]):
 
 
 CRITERIA_TYPE = Union[
-    Mapping[str, str],
-    Criteria,
-    ConstitutionalPrinciple,
+    Mapping[str, str], Criteria, ConstitutionalPrinciple,
 ]
 
 
-def resolve_criteria(
-    criteria: Optional[Union[CRITERIA_TYPE, str]],
-) -> Dict[str, str]:
+def resolve_criteria(criteria: Optional[Union[CRITERIA_TYPE, str]],) -> Dict[str, str]:
     """Resolve the criteria to evaluate.
 
     Parameters
@@ -256,8 +252,7 @@ class CriteriaEvalChain(StringEvaluator, LLMEvalChain, LLMChain):
 
     @classmethod
     def resolve_criteria(
-        cls,
-        criteria: Optional[Union[CRITERIA_TYPE, str]],
+        cls, criteria: Optional[Union[CRITERIA_TYPE, str]],
     ) -> Dict[str, str]:
         """Resolve the criteria to evaluate.
 
@@ -342,17 +337,11 @@ class CriteriaEvalChain(StringEvaluator, LLMEvalChain, LLMChain):
         criteria_str = "\n".join(f"{k}: {v}" for k, v in criteria_.items())
         prompt_ = prompt_.partial(criteria=criteria_str)
         return cls(
-            llm=llm,
-            prompt=prompt_,
-            criterion_name="-".join(criteria_),
-            **kwargs,
+            llm=llm, prompt=prompt_, criterion_name="-".join(criteria_), **kwargs,
         )
 
     def _get_eval_input(
-        self,
-        prediction: str,
-        reference: Optional[str],
-        input: Optional[str],
+        self, prediction: str, reference: Optional[str], input: Optional[str],
     ) -> dict:
         """Get the evaluation input."""
         input_ = {
@@ -555,8 +544,5 @@ class LabeledCriteriaEvalChain(CriteriaEvalChain):
         criteria_str = "\n".join(f"{k}: {v}" for k, v in criteria_.items())
         prompt_ = prompt.partial(criteria=criteria_str)
         return cls(
-            llm=llm,
-            prompt=prompt_,
-            criterion_name="-".join(criteria_),
-            **kwargs,
+            llm=llm, prompt=prompt_, criterion_name="-".join(criteria_), **kwargs,
         )

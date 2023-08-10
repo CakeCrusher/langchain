@@ -71,11 +71,7 @@ class FakeTracer(BaseTracer):
 
 
 class FakeRunnable(Runnable[str, int]):
-    def invoke(
-        self,
-        input: str,
-        config: Optional[RunnableConfig] = None,
-    ) -> int:
+    def invoke(self, input: str, config: Optional[RunnableConfig] = None,) -> int:
         return len(input)
 
 
@@ -261,10 +257,7 @@ async def test_prompt_with_chat_model(
             {"question": "What is your favorite color?"},
         ],
         dict(callbacks=[tracer]),
-    ) == [
-        AIMessage(content="foo"),
-        AIMessage(content="foo"),
-    ]
+    ) == [AIMessage(content="foo"), AIMessage(content="foo"),]
     assert prompt_spy.call_args.args[1] == [
         {"question": "What is your name?"},
         {"question": "What is your favorite color?"},
@@ -587,12 +580,7 @@ def test_seq_prompt_dict(mocker: MockerFixture, snapshot: SnapshotAssertion) -> 
     llm = FakeListLLM(responses=["i'm a textbot"])
 
     chain = (
-        prompt
-        | passthrough
-        | {
-            "chat": chat,
-            "llm": llm,
-        }
+        prompt | passthrough | {"chat": chat, "llm": llm,}
     )
 
     assert isinstance(chain, RunnableSequence)
@@ -608,10 +596,7 @@ def test_seq_prompt_dict(mocker: MockerFixture, snapshot: SnapshotAssertion) -> 
     tracer = FakeTracer()
     assert chain.invoke(
         {"question": "What is your name?"}, dict(callbacks=[tracer])
-    ) == {
-        "chat": AIMessage(content="i'm a chatbot"),
-        "llm": "i'm a textbot",
-    }
+    ) == {"chat": AIMessage(content="i'm a chatbot"), "llm": "i'm a textbot",}
     assert prompt_spy.call_args.args[1] == {"question": "What is your name?"}
     assert chat_spy.call_args.args[1] == ChatPromptValue(
         messages=[

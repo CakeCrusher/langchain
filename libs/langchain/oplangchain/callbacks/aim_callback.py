@@ -245,9 +245,7 @@ class AimCallbackHandler(BaseMetadataCallbackHandler, BaseCallbackHandler):
             for generation in generations
         ]
         self._run.track(
-            generated,
-            name="on_llm_end",
-            context=resp,
+            generated, name="on_llm_end", context=resp,
         )
 
     def on_llm_new_token(self, token: str, **kwargs: Any) -> None:

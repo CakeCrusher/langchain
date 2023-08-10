@@ -88,9 +88,7 @@ class ZepMemory(ConversationBufferMemory):
                                         chain's prompt template.
         """
         chat_message_history = ZepChatMessageHistory(
-            session_id=session_id,
-            url=url,
-            api_key=api_key,
+            session_id=session_id, url=url, api_key=api_key,
         )
         super().__init__(
             chat_memory=chat_message_history,

@@ -234,9 +234,7 @@ class BaseChatModel(BaseLanguageModel[BaseMessageChunk], ABC):
         return {}
 
     def _get_invocation_params(
-        self,
-        stop: Optional[List[str]] = None,
-        **kwargs: Any,
+        self, stop: Optional[List[str]] = None, **kwargs: Any,
     ) -> dict:
         params = self.dict()
         params["stop"] = stop

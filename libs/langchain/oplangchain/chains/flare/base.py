@@ -7,9 +7,7 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 import numpy as np
 from pydantic import Field
 
-from oplangchain.callbacks.manager import (
-    CallbackManagerForChainRun,
-)
+from oplangchain.callbacks.manager import CallbackManagerForChainRun
 from oplangchain.chains.base import Chain
 from oplangchain.chains.flare.prompts import (
     PROMPT,

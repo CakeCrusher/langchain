@@ -52,10 +52,7 @@ def test_anthropic_streaming_callback() -> None:
     callback_handler = FakeCallbackHandler()
     callback_manager = CallbackManager([callback_handler])
     chat = ChatAnthropic(
-        model="test",
-        streaming=True,
-        callback_manager=callback_manager,
-        verbose=True,
+        model="test", streaming=True, callback_manager=callback_manager, verbose=True,
     )
     message = HumanMessage(content="Write me a sentence with 10 words.")
     chat([message])
@@ -68,10 +65,7 @@ async def test_anthropic_async_streaming_callback() -> None:
     callback_handler = FakeCallbackHandler()
     callback_manager = CallbackManager([callback_handler])
     chat = ChatAnthropic(
-        model="test",
-        streaming=True,
-        callback_manager=callback_manager,
-        verbose=True,
+        model="test", streaming=True, callback_manager=callback_manager, verbose=True,
     )
     chat_messages: List[BaseMessage] = [
         HumanMessage(content="How many toes do dogs have?")

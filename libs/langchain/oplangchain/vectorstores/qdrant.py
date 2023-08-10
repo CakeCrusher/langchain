@@ -912,10 +912,7 @@ class Qdrant(VectorStore):
             for result in results
         ]
         mmr_selected: List[int] = maximal_marginal_relevance(
-            np.array(embedding),
-            embeddings,
-            k=k,
-            lambda_mult=lambda_mult,
+            np.array(embedding), embeddings, k=k, lambda_mult=lambda_mult,
         )
         return [
             (
@@ -943,8 +940,7 @@ class Qdrant(VectorStore):
         from qdrant_client.http import models as rest
 
         result = self.client.delete(
-            collection_name=self.collection_name,
-            points_selector=ids,
+            collection_name=self.collection_name, points_selector=ids,
         )
         return result.status == rest.UpdateStatus.COMPLETED
 
@@ -1488,10 +1484,7 @@ class Qdrant(VectorStore):
             )
 
     def _similarity_search_with_relevance_scores(
-        self,
-        query: str,
-        k: int = 4,
-        **kwargs: Any,
+        self, query: str, k: int = 4, **kwargs: Any,
     ) -> List[Tuple[Document, float]]:
         """Return docs and relevance scores in the range [0, 1].
 
@@ -1526,20 +1519,14 @@ class Qdrant(VectorStore):
                 )
             metadata = metadatas[i] if metadatas is not None else None
             payloads.append(
-                {
-                    content_payload_key: text,
-                    metadata_payload_key: metadata,
-                }
+                {content_payload_key: text, metadata_payload_key: metadata,}
             )
 
         return payloads
 
     @classmethod
     def _document_from_scored_point(
-        cls,
-        scored_point: Any,
-        content_payload_key: str,
-        metadata_payload_key: str,
+        cls, scored_point: Any, content_payload_key: str, metadata_payload_key: str,
     ) -> Document:
         return Document(
             page_content=scored_point.payload.get(content_payload_key),
@@ -1548,10 +1535,7 @@ class Qdrant(VectorStore):
 
     @classmethod
     def _document_from_scored_point_grpc(
-        cls,
-        scored_point: Any,
-        content_payload_key: str,
-        metadata_payload_key: str,
+        cls, scored_point: Any, content_payload_key: str, metadata_payload_key: str,
     ) -> Document:
         from qdrant_client.conversions.conversion import grpc_to_payload
 

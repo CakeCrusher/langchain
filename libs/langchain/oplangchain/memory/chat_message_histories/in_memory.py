@@ -2,9 +2,7 @@ from typing import List
 
 from pydantic import BaseModel
 
-from oplangchain.schema import (
-    BaseChatMessageHistory,
-)
+from oplangchain.schema import BaseChatMessageHistory
 from oplangchain.schema.messages import BaseMessage
 
 

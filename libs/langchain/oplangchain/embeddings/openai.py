@@ -235,22 +235,13 @@ class OpenAIEmbeddings(BaseModel, Embeddings):
             values, "openai_api_key", "OPENAI_API_KEY"
         )
         values["openai_api_base"] = get_from_dict_or_env(
-            values,
-            "openai_api_base",
-            "OPENAI_API_BASE",
-            default="",
+            values, "openai_api_base", "OPENAI_API_BASE", default="",
         )
         values["openai_api_type"] = get_from_dict_or_env(
-            values,
-            "openai_api_type",
-            "OPENAI_API_TYPE",
-            default="",
+            values, "openai_api_type", "OPENAI_API_TYPE", default="",
         )
         values["openai_proxy"] = get_from_dict_or_env(
-            values,
-            "openai_proxy",
-            "OPENAI_PROXY",
-            default="",
+            values, "openai_proxy", "OPENAI_PROXY", default="",
         )
         if values["openai_api_type"] in ("azure", "azure_ad", "azuread"):
             default_api_version = "2022-12-01"
@@ -263,10 +254,7 @@ class OpenAIEmbeddings(BaseModel, Embeddings):
             default=default_api_version,
         )
         values["openai_organization"] = get_from_dict_or_env(
-            values,
-            "openai_organization",
-            "OPENAI_ORGANIZATION",
-            default="",
+            values, "openai_organization", "OPENAI_ORGANIZATION", default="",
         )
         try:
             import openai
@@ -362,9 +350,7 @@ class OpenAIEmbeddings(BaseModel, Embeddings):
 
         for i in _iter:
             response = embed_with_retry(
-                self,
-                input=tokens[i : i + _chunk_size],
-                **self._invocation_params,
+                self, input=tokens[i : i + _chunk_size], **self._invocation_params,
             )
             batched_embeddings.extend(r["embedding"] for r in response["data"])
 
@@ -377,11 +363,7 @@ class OpenAIEmbeddings(BaseModel, Embeddings):
         for i in range(len(texts)):
             _result = results[i]
             if len(_result) == 0:
-                average = embed_with_retry(
-                    self,
-                    input="",
-                    **self._invocation_params,
-                )[
+                average = embed_with_retry(self, input="", **self._invocation_params,)[
                     "data"
                 ][0]["embedding"]
             else:
@@ -432,9 +414,7 @@ class OpenAIEmbeddings(BaseModel, Embeddings):
         _chunk_size = chunk_size or self.chunk_size
         for i in range(0, len(tokens), _chunk_size):
             response = await async_embed_with_retry(
-                self,
-                input=tokens[i : i + _chunk_size],
-                **self._invocation_params,
+                self, input=tokens[i : i + _chunk_size], **self._invocation_params,
             )
             batched_embeddings.extend(r["embedding"] for r in response["data"])
 
@@ -449,9 +429,7 @@ class OpenAIEmbeddings(BaseModel, Embeddings):
             if len(_result) == 0:
                 average = (
                     await async_embed_with_retry(
-                        self,
-                        input="",
-                        **self._invocation_params,
+                        self, input="", **self._invocation_params,
                     )
                 )["data"][0]["embedding"]
             else:

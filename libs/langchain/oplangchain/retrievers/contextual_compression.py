@@ -4,9 +4,7 @@ from oplangchain.callbacks.manager import (
     AsyncCallbackManagerForRetrieverRun,
     CallbackManagerForRetrieverRun,
 )
-from oplangchain.retrievers.document_compressors.base import (
-    BaseDocumentCompressor,
-)
+from oplangchain.retrievers.document_compressors.base import BaseDocumentCompressor
 from oplangchain.schema import BaseRetriever, Document
 
 
@@ -25,11 +23,7 @@ class ContextualCompressionRetriever(BaseRetriever):
         arbitrary_types_allowed = True
 
     def _get_relevant_documents(
-        self,
-        query: str,
-        *,
-        run_manager: CallbackManagerForRetrieverRun,
-        **kwargs: Any,
+        self, query: str, *, run_manager: CallbackManagerForRetrieverRun, **kwargs: Any,
     ) -> List[Document]:
         """Get documents relevant for a query.
 

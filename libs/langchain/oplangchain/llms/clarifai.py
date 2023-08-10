@@ -78,10 +78,7 @@ class Clarifai(LLM):
                 "Please install it with `pip install clarifai`."
             )
         auth = ClarifaiAuthHelper(
-            user_id=user_id,
-            app_id=app_id,
-            pat=values["pat"],
-            base=values["api_base"],
+            user_id=user_id, app_id=app_id, pat=values["pat"], base=values["api_base"],
         )
         values["userDataObject"] = auth.get_user_app_id_proto()
         values["stub"] = create_stub(auth)

@@ -37,8 +37,7 @@ class GenerationChunk(Generation):
                 else None
             )
             return GenerationChunk(
-                text=self.text + other.text,
-                generation_info=generation_info,
+                text=self.text + other.text, generation_info=generation_info,
             )
         else:
             raise TypeError(
@@ -72,8 +71,7 @@ class ChatGenerationChunk(ChatGeneration):
                 else None
             )
             return ChatGenerationChunk(
-                message=self.message + other.message,
-                generation_info=generation_info,
+                message=self.message + other.message, generation_info=generation_info,
             )
         else:
             raise TypeError(
@@ -127,10 +125,7 @@ class LLMResult(BaseModel):
             # Avoid double counting tokens in OpenAICallback
             if i == 0:
                 llm_results.append(
-                    LLMResult(
-                        generations=[gen_list],
-                        llm_output=self.llm_output,
-                    )
+                    LLMResult(generations=[gen_list], llm_output=self.llm_output,)
                 )
             else:
                 if self.llm_output is not None:
@@ -139,10 +134,7 @@ class LLMResult(BaseModel):
                 else:
                     llm_output = None
                 llm_results.append(
-                    LLMResult(
-                        generations=[gen_list],
-                        llm_output=llm_output,
-                    )
+                    LLMResult(generations=[gen_list], llm_output=llm_output,)
                 )
         return llm_results
 

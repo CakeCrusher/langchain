@@ -36,8 +36,7 @@ def _get_experiment(
     comet_ml = import_comet_ml()
 
     experiment = comet_ml.Experiment(  # type: ignore
-        workspace=workspace,
-        project_name=project_name,
+        workspace=workspace, project_name=project_name,
     )
 
     return experiment

@@ -152,10 +152,7 @@ class SupabaseVectorStore(VectorStore):
         )
 
     def add_vectors(
-        self,
-        vectors: List[List[float]],
-        documents: List[Document],
-        ids: List[str],
+        self, vectors: List[List[float]], documents: List[Document], ids: List[str],
     ) -> List[str]:
         return self._add_vectors(self._client, self.table_name, vectors, documents, ids)
 
@@ -253,8 +250,7 @@ class SupabaseVectorStore(VectorStore):
 
     @staticmethod
     def _texts_to_documents(
-        texts: Iterable[str],
-        metadatas: Optional[Iterable[Dict[Any, Any]]] = None,
+        texts: Iterable[str], metadatas: Optional[Iterable[Dict[Any, Any]]] = None,
     ) -> List[Document]:
         """Return list of Documents from list of texts and metadatas."""
         if metadatas is None:
@@ -421,12 +417,7 @@ class SupabaseVectorStore(VectorStore):
         if ids is None:
             raise ValueError("No ids provided to delete.")
 
-        rows: List[Dict[str, Any]] = [
-            {
-                "id": id,
-            }
-            for id in ids
-        ]
+        rows: List[Dict[str, Any]] = [{"id": id,} for id in ids]
 
         # TODO: Check if this can be done in bulk
         for row in rows:

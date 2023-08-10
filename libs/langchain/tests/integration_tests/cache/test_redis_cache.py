@@ -21,10 +21,7 @@ def test_redis_cache() -> None:
     langchain.llm_cache.update("foo", llm_string, [Generation(text="fizz")])
     output = llm.generate(["foo"])
     print(output)
-    expected_output = LLMResult(
-        generations=[[Generation(text="fizz")]],
-        llm_output={},
-    )
+    expected_output = LLMResult(generations=[[Generation(text="fizz")]], llm_output={},)
     print(expected_output)
     assert output == expected_output
     langchain.llm_cache.redis.flushall()
@@ -53,10 +50,7 @@ def test_redis_semantic_cache() -> None:
     output = llm.generate(
         ["bar"]
     )  # foo and bar will have the same embedding produced by FakeEmbeddings
-    expected_output = LLMResult(
-        generations=[[Generation(text="fizz")]],
-        llm_output={},
-    )
+    expected_output = LLMResult(generations=[[Generation(text="fizz")]], llm_output={},)
     assert output == expected_output
     # clear the cache
     langchain.llm_cache.clear(llm_string=llm_string)

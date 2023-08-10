@@ -24,11 +24,7 @@ class ElasticsearchEmbeddings(Embeddings):
     """  # noqa: E501
 
     def __init__(
-        self,
-        client: MlClient,
-        model_id: str,
-        *,
-        input_field: str = "text_field",
+        self, client: MlClient, model_id: str, *, input_field: str = "text_field",
     ):
         """
         Initialize the ElasticsearchEmbeddings instance.

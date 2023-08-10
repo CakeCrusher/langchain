@@ -93,10 +93,7 @@ def test_redis_add_texts_to_existing() -> None:
 def test_cosine(texts: List[str]) -> None:
     """Test cosine distance."""
     docsearch = Redis.from_texts(
-        texts,
-        FakeEmbeddings(),
-        redis_url=TEST_REDIS_URL,
-        distance_metric="COSINE",
+        texts, FakeEmbeddings(), redis_url=TEST_REDIS_URL, distance_metric="COSINE",
     )
     output = docsearch.similarity_search_with_score("far", k=2)
     _, score = output[1]

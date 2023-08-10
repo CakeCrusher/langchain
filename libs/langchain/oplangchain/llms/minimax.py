@@ -12,9 +12,7 @@ from typing import (
 import requests
 from pydantic import BaseModel, Extra, Field, PrivateAttr, root_validator
 
-from oplangchain.callbacks.manager import (
-    CallbackManagerForLLMRun,
-)
+from oplangchain.callbacks.manager import CallbackManagerForLLMRun
 from oplangchain.llms.base import LLM
 from oplangchain.utils import get_from_dict_or_env
 

@@ -153,9 +153,7 @@ def test_run_arg_with_memory() -> None:
 def test_run_with_callback() -> None:
     """Test run method works when callback manager is passed."""
     handler = FakeCallbackHandler()
-    chain = FakeChain(
-        callbacks=[handler],
-    )
+    chain = FakeChain(callbacks=[handler],)
     output = chain.run("bar")
     assert output == "baz"
     assert handler.starts == 1

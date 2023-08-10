@@ -143,15 +143,12 @@ def _bulk_ingest_embeddings(
 
 
 def _default_scripting_text_mapping(
-    dim: int,
-    vector_field: str = "vector_field",
+    dim: int, vector_field: str = "vector_field",
 ) -> Dict:
     """For Painless Scripting or Script Scoring,the default mapping to create index."""
     return {
         "mappings": {
-            "properties": {
-                vector_field: {"type": "knn_vector", "dimension": dim},
-            }
+            "properties": {vector_field: {"type": "knn_vector", "dimension": dim},}
         }
     }
 
@@ -186,9 +183,7 @@ def _default_text_mapping(
 
 
 def _default_approximate_search_query(
-    query_vector: List[float],
-    k: int = 4,
-    vector_field: str = "vector_field",
+    query_vector: List[float], k: int = 4, vector_field: str = "vector_field",
 ) -> Dict:
     """For Approximate k-NN Search, this is the default query."""
     return {
@@ -297,10 +292,7 @@ def _default_painless_scripting_query(
                 "query": pre_filter,
                 "script": {
                     "source": source,
-                    "params": {
-                        "field": vector_field,
-                        "query_value": query_vector,
-                    },
+                    "params": {"field": vector_field, "query_value": query_vector,},
                 },
             }
         },

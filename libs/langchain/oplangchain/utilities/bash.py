@@ -111,9 +111,7 @@ class BashProcess:
             commands = [commands]
         commands = ";".join(commands)
         if self.process is not None:
-            return self._run_persistent(
-                commands,
-            )
+            return self._run_persistent(commands,)
         else:
             return self._run(commands)
 

@@ -315,10 +315,7 @@ class ConversationEntityMemory(BaseChatMemory):
         # Generates a comma-separated list of named entities,
         # e.g. "Jane, White House, UFO"
         # or "NONE" if no named entities are extracted:
-        output = chain.predict(
-            history=buffer_string,
-            input=inputs[prompt_input_key],
-        )
+        output = chain.predict(history=buffer_string, input=inputs[prompt_input_key],)
 
         # If no named entities are extracted, assigns an empty list.
         if output.strip() == "NONE":

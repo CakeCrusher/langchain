@@ -243,10 +243,7 @@ class Chain(Serializable, Runnable[Dict[str, Any], Dict[str, Any]], ABC):
             self.metadata,
         )
         new_arg_supported = inspect.signature(self._call).parameters.get("run_manager")
-        run_manager = callback_manager.on_chain_start(
-            dumpd(self),
-            inputs,
-        )
+        run_manager = callback_manager.on_chain_start(dumpd(self), inputs,)
         try:
             outputs = (
                 self._call(inputs, run_manager=run_manager)
@@ -310,10 +307,7 @@ class Chain(Serializable, Runnable[Dict[str, Any], Dict[str, Any]], ABC):
             self.metadata,
         )
         new_arg_supported = inspect.signature(self._acall).parameters.get("run_manager")
-        run_manager = await callback_manager.on_chain_start(
-            dumpd(self),
-            inputs,
-        )
+        run_manager = await callback_manager.on_chain_start(dumpd(self), inputs,)
         try:
             outputs = (
                 await self._acall(inputs, run_manager=run_manager)

@@ -175,11 +175,7 @@ class BaseRetriever(Serializable, Runnable[str, List[Document]], ABC):
             inheritable_metadata=metadata,
             local_metadata=self.metadata,
         )
-        run_manager = callback_manager.on_retriever_start(
-            dumpd(self),
-            query,
-            **kwargs,
-        )
+        run_manager = callback_manager.on_retriever_start(dumpd(self), query, **kwargs,)
         try:
             _kwargs = kwargs if self._expects_other_args else {}
             if self._new_arg_supported:
@@ -193,8 +189,7 @@ class BaseRetriever(Serializable, Runnable[str, List[Document]], ABC):
             raise e
         else:
             run_manager.on_retriever_end(
-                result,
-                **kwargs,
+                result, **kwargs,
             )
             return result
 
@@ -232,9 +227,7 @@ class BaseRetriever(Serializable, Runnable[str, List[Document]], ABC):
             local_metadata=self.metadata,
         )
         run_manager = await callback_manager.on_retriever_start(
-            dumpd(self),
-            query,
-            **kwargs,
+            dumpd(self), query, **kwargs,
         )
         try:
             _kwargs = kwargs if self._expects_other_args else {}
@@ -249,7 +242,6 @@ class BaseRetriever(Serializable, Runnable[str, List[Document]], ABC):
             raise e
         else:
             await run_manager.on_retriever_end(
-                result,
-                **kwargs,
+                result, **kwargs,
             )
             return result

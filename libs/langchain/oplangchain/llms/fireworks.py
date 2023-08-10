@@ -148,14 +148,7 @@ class BaseFireworks(BaseLLM):
 
         for i, _ in enumerate(prompts):
             sub_choices = choices[i : (i + 1)]
-            generations.append(
-                [
-                    Generation(
-                        text=choice,
-                    )
-                    for choice in sub_choices
-                ]
-            )
+            generations.append([Generation(text=choice,) for choice in sub_choices])
         llm_output = {"token_usage": token_usage, "model_id": self.model_id}
         return LLMResult(generations=generations, llm_output=llm_output)
 
@@ -232,8 +225,7 @@ class FireworksChat(BaseLLM):
             "model_id": self.model_id,
         }
         return LLMResult(
-            generations=[[Generation(text=full_response[0])]],
-            llm_output=llm_output,
+            generations=[[Generation(text=full_response[0])]], llm_output=llm_output,
         )
 
     async def _agenerate(
@@ -250,8 +242,7 @@ class FireworksChat(BaseLLM):
             "model_id": self.model_id,
         }
         return LLMResult(
-            generations=[[Generation(text=full_response[0])]],
-            llm_output=llm_output,
+            generations=[[Generation(text=full_response[0])]], llm_output=llm_output,
         )
 
     @property

@@ -23,24 +23,21 @@ class TestGetBufferString(unittest.TestCase):
     def test_valid_single_message(self) -> None:
         expected_output = f"Human: {self.human_msg.content}"
         self.assertEqual(
-            get_buffer_string([self.human_msg]),
-            expected_output,
+            get_buffer_string([self.human_msg]), expected_output,
         )
 
     def test_custom_human_prefix(self) -> None:
         prefix = "H"
         expected_output = f"{prefix}: {self.human_msg.content}"
         self.assertEqual(
-            get_buffer_string([self.human_msg], human_prefix="H"),
-            expected_output,
+            get_buffer_string([self.human_msg], human_prefix="H"), expected_output,
         )
 
     def test_custom_ai_prefix(self) -> None:
         prefix = "A"
         expected_output = f"{prefix}: {self.ai_msg.content}"
         self.assertEqual(
-            get_buffer_string([self.ai_msg], ai_prefix="A"),
-            expected_output,
+            get_buffer_string([self.ai_msg], ai_prefix="A"), expected_output,
         )
 
     def test_multiple_msg(self) -> None:
@@ -53,8 +50,7 @@ class TestGetBufferString(unittest.TestCase):
             ]
         )
         self.assertEqual(
-            get_buffer_string(msgs),
-            expected_output,
+            get_buffer_string(msgs), expected_output,
         )
 
 
@@ -72,6 +68,5 @@ class TestMessageDictConversion(unittest.TestCase):
             self.sys_msg,
         ]
         self.assertEqual(
-            messages_from_dict(messages_to_dict(msgs)),
-            msgs,
+            messages_from_dict(messages_to_dict(msgs)), msgs,
         )

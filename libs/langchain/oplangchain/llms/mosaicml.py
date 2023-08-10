@@ -90,9 +90,7 @@ class MosaicML(LLM):
     def _transform_prompt(self, prompt: str) -> str:
         """Transform prompt."""
         if self.inject_instruction_format:
-            prompt = PROMPT_FOR_GENERATION_FORMAT.format(
-                instruction=prompt,
-            )
+            prompt = PROMPT_FOR_GENERATION_FORMAT.format(instruction=prompt,)
         return prompt
 
     def _call(

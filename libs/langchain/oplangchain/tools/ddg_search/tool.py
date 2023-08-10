@@ -24,9 +24,7 @@ class DuckDuckGoSearchRun(BaseTool):
     )
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool."""
         return self.api_wrapper.run(query)
@@ -48,9 +46,7 @@ class DuckDuckGoSearchResults(BaseTool):
     backend: str = "api"
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool."""
         res = self.api_wrapper.results(query, self.num_results, backend=self.backend)

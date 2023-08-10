@@ -176,8 +176,7 @@ class LLMChain(Chain):
             callbacks, self.callbacks, self.verbose
         )
         run_manager = callback_manager.on_chain_start(
-            dumpd(self),
-            {"input_list": input_list},
+            dumpd(self), {"input_list": input_list},
         )
         try:
             response = self.generate(input_list, run_manager=run_manager)
@@ -196,8 +195,7 @@ class LLMChain(Chain):
             callbacks, self.callbacks, self.verbose
         )
         run_manager = await callback_manager.on_chain_start(
-            dumpd(self),
-            {"input_list": input_list},
+            dumpd(self), {"input_list": input_list},
         )
         try:
             response = await self.agenerate(input_list, run_manager=run_manager)

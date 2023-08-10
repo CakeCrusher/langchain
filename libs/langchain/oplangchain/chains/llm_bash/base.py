@@ -115,10 +115,7 @@ class LLMBashChain(Chain):
 
     @classmethod
     def from_llm(
-        cls,
-        llm: BaseLanguageModel,
-        prompt: BasePromptTemplate = PROMPT,
-        **kwargs: Any,
+        cls, llm: BaseLanguageModel, prompt: BasePromptTemplate = PROMPT, **kwargs: Any,
     ) -> LLMBashChain:
         llm_chain = LLMChain(llm=llm, prompt=prompt)
         return cls(llm_chain=llm_chain, **kwargs)

@@ -121,11 +121,7 @@ class ConversationalChatAgent(Agent):
             input_variables=input_variables,
             output_parser=_output_parser,
         )
-        llm_chain = LLMChain(
-            llm=llm,
-            prompt=prompt,
-            callback_manager=callback_manager,
-        )
+        llm_chain = LLMChain(llm=llm, prompt=prompt, callback_manager=callback_manager,)
         tool_names = [tool.name for tool in tools]
         return cls(
             llm_chain=llm_chain,

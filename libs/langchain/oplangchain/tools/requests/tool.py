@@ -42,9 +42,7 @@ class RequestsGetTool(BaseRequestsTool, BaseTool):
         return self.requests_wrapper.get(_clean_url(url))
 
     async def _arun(
-        self,
-        url: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, url: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         """Run the tool asynchronously."""
         return await self.requests_wrapper.aget(_clean_url(url))
@@ -73,9 +71,7 @@ class RequestsPostTool(BaseRequestsTool, BaseTool):
             return repr(e)
 
     async def _arun(
-        self,
-        text: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, text: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         """Run the tool asynchronously."""
         try:
@@ -110,9 +106,7 @@ class RequestsPatchTool(BaseRequestsTool, BaseTool):
             return repr(e)
 
     async def _arun(
-        self,
-        text: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, text: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         """Run the tool asynchronously."""
         try:
@@ -147,9 +141,7 @@ class RequestsPutTool(BaseRequestsTool, BaseTool):
             return repr(e)
 
     async def _arun(
-        self,
-        text: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, text: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         """Run the tool asynchronously."""
         try:
@@ -168,17 +160,13 @@ class RequestsDeleteTool(BaseRequestsTool, BaseTool):
     description = "A portal to the internet. Use this when you need to make a DELETE request to a URL. Input should be a specific url, and the output will be the text response of the DELETE request."
 
     def _run(
-        self,
-        url: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, url: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Run the tool."""
         return self.requests_wrapper.delete(_clean_url(url))
 
     async def _arun(
-        self,
-        url: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, url: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         """Run the tool asynchronously."""
         return await self.requests_wrapper.adelete(_clean_url(url))

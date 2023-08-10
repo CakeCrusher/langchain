@@ -118,10 +118,7 @@ class RSSFeedLoader(BaseLoader):
                     raise e
             try:
                 for entry in feed.entries:
-                    loader = NewsURLLoader(
-                        urls=[entry.link],
-                        **self.newsloader_kwargs,
-                    )
+                    loader = NewsURLLoader(urls=[entry.link], **self.newsloader_kwargs,)
                     article = loader.load()[0]
                     article.metadata["feed"] = url
                     yield article

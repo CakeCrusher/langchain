@@ -61,8 +61,8 @@ class KNNRetriever(BaseRetriever):
     ) -> List[Document]:
         query_embeds = np.array(self.embeddings.embed_query(query))
         # calc L2 norm
-        index_embeds = self.index / np.sqrt((self.index**2).sum(1, keepdims=True))
-        query_embeds = query_embeds / np.sqrt((query_embeds**2).sum())
+        index_embeds = self.index / np.sqrt((self.index ** 2).sum(1, keepdims=True))
+        query_embeds = query_embeds / np.sqrt((query_embeds ** 2).sum())
 
         similarities = index_embeds.dot(query_embeds)
         sorted_ix = np.argsort(-similarities)

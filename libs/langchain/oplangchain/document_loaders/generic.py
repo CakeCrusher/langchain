@@ -64,11 +64,7 @@ class GenericLoader(BaseLoader):
             )
     """
 
-    def __init__(
-        self,
-        blob_loader: BlobLoader,
-        blob_parser: BaseBlobParser,
-    ) -> None:
+    def __init__(self, blob_loader: BlobLoader, blob_parser: BaseBlobParser,) -> None:
         """A generic document loader.
 
         Args:
@@ -78,9 +74,7 @@ class GenericLoader(BaseLoader):
         self.blob_loader = blob_loader
         self.blob_parser = blob_parser
 
-    def lazy_load(
-        self,
-    ) -> Iterator[Document]:
+    def lazy_load(self,) -> Iterator[Document]:
         """Load documents lazily. Use this when working at a large scale."""
         for blob in self.blob_loader.yield_blobs():
             yield from self.blob_parser.lazy_parse(blob)

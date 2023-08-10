@@ -51,10 +51,7 @@ class StdOutCallbackHandler(BaseCallbackHandler):
         pass
 
     def on_tool_start(
-        self,
-        serialized: Dict[str, Any],
-        input_str: str,
-        **kwargs: Any,
+        self, serialized: Dict[str, Any], input_str: str, **kwargs: Any,
     ) -> None:
         """Do nothing."""
         pass
@@ -87,11 +84,7 @@ class StdOutCallbackHandler(BaseCallbackHandler):
         pass
 
     def on_text(
-        self,
-        text: str,
-        color: Optional[str] = None,
-        end: str = "",
-        **kwargs: Any,
+        self, text: str, color: Optional[str] = None, end: str = "", **kwargs: Any,
     ) -> None:
         """Run when agent ends."""
         print_text(text, color=color or self.color, end=end)

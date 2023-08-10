@@ -573,8 +573,7 @@ def sample_tracer_session_v1() -> TracerSessionV1:
 
 @freeze_time("2023-01-01")
 def test_convert_run(
-    lang_chain_tracer_v1: LangChainTracerV1,
-    sample_tracer_session_v1: TracerSessionV1,
+    lang_chain_tracer_v1: LangChainTracerV1, sample_tracer_session_v1: TracerSessionV1,
 ) -> None:
     """Test converting a run to a V1 run."""
     llm_run = Run(

@@ -63,20 +63,12 @@ def http_paths_and_methods() -> List[Tuple[str, OpenAPISpec, str, str]]:
                 spec = yaml.safe_load(f.read())
         parsed_spec = OpenAPISpec.from_file(test_spec)
         for path, method in _get_paths_and_methods_from_spec_dictionary(spec):
-            http_paths_and_methods.append(
-                (
-                    spec_name,
-                    parsed_spec,
-                    path,
-                    method,
-                )
-            )
+            http_paths_and_methods.append((spec_name, parsed_spec, path, method,))
     return http_paths_and_methods
 
 
 @pytest.mark.parametrize(
-    "spec_name, spec, path, method",
-    http_paths_and_methods(),
+    "spec_name, spec, path, method", http_paths_and_methods(),
 )
 def test_parse_api_operations(
     spec_name: str, spec: OpenAPISpec, path: str, method: str
@@ -91,9 +83,7 @@ def test_parse_api_operations(
 @pytest.fixture
 def raw_spec() -> OpenAPISpec:
     """Return a raw OpenAPI spec."""
-    return OpenAPISpec(
-        info=Info(title="Test API", version="1.0.0"),
-    )
+    return OpenAPISpec(info=Info(title="Test API", version="1.0.0"),)
 
 
 def test_api_request_body_from_request_body_with_ref(raw_spec: OpenAPISpec) -> None:
@@ -110,11 +100,7 @@ def test_api_request_body_from_request_body_with_ref(raw_spec: OpenAPISpec) -> N
             )
         }
     )
-    media_type = MediaType(
-        schema=Reference(
-            ref="#/components/schemas/Foo",
-        )
-    )
+    media_type = MediaType(schema=Reference(ref="#/components/schemas/Foo",))
     request_body = RequestBody(content={"application/json": media_type})
     api_request_body = APIRequestBody.from_request_body(request_body, raw_spec)
     assert api_request_body.description is None
@@ -153,13 +139,7 @@ def test_api_request_body_from_request_body_with_schema(raw_spec: OpenAPISpec) -
 
 
 def test_api_request_body_property_from_schema(raw_spec: OpenAPISpec) -> None:
-    raw_spec.components = Components(
-        schemas={
-            "Bar": Schema(
-                type="number",
-            )
-        }
-    )
+    raw_spec.components = Components(schemas={"Bar": Schema(type="number",)})
     schema = Schema(
         type="object",
         properties={

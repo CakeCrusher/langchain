@@ -28,24 +28,16 @@ def _load_question_to_checked_assertions_chain(
     revised_answer_prompt: PromptTemplate,
 ) -> SequentialChain:
     create_draft_answer_chain = LLMChain(
-        llm=llm,
-        prompt=create_draft_answer_prompt,
-        output_key="statement",
+        llm=llm, prompt=create_draft_answer_prompt, output_key="statement",
     )
     list_assertions_chain = LLMChain(
-        llm=llm,
-        prompt=list_assertions_prompt,
-        output_key="assertions",
+        llm=llm, prompt=list_assertions_prompt, output_key="assertions",
     )
     check_assertions_chain = LLMChain(
-        llm=llm,
-        prompt=check_assertions_prompt,
-        output_key="checked_assertions",
+        llm=llm, prompt=check_assertions_prompt, output_key="checked_assertions",
     )
     revised_answer_chain = LLMChain(
-        llm=llm,
-        prompt=revised_answer_prompt,
-        output_key="revised_statement",
+        llm=llm, prompt=revised_answer_prompt, output_key="revised_statement",
     )
     chains = [
         create_draft_answer_chain,
@@ -106,16 +98,14 @@ class LLMCheckerChain(Chain):
                 "question_to_checked_assertions_chain" not in values
                 and values["llm"] is not None
             ):
-                question_to_checked_assertions_chain = (
-                    _load_question_to_checked_assertions_chain(
-                        values["llm"],
-                        values.get(
-                            "create_draft_answer_prompt", CREATE_DRAFT_ANSWER_PROMPT
-                        ),
-                        values.get("list_assertions_prompt", LIST_ASSERTIONS_PROMPT),
-                        values.get("check_assertions_prompt", CHECK_ASSERTIONS_PROMPT),
-                        values.get("revised_answer_prompt", REVISED_ANSWER_PROMPT),
-                    )
+                question_to_checked_assertions_chain = _load_question_to_checked_assertions_chain(
+                    values["llm"],
+                    values.get(
+                        "create_draft_answer_prompt", CREATE_DRAFT_ANSWER_PROMPT
+                    ),
+                    values.get("list_assertions_prompt", LIST_ASSERTIONS_PROMPT),
+                    values.get("check_assertions_prompt", CHECK_ASSERTIONS_PROMPT),
+                    values.get("revised_answer_prompt", REVISED_ANSWER_PROMPT),
                 )
                 values[
                     "question_to_checked_assertions_chain"
@@ -165,14 +155,12 @@ class LLMCheckerChain(Chain):
         revised_answer_prompt: PromptTemplate = REVISED_ANSWER_PROMPT,
         **kwargs: Any,
     ) -> LLMCheckerChain:
-        question_to_checked_assertions_chain = (
-            _load_question_to_checked_assertions_chain(
-                llm,
-                create_draft_answer_prompt,
-                list_assertions_prompt,
-                check_assertions_prompt,
-                revised_answer_prompt,
-            )
+        question_to_checked_assertions_chain = _load_question_to_checked_assertions_chain(
+            llm,
+            create_draft_answer_prompt,
+            list_assertions_prompt,
+            check_assertions_prompt,
+            revised_answer_prompt,
         )
         return cls(
             question_to_checked_assertions_chain=question_to_checked_assertions_chain,

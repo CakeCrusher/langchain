@@ -295,9 +295,7 @@ def test_few_shot_chat_message_prompt_template() -> None:
     )
 
     few_shot_prompt = FewShotChatMessagePromptTemplate(
-        input_variables=["input"],
-        example_prompt=example_prompt,
-        examples=examples,
+        input_variables=["input"], example_prompt=example_prompt, examples=examples,
     )
     final_prompt: ChatPromptTemplate = (
         SystemMessagePromptTemplate.from_template("You are a helpful AI Assistant")

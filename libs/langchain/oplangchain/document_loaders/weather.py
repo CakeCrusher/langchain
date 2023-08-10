@@ -18,9 +18,7 @@ class WeatherDataLoader(BaseLoader):
     """
 
     def __init__(
-        self,
-        client: OpenWeatherMapAPIWrapper,
-        places: Sequence[str],
+        self, client: OpenWeatherMapAPIWrapper, places: Sequence[str],
     ) -> None:
         """Initialize with parameters."""
         super().__init__()
@@ -34,17 +32,13 @@ class WeatherDataLoader(BaseLoader):
         client = OpenWeatherMapAPIWrapper(openweathermap_api_key=openweathermap_api_key)
         return cls(client, places)
 
-    def lazy_load(
-        self,
-    ) -> Iterator[Document]:
+    def lazy_load(self,) -> Iterator[Document]:
         """Lazily load weather data for the given locations."""
         for place in self.places:
             metadata = {"queried_at": datetime.now()}
             content = self.client.run(place)
             yield Document(page_content=content, metadata=metadata)
 
-    def load(
-        self,
-    ) -> List[Document]:
+    def load(self,) -> List[Document]:
         """Load weather data for the given locations."""
         return list(self.lazy_load())

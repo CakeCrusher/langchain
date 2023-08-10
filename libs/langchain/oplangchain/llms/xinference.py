@@ -82,10 +82,7 @@ class Xinference(LLM):
             ) from e
 
         super().__init__(
-            **{
-                "server_url": server_url,
-                "model_uid": model_uid,
-            }
+            **{"server_url": server_url, "model_uid": model_uid,}
         )
 
         if self.server_url is None:

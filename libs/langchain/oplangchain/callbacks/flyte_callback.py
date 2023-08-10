@@ -37,11 +37,7 @@ def import_flytekit() -> Tuple[flytekit, renderer]:
     return flytekit, renderer
 
 
-def analyze_text(
-    text: str,
-    nlp: Any = None,
-    textstat: Any = None,
-) -> dict:
+def analyze_text(text: str, nlp: Any = None, textstat: Any = None,) -> dict:
     """Analyze text using textstat and spacy.
 
     Parameters:

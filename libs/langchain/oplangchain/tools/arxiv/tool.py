@@ -24,9 +24,7 @@ class ArxivQueryRun(BaseTool):
     api_wrapper: ArxivAPIWrapper = Field(default_factory=ArxivAPIWrapper)
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the Arxiv tool."""
         return self.api_wrapper.run(query)

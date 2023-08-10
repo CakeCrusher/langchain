@@ -112,8 +112,7 @@ class ArgillaCallbackHandler(BaseCallbackHandler):
         # Connect to Argilla with the provided credentials, if applicable
         try:
             rg.init(
-                api_key=api_key,
-                api_url=api_url,
+                api_key=api_key, api_url=api_url,
             )
         except Exception as e:
             raise ConnectionError(
@@ -294,10 +293,7 @@ class ArgillaCallbackHandler(BaseCallbackHandler):
         pass
 
     def on_tool_start(
-        self,
-        serialized: Dict[str, Any],
-        input_str: str,
-        **kwargs: Any,
+        self, serialized: Dict[str, Any], input_str: str, **kwargs: Any,
     ) -> None:
         """Do nothing when tool starts."""
         pass

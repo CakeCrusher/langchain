@@ -7,9 +7,7 @@ from typing import Any, Dict, List, Tuple
 from pydantic import Extra, Field, root_validator
 
 from oplangchain.callbacks.manager import Callbacks
-from oplangchain.chains.combine_documents.base import (
-    BaseCombineDocumentsChain,
-)
+from oplangchain.chains.combine_documents.base import BaseCombineDocumentsChain
 from oplangchain.chains.llm import LLMChain
 from oplangchain.docstore.document import Document
 from oplangchain.prompts.prompt import PromptTemplate

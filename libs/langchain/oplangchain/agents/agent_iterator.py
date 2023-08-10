@@ -227,8 +227,7 @@ class AgentExecutorIterator(BaseAgentExecutorIterator):
         self.reset()
         assert isinstance(self.callback_manager, CallbackManager)
         self.run_manager = self.callback_manager.on_chain_start(
-            dumpd(self.agent_executor),
-            self.inputs,
+            dumpd(self.agent_executor), self.inputs,
         )
         return self
 
@@ -261,8 +260,7 @@ class AgentExecutorIterator(BaseAgentExecutorIterator):
         if self.iterations == 0:
             assert isinstance(self.callback_manager, AsyncCallbackManager)
             self.run_manager = await self.callback_manager.on_chain_start(
-                dumpd(self.agent_executor),
-                self.inputs,
+                dumpd(self.agent_executor), self.inputs,
             )
             if self.timeout_manager:
                 await self.timeout_manager.__aenter__()

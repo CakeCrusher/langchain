@@ -41,7 +41,7 @@ class DeterministicFakeEmbedding(Embeddings, BaseModel):
         """
         Get a seed for the random generator, using the hash of the text.
         """
-        return int(hashlib.sha256(text.encode("utf-8")).hexdigest(), 16) % 10**8
+        return int(hashlib.sha256(text.encode("utf-8")).hexdigest(), 16) % 10 ** 8
 
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         return [self._get_embedding(seed=self._get_seed(_)) for _ in texts]

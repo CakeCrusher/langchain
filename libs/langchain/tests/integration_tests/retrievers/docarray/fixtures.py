@@ -129,15 +129,7 @@ def init_qdrant() -> Tuple[QdrantDocumentIndex[MyDoc], rest.Filter, FakeEmbeddin
     )
     # build a filter query
     filter_query = rest.Filter(
-        must=[
-            rest.FieldCondition(
-                key="year",
-                range=rest.Range(
-                    gte=10,
-                    lt=90,
-                ),
-            )
-        ]
+        must=[rest.FieldCondition(key="year", range=rest.Range(gte=10, lt=90,),)]
     )
 
     return qdrant_db, filter_query, embeddings

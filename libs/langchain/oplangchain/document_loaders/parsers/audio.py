@@ -111,7 +111,7 @@ class OpenAIWhisperParserLocal(BaseBlobParser):
                 self.device = "cuda:0"
                 # check GPU memory and select automatically the model
                 mem = torch.cuda.get_device_properties(self.device).total_memory / (
-                    1024**2
+                    1024 ** 2
                 )
                 if mem < 5000:
                     rec_model = "openai/whisper-base"
@@ -174,6 +174,5 @@ class OpenAIWhisperParserLocal(BaseBlobParser):
         prediction = self.pipe(y.copy(), batch_size=8)["text"]
 
         yield Document(
-            page_content=prediction,
-            metadata={"source": blob.source},
+            page_content=prediction, metadata={"source": blob.source},
         )

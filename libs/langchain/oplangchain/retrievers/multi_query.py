@@ -73,17 +73,10 @@ class MultiQueryRetriever(BaseRetriever):
         """
         output_parser = LineListOutputParser()
         llm_chain = LLMChain(llm=llm, prompt=prompt, output_parser=output_parser)
-        return cls(
-            retriever=retriever,
-            llm_chain=llm_chain,
-            parser_key=parser_key,
-        )
+        return cls(retriever=retriever, llm_chain=llm_chain, parser_key=parser_key,)
 
     def _get_relevant_documents(
-        self,
-        query: str,
-        *,
-        run_manager: CallbackManagerForRetrieverRun,
+        self, query: str, *, run_manager: CallbackManagerForRetrieverRun,
     ) -> List[Document]:
         """Get relevated documents given a user query.
 

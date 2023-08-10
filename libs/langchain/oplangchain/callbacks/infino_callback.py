@@ -33,12 +33,7 @@ class InfinoCallbackHandler(BaseCallbackHandler):
         self.model_version = model_version
         self.verbose = verbose
 
-    def _send_to_infino(
-        self,
-        key: str,
-        value: Any,
-        is_ts: bool = True,
-    ) -> None:
+    def _send_to_infino(self, key: str, value: Any, is_ts: bool = True,) -> None:
         """Send the key-value to Infino.
 
         Parameters:
@@ -50,10 +45,7 @@ class InfinoCallbackHandler(BaseCallbackHandler):
         payload = {
             "date": int(time.time()),
             key: value,
-            "labels": {
-                "model_id": self.model_id,
-                "model_version": self.model_version,
-            },
+            "labels": {"model_id": self.model_id, "model_version": self.model_version,},
         }
         if self.verbose:
             print(f"Tracking {key} with Infino: {payload}")
@@ -66,10 +58,7 @@ class InfinoCallbackHandler(BaseCallbackHandler):
             self.client.append_log(payload)
 
     def on_llm_start(
-        self,
-        serialized: Dict[str, Any],
-        prompts: List[str],
-        **kwargs: Any,
+        self, serialized: Dict[str, Any], prompts: List[str], **kwargs: Any,
     ) -> None:
         """Log the prompts to Infino, and set start time and error flag."""
         for prompt in prompts:
@@ -136,10 +125,7 @@ class InfinoCallbackHandler(BaseCallbackHandler):
         pass
 
     def on_tool_start(
-        self,
-        serialized: Dict[str, Any],
-        input_str: str,
-        **kwargs: Any,
+        self, serialized: Dict[str, Any], input_str: str, **kwargs: Any,
     ) -> None:
         """Do nothing when tool starts."""
         pass

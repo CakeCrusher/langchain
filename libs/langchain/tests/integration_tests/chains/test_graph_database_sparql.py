@@ -12,10 +12,7 @@ def test_connect_file_rdf() -> None:
     """
     berners_lee_card = "http://www.w3.org/People/Berners-Lee/card"
 
-    graph = RdfGraph(
-        source_file=berners_lee_card,
-        standard="rdf",
-    )
+    graph = RdfGraph(source_file=berners_lee_card, standard="rdf",)
 
     query = """SELECT ?s ?p ?o\n""" """WHERE { ?s ?p ?o }"""
 
@@ -29,10 +26,7 @@ def test_sparql_select() -> None:
     """
     berners_lee_card = "http://www.w3.org/People/Berners-Lee/card"
 
-    graph = RdfGraph(
-        source_file=berners_lee_card,
-        standard="rdf",
-    )
+    graph = RdfGraph(source_file=berners_lee_card, standard="rdf",)
 
     chain = GraphSparqlQAChain.from_llm(OpenAI(temperature=0), graph=graph)
     output = chain.run("What is Tim Berners-Lee's work homepage?")
@@ -51,9 +45,7 @@ def test_sparql_insert() -> None:
     _local_copy = "test.ttl"
 
     graph = RdfGraph(
-        source_file=berners_lee_card,
-        standard="rdf",
-        local_copy=_local_copy,
+        source_file=berners_lee_card, standard="rdf", local_copy=_local_copy,
     )
 
     chain = GraphSparqlQAChain.from_llm(OpenAI(temperature=0), graph=graph)

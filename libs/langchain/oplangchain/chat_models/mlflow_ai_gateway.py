@@ -195,8 +195,7 @@ class ChatMLflowAIGateway(BaseChatModel):
             message = ChatMLflowAIGateway._convert_dict_to_message(candidate["message"])
             message_metadata = candidate.get("metadata", {})
             gen = ChatGeneration(
-                message=message,
-                generation_info=dict(message_metadata),
+                message=message, generation_info=dict(message_metadata),
             )
             generations.append(gen)
 

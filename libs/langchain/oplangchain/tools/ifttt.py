@@ -52,9 +52,7 @@ class IFTTTWebhook(BaseTool):
     url: str
 
     def _run(
-        self,
-        tool_input: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, tool_input: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         body = {"this": tool_input}
         response = requests.post(self.url, data=body)

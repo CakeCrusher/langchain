@@ -74,9 +74,7 @@ def test_openai_retries(mock_completion: dict) -> None:
     mock_client.create = raise_once
     callback_handler = FakeCallbackHandler()
     with patch.object(
-        llm,
-        "client",
-        mock_client,
+        llm, "client", mock_client,
     ):
         res = llm.predict("bar", callbacks=[callback_handler])
         assert res == "Bar Baz"
@@ -106,9 +104,7 @@ async def test_openai_async_retries(mock_completion: dict) -> None:
     mock_client.acreate = araise_once
     callback_handler = FakeAsyncCallbackHandler()
     with patch.object(
-        llm,
-        "client",
-        mock_client,
+        llm, "client", mock_client,
     ):
         res = await llm.apredict("bar", callbacks=[callback_handler])
         assert res == "Bar Baz"

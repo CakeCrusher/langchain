@@ -195,14 +195,10 @@ def _get_functions_multi_prompt(
             dfs_head = "\n\n".join(
                 [d.head(number_of_head_rows).to_markdown() for d in dfs]
             )
-            suffix_to_use = suffix_to_use.format(
-                dfs_head=dfs_head,
-            )
+            suffix_to_use = suffix_to_use.format(dfs_head=dfs_head,)
     elif include_df_in_prompt:
         dfs_head = "\n\n".join([d.head(number_of_head_rows).to_markdown() for d in dfs])
-        suffix_to_use = FUNCTIONS_WITH_MULTI_DF.format(
-            dfs_head=dfs_head,
-        )
+        suffix_to_use = FUNCTIONS_WITH_MULTI_DF.format(dfs_head=dfs_head,)
     else:
         suffix_to_use = ""
 
@@ -293,11 +289,7 @@ def create_pandas_dataframe_agent(
             include_df_in_prompt=include_df_in_prompt,
             number_of_head_rows=number_of_head_rows,
         )
-        llm_chain = LLMChain(
-            llm=llm,
-            prompt=prompt,
-            callback_manager=callback_manager,
-        )
+        llm_chain = LLMChain(llm=llm, prompt=prompt, callback_manager=callback_manager,)
         tool_names = [tool.name for tool in tools]
         agent = ZeroShotAgent(
             llm_chain=llm_chain,

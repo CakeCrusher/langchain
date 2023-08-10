@@ -3,9 +3,7 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any, Dict, List, Optional
 
-from oplangchain.schema import (
-    BaseChatMessageHistory,
-)
+from oplangchain.schema import BaseChatMessageHistory
 from oplangchain.schema.messages import (
     AIMessage,
     BaseMessage,

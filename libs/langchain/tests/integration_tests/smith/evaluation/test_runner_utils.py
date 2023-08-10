@@ -38,9 +38,7 @@ def client() -> Client:
     return Client()
 
 
-@pytest.fixture(
-    scope="module",
-)
+@pytest.fixture(scope="module",)
 def kv_dataset_name() -> Iterator[str]:
     import pandas as pd
 
@@ -53,12 +51,7 @@ def kv_dataset_name() -> Iterator[str]:
                 "What's the capital of Oregon?",
                 "What's the capital of Washington?",
             ],
-            "other_input": [
-                "a",
-                "b",
-                "c",
-                "d",
-            ],
+            "other_input": ["a", "b", "c", "d",],
             "some_output": ["Sacramento", "Carson City", "Salem", "Olympia"],
             "other_output": ["e", "f", "g", "h"],
         }
@@ -155,8 +148,7 @@ def test_chain(kv_dataset_name: str, eval_project_name: str, client: Client) -> 
         return {"input": d["some_input"]}
 
     with pytest.raises(
-        InputFormatError,
-        match=" match the chain's expected input keys.",
+        InputFormatError, match=" match the chain's expected input keys.",
     ):
         run_on_dataset(
             client,
@@ -184,9 +176,7 @@ def test_chain(kv_dataset_name: str, eval_project_name: str, client: Client) -> 
 ### Testing Chat Datasets
 
 
-@pytest.fixture(
-    scope="module",
-)
+@pytest.fixture(scope="module",)
 def chat_dataset_name() -> Iterator[str]:
     def _create_message(txt: str, role: str = "human") -> List[dict]:
         return [{"type": role, "data": {"content": txt}}]
@@ -265,16 +255,11 @@ def test_chain_on_chat_dataset(chat_dataset_name: str, client: Client) -> None:
         ValueError, match="Cannot evaluate a chain on dataset with data_type=chat"
     ):
         run_on_dataset(
-            client,
-            chat_dataset_name,
-            lambda: chain,
-            evaluation=eval_config,
+            client, chat_dataset_name, lambda: chain, evaluation=eval_config,
         )
 
 
-@pytest.fixture(
-    scope="module",
-)
+@pytest.fixture(scope="module",)
 def llm_dataset_name() -> Iterator[str]:
     import pandas as pd
 
@@ -344,16 +329,11 @@ def test_chain_on_llm_dataset(llm_dataset_name: str, client: Client) -> None:
         ValueError, match="Cannot evaluate a chain on dataset with data_type=llm"
     ):
         run_on_dataset(
-            client,
-            llm_dataset_name,
-            lambda: chain,
-            evaluation=eval_config,
+            client, llm_dataset_name, lambda: chain, evaluation=eval_config,
         )
 
 
-@pytest.fixture(
-    scope="module",
-)
+@pytest.fixture(scope="module",)
 def kv_singleio_dataset_name() -> Iterator[str]:
     import pandas as pd
 

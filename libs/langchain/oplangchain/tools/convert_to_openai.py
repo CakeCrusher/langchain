@@ -39,9 +39,7 @@ def format_tool_to_openai_function(tool: BaseTool) -> FunctionDescription:
                 # which is a string.
                 # And Open AI does not support an array type for the
                 # parameters.
-                "properties": {
-                    "__arg1": {"title": "__arg1", "type": "string"},
-                },
+                "properties": {"__arg1": {"title": "__arg1", "type": "string"},},
                 "required": ["__arg1"],
                 "type": "object",
             }

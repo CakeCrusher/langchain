@@ -124,9 +124,7 @@ def _load_map_reduce_documents_chain(
         reduce_documents_chain = _load_reduce_documents_chain(config)
 
     return MapReduceDocumentsChain(
-        llm_chain=llm_chain,
-        reduce_documents_chain=reduce_documents_chain,
-        **config,
+        llm_chain=llm_chain, reduce_documents_chain=reduce_documents_chain, **config,
     )
 
 
@@ -418,9 +416,7 @@ def _load_retrieval_qa(config: dict, **kwargs: Any) -> RetrievalQA:
             "`combine_documents_chain_path` must be present."
         )
     return RetrievalQA(
-        combine_documents_chain=combine_documents_chain,
-        retriever=retriever,
-        **config,
+        combine_documents_chain=combine_documents_chain, retriever=retriever, **config,
     )
 
 

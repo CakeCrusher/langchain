@@ -354,9 +354,7 @@ class RedisSemanticCache(BaseCache):
         generations = []
         # Read from a Hash
         results = llm_cache.similarity_search_limit_score(
-            query=prompt,
-            k=1,
-            score_threshold=self.score_threshold,
+            query=prompt, k=1, score_threshold=self.score_threshold,
         )
         if results:
             for document in results:

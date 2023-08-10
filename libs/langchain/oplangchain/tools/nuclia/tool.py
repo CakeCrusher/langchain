@@ -29,20 +29,16 @@ logger = logging.getLogger(__name__)
 
 class NUASchema(BaseModel):
     action: str = Field(
-        ...,
-        description="Action to perform. Either `push` or `pull`.",
+        ..., description="Action to perform. Either `push` or `pull`.",
     )
     id: str = Field(
-        ...,
-        description="ID of the file to push or pull.",
+        ..., description="ID of the file to push or pull.",
     )
     path: Optional[str] = Field(
-        ...,
-        description="Path to the file to push (needed only for `push` action).",
+        ..., description="Path to the file to push (needed only for `push` action).",
     )
     text: Optional[str] = Field(
-        ...,
-        description="Text content to process (needed only for `push` action).",
+        ..., description="Text content to process (needed only for `push` action).",
     )
 
 
@@ -192,9 +188,7 @@ class NucliaUnderstandingAPI(BaseTool):
 
         res = requests.get(
             self._config["BACKEND"] + "/processing/pull",
-            headers={
-                "x-stf-nuakey": "Bearer " + self._config["NUA_KEY"],
-            },
+            headers={"x-stf-nuakey": "Bearer " + self._config["NUA_KEY"],},
         ).json()
         if res["status"] == "empty":
             logger.info("Queue empty")

@@ -114,8 +114,7 @@ class RedditPostsLoader(BaseLoader):
                 "post_author": post.author,
             }
             yield Document(
-                page_content=post.selftext,
-                metadata=metadata,
+                page_content=post.selftext, metadata=metadata,
             )
 
     def _user_posts_loader(
@@ -137,6 +136,5 @@ class RedditPostsLoader(BaseLoader):
                 "post_author": post.author,
             }
             yield Document(
-                page_content=post.selftext,
-                metadata=metadata,
+                page_content=post.selftext, metadata=metadata,
             )

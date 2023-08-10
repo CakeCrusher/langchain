@@ -128,11 +128,7 @@ class StructuredChatAgent(Agent):
             input_variables=input_variables,
             memory_prompts=memory_prompts,
         )
-        llm_chain = LLMChain(
-            llm=llm,
-            prompt=prompt,
-            callback_manager=callback_manager,
-        )
+        llm_chain = LLMChain(llm=llm, prompt=prompt, callback_manager=callback_manager,)
         tool_names = [tool.name for tool in tools]
         _output_parser = output_parser or cls._get_default_output_parser(llm=llm)
         return cls(

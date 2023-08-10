@@ -84,10 +84,7 @@ def create_qa_with_structure_chain(
     prompt = prompt or ChatPromptTemplate(messages=messages)
 
     chain = LLMChain(
-        llm=llm,
-        prompt=prompt,
-        llm_kwargs=llm_kwargs,
-        output_parser=_output_parser,
+        llm=llm, prompt=prompt, llm_kwargs=llm_kwargs, output_parser=_output_parser,
     )
     return chain
 

@@ -31,7 +31,7 @@ def test_maximal_marginal_relevance() -> None:
     # (cosine similarity 0.97 and 0.71). So for 3rd vector be chosen, must be case that
     # 0.71lambda - 0.97(1 - lambda) < 0.26lambda - 0.71(1-lambda)
     # -> lambda ~< .26 / .71
-    embedding_list = [[3**0.5, 1], [1, 1], [1, 2 + (3**0.5)]]
+    embedding_list = [[3 ** 0.5, 1], [1, 1], [1, 2 + (3 ** 0.5)]]
     expected = [0, 2]
     actual = maximal_marginal_relevance(
         query_embedding, embedding_list, lambda_mult=(25 / 71), k=2

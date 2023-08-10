@@ -74,10 +74,7 @@ _EVALUATOR_MAP: Dict[EvaluatorType, Union[Type[LLMEvalChain], Type[Chain]]] = {
 
 
 def load_evaluator(
-    evaluator: EvaluatorType,
-    *,
-    llm: Optional[BaseLanguageModel] = None,
-    **kwargs: Any,
+    evaluator: EvaluatorType, *, llm: Optional[BaseLanguageModel] = None, **kwargs: Any,
 ) -> Chain:
     """Load the requested evaluation chain specified by a string.
 

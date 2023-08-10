@@ -140,10 +140,7 @@ class Typesense(VectorStore):
         return [doc["id"] for doc in docs]
 
     def similarity_search_with_score(
-        self,
-        query: str,
-        k: int = 10,
-        filter: Optional[str] = "",
+        self, query: str, k: int = 10, filter: Optional[str] = "",
     ) -> List[Tuple[Document, float]]:
         """Return typesense documents most similar to query, along with scores.
 
@@ -176,11 +173,7 @@ class Typesense(VectorStore):
         return docs
 
     def similarity_search(
-        self,
-        query: str,
-        k: int = 10,
-        filter: Optional[str] = "",
-        **kwargs: Any,
+        self, query: str, k: int = 10, filter: Optional[str] = "", **kwargs: Any,
     ) -> List[Document]:
         """Return typesense documents most similar to query.
 

@@ -64,8 +64,7 @@ class TwitterTweetLoader(BaseLoader):
                 "user_info": user_info,
             }
             yield Document(
-                page_content=tweet["text"],
-                metadata=metadata,
+                page_content=tweet["text"], metadata=metadata,
             )
 
     @classmethod
@@ -79,9 +78,7 @@ class TwitterTweetLoader(BaseLoader):
         tweepy = _dependable_tweepy_import()
         auth = tweepy.OAuth2BearerHandler(oauth2_bearer_token)
         return cls(
-            auth_handler=auth,
-            twitter_users=twitter_users,
-            number_tweets=number_tweets,
+            auth_handler=auth, twitter_users=twitter_users, number_tweets=number_tweets,
         )
 
     @classmethod
@@ -103,7 +100,5 @@ class TwitterTweetLoader(BaseLoader):
             consumer_secret=consumer_secret,
         )
         return cls(
-            auth_handler=auth,
-            twitter_users=twitter_users,
-            number_tweets=number_tweets,
+            auth_handler=auth, twitter_users=twitter_users, number_tweets=number_tweets,
         )

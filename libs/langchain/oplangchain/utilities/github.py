@@ -60,10 +60,7 @@ class GitHubAPIWrapper(BaseModel):
         with open(github_app_private_key, "r") as f:
             private_key = f.read()
 
-        auth = Auth.AppAuth(
-            github_app_id,
-            private_key,
-        )
+        auth = Auth.AppAuth(github_app_id, private_key,)
         gi = GithubIntegration(auth=auth)
         installation = gi.get_installations()[0]
 

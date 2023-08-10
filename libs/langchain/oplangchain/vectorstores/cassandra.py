@@ -169,9 +169,7 @@ class Cassandra(VectorStore):
 
     # id-returning search facilities
     def similarity_search_with_score_id_by_vector(
-        self,
-        embedding: List[float],
-        k: int = 4,
+        self, embedding: List[float], k: int = 4,
     ) -> List[Tuple[Document, float, str]]:
         """Return docs most similar to embedding vector.
 
@@ -184,19 +182,13 @@ class Cassandra(VectorStore):
             List of (Document, score, id), the most similar to the query vector.
         """
         hits = self.table.search(
-            embedding_vector=embedding,
-            top_k=k,
-            metric="cos",
-            metric_threshold=None,
+            embedding_vector=embedding, top_k=k, metric="cos", metric_threshold=None,
         )
         # We stick to 'cos' distance as it can be normalized on a 0-1 axis
         # (1=most relevant), as required by this class' contract.
         return [
             (
-                Document(
-                    page_content=hit["document"],
-                    metadata=hit["metadata"],
-                ),
+                Document(page_content=hit["document"], metadata=hit["metadata"],),
                 0.5 + 0.5 * hit["distance"],
                 hit["document_id"],
             )
@@ -204,21 +196,16 @@ class Cassandra(VectorStore):
         ]
 
     def similarity_search_with_score_id(
-        self,
-        query: str,
-        k: int = 4,
+        self, query: str, k: int = 4,
     ) -> List[Tuple[Document, float, str]]:
         embedding_vector = self.embedding.embed_query(query)
         return self.similarity_search_with_score_id_by_vector(
-            embedding=embedding_vector,
-            k=k,
+            embedding=embedding_vector, k=k,
         )
 
     # id-unaware search facilities
     def similarity_search_with_score_by_vector(
-        self,
-        embedding: List[float],
-        k: int = 4,
+        self, embedding: List[float], k: int = 4,
     ) -> List[Tuple[Document, float]]:
         """Return docs most similar to embedding vector.
 
@@ -233,47 +220,28 @@ class Cassandra(VectorStore):
         return [
             (doc, score)
             for (doc, score, docId) in self.similarity_search_with_score_id_by_vector(
-                embedding=embedding,
-                k=k,
+                embedding=embedding, k=k,
             )
         ]
 
     def similarity_search(
-        self,
-        query: str,
-        k: int = 4,
-        **kwargs: Any,
+        self, query: str, k: int = 4, **kwargs: Any,
     ) -> List[Document]:
         embedding_vector = self.embedding.embed_query(query)
-        return self.similarity_search_by_vector(
-            embedding_vector,
-            k,
-        )
+        return self.similarity_search_by_vector(embedding_vector, k,)
 
     def similarity_search_by_vector(
-        self,
-        embedding: List[float],
-        k: int = 4,
-        **kwargs: Any,
+        self, embedding: List[float], k: int = 4, **kwargs: Any,
     ) -> List[Document]:
         return [
-            doc
-            for doc, _ in self.similarity_search_with_score_by_vector(
-                embedding,
-                k,
-            )
+            doc for doc, _ in self.similarity_search_with_score_by_vector(embedding, k,)
         ]
 
     def similarity_search_with_score(
-        self,
-        query: str,
-        k: int = 4,
+        self, query: str, k: int = 4,
     ) -> List[Tuple[Document, float]]:
         embedding_vector = self.embedding.embed_query(query)
-        return self.similarity_search_with_score_by_vector(
-            embedding_vector,
-            k,
-        )
+        return self.similarity_search_with_score_by_vector(embedding_vector, k,)
 
     def max_marginal_relevance_search_by_vector(
         self,
@@ -315,10 +283,7 @@ class Cassandra(VectorStore):
             if pfIndex in mmrChosenIndices
         ]
         return [
-            Document(
-                page_content=hit["document"],
-                metadata=hit["metadata"],
-            )
+            Document(page_content=hit["document"], metadata=hit["metadata"],)
             for hit in mmrHits
         ]
 
@@ -346,10 +311,7 @@ class Cassandra(VectorStore):
         """
         embedding_vector = self.embedding.embed_query(query)
         return self.max_marginal_relevance_search_by_vector(
-            embedding_vector,
-            k,
-            fetch_k,
-            lambda_mult=lambda_mult,
+            embedding_vector, k, fetch_k, lambda_mult=lambda_mult,
         )
 
     @classmethod

@@ -98,11 +98,7 @@ class MiniMaxEmbeddings(BaseModel, Embeddings):
         values["minimax_api_key"] = minimax_api_key
         return values
 
-    def embed(
-        self,
-        texts: List[str],
-        embed_type: str,
-    ) -> List[List[float]]:
+    def embed(self, texts: List[str], embed_type: str,) -> List[List[float]]:
         payload = {
             "model": self.model,
             "type": embed_type,

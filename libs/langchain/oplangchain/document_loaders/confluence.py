@@ -488,9 +488,7 @@ class ConfluenceLoader(BaseLoader):
         )
 
     def process_attachment(
-        self,
-        page_id: str,
-        ocr_languages: Optional[str] = None,
+        self, page_id: str, ocr_languages: Optional[str] = None,
     ) -> List[str]:
         try:
             from PIL import Image  # noqa: F401
@@ -530,11 +528,7 @@ class ConfluenceLoader(BaseLoader):
 
         return texts
 
-    def process_pdf(
-        self,
-        link: str,
-        ocr_languages: Optional[str] = None,
-    ) -> str:
+    def process_pdf(self, link: str, ocr_languages: Optional[str] = None,) -> str:
         try:
             import pytesseract  # noqa: F401
             from pdf2image import convert_from_bytes  # noqa: F401
@@ -564,11 +558,7 @@ class ConfluenceLoader(BaseLoader):
 
         return text
 
-    def process_image(
-        self,
-        link: str,
-        ocr_languages: Optional[str] = None,
-    ) -> str:
+    def process_image(self, link: str, ocr_languages: Optional[str] = None,) -> str:
         try:
             import pytesseract  # noqa: F401
             from PIL import Image  # noqa: F401
@@ -666,11 +656,7 @@ class ConfluenceLoader(BaseLoader):
 
         return text
 
-    def process_svg(
-        self,
-        link: str,
-        ocr_languages: Optional[str] = None,
-    ) -> str:
+    def process_svg(self, link: str, ocr_languages: Optional[str] = None,) -> str:
         try:
             import pytesseract  # noqa: F401
             from PIL import Image  # noqa: F401

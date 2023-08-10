@@ -192,11 +192,7 @@ class Tongyi(LLM):
             **kwargs,
         }
 
-        completion = generate_with_retry(
-            self,
-            prompt=prompt,
-            **params,
-        )
+        completion = generate_with_retry(self, prompt=prompt, **params,)
         return completion["output"]["text"]
 
     def _generate(
@@ -231,11 +227,7 @@ class Tongyi(LLM):
                 )
         else:
             for prompt in prompts:
-                completion = generate_with_retry(
-                    self,
-                    prompt=prompt,
-                    **params,
-                )
+                completion = generate_with_retry(self, prompt=prompt, **params,)
                 generations.append(
                     [
                         Generation(

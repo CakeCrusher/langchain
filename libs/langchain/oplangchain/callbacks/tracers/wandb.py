@@ -464,8 +464,7 @@ class WandbTracer(BaseTracer):
             return
 
         model_trace = self._trace_tree.WBTraceTree(
-            root_span=root_span,
-            model_dict=model_dict,
+            root_span=root_span, model_dict=model_dict,
         )
         if self._wandb.run is not None:
             self._wandb.run.log({"langchain_trace": model_trace})

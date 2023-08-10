@@ -24,8 +24,7 @@ def fake_retriever_v1() -> BaseRetriever:
 
         class FakeRetrieverV1(BaseRetriever):
             def get_relevant_documents(  # type: ignore[override]
-                self,
-                query: str,
+                self, query: str,
             ) -> List[Document]:
                 assert isinstance(self, FakeRetrieverV1)
                 return [
@@ -33,8 +32,7 @@ def fake_retriever_v1() -> BaseRetriever:
                 ]
 
             async def aget_relevant_documents(  # type: ignore[override]
-                self,
-                query: str,
+                self, query: str,
             ) -> List[Document]:
                 assert isinstance(self, FakeRetrieverV1)
                 return [

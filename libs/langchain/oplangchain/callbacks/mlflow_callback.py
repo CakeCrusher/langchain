@@ -32,10 +32,7 @@ def import_mlflow() -> Any:
     return mlflow
 
 
-def analyze_text(
-    text: str,
-    nlp: Any = None,
-) -> dict:
+def analyze_text(text: str, nlp: Any = None,) -> dict:
     """Analyze text using textstat and spacy.
 
     Parameters:
@@ -365,16 +362,10 @@ class MlflowCallbackHandler(BaseMetadataCallbackHandler, BaseCallbackHandler):
             for idx, generation in enumerate(generations):
                 generation_resp = deepcopy(resp)
                 generation_resp.update(flatten_dict(generation.dict()))
-                generation_resp.update(
-                    analyze_text(
-                        generation.text,
-                        nlp=self.nlp,
-                    )
-                )
+                generation_resp.update(analyze_text(generation.text, nlp=self.nlp,))
                 complexity_metrics: Dict[str, float] = generation_resp.pop("text_complexity_metrics")  # type: ignore  # noqa: E501
                 self.mlflg.metrics(
-                    complexity_metrics,
-                    step=self.metrics["step"],
+                    complexity_metrics, step=self.metrics["step"],
                 )
                 self.records["on_llm_end_records"].append(generation_resp)
                 self.records["action_records"].append(generation_resp)

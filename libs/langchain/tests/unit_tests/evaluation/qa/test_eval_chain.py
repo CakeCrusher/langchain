@@ -49,16 +49,12 @@ def test_context_eval_chain(chain_cls: Type[ContextQAEvalChain]) -> None:
 
 
 @pytest.mark.parametrize("chain_cls", [QAEvalChain, ContextQAEvalChain, CotQAEvalChain])
-def test_implements_string_evaluator_protocol(
-    chain_cls: Type[LLMChain],
-) -> None:
+def test_implements_string_evaluator_protocol(chain_cls: Type[LLMChain],) -> None:
     assert issubclass(chain_cls, StringEvaluator)
 
 
 @pytest.mark.parametrize("chain_cls", [QAEvalChain, ContextQAEvalChain, CotQAEvalChain])
-def test_returns_expected_results(
-    chain_cls: Type[LLMChain],
-) -> None:
+def test_returns_expected_results(chain_cls: Type[LLMChain],) -> None:
     fake_llm = FakeLLM(
         queries={"text": "The meaning of life\nCORRECT"}, sequential_responses=True
     )

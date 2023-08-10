@@ -56,34 +56,22 @@ class AzureChatOpenAI(ChatOpenAI):
     def validate_environment(cls, values: Dict) -> Dict:
         """Validate that api key and python package exists in environment."""
         values["openai_api_key"] = get_from_dict_or_env(
-            values,
-            "openai_api_key",
-            "OPENAI_API_KEY",
+            values, "openai_api_key", "OPENAI_API_KEY",
         )
         values["openai_api_base"] = get_from_dict_or_env(
-            values,
-            "openai_api_base",
-            "OPENAI_API_BASE",
+            values, "openai_api_base", "OPENAI_API_BASE",
         )
         values["openai_api_version"] = get_from_dict_or_env(
-            values,
-            "openai_api_version",
-            "OPENAI_API_VERSION",
+            values, "openai_api_version", "OPENAI_API_VERSION",
         )
         values["openai_api_type"] = get_from_dict_or_env(
             values, "openai_api_type", "OPENAI_API_TYPE", default="azure"
         )
         values["openai_organization"] = get_from_dict_or_env(
-            values,
-            "openai_organization",
-            "OPENAI_ORGANIZATION",
-            default="",
+            values, "openai_organization", "OPENAI_ORGANIZATION", default="",
         )
         values["openai_proxy"] = get_from_dict_or_env(
-            values,
-            "openai_proxy",
-            "OPENAI_PROXY",
-            default="",
+            values, "openai_proxy", "OPENAI_PROXY", default="",
         )
         try:
             import openai

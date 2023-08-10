@@ -4,9 +4,7 @@ import json
 from datetime import timedelta
 from typing import TYPE_CHECKING, Any, Optional
 
-from oplangchain.schema import (
-    BaseChatMessageHistory,
-)
+from oplangchain.schema import BaseChatMessageHistory
 from oplangchain.schema.messages import (
     BaseMessage,
     _message_to_dict,

@@ -42,9 +42,7 @@ def _results_to_docs_and_scores(results: Any) -> List[Tuple[Document, float]]:
         # we shouldn't hard code to the 1st result
         (Document(page_content=result[0], metadata=result[1] or {}), result[2])
         for result in zip(
-            results["documents"][0],
-            results["metadatas"][0],
-            results["distances"][0],
+            results["documents"][0], results["metadatas"][0], results["distances"][0],
         )
     ]
 
@@ -224,9 +222,7 @@ class Chroma(VectorStore):
                 )
         else:
             self._collection.upsert(
-                embeddings=embeddings,
-                documents=texts,
-                ids=ids,
+                embeddings=embeddings, documents=texts, ids=ids,
             )
         return ids
 

@@ -14,11 +14,7 @@ class BS4HTMLParser(BaseBlobParser):
     """Parser that uses beautiful soup to parse HTML files."""
 
     def __init__(
-        self,
-        *,
-        features: str = "lxml",
-        get_text_separator: str = "",
-        **kwargs: Any,
+        self, *, features: str = "lxml", get_text_separator: str = "", **kwargs: Any,
     ) -> None:
         """Initialize a bs4 based HTML parser."""
         try:

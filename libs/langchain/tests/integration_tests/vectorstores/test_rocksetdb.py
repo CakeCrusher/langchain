@@ -99,10 +99,7 @@ class TestRockset:
 
         texts = ["foo", "bar", "baz"]
         metadatas = [{"metadata_index": i} for i in range(len(texts))]
-        ids = self.rockset_vectorstore.add_texts(
-            texts=texts,
-            metadatas=metadatas,
-        )
+        ids = self.rockset_vectorstore.add_texts(texts=texts, metadatas=metadatas,)
         assert len(ids) == len(texts)
         # Test that `foo` is closest to `foo`
         output = self.rockset_vectorstore.similarity_search(
@@ -122,9 +119,7 @@ class TestRockset:
     def test_build_query_sql(self) -> None:
         vector = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
         q_str = self.rockset_vectorstore._build_query_sql(
-            vector,
-            Rockset.DistanceFunction.COSINE_SIM,
-            4,
+            vector, Rockset.DistanceFunction.COSINE_SIM, 4,
         )
         vector_str = ",".join(map(str, vector))
         expected = f"""\
@@ -139,10 +134,7 @@ LIMIT 4
     def test_build_query_sql_with_where(self) -> None:
         vector = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
         q_str = self.rockset_vectorstore._build_query_sql(
-            vector,
-            Rockset.DistanceFunction.COSINE_SIM,
-            4,
-            "age >= 10",
+            vector, Rockset.DistanceFunction.COSINE_SIM, 4, "age >= 10",
         )
         vector_str = ",".join(map(str, vector))
         expected = f"""\

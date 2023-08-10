@@ -15,9 +15,7 @@ class CollectionStore(BaseModel):
     cmetadata = sqlalchemy.Column(JSON)
 
     embeddings = relationship(
-        "EmbeddingStore",
-        back_populates="collection",
-        passive_deletes=True,
+        "EmbeddingStore", back_populates="collection", passive_deletes=True,
     )
 
     @classmethod
@@ -26,10 +24,7 @@ class CollectionStore(BaseModel):
 
     @classmethod
     def get_or_create(
-        cls,
-        session: Session,
-        name: str,
-        cmetadata: Optional[dict] = None,
+        cls, session: Session, name: str, cmetadata: Optional[dict] = None,
     ) -> Tuple["CollectionStore", bool]:
         """
         Get or create a collection.
@@ -53,8 +48,7 @@ class EmbeddingStore(BaseModel):
     collection_id = sqlalchemy.Column(
         UUID(as_uuid=True),
         sqlalchemy.ForeignKey(
-            f"{CollectionStore.__tablename__}.uuid",
-            ondelete="CASCADE",
+            f"{CollectionStore.__tablename__}.uuid", ondelete="CASCADE",
         ),
     )
     collection = relationship(CollectionStore, back_populates="embeddings")

@@ -148,10 +148,7 @@ class Marqo(VectorStore):
         return ids
 
     def similarity_search(
-        self,
-        query: Union[str, Dict[str, float]],
-        k: int = 4,
-        **kwargs: Any,
+        self, query: Union[str, Dict[str, float]], k: int = 4, **kwargs: Any,
     ) -> List[Document]:
         """Search the marqo index for the most similar documents.
 
@@ -169,9 +166,7 @@ class Marqo(VectorStore):
         return documents
 
     def similarity_search_with_score(
-        self,
-        query: Union[str, Dict[str, float]],
-        k: int = 4,
+        self, query: Union[str, Dict[str, float]], k: int = 4,
     ) -> List[Tuple[Document, float]]:
         """Return documents from Marqo that are similar to the query as well
         as their scores.
@@ -297,9 +292,7 @@ class Marqo(VectorStore):
         return documents
 
     def marqo_similarity_search(
-        self,
-        query: Union[str, Dict[str, float]],
-        k: int = 4,
+        self, query: Union[str, Dict[str, float]], k: int = 4,
     ) -> Dict[str, List[Dict[str, str]]]:
         """Return documents from Marqo exposing Marqo's output directly
 

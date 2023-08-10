@@ -24,17 +24,13 @@ class SearxSearchRun(BaseTool):
     kwargs: dict = Field(default_factory=dict)
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool."""
         return self.wrapper.run(query, **self.kwargs)
 
     async def _arun(
-        self,
-        query: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool asynchronously."""
         return await self.wrapper.arun(query, **self.kwargs)
@@ -59,17 +55,13 @@ class SearxSearchResults(BaseTool):
         extra = Extra.allow
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool."""
         return str(self.wrapper.results(query, self.num_results, **self.kwargs))
 
     async def _arun(
-        self,
-        query: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool asynchronously."""
         return (

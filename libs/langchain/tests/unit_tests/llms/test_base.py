@@ -30,10 +30,7 @@ def test_caching() -> None:
         [Generation(text="foo")],
         [Generation(text="fizz")],
     ]
-    expected_output = LLMResult(
-        generations=expected_generations,
-        llm_output=None,
-    )
+    expected_output = LLMResult(generations=expected_generations, llm_output=None,)
     assert output == expected_output
 
 
@@ -68,8 +65,5 @@ def test_custom_caching() -> None:
         [Generation(text="foo")],
         [Generation(text="fizz")],
     ]
-    expected_output = LLMResult(
-        generations=expected_generations,
-        llm_output=None,
-    )
+    expected_output = LLMResult(generations=expected_generations, llm_output=None,)
     assert output == expected_output

@@ -127,11 +127,7 @@ class PairwiseStringResultOutputParser(BaseOutputParser[dict]):
             )
         # C means the models are tied. Return 'None' meaning no preference
         verdict_ = None if verdict == "C" else verdict
-        score = {
-            "A": 1,
-            "B": 0,
-            None: 0.5,
-        }.get(verdict_)
+        score = {"A": 1, "B": 0, None: 0.5,}.get(verdict_)
         return {
             "reasoning": reasoning,
             "value": verdict_,

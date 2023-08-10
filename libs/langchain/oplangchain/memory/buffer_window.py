@@ -32,8 +32,6 @@ class ConversationBufferWindowMemory(BaseChatMemory):
         buffer: Any = self.buffer[-self.k * 2 :] if self.k > 0 else []
         if not self.return_messages:
             buffer = get_buffer_string(
-                buffer,
-                human_prefix=self.human_prefix,
-                ai_prefix=self.ai_prefix,
+                buffer, human_prefix=self.human_prefix, ai_prefix=self.ai_prefix,
             )
         return {self.memory_key: buffer}

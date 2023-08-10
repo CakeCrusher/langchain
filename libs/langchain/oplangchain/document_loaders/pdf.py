@@ -153,9 +153,7 @@ class PyPDFLoader(BasePDFLoader):
         """Load given path as pages."""
         return list(self.lazy_load())
 
-    def lazy_load(
-        self,
-    ) -> Iterator[Document]:
+    def lazy_load(self,) -> Iterator[Document]:
         """Lazy load given path as pages."""
         blob = Blob.from_path(self.file_path)
         yield from self.parser.parse(blob)
@@ -173,9 +171,7 @@ class PyPDFium2Loader(BasePDFLoader):
         """Load given path as pages."""
         return list(self.lazy_load())
 
-    def lazy_load(
-        self,
-    ) -> Iterator[Document]:
+    def lazy_load(self,) -> Iterator[Document]:
         """Lazy load given path as pages."""
         blob = Blob.from_path(self.file_path)
         yield from self.parser.parse(blob)
@@ -246,9 +242,7 @@ class PDFMinerLoader(BasePDFLoader):
         """Eagerly load the content."""
         return list(self.lazy_load())
 
-    def lazy_load(
-        self,
-    ) -> Iterator[Document]:
+    def lazy_load(self,) -> Iterator[Document]:
         """Lazily load documents."""
         blob = Blob.from_path(self.file_path)
         yield from self.parser.parse(blob)
@@ -551,9 +545,7 @@ class AmazonTextractPDFLoader(BasePDFLoader):
         """Load given path as pages."""
         return list(self.lazy_load())
 
-    def lazy_load(
-        self,
-    ) -> Iterator[Document]:
+    def lazy_load(self,) -> Iterator[Document]:
         """Lazy load documents"""
         # the self.file_path is local, but the blob has to include
         # the S3 location if the file originated from S3 for multi-page documents

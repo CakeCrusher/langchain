@@ -151,9 +151,7 @@ def test_singlestoredb_add_texts_to_existing(texts: List[str]) -> None:
         host=TEST_SINGLESTOREDB_URL,
     )
     docsearch = SingleStoreDB(
-        NormilizedFakeEmbeddings(),
-        table_name=table_name,
-        host=TEST_SINGLESTOREDB_URL,
+        NormilizedFakeEmbeddings(), table_name=table_name, host=TEST_SINGLESTOREDB_URL,
     )
     docsearch.add_texts(["foo"])
     output = docsearch.similarity_search("foo", k=2)

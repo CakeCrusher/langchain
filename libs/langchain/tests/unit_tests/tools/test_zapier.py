@@ -21,8 +21,7 @@ def test_default_base_prompt() -> None:
     # Test that the base prompt was successfully assigned to the default prompt
     assert tool.base_prompt == BASE_ZAPIER_TOOL_PROMPT
     assert tool.description == BASE_ZAPIER_TOOL_PROMPT.format(
-        zapier_description="test",
-        params=str(list({"test": "test"}.keys())),
+        zapier_description="test", params=str(list({"test": "test"}.keys())),
     )
 
 
@@ -107,8 +106,7 @@ def test_create_action_payload_preview() -> None:
     )
 
     payload = tool.api_wrapper._create_action_payload(
-        "some instructions",
-        preview_only=True,
+        "some instructions", preview_only=True,
     )
     assert payload["instructions"] == "some instructions"
     assert payload["preview_only"] is True
@@ -124,9 +122,7 @@ def test_create_action_payload_with_params() -> None:
     )
 
     payload = tool.api_wrapper._create_action_payload(
-        "some instructions",
-        {"test": "test"},
-        preview_only=True,
+        "some instructions", {"test": "test"}, preview_only=True,
     )
     assert payload["instructions"] == "some instructions"
     assert payload["preview_only"] is True
@@ -141,15 +137,12 @@ async def test_apreview(mocker) -> None:  # type: ignore[no-untyped-def]
         zapier_description="test",
         params_schema={"test": "test"},
         api_wrapper=ZapierNLAWrapper(
-            zapier_nla_api_key="test",
-            zapier_nla_api_base="http://localhost:8080/v1/",
+            zapier_nla_api_key="test", zapier_nla_api_base="http://localhost:8080/v1/",
         ),
     )
     mockObj = mocker.patch.object(ZapierNLAWrapper, "_arequest")
     await tool.api_wrapper.apreview(
-        "random_action_id",
-        "some instructions",
-        {"test": "test"},
+        "random_action_id", "some instructions", {"test": "test"},
     )
     mockObj.assert_called_once_with(
         "POST",
@@ -170,15 +163,12 @@ async def test_arun(mocker) -> None:  # type: ignore[no-untyped-def]
         zapier_description="test",
         params_schema={"test": "test"},
         api_wrapper=ZapierNLAWrapper(
-            zapier_nla_api_key="test",
-            zapier_nla_api_base="http://localhost:8080/v1/",
+            zapier_nla_api_key="test", zapier_nla_api_base="http://localhost:8080/v1/",
         ),
     )
     mockObj = mocker.patch.object(ZapierNLAWrapper, "_arequest")
     await tool.api_wrapper.arun(
-        "random_action_id",
-        "some instructions",
-        {"test": "test"},
+        "random_action_id", "some instructions", {"test": "test"},
     )
     mockObj.assert_called_once_with(
         "POST",
@@ -195,15 +185,13 @@ async def test_alist(mocker) -> None:  # type: ignore[no-untyped-def]
         zapier_description="test",
         params_schema={"test": "test"},
         api_wrapper=ZapierNLAWrapper(
-            zapier_nla_api_key="test",
-            zapier_nla_api_base="http://localhost:8080/v1/",
+            zapier_nla_api_key="test", zapier_nla_api_base="http://localhost:8080/v1/",
         ),
     )
     mockObj = mocker.patch.object(ZapierNLAWrapper, "_arequest")
     await tool.api_wrapper.alist()
     mockObj.assert_called_once_with(
-        "GET",
-        "http://localhost:8080/v1/exposed/",
+        "GET", "http://localhost:8080/v1/exposed/",
     )
 
 

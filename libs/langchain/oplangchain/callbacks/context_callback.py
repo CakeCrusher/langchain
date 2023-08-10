@@ -137,10 +137,7 @@ class ContextCallbackHandler(BaseCallbackHandler):
                 role = self.message_role_model.ASSISTANT
 
             self.messages.append(
-                self.message_model(
-                    message=message.content,
-                    role=role,
-                )
+                self.message_model(message=message.content, role=role,)
             )
 
     def on_llm_end(self, response: LLMResult, **kwargs: Any) -> None:
@@ -152,8 +149,7 @@ class ContextCallbackHandler(BaseCallbackHandler):
             generation = response.generations[0][0]
             self.messages.append(
                 self.message_model(
-                    message=generation.text,
-                    role=self.message_role_model.ASSISTANT,
+                    message=generation.text, role=self.message_role_model.ASSISTANT,
                 )
             )
 
@@ -169,8 +165,7 @@ class ContextCallbackHandler(BaseCallbackHandler):
         """Run when chain ends."""
         self.messages.append(
             self.message_model(
-                message=outputs["text"],
-                role=self.message_role_model.ASSISTANT,
+                message=outputs["text"], role=self.message_role_model.ASSISTANT,
             )
         )
 
@@ -186,8 +181,7 @@ class ContextCallbackHandler(BaseCallbackHandler):
         self.client.log.conversation_upsert(
             body={
                 "conversation": self.conversation_model(
-                    messages=self.messages,
-                    metadata=self.metadata,
+                    messages=self.messages, metadata=self.metadata,
                 )
             }
         )

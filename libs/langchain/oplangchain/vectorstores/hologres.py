@@ -59,8 +59,7 @@ document text);"""
             f"document from {self.table_name} where id = %s;"
         )
         self.cursor.execute(
-            statement,
-            (id),
+            statement, (id),
         )
         self.conn.commit()
         return self.cursor.fetchall()
@@ -136,9 +135,7 @@ class Hologres(VectorStore):
         self.logger = logger or logging.getLogger(__name__)
         self.__post_init__()
 
-    def __post_init__(
-        self,
-    ) -> None:
+    def __post_init__(self,) -> None:
         """
         Initialize the store.
         """
@@ -250,11 +247,7 @@ class Hologres(VectorStore):
         return ids
 
     def similarity_search(
-        self,
-        query: str,
-        k: int = 4,
-        filter: Optional[dict] = None,
-        **kwargs: Any,
+        self, query: str, k: int = 4, filter: Optional[dict] = None, **kwargs: Any,
     ) -> List[Document]:
         """Run similarity search with Hologres with distance.
 
@@ -268,9 +261,7 @@ class Hologres(VectorStore):
         """
         embedding = self.embedding_function.embed_query(text=query)
         return self.similarity_search_by_vector(
-            embedding=embedding,
-            k=k,
-            filter=filter,
+            embedding=embedding, k=k, filter=filter,
         )
 
     def similarity_search_by_vector(
@@ -296,10 +287,7 @@ class Hologres(VectorStore):
         return [doc for doc, _ in docs_and_scores]
 
     def similarity_search_with_score(
-        self,
-        query: str,
-        k: int = 4,
-        filter: Optional[dict] = None,
+        self, query: str, k: int = 4, filter: Optional[dict] = None,
     ) -> List[Tuple[Document, float]]:
         """Return docs most similar to query.
 
@@ -318,10 +306,7 @@ class Hologres(VectorStore):
         return docs
 
     def similarity_search_with_score_by_vector(
-        self,
-        embedding: List[float],
-        k: int = 4,
-        filter: Optional[dict] = None,
+        self, embedding: List[float], k: int = 4, filter: Optional[dict] = None,
     ) -> List[Tuple[Document, float]]:
         results: List[Tuple[str, str, float]] = self.storage.query_nearest_neighbours(
             embedding, k, filter
@@ -329,10 +314,7 @@ class Hologres(VectorStore):
 
         docs = [
             (
-                Document(
-                    page_content=result[0],
-                    metadata=json.loads(result[1]),
-                ),
+                Document(page_content=result[0], metadata=json.loads(result[1]),),
                 result[2],
             )
             for result in results
@@ -446,9 +428,7 @@ class Hologres(VectorStore):
     @classmethod
     def get_connection_string(cls, kwargs: Dict[str, Any]) -> str:
         connection_string: str = get_from_dict_or_env(
-            data=kwargs,
-            key="connection_string",
-            env_key="HOLOGRES_CONNECTION_STRING",
+            data=kwargs, key="connection_string", env_key="HOLOGRES_CONNECTION_STRING",
         )
 
         if not connection_string:
@@ -497,12 +477,7 @@ class Hologres(VectorStore):
 
     @classmethod
     def connection_string_from_db_params(
-        cls,
-        host: str,
-        port: int,
-        database: str,
-        user: str,
-        password: str,
+        cls, host: str, port: int, database: str, user: str, password: str,
     ) -> str:
         """Return connection string from database parameters."""
         return (

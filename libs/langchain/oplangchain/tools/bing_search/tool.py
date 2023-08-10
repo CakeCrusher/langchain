@@ -19,9 +19,7 @@ class BingSearchRun(BaseTool):
     api_wrapper: BingSearchAPIWrapper
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool."""
         return self.api_wrapper.run(query)
@@ -40,9 +38,7 @@ class BingSearchResults(BaseTool):
     api_wrapper: BingSearchAPIWrapper
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool."""
         return str(self.api_wrapper.results(query, self.num_results))

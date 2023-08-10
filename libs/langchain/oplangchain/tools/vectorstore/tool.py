@@ -44,9 +44,7 @@ class VectorStoreQATool(BaseVectorStoreTool, BaseTool):
         return template.format(name=name, description=description)
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool."""
         chain = RetrievalQA.from_chain_type(
@@ -74,9 +72,7 @@ class VectorStoreQAWithSourcesTool(BaseVectorStoreTool, BaseTool):
         return template.format(name=name, description=description)
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the tool."""
         chain = RetrievalQAWithSourcesChain.from_chain_type(

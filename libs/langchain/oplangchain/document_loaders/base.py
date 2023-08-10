@@ -45,9 +45,7 @@ class BaseLoader(ABC):
 
     # Attention: This method will be upgraded into an abstractmethod once it's
     #            implemented in all the existing subclasses.
-    def lazy_load(
-        self,
-    ) -> Iterator[Document]:
+    def lazy_load(self,) -> Iterator[Document]:
         """A lazy loader for Documents."""
         raise NotImplementedError(
             f"{self.__class__.__name__} does not implement lazy_load()"

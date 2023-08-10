@@ -160,12 +160,7 @@ class MongoDBAtlasVectorSearch(VectorStore):
         if pre_filter:
             knn_beta["filter"] = pre_filter
         pipeline = [
-            {
-                "$search": {
-                    "index": self._index_name,
-                    "knnBeta": knn_beta,
-                }
-            },
+            {"$search": {"index": self._index_name, "knnBeta": knn_beta,}},
             {"$set": {"score": {"$meta": "searchScore"}}},
         ]
         if post_filter_pipeline is not None:

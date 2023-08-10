@@ -17,16 +17,13 @@ class SendEventSchema(BaseModel):
     """Input for CreateEvent Tool."""
 
     body: str = Field(
-        ...,
-        description="The message body to include in the event.",
+        ..., description="The message body to include in the event.",
     )
     attendees: List[str] = Field(
-        ...,
-        description="The list of attendees for the event.",
+        ..., description="The list of attendees for the event.",
     )
     subject: str = Field(
-        ...,
-        description="The subject of the event.",
+        ..., description="The subject of the event.",
     )
     start_datetime: str = Field(
         description=" The start datetime for the event in the following format: "

@@ -105,10 +105,7 @@ class BaseRetrievalQA(Chain):
 
     @abstractmethod
     def _get_docs(
-        self,
-        question: str,
-        *,
-        run_manager: CallbackManagerForChainRun,
+        self, question: str, *, run_manager: CallbackManagerForChainRun,
     ) -> List[Document]:
         """Get documents to do question answering over."""
 
@@ -148,10 +145,7 @@ class BaseRetrievalQA(Chain):
 
     @abstractmethod
     async def _aget_docs(
-        self,
-        question: str,
-        *,
-        run_manager: AsyncCallbackManagerForChainRun,
+        self, question: str, *, run_manager: AsyncCallbackManagerForChainRun,
     ) -> List[Document]:
         """Get documents to do question answering over."""
 
@@ -208,10 +202,7 @@ class RetrievalQA(BaseRetrievalQA):
     retriever: BaseRetriever = Field(exclude=True)
 
     def _get_docs(
-        self,
-        question: str,
-        *,
-        run_manager: CallbackManagerForChainRun,
+        self, question: str, *, run_manager: CallbackManagerForChainRun,
     ) -> List[Document]:
         """Get docs."""
         return self.retriever.get_relevant_documents(
@@ -219,10 +210,7 @@ class RetrievalQA(BaseRetrievalQA):
         )
 
     async def _aget_docs(
-        self,
-        question: str,
-        *,
-        run_manager: AsyncCallbackManagerForChainRun,
+        self, question: str, *, run_manager: AsyncCallbackManagerForChainRun,
     ) -> List[Document]:
         """Get docs."""
         return await self.retriever.aget_relevant_documents(
@@ -265,10 +253,7 @@ class VectorDBQA(BaseRetrievalQA):
         return values
 
     def _get_docs(
-        self,
-        question: str,
-        *,
-        run_manager: CallbackManagerForChainRun,
+        self, question: str, *, run_manager: CallbackManagerForChainRun,
     ) -> List[Document]:
         """Get docs."""
         if self.search_type == "similarity":
@@ -284,10 +269,7 @@ class VectorDBQA(BaseRetrievalQA):
         return docs
 
     async def _aget_docs(
-        self,
-        question: str,
-        *,
-        run_manager: AsyncCallbackManagerForChainRun,
+        self, question: str, *, run_manager: AsyncCallbackManagerForChainRun,
     ) -> List[Document]:
         """Get docs."""
         raise NotImplementedError("VectorDBQA does not support async")

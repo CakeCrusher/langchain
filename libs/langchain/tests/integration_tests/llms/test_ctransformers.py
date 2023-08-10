@@ -11,9 +11,7 @@ def test_ctransformers_call() -> None:
     callback_handler = FakeCallbackHandler()
 
     llm = CTransformers(
-        model="marella/gpt-2-ggml",
-        config=config,
-        callbacks=[callback_handler],
+        model="marella/gpt-2-ggml", config=config, callbacks=[callback_handler],
     )
 
     output = llm("Say foo:")
@@ -28,9 +26,7 @@ async def test_ctransformers_async_inference() -> None:
     callback_handler = FakeCallbackHandler()
 
     llm = CTransformers(
-        model="marella/gpt-2-ggml",
-        config=config,
-        callbacks=[callback_handler],
+        model="marella/gpt-2-ggml", config=config, callbacks=[callback_handler],
     )
 
     output = await llm._acall(prompt="Say foo:")

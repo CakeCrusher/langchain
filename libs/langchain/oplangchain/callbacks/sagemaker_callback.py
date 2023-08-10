@@ -6,9 +6,7 @@ from copy import deepcopy
 from typing import Any, Dict, List, Optional, Union
 
 from oplangchain.callbacks.base import BaseCallbackHandler
-from oplangchain.callbacks.utils import (
-    flatten_dict,
-)
+from oplangchain.callbacks.utils import flatten_dict
 from oplangchain.schema import AgentAction, AgentFinish, LLMResult
 
 
@@ -78,9 +76,7 @@ class SageMakerCallbackHandler(BaseCallbackHandler):
             prompt_resp = deepcopy(resp)
             prompt_resp["prompt"] = prompt
             self.jsonf(
-                prompt_resp,
-                self.temp_dir,
-                f"llm_start_{llm_starts}_prompt_{idx}",
+                prompt_resp, self.temp_dir, f"llm_start_{llm_starts}_prompt_{idx}",
             )
 
     def on_llm_new_token(self, token: str, **kwargs: Any) -> None:
@@ -116,9 +112,7 @@ class SageMakerCallbackHandler(BaseCallbackHandler):
                 generation_resp.update(flatten_dict(generation.dict()))
 
                 self.jsonf(
-                    resp,
-                    self.temp_dir,
-                    f"llm_end_{llm_ends}_generation_{idx}",
+                    resp, self.temp_dir, f"llm_end_{llm_ends}_generation_{idx}",
                 )
 
     def on_llm_error(

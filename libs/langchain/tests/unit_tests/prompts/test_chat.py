@@ -28,8 +28,7 @@ def create_messages() -> List[BaseMessagePromptTemplate]:
     """Create messages."""
     system_message_prompt = SystemMessagePromptTemplate(
         prompt=PromptTemplate(
-            template="Here's some context: {context}",
-            input_variables=["context"],
+            template="Here's some context: {context}", input_variables=["context"],
         )
     )
     human_message_prompt = HumanMessagePromptTemplate(
@@ -40,8 +39,7 @@ def create_messages() -> List[BaseMessagePromptTemplate]:
     )
     ai_message_prompt = AIMessagePromptTemplate(
         prompt=PromptTemplate(
-            template="I'm an AI. I'm {foo}. I'm {bar}.",
-            input_variables=["foo", "bar"],
+            template="I'm an AI. I'm {foo}. I'm {bar}.", input_variables=["foo", "bar"],
         )
     )
     chat_message_prompt = ChatMessagePromptTemplate(
@@ -62,8 +60,7 @@ def create_messages() -> List[BaseMessagePromptTemplate]:
 def create_chat_prompt_template() -> ChatPromptTemplate:
     """Create a chat prompt template."""
     return ChatPromptTemplate(
-        input_variables=["foo", "bar", "context"],
-        messages=create_messages(),
+        input_variables=["foo", "bar", "context"], messages=create_messages(),
     )
 
 

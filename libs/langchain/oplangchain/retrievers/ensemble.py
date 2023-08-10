@@ -38,10 +38,7 @@ class EnsembleRetriever(BaseRetriever):
         return values
 
     def _get_relevant_documents(
-        self,
-        query: str,
-        *,
-        run_manager: CallbackManagerForRetrieverRun,
+        self, query: str, *, run_manager: CallbackManagerForRetrieverRun,
     ) -> List[Document]:
         """
         Get the relevant documents for a given query.
@@ -59,10 +56,7 @@ class EnsembleRetriever(BaseRetriever):
         return fused_documents
 
     async def _aget_relevant_documents(
-        self,
-        query: str,
-        *,
-        run_manager: AsyncCallbackManagerForRetrieverRun,
+        self, query: str, *, run_manager: AsyncCallbackManagerForRetrieverRun,
     ) -> List[Document]:
         """
         Asynchronously get the relevant documents for a given query.

@@ -76,8 +76,7 @@ def _get_eval_project_url(api_url: str, project_id: str) -> str:
 
 
 def _wrap_in_chain_factory(
-    llm_or_chain_factory: MODEL_OR_CHAIN_FACTORY,
-    dataset_name: str = "<my_dataset>",
+    llm_or_chain_factory: MODEL_OR_CHAIN_FACTORY, dataset_name: str = "<my_dataset>",
 ) -> MCF:
     """Forgive the user if they pass in a chain without memory instead of a chain
     factory. It's a common mistake. Raise a more helpful error message as well."""
@@ -248,10 +247,7 @@ def _get_messages(inputs: Dict[str, Any]) -> List[BaseMessage]:
         )
 
 
-def _get_project_name(
-    project_name: Optional[str],
-    llm_or_chain_factory: MCF,
-) -> str:
+def _get_project_name(project_name: Optional[str], llm_or_chain_factory: MCF,) -> str:
     """
     Get the project name.
 
@@ -274,8 +270,7 @@ def _get_project_name(
 
 ## Shared Validation Utilities
 def _validate_example_inputs_for_language_model(
-    first_example: Example,
-    input_mapper: Optional[Callable[[Dict], Any]],
+    first_example: Example, input_mapper: Optional[Callable[[Dict], Any]],
 ) -> None:
     if input_mapper:
         prompt_input = input_mapper(first_example.inputs)
@@ -307,9 +302,7 @@ def _validate_example_inputs_for_language_model(
 
 
 def _validate_example_inputs_for_chain(
-    first_example: Example,
-    chain: Chain,
-    input_mapper: Optional[Callable[[Dict], Any]],
+    first_example: Example, chain: Chain, input_mapper: Optional[Callable[[Dict], Any]],
 ) -> None:
     """Validate that the example inputs match the chain input keys."""
     if input_mapper:
@@ -404,8 +397,7 @@ def _setup_evaluation(
 
 
 def _determine_input_key(
-    config: RunEvalConfig,
-    run_inputs: Optional[List[str]],
+    config: RunEvalConfig, run_inputs: Optional[List[str]],
 ) -> Optional[str]:
     input_key = None
     if config.input_key:
@@ -423,8 +415,7 @@ def _determine_input_key(
 
 
 def _determine_prediction_key(
-    config: RunEvalConfig,
-    run_outputs: Optional[List[str]],
+    config: RunEvalConfig, run_outputs: Optional[List[str]],
 ) -> Optional[str]:
     prediction_key = None
     if config.prediction_key:
@@ -444,8 +435,7 @@ def _determine_prediction_key(
 
 
 def _determine_reference_key(
-    config: RunEvalConfig,
-    example_outputs: Optional[List[str]],
+    config: RunEvalConfig, example_outputs: Optional[List[str]],
 ) -> Optional[str]:
     if config.reference_key:
         reference_key = config.reference_key
@@ -1084,8 +1074,7 @@ def _run_on_examples(
     )
     examples = _validate_example_inputs(examples, llm_or_chain_factory, input_mapper)
     evalution_handler = EvaluatorCallbackHandler(
-        evaluators=run_evaluators or [],
-        client=client,
+        evaluators=run_evaluators or [], client=client,
     )
     callbacks: List[BaseCallbackHandler] = [tracer, evalution_handler]
     for i, example in enumerate(examples):

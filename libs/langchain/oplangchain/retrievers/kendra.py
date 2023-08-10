@@ -387,10 +387,7 @@ class AmazonKendraRetriever(BaseRetriever):
         return top_docs
 
     def _get_relevant_documents(
-        self,
-        query: str,
-        *,
-        run_manager: CallbackManagerForRetrieverRun,
+        self, query: str, *, run_manager: CallbackManagerForRetrieverRun,
     ) -> List[Document]:
         """Run search on Kendra index and get top k documents
 

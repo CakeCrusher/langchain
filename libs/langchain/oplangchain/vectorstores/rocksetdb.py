@@ -194,11 +194,7 @@ class Rockset(VectorStore):
             List[Tuple[Document, float]]: List of documents with their relevance score
         """
         return self.similarity_search_by_vector_with_relevance_scores(
-            self._embeddings.embed_query(query),
-            k,
-            distance_func,
-            where_str,
-            **kwargs,
+            self._embeddings.embed_query(query), k, distance_func, where_str, **kwargs,
         )
 
     def similarity_search(
@@ -213,11 +209,7 @@ class Rockset(VectorStore):
         doesn't return the scores.
         """
         return self.similarity_search_by_vector(
-            self._embeddings.embed_query(query),
-            k,
-            distance_func,
-            where_str,
-            **kwargs,
+            self._embeddings.embed_query(query), k, distance_func, where_str, **kwargs,
         )
 
     def similarity_search_by_vector(

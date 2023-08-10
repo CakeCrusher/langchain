@@ -14,8 +14,7 @@ class DocstoreFn(Docstore):
     """
 
     def __init__(
-        self,
-        lookup_fn: Callable[[str], Union[Document, str]],
+        self, lookup_fn: Callable[[str], Union[Document, str]],
     ):
         self._lookup_fn = lookup_fn
 

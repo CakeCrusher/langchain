@@ -206,8 +206,7 @@ class WandbCallbackHandler(BaseMetadataCallbackHandler, BaseCallbackHandler):
             "instead."
         )
         wandb.termwarn(
-            warning,
-            repeat=False,
+            warning, repeat=False,
         )
         self.callback_columns: list = []
         self.action_records: list = []

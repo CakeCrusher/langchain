@@ -107,10 +107,7 @@ def test_chat_openai_invalid_streaming_params() -> None:
     """Test that streaming correctly invokes on_llm_new_token callback."""
     with pytest.raises(ValueError):
         ChatOpenAI(
-            max_tokens=10,
-            streaming=True,
-            temperature=0,
-            n=5,
+            max_tokens=10, streaming=True, temperature=0, n=5,
         )
 
 

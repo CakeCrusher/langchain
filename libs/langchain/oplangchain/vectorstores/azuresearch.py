@@ -212,10 +212,7 @@ class AzureSearch(VectorStore):
                 key=True,
                 filterable=True,
             ),
-            SearchableField(
-                name=FIELDS_CONTENT,
-                type=SearchFieldDataType.String,
-            ),
+            SearchableField(name=FIELDS_CONTENT, type=SearchFieldDataType.String,),
             SearchField(
                 name=FIELDS_CONTENT_VECTOR,
                 type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
@@ -223,10 +220,7 @@ class AzureSearch(VectorStore):
                 vector_search_dimensions=len(embedding_function("Text")),
                 vector_search_configuration="default",
             ),
-            SearchableField(
-                name=FIELDS_METADATA,
-                type=SearchFieldDataType.String,
-            ),
+            SearchableField(name=FIELDS_METADATA, type=SearchFieldDataType.String,),
         ]
         self.client = _get_search_client(
             azure_search_endpoint,
@@ -516,10 +510,7 @@ class AzureSearch(VectorStore):
     ) -> AzureSearch:
         # Creating a new Azure Search instance
         azure_search = cls(
-            azure_search_endpoint,
-            azure_search_key,
-            index_name,
-            embedding.embed_query,
+            azure_search_endpoint, azure_search_key, index_name, embedding.embed_query,
         )
         azure_search.add_texts(texts, metadatas, **kwargs)
         return azure_search
@@ -551,10 +542,7 @@ class AzureSearchVectorStoreRetriever(BaseRetriever):
         return values
 
     def _get_relevant_documents(
-        self,
-        query: str,
-        *,
-        run_manager: CallbackManagerForRetrieverRun,
+        self, query: str, *, run_manager: CallbackManagerForRetrieverRun,
     ) -> List[Document]:
         if self.search_type == "similarity":
             docs = self.vectorstore.vector_search(query, k=self.k)
@@ -567,10 +555,7 @@ class AzureSearchVectorStoreRetriever(BaseRetriever):
         return docs
 
     async def _aget_relevant_documents(
-        self,
-        query: str,
-        *,
-        run_manager: AsyncCallbackManagerForRetrieverRun,
+        self, query: str, *, run_manager: AsyncCallbackManagerForRetrieverRun,
     ) -> List[Document]:
         raise NotImplementedError(
             "AzureSearchVectorStoreRetriever does not support async"

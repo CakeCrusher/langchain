@@ -9,9 +9,7 @@ from oplangchain.document_transformers.embeddings_redundant_filter import (
     get_stateful_documents,
 )
 from oplangchain.embeddings.base import Embeddings
-from oplangchain.retrievers.document_compressors.base import (
-    BaseDocumentCompressor,
-)
+from oplangchain.retrievers.document_compressors.base import BaseDocumentCompressor
 from oplangchain.schema import Document
 from oplangchain.utils.math import cosine_similarity
 

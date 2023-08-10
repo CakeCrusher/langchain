@@ -17,12 +17,7 @@ from oplangchain.vectorstores.utils import maximal_marginal_relevance
 def _default_schema(index_name: str) -> Dict:
     return {
         "class": index_name,
-        "properties": [
-            {
-                "name": "text",
-                "dataType": ["text"],
-            }
-        ],
+        "properties": [{"name": "text", "dataType": ["text"],}],
     }
 
 

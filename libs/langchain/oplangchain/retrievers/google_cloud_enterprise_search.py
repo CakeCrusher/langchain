@@ -149,16 +149,12 @@ class GoogleCloudEnterpriseSearchRetriever(BaseRetriever):
         )
 
         if self.get_extractive_answers:
-            extractive_content_spec = (
-                SearchRequest.ContentSearchSpec.ExtractiveContentSpec(
-                    max_extractive_answer_count=self.max_extractive_answer_count,
-                )
+            extractive_content_spec = SearchRequest.ContentSearchSpec.ExtractiveContentSpec(
+                max_extractive_answer_count=self.max_extractive_answer_count,
             )
         else:
-            extractive_content_spec = (
-                SearchRequest.ContentSearchSpec.ExtractiveContentSpec(
-                    max_extractive_segment_count=self.max_extractive_segment_count,
-                )
+            extractive_content_spec = SearchRequest.ContentSearchSpec.ExtractiveContentSpec(
+                max_extractive_segment_count=self.max_extractive_segment_count,
             )
 
         content_search_spec = SearchRequest.ContentSearchSpec(

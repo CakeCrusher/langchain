@@ -67,10 +67,7 @@ class BaseQAWithSourcesChain(Chain, ABC):
             reduce_documents_chain=reduce_documents_chain,
             document_variable_name="context",
         )
-        return cls(
-            combine_documents_chain=combine_documents_chain,
-            **kwargs,
-        )
+        return cls(combine_documents_chain=combine_documents_chain, **kwargs,)
 
     @classmethod
     def from_chain_type(
@@ -121,10 +118,7 @@ class BaseQAWithSourcesChain(Chain, ABC):
 
     @abstractmethod
     def _get_docs(
-        self,
-        inputs: Dict[str, Any],
-        *,
-        run_manager: CallbackManagerForChainRun,
+        self, inputs: Dict[str, Any], *, run_manager: CallbackManagerForChainRun,
     ) -> List[Document]:
         """Get docs to run questioning over."""
 
@@ -159,10 +153,7 @@ class BaseQAWithSourcesChain(Chain, ABC):
 
     @abstractmethod
     async def _aget_docs(
-        self,
-        inputs: Dict[str, Any],
-        *,
-        run_manager: AsyncCallbackManagerForChainRun,
+        self, inputs: Dict[str, Any], *, run_manager: AsyncCallbackManagerForChainRun,
     ) -> List[Document]:
         """Get docs to run questioning over."""
 
@@ -209,19 +200,13 @@ class QAWithSourcesChain(BaseQAWithSourcesChain):
         return [self.input_docs_key, self.question_key]
 
     def _get_docs(
-        self,
-        inputs: Dict[str, Any],
-        *,
-        run_manager: CallbackManagerForChainRun,
+        self, inputs: Dict[str, Any], *, run_manager: CallbackManagerForChainRun,
     ) -> List[Document]:
         """Get docs to run questioning over."""
         return inputs.pop(self.input_docs_key)
 
     async def _aget_docs(
-        self,
-        inputs: Dict[str, Any],
-        *,
-        run_manager: AsyncCallbackManagerForChainRun,
+        self, inputs: Dict[str, Any], *, run_manager: AsyncCallbackManagerForChainRun,
     ) -> List[Document]:
         """Get docs to run questioning over."""
         return inputs.pop(self.input_docs_key)

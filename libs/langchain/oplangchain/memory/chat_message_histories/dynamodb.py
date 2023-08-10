@@ -1,9 +1,7 @@
 import logging
 from typing import List, Optional
 
-from oplangchain.schema import (
-    BaseChatMessageHistory,
-)
+from oplangchain.schema import BaseChatMessageHistory
 from oplangchain.schema.messages import (
     BaseMessage,
     _message_to_dict,

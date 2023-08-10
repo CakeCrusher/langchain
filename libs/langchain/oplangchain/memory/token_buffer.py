@@ -34,9 +34,7 @@ class ConversationTokenBufferMemory(BaseChatMemory):
             final_buffer: Any = buffer
         else:
             final_buffer = get_buffer_string(
-                buffer,
-                human_prefix=self.human_prefix,
-                ai_prefix=self.ai_prefix,
+                buffer, human_prefix=self.human_prefix, ai_prefix=self.ai_prefix,
             )
         return {self.memory_key: final_buffer}
 

@@ -109,9 +109,7 @@ def _get_python_function_required_args(function: Callable) -> List[str]:
     return required
 
 
-def convert_python_function_to_openai_function(
-    function: Callable,
-) -> Dict[str, Any]:
+def convert_python_function_to_openai_function(function: Callable,) -> Dict[str, Any]:
     """Convert a Python function to an OpenAI function-calling API compatible dict.
 
     Assumes the Python function has type hints and a docstring with a description. If

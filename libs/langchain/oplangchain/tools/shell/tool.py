@@ -17,8 +17,7 @@ class ShellInput(BaseModel):
     """Commands for the Bash Shell tool."""
 
     commands: Union[str, List[str]] = Field(
-        ...,
-        description="List of shell commands to run. Deserialized using json.loads",
+        ..., description="List of shell commands to run. Deserialized using json.loads",
     )
     """List of shell commands to run."""
 

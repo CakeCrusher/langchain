@@ -87,10 +87,7 @@ class MockVectorStore(VectorStore):
         return cls()
 
     def _similarity_search_with_relevance_scores(
-        self,
-        query: str,
-        k: int = 4,
-        **kwargs: Any,
+        self, query: str, k: int = 4, **kwargs: Any,
     ) -> List[Tuple[Document, float]]:
         """Return docs and similarity scores, normalized on a scale from 0 to 1.
 

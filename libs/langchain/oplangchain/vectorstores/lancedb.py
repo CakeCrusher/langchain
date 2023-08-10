@@ -125,13 +125,7 @@ class LanceDB(VectorStore):
         text_key: Optional[str] = "text",
         **kwargs: Any,
     ) -> LanceDB:
-        instance = LanceDB(
-            connection,
-            embedding,
-            vector_key,
-            id_key,
-            text_key,
-        )
+        instance = LanceDB(connection, embedding, vector_key, id_key, text_key,)
         instance.add_texts(texts, metadatas=metadatas, **kwargs)
 
         return instance

@@ -10,24 +10,19 @@ class SendMessageSchema(BaseModel):
     """Input for SendMessageTool."""
 
     body: str = Field(
-        ...,
-        description="The message body to be sent.",
+        ..., description="The message body to be sent.",
     )
     to: List[str] = Field(
-        ...,
-        description="The list of recipients.",
+        ..., description="The list of recipients.",
     )
     subject: str = Field(
-        ...,
-        description="The subject of the message.",
+        ..., description="The subject of the message.",
     )
     cc: Optional[List[str]] = Field(
-        None,
-        description="The list of CC recipients.",
+        None, description="The list of CC recipients.",
     )
     bcc: Optional[List[str]] = Field(
-        None,
-        description="The list of BCC recipients.",
+        None, description="The list of BCC recipients.",
     )
 
 

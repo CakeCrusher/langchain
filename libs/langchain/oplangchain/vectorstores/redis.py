@@ -478,10 +478,7 @@ class Redis(VectorStore):
         return instance
 
     @staticmethod
-    def delete(
-        ids: Optional[List[str]] = None,
-        **kwargs: Any,
-    ) -> bool:
+    def delete(ids: Optional[List[str]] = None, **kwargs: Any,) -> bool:
         """
         Delete a Redis entry.
 
@@ -521,11 +518,7 @@ class Redis(VectorStore):
             return False
 
     @staticmethod
-    def drop_index(
-        index_name: str,
-        delete_documents: bool,
-        **kwargs: Any,
-    ) -> bool:
+    def drop_index(index_name: str, delete_documents: bool, **kwargs: Any,) -> bool:
         """
         Drop a Redis search index.
 

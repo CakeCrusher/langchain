@@ -305,8 +305,7 @@ class LlamaCpp(LLM):
         for part in result:
             logprobs = part["choices"][0].get("logprobs", None)
             chunk = GenerationChunk(
-                text=part["choices"][0]["text"],
-                generation_info={"logprobs": logprobs},
+                text=part["choices"][0]["text"], generation_info={"logprobs": logprobs},
             )
             yield chunk
             if run_manager:

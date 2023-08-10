@@ -81,10 +81,7 @@ def toy_dir() -> Generator[Path, None, None]:
     ],
 )
 def test_file_names_exist(
-    toy_dir: str,
-    glob: str,
-    suffixes: Sequence[str],
-    relative_filenames: Sequence[str],
+    toy_dir: str, glob: str, suffixes: Sequence[str], relative_filenames: Sequence[str],
 ) -> None:
     """Verify that the file names exist."""
 

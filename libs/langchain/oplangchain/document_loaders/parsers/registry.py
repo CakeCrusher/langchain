@@ -8,10 +8,7 @@ from oplangchain.document_loaders.parsers.txt import TextParser
 def _get_default_parser() -> BaseBlobParser:
     """Get default mime-type based parser."""
     return MimeTypeBasedParser(
-        handlers={
-            "application/pdf": PyMuPDFParser(),
-            "text/plain": TextParser(),
-        },
+        handlers={"application/pdf": PyMuPDFParser(), "text/plain": TextParser(),},
         fallback_parser=None,
     )
 

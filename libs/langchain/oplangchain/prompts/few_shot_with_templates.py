@@ -127,9 +127,7 @@ class FewShotPromptWithTemplates(StringPromptTemplate):
         }
         for k in suffix_kwargs.keys():
             kwargs.pop(k)
-        suffix = self.suffix.format(
-            **suffix_kwargs,
-        )
+        suffix = self.suffix.format(**suffix_kwargs,)
 
         pieces = [prefix, *example_strings, suffix]
         template = self.example_separator.join([piece for piece in pieces if piece])

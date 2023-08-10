@@ -261,10 +261,7 @@ def test_structured_tool_types_parsed() -> None:
         foo: str
 
     @tool
-    def structured_tool(
-        some_enum: SomeEnum,
-        some_base_model: SomeBaseModel,
-    ) -> dict:
+    def structured_tool(some_enum: SomeEnum, some_base_model: SomeBaseModel,) -> dict:
         """Return the arguments directly."""
         return {
             "some_enum": some_enum,
@@ -306,11 +303,7 @@ def test_base_tool_inheritance_base_schema() -> None:
 def test_tool_lambda_args_schema() -> None:
     """Test args schema inference when the tool argument is a lambda function."""
 
-    tool = Tool(
-        name="tool",
-        description="A tool",
-        func=lambda tool_input: tool_input,
-    )
+    tool = Tool(name="tool", description="A tool", func=lambda tool_input: tool_input,)
     assert tool.args_schema is None
     expected_args = {"tool_input": {"type": "string"}}
     assert tool.args == expected_args
@@ -405,11 +398,7 @@ def test_tool_partial_function_args_schema() -> None:
         assert isinstance(other_arg, str)
         return tool_input + other_arg
 
-    tool = Tool(
-        name="tool",
-        description="A tool",
-        func=partial(func, other_arg="foo"),
-    )
+    tool = Tool(name="tool", description="A tool", func=partial(func, other_arg="foo"),)
     assert tool.run("bar") == "barfoo"
 
 
@@ -533,29 +522,15 @@ def test_tool_with_kwargs() -> None:
     """Test functionality when only return direct is provided."""
 
     @tool(return_direct=True)
-    def search_api(
-        arg_0: str,
-        arg_1: float = 4.3,
-        ping: str = "hi",
-    ) -> str:
+    def search_api(arg_0: str, arg_1: float = 4.3, ping: str = "hi",) -> str:
         """Search the API for the query."""
         return f"arg_0={arg_0}, arg_1={arg_1}, ping={ping}"
 
     assert isinstance(search_api, BaseTool)
-    result = search_api.run(
-        tool_input={
-            "arg_0": "foo",
-            "arg_1": 3.2,
-            "ping": "pong",
-        }
-    )
+    result = search_api.run(tool_input={"arg_0": "foo", "arg_1": 3.2, "ping": "pong",})
     assert result == "arg_0=foo, arg_1=3.2, ping=pong"
 
-    result = search_api.run(
-        tool_input={
-            "arg_0": "foo",
-        }
-    )
+    result = search_api.run(tool_input={"arg_0": "foo",})
     assert result == "arg_0=foo, arg_1=4.3, ping=hi"
     # For backwards compatibility, we still accept a single str arg
     result = search_api.run("foobar")

@@ -59,9 +59,7 @@ def test_deeplakewith_persistence() -> None:
 
     texts = ["foo", "bar", "baz"]
     docsearch = DeepLake.from_texts(
-        dataset_path=dataset_path,
-        texts=texts,
-        embedding=FakeEmbeddings(),
+        dataset_path=dataset_path, texts=texts, embedding=FakeEmbeddings(),
     )
 
     output = docsearch.similarity_search("foo", k=1)
@@ -69,8 +67,7 @@ def test_deeplakewith_persistence() -> None:
 
     # Get a new VectorStore from the persisted directory
     docsearch = DeepLake(
-        dataset_path=dataset_path,
-        embedding_function=FakeEmbeddings(),
+        dataset_path=dataset_path, embedding_function=FakeEmbeddings(),
     )
     output = docsearch.similarity_search("foo", k=1)
 
@@ -90,17 +87,14 @@ def test_deeplake_overwrite_flag() -> None:
 
     texts = ["foo", "bar", "baz"]
     docsearch = DeepLake.from_texts(
-        dataset_path=dataset_path,
-        texts=texts,
-        embedding=FakeEmbeddings(),
+        dataset_path=dataset_path, texts=texts, embedding=FakeEmbeddings(),
     )
     output = docsearch.similarity_search("foo", k=1)
     assert output == [Document(page_content="foo")]
 
     # Get a new VectorStore from the persisted directory, with no overwrite (implicit)
     docsearch = DeepLake(
-        dataset_path=dataset_path,
-        embedding_function=FakeEmbeddings(),
+        dataset_path=dataset_path, embedding_function=FakeEmbeddings(),
     )
     output = docsearch.similarity_search("foo", k=1)
     # assert page still present
@@ -108,9 +102,7 @@ def test_deeplake_overwrite_flag() -> None:
 
     # Get a new VectorStore from the persisted directory, with no overwrite (explicit)
     docsearch = DeepLake(
-        dataset_path=dataset_path,
-        embedding_function=FakeEmbeddings(),
-        overwrite=False,
+        dataset_path=dataset_path, embedding_function=FakeEmbeddings(), overwrite=False,
     )
     output = docsearch.similarity_search("foo", k=1)
     # assert page still present
@@ -118,9 +110,7 @@ def test_deeplake_overwrite_flag() -> None:
 
     # Get a new VectorStore from the persisted directory, with overwrite
     docsearch = DeepLake(
-        dataset_path=dataset_path,
-        embedding_function=FakeEmbeddings(),
-        overwrite=True,
+        dataset_path=dataset_path, embedding_function=FakeEmbeddings(), overwrite=True,
     )
     with pytest.raises(ValueError):
         output = docsearch.similarity_search("foo", k=1)
@@ -178,10 +168,7 @@ def test_similarity_search_with_filter(
     """Test similarity search."""
 
     output = deeplake_datastore.similarity_search(
-        "foo",
-        k=1,
-        distance_metric=distance_metric,
-        filter={"metadata": {"page": "1"}},
+        "foo", k=1, distance_metric=distance_metric, filter={"metadata": {"page": "1"}},
     )
     assert output == [Document(page_content="bar", metadata={"page": "1"})]
     deeplake_datastore.delete_dataset()
@@ -245,12 +232,10 @@ def test_add_texts(deeplake_datastore: DeepLake) -> None:
     metadatas = [{"page": str(i)} for i in range(len(texts))]
 
     deeplake_datastore.add_texts(
-        texts=texts,
-        metadatas=metadatas,
+        texts=texts, metadatas=metadatas,
     )
 
     with pytest.raises(TypeError):
         deeplake_datastore.add_texts(
-            texts=texts,
-            metada=metadatas,
+            texts=texts, metada=metadatas,
         )

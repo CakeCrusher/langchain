@@ -176,10 +176,7 @@ def tracing_v2_enabled(
     if isinstance(example_id, str):
         example_id = UUID(example_id)
     cb = LangChainTracer(
-        example_id=example_id,
-        project_name=project_name,
-        tags=tags,
-        client=client,
+        example_id=example_id, project_name=project_name, tags=tags, client=client,
     )
     tracing_v2_callback_var.set(cb)
     yield
@@ -218,19 +215,11 @@ def trace_as_chain_group(
     """
     cb = cast(
         Callbacks,
-        [
-            LangChainTracer(
-                project_name=project_name,
-                example_id=example_id,
-            )
-        ]
+        [LangChainTracer(project_name=project_name, example_id=example_id,)]
         if callback_manager is None
         else callback_manager,
     )
-    cm = CallbackManager.configure(
-        inheritable_callbacks=cb,
-        inheritable_tags=tags,
-    )
+    cm = CallbackManager.configure(inheritable_callbacks=cb, inheritable_tags=tags,)
 
     run_manager = cm.on_chain_start({"name": group_name}, {})
     yield run_manager.get_child()
@@ -268,12 +257,7 @@ async def atrace_as_chain_group(
     """
     cb = cast(
         Callbacks,
-        [
-            LangChainTracer(
-                project_name=project_name,
-                example_id=example_id,
-            )
-        ]
+        [LangChainTracer(project_name=project_name, example_id=example_id,)]
         if callback_manager is None
         else callback_manager,
     )
@@ -456,11 +440,7 @@ class BaseRunManager(RunManagerMixin):
 class RunManager(BaseRunManager):
     """Sync Run Manager."""
 
-    def on_text(
-        self,
-        text: str,
-        **kwargs: Any,
-    ) -> Any:
+    def on_text(self, text: str, **kwargs: Any,) -> Any:
         """Run when text is received.
 
         Args:
@@ -480,11 +460,7 @@ class RunManager(BaseRunManager):
             **kwargs,
         )
 
-    def on_retry(
-        self,
-        retry_state: RetryCallState,
-        **kwargs: Any,
-    ) -> None:
+    def on_retry(self, retry_state: RetryCallState, **kwargs: Any,) -> None:
         _handle_event(
             self.handlers,
             "on_retry",
@@ -522,11 +498,7 @@ class ParentRunManager(RunManager):
 class AsyncRunManager(BaseRunManager):
     """Async Run Manager."""
 
-    async def on_text(
-        self,
-        text: str,
-        **kwargs: Any,
-    ) -> Any:
+    async def on_text(self, text: str, **kwargs: Any,) -> Any:
         """Run when text is received.
 
         Args:
@@ -546,11 +518,7 @@ class AsyncRunManager(BaseRunManager):
             **kwargs,
         )
 
-    async def on_retry(
-        self,
-        retry_state: RetryCallState,
-        **kwargs: Any,
-    ) -> None:
+    async def on_retry(self, retry_state: RetryCallState, **kwargs: Any,) -> None:
         await _ahandle_event(
             self.handlers,
             "on_retry",
@@ -588,11 +556,7 @@ class AsyncParentRunManager(AsyncRunManager):
 class CallbackManagerForLLMRun(RunManager, LLMManagerMixin):
     """Callback manager for LLM run."""
 
-    def on_llm_new_token(
-        self,
-        token: str,
-        **kwargs: Any,
-    ) -> None:
+    def on_llm_new_token(self, token: str, **kwargs: Any,) -> None:
         """Run when LLM generates a new token.
 
         Args:
@@ -627,9 +591,7 @@ class CallbackManagerForLLMRun(RunManager, LLMManagerMixin):
         )
 
     def on_llm_error(
-        self,
-        error: Union[Exception, KeyboardInterrupt],
-        **kwargs: Any,
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any,
     ) -> None:
         """Run when LLM errors.
 
@@ -651,11 +613,7 @@ class CallbackManagerForLLMRun(RunManager, LLMManagerMixin):
 class AsyncCallbackManagerForLLMRun(AsyncRunManager, LLMManagerMixin):
     """Async callback manager for LLM run."""
 
-    async def on_llm_new_token(
-        self,
-        token: str,
-        **kwargs: Any,
-    ) -> None:
+    async def on_llm_new_token(self, token: str, **kwargs: Any,) -> None:
         """Run when LLM generates a new token.
 
         Args:
@@ -690,9 +648,7 @@ class AsyncCallbackManagerForLLMRun(AsyncRunManager, LLMManagerMixin):
         )
 
     async def on_llm_error(
-        self,
-        error: Union[Exception, KeyboardInterrupt],
-        **kwargs: Any,
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any,
     ) -> None:
         """Run when LLM errors.
 
@@ -731,11 +687,7 @@ class CallbackManagerForChainRun(ParentRunManager, ChainManagerMixin):
             **kwargs,
         )
 
-    def on_chain_error(
-        self,
-        error: BaseException,
-        **kwargs: Any,
-    ) -> None:
+    def on_chain_error(self, error: BaseException, **kwargs: Any,) -> None:
         """Run when chain errors.
 
         Args:
@@ -813,11 +765,7 @@ class AsyncCallbackManagerForChainRun(AsyncParentRunManager, ChainManagerMixin):
             **kwargs,
         )
 
-    async def on_chain_error(
-        self,
-        error: BaseException,
-        **kwargs: Any,
-    ) -> None:
+    async def on_chain_error(self, error: BaseException, **kwargs: Any,) -> None:
         """Run when chain errors.
 
         Args:
@@ -878,11 +826,7 @@ class AsyncCallbackManagerForChainRun(AsyncParentRunManager, ChainManagerMixin):
 class CallbackManagerForToolRun(ParentRunManager, ToolManagerMixin):
     """Callback manager for tool run."""
 
-    def on_tool_end(
-        self,
-        output: str,
-        **kwargs: Any,
-    ) -> None:
+    def on_tool_end(self, output: str, **kwargs: Any,) -> None:
         """Run when tool ends running.
 
         Args:
@@ -900,9 +844,7 @@ class CallbackManagerForToolRun(ParentRunManager, ToolManagerMixin):
         )
 
     def on_tool_error(
-        self,
-        error: Union[Exception, KeyboardInterrupt],
-        **kwargs: Any,
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any,
     ) -> None:
         """Run when tool errors.
 
@@ -942,9 +884,7 @@ class AsyncCallbackManagerForToolRun(AsyncParentRunManager, ToolManagerMixin):
         )
 
     async def on_tool_error(
-        self,
-        error: Union[Exception, KeyboardInterrupt],
-        **kwargs: Any,
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any,
     ) -> None:
         """Run when tool errors.
 
@@ -966,11 +906,7 @@ class AsyncCallbackManagerForToolRun(AsyncParentRunManager, ToolManagerMixin):
 class CallbackManagerForRetrieverRun(ParentRunManager, RetrieverManagerMixin):
     """Callback manager for retriever run."""
 
-    def on_retriever_end(
-        self,
-        documents: Sequence[Document],
-        **kwargs: Any,
-    ) -> None:
+    def on_retriever_end(self, documents: Sequence[Document], **kwargs: Any,) -> None:
         """Run when retriever ends running."""
         _handle_event(
             self.handlers,
@@ -984,9 +920,7 @@ class CallbackManagerForRetrieverRun(ParentRunManager, RetrieverManagerMixin):
         )
 
     def on_retriever_error(
-        self,
-        error: Union[Exception, KeyboardInterrupt],
-        **kwargs: Any,
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any,
     ) -> None:
         """Run when retriever errors."""
         _handle_event(
@@ -1002,8 +936,7 @@ class CallbackManagerForRetrieverRun(ParentRunManager, RetrieverManagerMixin):
 
 
 class AsyncCallbackManagerForRetrieverRun(
-    AsyncParentRunManager,
-    RetrieverManagerMixin,
+    AsyncParentRunManager, RetrieverManagerMixin,
 ):
     """Async callback manager for retriever run."""
 
@@ -1023,9 +956,7 @@ class AsyncCallbackManagerForRetrieverRun(
         )
 
     async def on_retriever_error(
-        self,
-        error: Union[Exception, KeyboardInterrupt],
-        **kwargs: Any,
+        self, error: Union[Exception, KeyboardInterrupt], **kwargs: Any,
     ) -> None:
         """Run when retriever errors."""
         await _ahandle_event(
@@ -1044,10 +975,7 @@ class CallbackManager(BaseCallbackManager):
     """Callback manager that handles callbacks from oplangchain."""
 
     def on_llm_start(
-        self,
-        serialized: Dict[str, Any],
-        prompts: List[str],
-        **kwargs: Any,
+        self, serialized: Dict[str, Any], prompts: List[str], **kwargs: Any,
     ) -> List[CallbackManagerForLLMRun]:
         """Run when LLM starts running.
 
@@ -1318,10 +1246,7 @@ class AsyncCallbackManager(BaseCallbackManager):
         return True
 
     async def on_llm_start(
-        self,
-        serialized: Dict[str, Any],
-        prompts: List[str],
-        **kwargs: Any,
+        self, serialized: Dict[str, Any], prompts: List[str], **kwargs: Any,
     ) -> List[AsyncCallbackManagerForLLMRun]:
         """Run when LLM starts running.
 

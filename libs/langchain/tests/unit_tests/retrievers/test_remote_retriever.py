@@ -19,18 +19,8 @@ def mocked_requests_post(*args: Any, **kwargs: Any) -> MockResponse:
     return MockResponse(
         json_data={
             "response": [
-                {
-                    "page_content": "I like apples",
-                    "metadata": {
-                        "test": 0,
-                    },
-                },
-                {
-                    "page_content": "I like pineapples",
-                    "metadata": {
-                        "test": 1,
-                    },
-                },
+                {"page_content": "I like apples", "metadata": {"test": 0,},},
+                {"page_content": "I like pineapples", "metadata": {"test": 1,},},
             ]
         },
         status_code=200,
@@ -42,9 +32,7 @@ def test_RemoteLangChainRetriever_get_relevant_documents(
 ) -> None:
     mocker.patch("requests.post", side_effect=mocked_requests_post)
 
-    remote_langchain_retriever = RemoteLangChainRetriever(
-        url="http://localhost:8000",
-    )
+    remote_langchain_retriever = RemoteLangChainRetriever(url="http://localhost:8000",)
     response = remote_langchain_retriever.get_relevant_documents("I like apples")
     want = [
         Document(page_content="I like apples", metadata={"test": 0}),

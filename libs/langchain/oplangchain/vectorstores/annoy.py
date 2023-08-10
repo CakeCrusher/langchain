@@ -426,11 +426,7 @@ class Annoy(VectorStore):
             pickle.dump((self.docstore, self.index_to_docstore_id, config_object), file)
 
     @classmethod
-    def load_local(
-        cls,
-        folder_path: str,
-        embeddings: Embeddings,
-    ) -> Annoy:
+    def load_local(cls, folder_path: str, embeddings: Embeddings,) -> Annoy:
         """Load Annoy index, docstore, and index_to_docstore_id to disk.
 
         Args:

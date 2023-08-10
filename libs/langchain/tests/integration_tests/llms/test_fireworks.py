@@ -128,9 +128,7 @@ def test_fireworkschat_chain() -> None:
     docs = db.similarity_search(query)
 
     qa = RetrievalQA.from_chain_type(
-        llm=FireworksChat(),
-        chain_type="stuff",
-        retriever=db.as_retriever(),
+        llm=FireworksChat(), chain_type="stuff", retriever=db.as_retriever(),
     )
     query = "What did the president say about Ketanji Brown Jackson"
     output = qa.run(query)

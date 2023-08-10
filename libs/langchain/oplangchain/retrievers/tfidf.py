@@ -80,9 +80,7 @@ class TFIDFRetriever(BaseRetriever):
         return return_docs
 
     def save_local(
-        self,
-        folder_path: str,
-        file_name: str = "tfidf_vectorizer",
+        self, folder_path: str, file_name: str = "tfidf_vectorizer",
     ) -> None:
         try:
             import joblib
@@ -103,9 +101,7 @@ class TFIDFRetriever(BaseRetriever):
 
     @classmethod
     def load_local(
-        cls,
-        folder_path: str,
-        file_name: str = "tfidf_vectorizer",
+        cls, folder_path: str, file_name: str = "tfidf_vectorizer",
     ) -> TFIDFRetriever:
         try:
             import joblib

@@ -169,8 +169,7 @@ def test_loading_with_output_parser() -> None:
         expected_prompt = PromptTemplate(
             input_variables=["question", "student_answer"],
             output_parser=RegexParser(
-                regex="(.*?)\nScore: (.*)",
-                output_keys=["answer", "score"],
+                regex="(.*?)\nScore: (.*)", output_keys=["answer", "score"],
             ),
             template=expected_template,
         )

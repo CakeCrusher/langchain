@@ -42,7 +42,5 @@ def init_vertexai(
         raise_vertex_import_error()
 
     vertexai.init(
-        project=project,
-        location=location,
-        credentials=credentials,
+        project=project, location=location, credentials=credentials,
     )

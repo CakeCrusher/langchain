@@ -271,11 +271,7 @@ Corrected AQL Query:
 """
 
 AQL_FIX_PROMPT = PromptTemplate(
-    input_variables=[
-        "adb_schema",
-        "aql_query",
-        "aql_error",
-    ],
+    input_variables=["adb_schema", "aql_query", "aql_error",],
     template=AQL_FIX_TEMPLATE,
 )
 

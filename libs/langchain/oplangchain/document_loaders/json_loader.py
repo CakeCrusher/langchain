@@ -79,10 +79,7 @@ class JSONLoader(BaseLoader):
             self._validate_content_key(data)
 
         for i, sample in enumerate(data, len(docs) + 1):
-            metadata = dict(
-                source=str(self.file_path),
-                seq_num=i,
-            )
+            metadata = dict(source=str(self.file_path), seq_num=i,)
             text = self._get_text(sample=sample, metadata=metadata)
             docs.append(Document(page_content=text, metadata=metadata))
 

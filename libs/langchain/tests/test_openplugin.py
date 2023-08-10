@@ -14,10 +14,7 @@ test_success_plugins = [
         "name": "BrowserOp",
         "openapi_url": "https://testplugin.feednews.com/.well-known/openapi.yaml",
         "messages": [
-            {
-                "role": "user",
-                "content": "hi what is https://chat.openai.com/",
-            }
+            {"role": "user", "content": "hi what is https://chat.openai.com/",}
         ],
         "truncate": False,
     },
@@ -25,10 +22,7 @@ test_success_plugins = [
         "name": "BrowserPilot",
         "openapi_url": "https://browserplugin.feednews.com/.well-known/openapi.yaml",
         "messages": [
-            {
-                "role": "user",
-                "content": "hi what is https://chat.openai.com/",
-            }
+            {"role": "user", "content": "hi what is https://chat.openai.com/",}
         ],
         "truncate": False,
     },
@@ -72,12 +66,7 @@ test_root_url_fail_plugins = [
     {
         "name": "andorra_news_flats_traffic_work__search",
         "openapi_url": "https://gpt.andocarbur.com/openai.yaml",
-        "messages": [
-            {
-                "role": "user",
-                "content": "andorra traffic work",
-            }
-        ],
+        "messages": [{"role": "user", "content": "andorra traffic work",}],
         "truncate": False,
     },
     {
@@ -125,9 +114,7 @@ def test_full_suite() -> None:
 
     openai_fns, call_api_fn = openapi_to_functions_and_call_api_fn()
 
-    llm = ChatOpenAI(
-        model="gpt-3.5-turbo-0613",
-    )
+    llm = ChatOpenAI(model="gpt-3.5-turbo-0613",)
     llm_chain = LLMChain(
         llm=llm,
         prompt=ChatPromptTemplate.from_template("{query}"),

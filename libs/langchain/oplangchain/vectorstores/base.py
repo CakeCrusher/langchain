@@ -199,10 +199,7 @@ class VectorStore(ABC):
         raise NotImplementedError
 
     def _similarity_search_with_relevance_scores(
-        self,
-        query: str,
-        k: int = 4,
-        **kwargs: Any,
+        self, query: str, k: int = 4, **kwargs: Any,
     ) -> List[Tuple[Document, float]]:
         """
         Default similarity search with relevance scores. Modify if necessary
@@ -226,10 +223,7 @@ class VectorStore(ABC):
         return [(doc, relevance_score_fn(score)) for doc, score in docs_and_scores]
 
     def similarity_search_with_relevance_scores(
-        self,
-        query: str,
-        k: int = 4,
-        **kwargs: Any,
+        self, query: str, k: int = 4, **kwargs: Any,
     ) -> List[Tuple[Document, float]]:
         """Return docs and relevance scores in the range [0, 1].
 
@@ -409,10 +403,7 @@ class VectorStore(ABC):
 
     @classmethod
     def from_documents(
-        cls: Type[VST],
-        documents: List[Document],
-        embedding: Embeddings,
-        **kwargs: Any,
+        cls: Type[VST], documents: List[Document], embedding: Embeddings, **kwargs: Any,
     ) -> VST:
         """Return VectorStore initialized from documents and embeddings."""
         texts = [d.page_content for d in documents]
@@ -421,10 +412,7 @@ class VectorStore(ABC):
 
     @classmethod
     async def afrom_documents(
-        cls: Type[VST],
-        documents: List[Document],
-        embedding: Embeddings,
-        **kwargs: Any,
+        cls: Type[VST], documents: List[Document], embedding: Embeddings, **kwargs: Any,
     ) -> VST:
         """Return VectorStore initialized from documents and embeddings."""
         texts = [d.page_content for d in documents]
@@ -564,10 +552,8 @@ class VectorStoreRetriever(BaseRetriever):
         if self.search_type == "similarity":
             docs = self.vectorstore.similarity_search(query, **self.search_kwargs)
         elif self.search_type == "similarity_score_threshold":
-            docs_and_similarities = (
-                self.vectorstore.similarity_search_with_relevance_scores(
-                    query, **self.search_kwargs
-                )
+            docs_and_similarities = self.vectorstore.similarity_search_with_relevance_scores(
+                query, **self.search_kwargs
             )
             docs = [doc for doc, _ in docs_and_similarities]
         elif self.search_type == "mmr":
@@ -586,10 +572,8 @@ class VectorStoreRetriever(BaseRetriever):
                 query, **self.search_kwargs
             )
         elif self.search_type == "similarity_score_threshold":
-            docs_and_similarities = (
-                await self.vectorstore.asimilarity_search_with_relevance_scores(
-                    query, **self.search_kwargs
-                )
+            docs_and_similarities = await self.vectorstore.asimilarity_search_with_relevance_scores(
+                query, **self.search_kwargs
             )
             docs = [doc for doc, _ in docs_and_similarities]
         elif self.search_type == "mmr":

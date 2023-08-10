@@ -82,9 +82,7 @@ class Modal(LLM):
         params = {**params, **kwargs}
         response = requests.post(
             url=self.endpoint_url,
-            headers={
-                "Content-Type": "application/json",
-            },
+            headers={"Content-Type": "application/json",},
             json={"prompt": prompt, **params},
         )
         try:

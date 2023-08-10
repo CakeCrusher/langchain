@@ -20,8 +20,7 @@ class CreateSessionSchema(BaseModel):
     """Input for CreateSessionTool."""
 
     query: str = Field(
-        ...,
-        description="The query to run in multion agent.",
+        ..., description="The query to run in multion agent.",
     )
     url: str = Field(
         "https://www.google.com/",

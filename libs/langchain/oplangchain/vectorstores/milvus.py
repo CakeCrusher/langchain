@@ -152,10 +152,7 @@ class Milvus(VectorStore):
 
         # Grab the existing collection if it exists
         if utility.has_collection(self.collection_name, using=self.alias):
-            self.col = Collection(
-                self.collection_name,
-                using=self.alias,
-            )
+            self.col = Collection(self.collection_name, using=self.alias,)
         # If need to drop old, drop it
         if drop_old and isinstance(self.col, Collection):
             self.col.drop()

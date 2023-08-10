@@ -206,9 +206,7 @@ class Anthropic(LLM, _AnthropicCommon):
         stop = self._get_anthropic_stop(stop)
         params = {**self._default_params, **kwargs}
         response = self.client.completions.create(
-            prompt=self._wrap_prompt(prompt),
-            stop_sequences=stop,
-            **params,
+            prompt=self._wrap_prompt(prompt), stop_sequences=stop, **params,
         )
         return response.completion
 
@@ -232,9 +230,7 @@ class Anthropic(LLM, _AnthropicCommon):
         params = {**self._default_params, **kwargs}
 
         response = await self.async_client.completions.create(
-            prompt=self._wrap_prompt(prompt),
-            stop_sequences=stop,
-            **params,
+            prompt=self._wrap_prompt(prompt), stop_sequences=stop, **params,
         )
         return response.completion
 

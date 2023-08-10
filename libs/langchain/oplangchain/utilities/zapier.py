@@ -84,9 +84,7 @@ class ZapierNLAWrapper(BaseModel):
         """Create a payload for an action."""
         data = params if params else {}
         data.update(
-            {
-                "instructions": instructions,
-            }
+            {"instructions": instructions,}
         )
         if preview_only:
             data.update({"preview_only": True})
@@ -104,11 +102,7 @@ class ZapierNLAWrapper(BaseModel):
         preview_only=False,
     ) -> Request:
         data = self._create_action_payload(instructions, params, preview_only)
-        return Request(
-            "POST",
-            self._create_action_url(action_id),
-            json=data,
-        )
+        return Request("POST", self._create_action_url(action_id), json=data,)
 
     @root_validator(pre=True)
     def validate_environment(cls, values: Dict) -> Dict:

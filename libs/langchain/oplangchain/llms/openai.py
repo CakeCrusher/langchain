@@ -70,15 +70,7 @@ def _update_response(response: Dict[str, Any], stream_response: Dict[str, Any]) 
 
 
 def _streaming_response_template() -> Dict[str, Any]:
-    return {
-        "choices": [
-            {
-                "text": "",
-                "finish_reason": None,
-                "logprobs": None,
-            }
-        ]
-    }
+    return {"choices": [{"text": "", "finish_reason": None, "logprobs": None,}]}
 
 
 def _create_retry_decorator(
@@ -228,22 +220,13 @@ class BaseOpenAI(BaseLLM):
             values, "openai_api_key", "OPENAI_API_KEY"
         )
         values["openai_api_base"] = get_from_dict_or_env(
-            values,
-            "openai_api_base",
-            "OPENAI_API_BASE",
-            default="",
+            values, "openai_api_base", "OPENAI_API_BASE", default="",
         )
         values["openai_proxy"] = get_from_dict_or_env(
-            values,
-            "openai_proxy",
-            "OPENAI_PROXY",
-            default="",
+            values, "openai_proxy", "OPENAI_PROXY", default="",
         )
         values["openai_organization"] = get_from_dict_or_env(
-            values,
-            "openai_organization",
-            "OPENAI_ORGANIZATION",
-            default="",
+            values, "openai_organization", "OPENAI_ORGANIZATION", default="",
         )
         try:
             import openai
@@ -658,9 +641,7 @@ class AzureOpenAI(BaseOpenAI):
     @root_validator()
     def validate_azure_settings(cls, values: Dict) -> Dict:
         values["openai_api_version"] = get_from_dict_or_env(
-            values,
-            "openai_api_version",
-            "OPENAI_API_VERSION",
+            values, "openai_api_version", "OPENAI_API_VERSION",
         )
         values["openai_api_type"] = get_from_dict_or_env(
             values, "openai_api_type", "OPENAI_API_TYPE", "azure"
@@ -746,16 +727,10 @@ class OpenAIChat(BaseLLM):
             values, "openai_api_key", "OPENAI_API_KEY"
         )
         openai_api_base = get_from_dict_or_env(
-            values,
-            "openai_api_base",
-            "OPENAI_API_BASE",
-            default="",
+            values, "openai_api_base", "OPENAI_API_BASE", default="",
         )
         openai_proxy = get_from_dict_or_env(
-            values,
-            "openai_proxy",
-            "OPENAI_PROXY",
-            default="",
+            values, "openai_proxy", "OPENAI_PROXY", default="",
         )
         openai_organization = get_from_dict_or_env(
             values, "openai_organization", "OPENAI_ORGANIZATION", default=""

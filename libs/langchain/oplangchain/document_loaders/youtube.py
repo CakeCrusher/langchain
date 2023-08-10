@@ -332,17 +332,9 @@ class GoogleApiYoutubeLoader(BaseLoader):
     def _get_document_for_video_id(self, video_id: str, **kwargs: Any) -> Document:
         captions = self._get_transcripe_for_video_id(video_id)
         video_response = (
-            self.youtube_client.videos()
-            .list(
-                part="id,snippet",
-                id=video_id,
-            )
-            .execute()
+            self.youtube_client.videos().list(part="id,snippet", id=video_id,).execute()
         )
-        return Document(
-            page_content=captions,
-            metadata=video_response.get("items")[0],
-        )
+        return Document(page_content=captions, metadata=video_response.get("items")[0],)
 
     def _get_channel_id(self, channel_name: str) -> str:
         request = self.youtube_client.search().list(
@@ -392,10 +384,7 @@ class GoogleApiYoutubeLoader(BaseLoader):
                         item["id"]["videoId"]
                     )
                     video_ids.append(
-                        Document(
-                            page_content=page_content,
-                            metadata=meta_data,
-                        )
+                        Document(page_content=page_content, metadata=meta_data,)
                     )
                 except (TranscriptsDisabled, NoTranscriptFound) as e:
                     if self.continue_on_failure:

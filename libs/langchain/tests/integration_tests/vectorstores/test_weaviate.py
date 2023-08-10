@@ -43,9 +43,7 @@ class TestWeaviate:
         """Test end to end construction and search without metadata."""
         texts = ["foo", "bar", "baz"]
         docsearch = Weaviate.from_texts(
-            texts,
-            embedding_openai,
-            weaviate_url=weaviate_url,
+            texts, embedding_openai, weaviate_url=weaviate_url,
         )
 
         output = docsearch.similarity_search("foo", k=1)
@@ -91,11 +89,7 @@ class TestWeaviate:
         docsearch = Weaviate.from_texts(
             texts, embedding_openai, metadatas=metadatas, weaviate_url=weaviate_url
         )
-        output = docsearch.similarity_search(
-            "foo",
-            k=1,
-            additional=["certainty"],
-        )
+        output = docsearch.similarity_search("foo", k=1, additional=["certainty"],)
         assert output == [
             Document(
                 page_content="foo",
@@ -231,10 +225,7 @@ class TestWeaviate:
         uuids = [uuid.uuid5(uuid.NAMESPACE_DNS, text) for text in texts]
 
         docsearch = Weaviate.from_texts(
-            texts,
-            embedding=embedding,
-            weaviate_url=weaviate_url,
-            uuids=uuids,
+            texts, embedding=embedding, weaviate_url=weaviate_url, uuids=uuids,
         )
 
         # Weaviate replaces the object if the UUID already exists

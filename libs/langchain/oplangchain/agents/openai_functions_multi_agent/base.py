@@ -75,10 +75,7 @@ def _create_function_message(
             content = str(observation)
     else:
         content = observation
-    return FunctionMessage(
-        name=agent_action.tool,
-        content=content,
-    )
+    return FunctionMessage(name=agent_action.tool, content=content,)
 
 
 def _format_intermediate_steps(
@@ -351,8 +348,7 @@ class OpenAIMultiFunctionsAgent(BaseMultiActionAgent):
     ) -> BaseMultiActionAgent:
         """Construct an agent from an LLM and tools."""
         prompt = cls.create_prompt(
-            extra_prompt_messages=extra_prompt_messages,
-            system_message=system_message,
+            extra_prompt_messages=extra_prompt_messages, system_message=system_message,
         )
         return cls(
             llm=llm,

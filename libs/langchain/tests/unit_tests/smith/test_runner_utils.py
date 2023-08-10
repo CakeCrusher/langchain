@@ -33,10 +33,7 @@ _EXAMPLE_MESSAGE = {
 _VALID_MESSAGES = [
     {"messages": [_EXAMPLE_MESSAGE], "other_key": "value"},
     {"messages": [], "other_key": "value"},
-    {
-        "messages": [[_EXAMPLE_MESSAGE, _EXAMPLE_MESSAGE]],
-        "other_key": "value",
-    },
+    {"messages": [[_EXAMPLE_MESSAGE, _EXAMPLE_MESSAGE]], "other_key": "value",},
     {"any_key": [_EXAMPLE_MESSAGE]},
     {"any_key": [[_EXAMPLE_MESSAGE, _EXAMPLE_MESSAGE]]},
 ]
@@ -58,8 +55,7 @@ _INVALID_PROMPTS = (
 
 
 @pytest.mark.parametrize(
-    "inputs",
-    _VALID_MESSAGES,
+    "inputs", _VALID_MESSAGES,
 )
 def test__get_messages_valid(inputs: Dict[str, Any]) -> None:
     {"messages": []}
@@ -67,16 +63,14 @@ def test__get_messages_valid(inputs: Dict[str, Any]) -> None:
 
 
 @pytest.mark.parametrize(
-    "inputs",
-    _VALID_PROMPTS,
+    "inputs", _VALID_PROMPTS,
 )
 def test__get_prompts_valid(inputs: Dict[str, Any]) -> None:
     _get_prompt(inputs)
 
 
 @pytest.mark.parametrize(
-    "inputs",
-    _VALID_PROMPTS,
+    "inputs", _VALID_PROMPTS,
 )
 def test__validate_example_inputs_for_language_model(inputs: Dict[str, Any]) -> None:
     mock_ = mock.MagicMock()
@@ -85,8 +79,7 @@ def test__validate_example_inputs_for_language_model(inputs: Dict[str, Any]) -> 
 
 
 @pytest.mark.parametrize(
-    "inputs",
-    _INVALID_PROMPTS,
+    "inputs", _INVALID_PROMPTS,
 )
 def test__validate_example_inputs_for_language_model_invalid(
     inputs: Dict[str, Any]
@@ -188,11 +181,7 @@ def test_run_llm_or_chain_with_input_mapper() -> None:
     )
     assert len(result) == 1
     assert result[0] == {"output": "2", "the right input": "1"}
-    bad_result = _run_llm_or_chain(
-        example,
-        lambda: mock_chain,
-        n_repetitions=1,
-    )
+    bad_result = _run_llm_or_chain(example, lambda: mock_chain, n_repetitions=1,)
     assert len(bad_result) == 1
     assert "Error" in bad_result[0]
 

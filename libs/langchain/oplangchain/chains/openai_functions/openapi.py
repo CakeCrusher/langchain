@@ -147,19 +147,9 @@ def openapi_spec_to_openai_fn(
             fn = {
                 "name": api_op.operation_id,
                 "description": api_op.description,
-                "parameters": {
-                    "type": "object",
-                    "properties": request_args,
-                },
+                "parameters": {"type": "object", "properties": request_args,},
             }
             functions.append(fn)
-            print(
-                f"Assigning \"{fn['name']}\"",
-                {
-                    "method": method,
-                    "url": api_op.base_url + api_op.path,
-                },
-            )
             _name_to_call_map[fn["name"]] = {
                 "method": method,
                 "url": api_op.base_url + api_op.path,
@@ -283,9 +273,7 @@ def get_openapi_chain(
         if isinstance(spec, str):
             raise ValueError(f"Unable to parse spec from source {spec}")
     openai_fns, call_api_fn = openapi_spec_to_openai_fn(spec)
-    llm = llm or ChatOpenAI(
-        model="gpt-3.5-turbo-0613",
-    )
+    llm = llm or ChatOpenAI(model="gpt-3.5-turbo-0613",)
     prompt = prompt or ChatPromptTemplate.from_template(
         "Use the provided API's to respond to this user query:\n\n{query}"
     )

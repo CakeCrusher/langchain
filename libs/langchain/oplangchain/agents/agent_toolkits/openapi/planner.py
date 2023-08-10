@@ -50,10 +50,7 @@ MAX_RESPONSE_LENGTH = 5000
 
 
 def _get_default_llm_chain(prompt: BasePromptTemplate) -> LLMChain:
-    return LLMChain(
-        llm=OpenAI(),
-        prompt=prompt,
-    )
+    return LLMChain(llm=OpenAI(), prompt=prompt,)
 
 
 def _get_default_llm_chain_factory(

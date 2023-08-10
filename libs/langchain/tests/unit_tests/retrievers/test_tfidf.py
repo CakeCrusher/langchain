@@ -47,15 +47,13 @@ def test_save_local_load_local() -> None:
     temp_timestamp = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
     with TemporaryDirectory(suffix="_" + temp_timestamp + "/") as temp_folder:
         tfidf_retriever.save_local(
-            folder_path=temp_folder,
-            file_name=file_name,
+            folder_path=temp_folder, file_name=file_name,
         )
         assert os.path.exists(os.path.join(temp_folder, f"{file_name}.joblib"))
         assert os.path.exists(os.path.join(temp_folder, f"{file_name}.pkl"))
 
         loaded_tfidf_retriever = TFIDFRetriever.load_local(
-            folder_path=temp_folder,
-            file_name=file_name,
+            folder_path=temp_folder, file_name=file_name,
         )
     assert len(loaded_tfidf_retriever.docs) == 3
     assert loaded_tfidf_retriever.tfidf_array.toarray().shape == (3, 5)

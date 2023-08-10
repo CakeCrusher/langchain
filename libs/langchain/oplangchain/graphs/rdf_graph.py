@@ -183,10 +183,7 @@ class RdfGraph:
         """
         return self.schema
 
-    def query(
-        self,
-        query: str,
-    ) -> List[rdflib.query.ResultRow]:
+    def query(self, query: str,) -> List[rdflib.query.ResultRow]:
         """
         Query the graph.
         """
@@ -199,10 +196,7 @@ class RdfGraph:
             raise ValueError("Generated SPARQL statement is invalid\n" f"{e}")
         return [r for r in res if isinstance(r, ResultRow)]
 
-    def update(
-        self,
-        query: str,
-    ) -> None:
+    def update(self, query: str,) -> None:
         """
         Update the graph.
         """

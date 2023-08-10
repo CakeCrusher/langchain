@@ -30,10 +30,7 @@ class BaseTracer(BaseCallbackHandler, ABC):
         self.run_map: Dict[str, Run] = {}
 
     @staticmethod
-    def _add_child_run(
-        parent_run: Run,
-        child_run: Run,
-    ) -> None:
+    def _add_child_run(parent_run: Run, child_run: Run,) -> None:
         """Add child run to a chain run or tool run."""
         parent_run.child_runs.append(child_run)
 
@@ -141,11 +138,7 @@ class BaseTracer(BaseCallbackHandler, ABC):
         )
 
     def on_retry(
-        self,
-        retry_state: RetryCallState,
-        *,
-        run_id: UUID,
-        **kwargs: Any,
+        self, retry_state: RetryCallState, *, run_id: UUID, **kwargs: Any,
     ) -> None:
         if not run_id:
             raise TracerException("No run_id provided for on_retry callback.")
@@ -168,11 +161,7 @@ class BaseTracer(BaseCallbackHandler, ABC):
             retry_d["outcome"] = "success"
             retry_d["result"] = str(retry_state.outcome.result())
         llm_run.events.append(
-            {
-                "name": "retry",
-                "time": datetime.utcnow(),
-                "kwargs": retry_d,
-            },
+            {"name": "retry", "time": datetime.utcnow(), "kwargs": retry_d,},
         )
 
     def on_llm_end(self, response: LLMResult, *, run_id: UUID, **kwargs: Any) -> None:

@@ -240,8 +240,7 @@ class RunnableWithFallbacks(Serializable, Runnable[Input, Output]):
         for runnable in self.runnables:
             try:
                 output = runnable.invoke(
-                    input,
-                    _patch_config(config, run_manager.get_child()),
+                    input, _patch_config(config, run_manager.get_child()),
                 )
             except self.exceptions_to_handle as e:
                 if first_error is None:
@@ -284,8 +283,7 @@ class RunnableWithFallbacks(Serializable, Runnable[Input, Output]):
         for runnable in self.runnables:
             try:
                 output = await runnable.ainvoke(
-                    input,
-                    _patch_config(config, run_manager.get_child()),
+                    input, _patch_config(config, run_manager.get_child()),
                 )
             except self.exceptions_to_handle as e:
                 if first_error is None:

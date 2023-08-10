@@ -13,9 +13,7 @@ class Html2TextTransformer(BaseDocumentTransformer):
     """
 
     def transform_documents(
-        self,
-        documents: Sequence[Document],
-        **kwargs: Any,
+        self, documents: Sequence[Document], **kwargs: Any,
     ) -> Sequence[Document]:
         try:
             import html2text
@@ -34,8 +32,6 @@ class Html2TextTransformer(BaseDocumentTransformer):
         return documents
 
     async def atransform_documents(
-        self,
-        documents: Sequence[Document],
-        **kwargs: Any,
+        self, documents: Sequence[Document], **kwargs: Any,
     ) -> Sequence[Document]:
         raise NotImplementedError

@@ -127,11 +127,7 @@ class Meilisearch(VectorStore):
             metadata[self._text_key] = text
             embedding = embedding_vectors[i]
             docs.append(
-                {
-                    "id": id,
-                    "_vectors": embedding,
-                    f"{self._metadata_key}": metadata,
-                }
+                {"id": id, "_vectors": embedding, f"{self._metadata_key}": metadata,}
             )
 
         # Send to Meilisearch
@@ -158,10 +154,7 @@ class Meilisearch(VectorStore):
             text and score for each.
         """
         docs_and_scores = self.similarity_search_with_score(
-            query=query,
-            k=k,
-            filter=filter,
-            kwargs=kwargs,
+            query=query, k=k, filter=filter, kwargs=kwargs,
         )
         return [doc for doc, _ in docs_and_scores]
 
@@ -187,10 +180,7 @@ class Meilisearch(VectorStore):
         _query = self._embedding.embed_query(query)
 
         docs = self.similarity_search_by_vector_with_scores(
-            embedding=_query,
-            k=k,
-            filter=filter,
-            kwargs=kwargs,
+            embedding=_query, k=k, filter=filter, kwargs=kwargs,
         )
         return docs
 
@@ -249,10 +239,7 @@ class Meilisearch(VectorStore):
                 vector and score for each.
         """
         docs = self.similarity_search_by_vector_with_scores(
-            embedding=embedding,
-            k=k,
-            filter=filter,
-            kwargs=kwargs,
+            embedding=embedding, k=k, filter=filter, kwargs=kwargs,
         )
         return [doc for doc, _ in docs]
 
@@ -297,11 +284,7 @@ class Meilisearch(VectorStore):
         """
         client = _create_client(client=client, url=url, api_key=api_key)
 
-        vectorstore = cls(
-            embedding=embedding,
-            client=client,
-            index_name=index_name,
-        )
+        vectorstore = cls(embedding=embedding, client=client, index_name=index_name,)
         vectorstore.add_texts(
             texts=texts,
             metadatas=metadatas,

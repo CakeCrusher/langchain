@@ -12,24 +12,19 @@ class CreateDraftSchema(BaseModel):
     """Input for CreateDraftTool."""
 
     message: str = Field(
-        ...,
-        description="The message to include in the draft.",
+        ..., description="The message to include in the draft.",
     )
     to: List[str] = Field(
-        ...,
-        description="The list of recipients.",
+        ..., description="The list of recipients.",
     )
     subject: str = Field(
-        ...,
-        description="The subject of the message.",
+        ..., description="The subject of the message.",
     )
     cc: Optional[List[str]] = Field(
-        None,
-        description="The list of CC recipients.",
+        None, description="The list of CC recipients.",
     )
     bcc: Optional[List[str]] = Field(
-        None,
-        description="The list of BCC recipients.",
+        None, description="The list of BCC recipients.",
     )
 
 

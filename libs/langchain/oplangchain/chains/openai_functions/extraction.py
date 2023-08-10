@@ -99,9 +99,6 @@ def create_extraction_chain_pydantic(
     )
     llm_kwargs = get_llm_kwargs(function)
     chain = LLMChain(
-        llm=llm,
-        prompt=prompt,
-        llm_kwargs=llm_kwargs,
-        output_parser=output_parser,
+        llm=llm, prompt=prompt, llm_kwargs=llm_kwargs, output_parser=output_parser,
     )
     return chain

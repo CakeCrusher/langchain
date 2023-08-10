@@ -52,10 +52,7 @@ def get_models() -> List[str]:
 
 
 def get_completions(
-    model: str,
-    prompt: str,
-    use_prompt_format: bool = True,
-    version: str = "",
+    model: str, prompt: str, use_prompt_format: bool = True, version: str = "",
 ) -> Dict[str, Union[str, float, int]]:
     """Get completions from Aviary models."""
 
@@ -169,11 +166,7 @@ class Aviary(LLM):
         if self.version:
             kwargs["version"] = self.version
 
-        output = get_completions(
-            model=self.model,
-            prompt=prompt,
-            **kwargs,
-        )
+        output = get_completions(model=self.model, prompt=prompt, **kwargs,)
 
         text = cast(str, output["generated_text"])
         if stop:

@@ -133,9 +133,7 @@ class LangChainTracerV1(BaseTracer):
 
         try:
             response = requests.post(
-                endpoint,
-                data=v1_run.json(),
-                headers=self._headers,
+                endpoint, data=v1_run.json(), headers=self._headers,
             )
             raise_for_status_with_text(response)
         except Exception as e:

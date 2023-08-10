@@ -8,9 +8,7 @@ from typing import List
 if typing.TYPE_CHECKING:
     from cassandra.cluster import Session
 
-from oplangchain.schema import (
-    BaseChatMessageHistory,
-)
+from oplangchain.schema import BaseChatMessageHistory
 from oplangchain.schema.messages import (
     BaseMessage,
     _message_to_dict,
@@ -56,9 +54,7 @@ class CassandraChatMessageHistory(BaseChatMessageHistory):
     @property
     def messages(self) -> List[BaseMessage]:  # type: ignore
         """Retrieve all session messages from DB"""
-        message_blobs = self.blob_history.retrieve(
-            self.session_id,
-        )
+        message_blobs = self.blob_history.retrieve(self.session_id,)
         items = [json.loads(message_blob) for message_blob in message_blobs]
         messages = messages_from_dict(items)
         return messages

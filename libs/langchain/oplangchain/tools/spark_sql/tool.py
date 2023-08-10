@@ -41,9 +41,7 @@ class QuerySparkSQLTool(BaseSparkSQLTool, BaseTool):
     """
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Execute the query, return the results or an error message."""
         return self.db.run_no_throw(query)
@@ -61,9 +59,7 @@ class InfoSparkSQLTool(BaseSparkSQLTool, BaseTool):
     """
 
     def _run(
-        self,
-        table_names: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, table_names: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Get the schema for tables in a comma-separated list."""
         return self.db.get_table_info_no_throw(table_names.split(", "))
@@ -116,9 +112,7 @@ class QueryCheckerTool(BaseSparkSQLTool, BaseTool):
         return values
 
     def _run(
-        self,
-        query: str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
         """Use the LLM to check the query."""
         return self.llm_chain.predict(
@@ -126,9 +120,7 @@ class QueryCheckerTool(BaseSparkSQLTool, BaseTool):
         )
 
     async def _arun(
-        self,
-        query: str,
-        run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
+        self, query: str, run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
         return await self.llm_chain.apredict(
             query=query, callbacks=run_manager.get_child() if run_manager else None

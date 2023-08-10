@@ -113,8 +113,7 @@ class Clarifai(VectorStore):
                 inputs=[
                     resources_pb2.Input(
                         data=resources_pb2.Data(
-                            text=resources_pb2.Text(raw=text),
-                            metadata=input_metadata,
+                            text=resources_pb2.Text(raw=text), metadata=input_metadata,
                         )
                     )
                 ],
@@ -260,10 +259,7 @@ class Clarifai(VectorStore):
         return docs_and_scores
 
     def similarity_search(
-        self,
-        query: str,
-        k: int = 4,
-        **kwargs: Any,
+        self, query: str, k: int = 4, **kwargs: Any,
     ) -> List[Document]:
         """Run similarity search using Clarifai.
 
